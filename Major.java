@@ -14,15 +14,6 @@ public class Major {
     private int hoursCompleted;
     private double progression;
 
-    public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired, int hoursCompleted, int progression) {
-        private UUID majorID;
-    private String title;
-    private ArrayList<Course> requiredCourses;
-    private ArrayList<Course> completedCourses;
-    private int hoursRequired;
-    private int hoursCompleted;
-    private double progression;
-
     public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired, int hoursCompleted, double progression) {
         this.majorID = UUID.randomUUID();
         this.title = title;

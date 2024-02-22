@@ -1,0 +1,32 @@
+{
+    "major": "Computer Science",
+    "minor": false,
+    "studentComments": ["Advised to take CSCE350, MATH241"],
+    "achievements": [
+      { "name": "Dean's List", "date": "2023-05-15" },
+      { "name": "Hackathon Winner", "date": "2022-11-30" }
+    ],
+    "gpa": 3.5,
+    "enrolledCourses": [
+      {
+        "courseNumber": 145,
+        "courseID": "CSCE",
+        "courseName": "Introduction to Algorithms",
+        "grade": 3.5
+      },
+      {
+        "courseNumber": 247,
+        "courseID": "CSCE",
+        "courseName": "Software Engineering",
+        "grade": 3.5
+      }
+    ],
+    "advisor": {
+      "name": "Erik Martin",
+      "email": "EMartin@email.sc.edu"
+    },
+    "riskFailing": false,
+    "hoursCompleted": 60.5,
+    "studentID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99"
+  }
+  

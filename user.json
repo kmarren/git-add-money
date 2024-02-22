@@ -1,0 +1,48 @@
+[
+    {
+      "type": 1,
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "ID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99",
+      "email": "bob@email.sc.edu",
+      "username": "bobsmith123",
+      "password": "password123"
+    },
+    {
+      "type": 2,
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "ID": "729b9671-1646-4b0f-87ac-7dde5ec1e7d1",
+      "email": "alice@email.sc.edu",
+      "username": "alicejohnson789",
+      "password": "password456"
+    },
+    {
+      "type": 3,
+      "firstName": "John",
+      "lastName": "Doe",
+      "ID": "c088c330-434b-4000-8c17-7fc654064569",
+      "email": "john@email.sc.edu",
+      "username": "johndoe456",
+      "password": "password789"
+    },
+    {
+      "type": 2,
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "ID": "ece51e69-47ea-4498-8f3e-9950f8bff1e4",
+      "email": "emily@email.sc.edu",
+      "username": "emilybrown654",
+      "password": "passwordabc"
+    },
+    {
+      "type": 3,
+      "firstName": "Michael",
+      "lastName": "Jones",
+      "ID": "00cd01d3-a9d0-430b-bb5e-1b719f0b8100",
+      "email": "michael@email.sc.edu",
+      "username": "michaeljones789",
+      "password": "passwordxyz"
+    }
+  ]
+  

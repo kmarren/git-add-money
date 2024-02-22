@@ -1,0 +1,36 @@
+[
+{
+    "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
+    "title": "Computer Information Systems",
+    "requiredCourses": [
+      {"courseID": "CIS101", "courseName": "Introduction to Information Systems"},
+      {"courseID": "CIS201", "courseName": "Database Management Systems"},
+      {"courseID": "CIS301", "courseName": "Business Intelligence"},
+      {"courseID": "CIS401", "courseName": "Enterprise Resource Planning"},
+      {"courseID": "CIS501", "courseName": "Information Security"}
+    ],
+    "completedCourses": [
+      {"courseID": "CIS100", "courseName": "Computer Basics"}
+    ],
+    "hoursRequired": 110,
+    "hoursCompleted": 40,
+    "progression": 0.36
+  },
+  {
+    "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
+    "title": "Computer Science",
+    "requiredCourses": [
+      {"courseID": "CS101", "courseName": "Introduction to Computer Science"},
+      {"courseID": "CS201", "courseName": "Data Structures and Algorithms"},
+      {"courseID": "CS301", "courseName": "Operating Systems"},
+      {"courseID": "CS401", "courseName": "Software Engineering"},
+      {"courseID": "CS501", "courseName": "Advanced Algorithms"}
+    ],
+    "completedCourses": [
+      {"courseID": "CS100", "courseName": "Programming Fundamentals"}
+    ],
+    "hoursRequired": 120,
+    "hoursCompleted": 30,
+    "progression": 0.25
+  }
+]

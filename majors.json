@@ -3,14 +3,14 @@
     "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
     "title": "Computer Information Systems",
     "requiredCourses": [
-      {"courseID": "CIS101", "courseName": "Introduction to Information Systems"},
-      {"courseID": "CIS201", "courseName": "Database Management Systems"},
-      {"courseID": "CIS301", "courseName": "Business Intelligence"},
-      {"courseID": "CIS401", "courseName": "Enterprise Resource Planning"},
-      {"courseID": "CIS501", "courseName": "Information Security"}
+      {"courseID": "a01df799-abfa-4327-a63a-3980c863bd46"},
+      {"courseID": "dde223de-33d6-477c-a8f0-2b9085a558fc"},
+      {"courseID": "a31a4538-358d-42ee-b5b7-8dd9da832610"},
+      {"courseID": "e014cf0d-6784-4b6e-b559-43aa92266145"},
+      {"courseID": "cbc9da89-d491-4666-bf4c-cab82db2adec"}
     ],
     "completedCourses": [
-      {"courseID": "CIS100", "courseName": "Computer Basics"}
+      {"courseID": "69f56c10-90bc-4af3-afcd-0eebff71eaad"}
     ],
     "hoursRequired": 110,
     "hoursCompleted": 40,
@@ -20,14 +20,14 @@
     "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
     "title": "Computer Science",
     "requiredCourses": [
-      {"courseID": "CS101", "courseName": "Introduction to Computer Science"},
-      {"courseID": "CS201", "courseName": "Data Structures and Algorithms"},
-      {"courseID": "CS301", "courseName": "Operating Systems"},
-      {"courseID": "CS401", "courseName": "Software Engineering"},
-      {"courseID": "CS501", "courseName": "Advanced Algorithms"}
+      {"courseID": "8ef52696-c02f-4637-92c9-a47c095a67a9"},
+      {"courseID": "d13b1884-f631-417c-ad8f-ab497eb94b71"},
+      {"courseID": "1462aaf3-e4e1-4cff-acc5-9f6621846041"},
+      {"courseID": "9bbf88f7-091e-4e0c-b6d2-48e57119fa80"},
+      {"courseID": "8f78a684-3275-4f20-a137-ee0d0e082bba"}
     ],
     "completedCourses": [
-      {"courseID": "CS100", "courseName": "Programming Fundamentals"}
+      {"courseID": "58822196-9ae3-489b-9853-28de347751aa"}
     ],
     "hoursRequired": 120,
     "hoursCompleted": 30,

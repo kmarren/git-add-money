@@ -2,7 +2,7 @@
     {
       "courseComments": ["Great course!", "Difficult but rewarding."],
       "courseNumber": 145,
-      "courseID": "CSCE",
+      "courseID": "ab25ae15-2a73-4403-bbb5-524a19d8b211",
       "courseCode": "PR",
       "courseName": "CSCE145",
       "instructor": {
@@ -11,10 +11,10 @@
       },
       "prerequisites": [
         {
-          "courseName": "MATH115",
-          "courseNumber": 115,
-          "courseCode": "",
-          "courseID": "MATH"
+          "courseID": "7487e711-f080-4c35-bf76-7906666311f0"
+        },
+        {
+          "courseID": "87e711-f080-4c35-bf76-7906666311f0"
         }
       ],
       "description": "Introduction to Algorithms",
@@ -31,25 +31,16 @@
     {
       "courseComments": ["Working on real-world projects!", "Teamwork is emphasized."],
       "courseNumber": 247,
-      "courseID": "CSCE",
+      "courseID": "01c98311-e975-41da-b2af-8809c12d79a5",
       "courseCode": "PR",
       "courseName": "CSCE247",
-      "instructor": {
-        "name": "Prof. Johnson",
-        "email": "profjohnson@email.sc.edu"
-      },
+      "instructorID": "c1e22059-9c1a-4708-b732-79e80ae43a34",
       "prerequisites": [
         {
-          "courseName": "CSCE145",
-          "courseNumber": 145,
-          "courseCode": "PR",
-          "courseID": "CSCE"
+          "courseID": "ab25ae15-2a73-4403-bbb5-524a19d8b211"
         },
         {
-          "courseName": "CSCE206",
-          "courseNumber": 206,
-          "courseCode": "PR",
-          "courseID": "CSCE"
+          "courseID": "7487e711-f080-4c35-bf76-7906666311f0"
         }
       ],
       "description": "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance of software systems.",

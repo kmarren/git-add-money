@@ -3,7 +3,7 @@
       "type": 1,
       "firstName": "Bob",
       "lastName": "Smith",
-      "ID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99",
+      "userID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99",
       "email": "bob@email.sc.edu",
       "username": "bobsmith123",
       "password": "password123"
@@ -12,7 +12,7 @@
       "type": 2,
       "firstName": "Alice",
       "lastName": "Johnson",
-      "ID": "729b9671-1646-4b0f-87ac-7dde5ec1e7d1",
+      "userID": "729b9671-1646-4b0f-87ac-7dde5ec1e7d1",
       "email": "alice@email.sc.edu",
       "username": "alicejohnson789",
       "password": "password456"

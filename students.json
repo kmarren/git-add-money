@@ -1,6 +1,7 @@
 { 
     "studentID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99",
     "major": "Computer Science",
+    "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
     "minor": false,
     "studentComments": ["Advised to take CSCE350, MATH241"],
     "achievements": [

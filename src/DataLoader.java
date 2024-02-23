@@ -20,7 +20,6 @@ public class DataLoader extends DataConstants {
                 int type = Integer.parseInt(userObj.get(USER_TYPE).toString());
                 String firstName = (String) userObj.get(USER_FIRST_NAME);
                 String lastName = (String) userObj.get(USER_LAST_NAME);
-                // Assuming you're not using userID in this context
                 String email = (String) userObj.get(USER_EMAIL);
                 String username = (String) userObj.get(USER_USERNAME);
                 String password = (String) userObj.get(USER_PASSWORD);

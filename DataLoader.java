@@ -1,3 +1,3 @@
-public class DataLoader {
+public class DataLoader extends DataConstants {
 
 }

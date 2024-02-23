@@ -1,4 +1,5 @@
 import java.util.UUID;
+
 public class User {
 
     private String firstName;
@@ -9,7 +10,7 @@ public class User {
     private String password;
     private int type;
 
-    public User(String firstName, String lastName, String email, String username, String password, int type){
+    public User(String firstName, String lastName, String email, String username, String password, int type) {
         this.userID = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,8 +76,7 @@ public class User {
         this.type = type;
     }
 
-    public String viewStudentProfile(Student student)
-    {
+    public String viewStudentProfile(Student student) {
         return " ";
     }
 

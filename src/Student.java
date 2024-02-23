@@ -37,14 +37,11 @@ public class Student extends User {
      * @param email           The email address of the student.
      * @param username        The username of the student.
      * @param password        The password of the student.
-     * @param type            The type of user (e.g., 1=student, 2=faculty,
-     *                        3=advisor).
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<UUID> enrolledCourses,
             ArrayList<UUID> achievements, UUID advisor, boolean riskFailing, double hoursCompleted,
-            String studentID, String firstName, String lastName, String email, String username, String password,
-            int type) {
-        super(firstName, lastName, email, username, password, type);
+            String studentID, String firstName, String lastName, String email, String username, String password) {
+        super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
         this.studentComments = studentComments;
@@ -54,6 +51,22 @@ public class Student extends User {
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
         this.studentID = studentID;
+    }
+
+    /**
+     * Constructs a new Student object with the provided first name, last name,
+     * email,
+     * username, and password. The type of the user is set to 1, indicating a
+     * student.
+     *
+     * @param firstName The first name of the student.
+     * @param lastName  The last name of the student.
+     * @param email     The email address of the student.
+     * @param username  The username of the student.
+     * @param password  The password of the student.
+     */
+    public Student(String firstName, String lastName, String email, String username, String password) {
+        super(firstName, lastName, email, username, password, 1);
     }
 
     // Getters

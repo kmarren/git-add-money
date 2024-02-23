@@ -8,12 +8,44 @@ public class User {
     private String lastName;
     private UUID userID;
     private String email;
-    private String username;
-    private String password;
-    private int type;
+    protected String username;
+    protected String password;
+    protected int type;
 
-    public User(String firstName, String lastName, String email, String username, String password, int type) {
+    /**
+     * Constructs a new User object with a randomly generated userID.
+     */
+    public User() {
         this.userID = UUID.randomUUID();
+    }
+
+    /**
+     * Constructs a new User object with a randomly generated userID, username,
+     * password, and type.
+     *
+     * @param username The username of the user.
+     * @param password The password of the user.
+     * @param type     The type of the user (e.g., student, faculty, advisor).
+     */
+    public User(String username, String password, int type) {
+        this();
+        this.password = password;
+        this.username = username;
+        this.type = type;
+    }
+
+    /**
+     * Constructs a new User object with a randomly generated userID.
+     *
+     * @param firstName The first name of the user.
+     * @param lastName  The last name of the user.
+     * @param email     The email address of the user.
+     * @param username  The username of the user.
+     * @param password  The password of the user.
+     * @param type      The type of the user (e.g., student, faculty, advisor).
+     */
+    public User(String firstName, String lastName, String email, String username, String password, int type) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

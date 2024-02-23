@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * class to epresent a student, extends attributes from the User class
@@ -8,15 +9,15 @@ import java.util.ArrayList;
  * @author Jacob Robertson
  */
 public class Student extends User {
+    private String studentID;
     private double gpa;
     private boolean minor;
     protected ArrayList<String> studentComments;
-    private ArrayList<Achievement> achievements;
-    private ArrayList<Course> enrolledCourses;
-    private Advisor advisor;
+    private ArrayList<UUID> achievements;
+    private ArrayList<UUID> enrolledCourses;
+    private UUID advisor;
     private boolean riskFailing;
     private double hoursCompleted;
-    private String studentID;
 
     /**
      * Constructs a new Student object with the specified attributes.
@@ -39,8 +40,8 @@ public class Student extends User {
      * @param type            The type of user (e.g., 1=student, 2=faculty,
      *                        3=advisor).
      */
-    public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<Course> enrolledCourses,
-            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
+    public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<UUID> enrolledCourses,
+            ArrayList<UUID> achievements, UUID advisor, boolean riskFailing, double hoursCompleted,
             String studentID, String firstName, String lastName, String email, String username, String password,
             int type) {
         super(firstName, lastName, email, username, password, type);
@@ -88,7 +89,7 @@ public class Student extends User {
      *
      * @return The achievements earned by the student.
      */
-    public ArrayList<Achievement> getAchievements() {
+    public ArrayList<UUID> getAchievements() {
         return achievements;
     }
 
@@ -97,7 +98,7 @@ public class Student extends User {
      *
      * @return The courses in which the student is enrolled.
      */
-    public ArrayList<Course> getEnrolledCourses() {
+    public ArrayList<UUID> getEnrolledCourses() {
         return enrolledCourses;
     }
 
@@ -106,7 +107,7 @@ public class Student extends User {
      *
      * @return The advisor assigned to the student.
      */
-    public Advisor getAdvisor() {
+    public UUID getAdvisor() {
         return advisor;
     }
 
@@ -172,7 +173,7 @@ public class Student extends User {
      *
      * @param achievements The achievements earned by the student.
      */
-    public void setAchievement(ArrayList<Achievement> achievements) {
+    public void setAchievement(ArrayList<UUID> achievements) {
         this.achievements = achievements;
     }
 
@@ -181,7 +182,7 @@ public class Student extends User {
      *
      * @param enrolledCourses The courses in which the student is enrolled.
      */
-    public void setEnrolledCourse(ArrayList<Course> enrolledCourses) {
+    public void setEnrolledCourse(ArrayList<UUID> enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
     }
 
@@ -190,7 +191,7 @@ public class Student extends User {
      *
      * @param advisor The advisor assigned to the student.
      */
-    public void setAdvisor(Advisor advisor) {
+    public void setAdvisor(UUID advisor) {
         this.advisor = advisor;
     }
 
@@ -240,7 +241,7 @@ public class Student extends User {
      * @return A string representation of the student's profile.
      */
     // I dont think we need to pass in a student here, can just pass in nothing??
-    public String viewStudentProfile(Student student) {
+    public String viewStudentProfile() {
         // Implementation goes here
         return null; // Placeholder return statement
     }
@@ -250,7 +251,7 @@ public class Student extends User {
      *
      * @param enrolledCourse The course to be added.
      */
-    public void addEnrolledCourse(Course enrolledCourse) {
+    public void addEnrolledCourse(UUID enrolledCourse) {
         // Implementation goes here
     }
 
@@ -264,7 +265,7 @@ public class Student extends User {
      *                                major.
      * @param newMajor                The new major chosen by the student.
      */
-    public void whatIfScenario(int projectedGraduationYear, int additionalHoursNeeded, Major newMajor) {
+    public void whatIfScenario(int projectedGraduationYear, int additionalHoursNeeded, UUID newMajor) {
         // Implementation goes here
     }
 

@@ -17,9 +17,7 @@
         "courseID": "32214390-6197-4535-887a-7b629945885b"
       }
     ],
-    "advisor": {
-      "adviorID": "2a419d72-338b-40be-8c71-c83221c91334"
-    },
+    "advisor":  "2a419d72-338b-40be-8c71-c83221c91334",
     "riskFailing": false,
     "hoursCompleted": 60.5
   }

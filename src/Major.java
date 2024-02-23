@@ -1,4 +1,5 @@
 package src;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -10,8 +11,8 @@ import java.util.UUID;
 public class Major {
     private UUID majorID;
     private String title;
-    private ArrayList<Course> requiredCourses;
-    private ArrayList<Course> completedCourses;
+    private ArrayList<UUID> requiredCourses;
+    private ArrayList<UUID> completedCourses;
     private int hoursRequired;
     private int hoursCompleted;
     private double progression;
@@ -26,7 +27,7 @@ public class Major {
      * @param hoursCompleted   The total hours completed for the major.
      * @param progression      The progression percentage of the major completion.
      */
-    public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired,
+    public Major(String title, ArrayList<UUID> courses, ArrayList<UUID> completedCourses, int hoursRequired,
             int hoursCompleted, double progression) {
         this.majorID = UUID.randomUUID();
         this.title = title;
@@ -80,7 +81,7 @@ public class Major {
      * 
      * @return The list of required courses.
      */
-    public ArrayList<Course> getRequiredCourses() {
+    public ArrayList<UUID> getRequiredCourses() {
         return requiredCourses;
     }
 
@@ -89,7 +90,7 @@ public class Major {
      * 
      * @param requiredCourses The list of required courses to set.
      */
-    public void setRequiredCourses(ArrayList<Course> requiredCourses) {
+    public void setRequiredCourses(ArrayList<UUID> requiredCourses) {
         this.requiredCourses = requiredCourses;
     }
 
@@ -98,7 +99,7 @@ public class Major {
      * 
      * @return The list of completed courses.
      */
-    public ArrayList<Course> getCompletedCourses() {
+    public ArrayList<UUID> getCompletedCourses() {
         return completedCourses;
     }
 
@@ -107,7 +108,7 @@ public class Major {
      * 
      * @param completedCourses The list of completed courses to set.
      */
-    public void setCompletedCourses(ArrayList<Course> completedCourses) {
+    public void setCompletedCourses(ArrayList<UUID> completedCourses) {
         this.completedCourses = completedCourses;
     }
 
@@ -170,7 +171,7 @@ public class Major {
      * 
      * @param course The course to add.
      */
-    public void addRequiredCourse(Course course) {
+    public void addRequiredCourse(UUID course) {
         // Add the course to the required courses list
     }
 
@@ -179,7 +180,7 @@ public class Major {
      * 
      * @param course The course to add.
      */
-    public void addCompletedCourse(Course course) {
+    public void addCompletedCourse(UUID course) {
         // add the course to the completed courses list
     }
 

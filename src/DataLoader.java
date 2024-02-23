@@ -23,8 +23,12 @@ public class DataLoader extends DataConstants {
                 String email = (String) userObj.get(USER_EMAIL);
                 String username = (String) userObj.get(USER_USERNAME);
                 String password = (String) userObj.get(USER_PASSWORD);
+                if (type == 1) {
+                    users.add(new Student(firstName, lastName, email, username, password));
+                } else {
+                    users.add(new User(firstName, lastName, email, username, password, type));
+                }
 
-                users.add(new User(firstName, lastName, email, username, password, type));
             }
             return users;
         } catch (Exception e) {

@@ -1,5 +1,4 @@
 UUIDgenerator.java
-.vscode
 
 # Compiled class file
 *.class
@@ -11,7 +10,7 @@ UUIDgenerator.java
 *.ctxt
 
 # VSCode Configurations
-.vscode/*
+.vscode/
 .classpath/
 .project/
 

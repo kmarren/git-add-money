@@ -179,7 +179,7 @@ public class Major {
      * @param course The course to add.
      */
     public void addCompletedCourse(Course course) {
-        // Add the course to the completed courses list
+        // add the course to the completed courses list
     }
 
     /**

@@ -1,4 +1,5 @@
 package src;
+
 import java.util.UUID;
 
 /**
@@ -25,12 +26,16 @@ public class Achievement {
      * @param description A description of the achievement.
      */
     public Achievement(String name, String type, String benefits, String semester, String description) {
-        this.achievementID = UUID.randomUUID();
+        this();
         this.name = name;
         this.type = type;
         this.benefits = benefits;
         this.semester = semester;
         this.description = description;
+    }
+
+    public Achievement() {
+        this.achievementID = UUID.randomUUID();
     }
 
     /**

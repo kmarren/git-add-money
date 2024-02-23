@@ -1,8 +1,9 @@
 package src;
+
 public abstract class DataConstants {
 
     // major data constants
-    protected static final String MAJOR_FILE_NAME = "majors.json";
+    protected static final String MAJOR_FILE_NAME = "data/user.json";
     protected static final String MAJOR_ID = "majorID";
     protected static final String MAJOR_TITLE = "title";
     protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";

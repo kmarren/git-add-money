@@ -58,62 +58,123 @@ public class User {
         this.type = type;
     }
 
+    /**
+     * Gets the first name of the user. 
+     * @return The user's first name.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets the user's first name.
+     * @param firstName The first name to set for the user.
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets the last name of the user.
+     * @return The user's last name.
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets the user's last name.
+     * @param firstName The last name to set for the user.
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets the UUID of the user.
+     * @return The UUID of the user.
+     */
     public UUID getUserID() {
         return userID;
     }
 
+    /**
+     * Sets the UUID of the user.
+     * @param majorID The UUID to set.
+     */
     public void setUserID(UUID userID) {
         this.userID = userID;
     }
 
+    /**
+     * Gets the email of the user.
+     * @return The user's email.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets the email of the user.
+     * @param email The email to be set for the user.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets the user's username.
+     * @return The username of the user.
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Sets the username of the user.
+     * @param username The username to set for the user.
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * Gets the users password.
+     * @return The password of the user.
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the user's password.
+     * @param password The password to be set to the user.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets the type of user (1, 2, or 3) to indicate whether the user is a student, faculty, or advisor
+     * @return
+     */
     public int getType() {
         return type;
     }
 
+    /**
+     * Sets the type of the user.
+     * @param type The type to set for the user, either 1 2 or 3.
+     */
     public void setType(int type) {
         this.type = type;
     }
 
+    /**
+     * Acts as a toString method which lists out the student's user information
+     * @param student The student whose information is being viewed
+     * @return The students profile information. 
+     */
     public String viewStudentProfile(Student student) {
         return " ";
     }

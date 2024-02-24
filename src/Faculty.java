@@ -8,6 +8,7 @@ public class Faculty
 {
     private String officeHours;
     private ArrayList<Student> studentList;
+    
     public Faculty(String officeHours, ArrayList<Student> studentList)
     {
         this.officeHours = officeHours;

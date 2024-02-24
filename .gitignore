@@ -1,1 +1,24 @@
 UUIDgenerator.java
+# i dont want this in the repo
+UUIDgenerator.java
+testing.java
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# VSCode Configurations
+.vscode/
+.classpath/
+.project/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar

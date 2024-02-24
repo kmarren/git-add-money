@@ -1,0 +1,58 @@
+[
+    {
+      "courseComments": ["Great course!", "Difficult but rewarding."],
+      "courseNumber": 145,
+      "courseID": "ab25ae15-2a73-4403-bbb5-524a19d8b211",
+      "courseCode": "PR",
+      "courseName": "CSCE145",
+      "instructor": {
+        "name": "Dr. Smith",
+        "email": "drsmith@email.sc.edu"
+      },
+      "prerequisites": [
+        {
+          "courseID": "7487e711-f080-4c35-bf76-7906666311f0"
+        },
+        {
+          "courseID": "87e711-f080-4c35-bf76-7906666311f0"
+        }
+      ],
+      "description": "Introduction to Algorithms",
+      "totalSeats": 30,
+      "creditWorth": 3,
+      "corequisites": [],
+      "applicationArea": false,
+      "carolinaCore": false,
+      "elective": false,
+      "grade": 4.0,
+      "completed": true,
+      "enrolled": false
+    },
+    {
+      "courseComments": ["Working on real-world projects!", "Teamwork is emphasized."],
+      "courseNumber": 247,
+      "courseID": "01c98311-e975-41da-b2af-8809c12d79a5",
+      "courseCode": "PR",
+      "courseName": "CSCE247",
+      "instructorID": "c1e22059-9c1a-4708-b732-79e80ae43a34",
+      "prerequisites": [
+        {
+          "courseID": "ab25ae15-2a73-4403-bbb5-524a19d8b211"
+        },
+        {
+          "courseID": "7487e711-f080-4c35-bf76-7906666311f0"
+        }
+      ],
+      "description": "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance of software systems.",
+      "totalSeats": 40,
+      "creditWorth": 3,
+      "corequisites": [],
+      "applicationArea": false,
+      "carolinaCore": false,
+      "elective": false,
+      "grade": 0,
+      "completed": false,
+      "enrolled": true
+    }
+  ]
+  

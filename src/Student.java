@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * class to epresent a student, extends attributes from the User class

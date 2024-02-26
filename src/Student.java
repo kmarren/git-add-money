@@ -304,4 +304,14 @@ public class Student extends User {
         double gpa = 100000000;
         setGpa(gpa);
     }
+
+    /**
+     * Acts as a toString method which lists out the student's user information
+     * @return The students profile information. 
+     */
+    
+    public String viewProfile()
+    {
+        return " ";
+    }
 }

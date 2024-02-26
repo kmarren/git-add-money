@@ -170,13 +170,4 @@ public class User {
         this.type = type;
     }
 
-    /**
-     * Acts as a toString method which lists out the student's user information
-     * @param student The student whose information is being viewed
-     * @return The students profile information. 
-     */
-    public String viewStudentProfile(Student student) {
-        return " ";
-    }
-
 }

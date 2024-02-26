@@ -170,4 +170,22 @@ public class User {
         this.type = type;
     }
 
+    /**
+     * User login is verified if the username and password they enter are correct
+     * 
+     * @param username the username attempt the user enters when prompted
+     * @param password the password attempt the user enters when promted
+     * 
+     * @return whether or not the login is verified
+     */
+    public boolean login(String username, String password)
+    {
+        if (username.equals(getUsername()) && password.equals(getPassword()))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
 }

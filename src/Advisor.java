@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * class representing an advisor, extends the User class
@@ -8,14 +9,18 @@ import java.util.ArrayList;
  * @author Ben Thompson
  */
 public class Advisor extends User {
-    private String advisorId;
+    private UUID advisorId;
     private String office;
     private String officeHours;
     private String phoneNumber;
-    private ArrayList<Student> adviseeList;
+    private ArrayList<UUID> adviseeList;
     private String schoolOfFocus;
     // Appointment will cause errors for now until appointment class completed
-    protected ArrayList<Appointment> appointments;
+    protected ArrayList<UUID> appointments;
+
+    public Advisor() {
+        this.advisorId = UUID.randomUUID();
+    }
 
     /**
      * Constructs an advisor object with the following attributes.
@@ -35,12 +40,12 @@ public class Advisor extends User {
      * @param username      The username of the advisor.
      * @param password      The password of the advisor.
      */
-    public Advisor(String advisorID, String office, String officeHours, 
-    String phoneNumber, ArrayList<Student> adviseeList, String schoolOfFocus, 
-    ArrayList<Appointment> appointments, String firstName, String lastName,
-    String email, String username, String password) {
-        super(firstName, lastName, email, username, password, 2)
-        this.advisorId = advisorId;
+    public Advisor(String office, String officeHours,
+            String phoneNumber, ArrayList<UUID> adviseeList, String schoolOfFocus,
+            ArrayList<UUID> appointments, String firstName, String lastName,
+            String email, String username, String password) {
+        super(firstName, lastName, email, username, password, 2);
+        this.advisorId = UUID.randomUUID();
         this.office = office;
         this.officeHours = officeHours;
         this.phoneNumber = phoneNumber;
@@ -56,7 +61,7 @@ public class Advisor extends User {
      * 
      * @return The advisor's ID.
      */
-    public String getAdvisorId() {
+    public UUID getAdvisorId() {
         return advisorId;
     }
 
@@ -65,8 +70,8 @@ public class Advisor extends User {
      * 
      * @param advisorID The advisor's ID.
      */
-    public void setAdvisorId(String advisorID) {
-        this.advisorId = advisorId;
+    public void setAdvisorId(UUID id) {
+        this.advisorId = id;
     }
 
     /**
@@ -128,7 +133,7 @@ public class Advisor extends User {
      * 
      * @return The list of all the advisees.
      */
-    public ArrayList<Student> getAdviseeList() {
+    public ArrayList<UUID> getAdviseeList() {
         return adviseeList;
     }
 
@@ -137,7 +142,7 @@ public class Advisor extends User {
      * 
      * @param adviseeList A list of all the students being advised.
      */
-    public void setAdviseeList(ArrayList<Student> adviseeList) {
+    public void setAdviseeList(ArrayList<UUID> adviseeList) {
         this.adviseeList = adviseeList;
     }
 
@@ -158,14 +163,14 @@ public class Advisor extends User {
     public void setSchoolOfFocus(String schoolOfFocus) {
         this.schoolOfFocus = schoolOfFocus;
     }
-    
+
     /**
      * Gets a list of all the appointments with the advisor that
      * are available.
      * 
      * @return The available appointments.
      */
-    public ArrayList<Appointment> getAppointments() {
+    public ArrayList<UUID> getAppointments() {
         return appointments;
     }
 
@@ -174,8 +179,8 @@ public class Advisor extends User {
      * 
      * @param appointments The available appointments.
      */
-    public void setAppointments(Arraylist<Appointment> appointments) {
-        this.appointments = apppointments;
+    public void setAppointments(ArrayList<UUID> appointments) {
+        this.appointments = appointments;
     }
 
     // Methods
@@ -196,7 +201,7 @@ public class Advisor extends User {
      * 
      * @param avisees The list of the advisees.
      */
-    public void viewAdvisees(ArrayList<Student> advisees) {
+    public void viewAdvisees(ArrayList<UUID> advisees) {
 
     }
 
@@ -216,7 +221,7 @@ public class Advisor extends User {
      * @param appointments A list of all their current appointments.
      * @return The current list of appointments.
      */
-    public ArrayList<Appointment> viewAppointments(ArrayList<Appointment> appointments) {
+    public ArrayList<UUID> viewAppointments(ArrayList<UUID> appointments) {
         return appointments;
     }
 
@@ -235,7 +240,7 @@ public class Advisor extends User {
      * 
      * @param appointments The advisor's current list of appointments.
      */
-    public void addAppointment(Appointment appointments) {
+    public void addAppointment(UUID appointments) {
 
     }
 }

@@ -13,9 +13,9 @@ public class Student extends User {
     private double gpa;
     private boolean minor;
     protected ArrayList<String> studentComments;
-    private ArrayList<UUID> achievements;
-    private ArrayList<UUID> enrolledCourses;
-    private UUID advisor;
+    private ArrayList<Achievement> achievements;
+    private ArrayList<Course> enrolledCourses;
+    private Advisor advisor;
     private boolean riskFailing;
     private double hoursCompleted;
 
@@ -38,8 +38,8 @@ public class Student extends User {
      * @param username        The username of the student.
      * @param password        The password of the student.
      */
-    public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<UUID> enrolledCourses,
-            ArrayList<UUID> achievements, UUID advisor, boolean riskFailing, double hoursCompleted,
+    public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<Course> enrolledCourses,
+            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
             String studentID, String firstName, String lastName, String email, String username, String password) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
@@ -102,7 +102,7 @@ public class Student extends User {
      *
      * @return The achievements earned by the student.
      */
-    public ArrayList<UUID> getAchievements() {
+    public ArrayList<Achievement> getAchievements() {
         return achievements;
     }
 
@@ -111,7 +111,7 @@ public class Student extends User {
      *
      * @return The courses in which the student is enrolled.
      */
-    public ArrayList<UUID> getEnrolledCourses() {
+    public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }
 
@@ -120,7 +120,7 @@ public class Student extends User {
      *
      * @return The advisor assigned to the student.
      */
-    public UUID getAdvisor() {
+    public Advisor getAdvisor() {
         return advisor;
     }
 
@@ -186,7 +186,7 @@ public class Student extends User {
      *
      * @param achievements The achievements earned by the student.
      */
-    public void setAchievement(ArrayList<UUID> achievements) {
+    public void setAchievement(ArrayList<Achievement> achievements) {
         this.achievements = achievements;
     }
 
@@ -195,7 +195,7 @@ public class Student extends User {
      *
      * @param enrolledCourses The courses in which the student is enrolled.
      */
-    public void setEnrolledCourse(ArrayList<UUID> enrolledCourses) {
+    public void setEnrolledCourse(ArrayList<Course> enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
     }
 
@@ -204,7 +204,7 @@ public class Student extends User {
      *
      * @param advisor The advisor assigned to the student.
      */
-    public void setAdvisor(UUID advisor) {
+    public void setAdvisor(Advisor advisor) {
         this.advisor = advisor;
     }
 
@@ -264,7 +264,7 @@ public class Student extends User {
      *
      * @param enrolledCourse The course to be added.
      */
-    public void addEnrolledCourse(UUID enrolledCourse) {
+    public void addEnrolledCourse(Course enrolledCourse) {
         // Implementation goes here
     }
 
@@ -278,7 +278,7 @@ public class Student extends User {
      *                                major.
      * @param newMajor                The new major chosen by the student.
      */
-    public void whatIfScenario(int projectedGraduationYear, int additionalHoursNeeded, UUID newMajor) {
+    public void whatIfScenario(int projectedGraduationYear, int additionalHoursNeeded, Major newMajor) {
         // Implementation goes here
     }
 
@@ -307,11 +307,11 @@ public class Student extends User {
 
     /**
      * Acts as a toString method which lists out the student's user information
-     * @return The students profile information. 
+     * 
+     * @return The students profile information.
      */
-    
-    public String viewProfile()
-    {
+
+    public String viewProfile() {
         return " ";
     }
 }

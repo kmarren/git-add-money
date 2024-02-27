@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Jacob Robertson
  */
 public class Student extends User {
-    private String studentID;
+    private Major major;
     private double gpa;
     private boolean minor;
     protected ArrayList<String> studentComments;
@@ -38,8 +38,8 @@ public class Student extends User {
      * @param password        The password of the student.
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<Course> enrolledCourses,
-            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-            String studentID, String firstName, String lastName, String email, String username, String password) {
+            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted, 
+            String firstName, String lastName, String email, String username, String password, Major major) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -49,7 +49,7 @@ public class Student extends User {
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
-        this.studentID = studentID;
+        this.major = major;
     }
 
     /**
@@ -151,15 +151,6 @@ public class Student extends User {
         return hoursCompleted;
     }
 
-    /**
-     * Returns the ID of the student.
-     *
-     * @return The ID of the student.
-     */
-    public String getStudentID() {
-        return studentID;
-    }
-
     // Setters
 
     /**
@@ -233,15 +224,6 @@ public class Student extends User {
      */
     public void setHoursCompleted(double hoursCompleted) {
         this.hoursCompleted = hoursCompleted;
-    }
-
-    /**
-     * Sets the ID of the student.
-     *
-     * @param studentID The ID of the student.
-     */
-    public void setStudentID(String studentID) {
-        this.studentID = studentID;
     }
 
     /*

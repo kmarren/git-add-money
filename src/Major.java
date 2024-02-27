@@ -17,6 +17,9 @@ public class Major {
     private int hoursCompleted;
     private double progression;
 
+    public Major(){
+        this.majorID = UUID.randomUUID();
+    }
     /**
      * Constructs a Major object with the specified parameters.
      * 
@@ -29,7 +32,7 @@ public class Major {
      */
     public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired,
             int hoursCompleted, double progression) {
-        this.majorID = UUID.randomUUID();
+        this();
         this.title = title;
         this.requiredCourses = courses;
         this.completedCourses = completedCourses;

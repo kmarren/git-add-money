@@ -9,7 +9,6 @@ import java.util.UUID;
  * @author Ben Thompson
  */
 public class Advisor extends User {
-    private UUID advisorId;
     private String office;
     private String officeHours;
     private String phoneNumber;
@@ -19,14 +18,9 @@ public class Advisor extends User {
     // Appointment will cause errors for now until appointment class completed
     protected ArrayList<Appointment> appointments;
 
-    public Advisor() {
-        this.advisorId = UUID.randomUUID();
-    }
-
     /**
      * Constructs an advisor object with the following attributes.
      * 
-     * @param advisorId     The ID of the advisor.
      * @param office        The location of the advisor's office
      * @param officeHours   The office hours of the advisor.
      * @param phoneNumber   The advisor's phone number.
@@ -46,7 +40,6 @@ public class Advisor extends User {
             ArrayList<Appointment> appointments, String firstName, String lastName,
             String email, String username, String password) {
         super(firstName, lastName, email, username, password, 2);
-        this.advisorId = UUID.randomUUID();
         this.office = office;
         this.officeHours = officeHours;
         this.phoneNumber = phoneNumber;

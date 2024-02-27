@@ -26,6 +26,16 @@ public class Faculty extends User
         this.studentList = studentList;
     }
 
+    /**
+     * Constructs a new faculty with a username and password
+     * @param username the facultys username
+     * @param password the facultys password
+     */
+    public Faculty(String username, String password)
+    {
+        super(username, password, 3);
+    }
+
     // getters and setters
 
     /**

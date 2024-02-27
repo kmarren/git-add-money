@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-
 /**
  * class to epresent a student, extends attributes from the User class
  * 
@@ -18,6 +17,7 @@ public class Student extends User {
     private boolean riskFailing;
     private double hoursCompleted;
 
+   
     /**
      * Constructs a new Student object with the specified attributes.
      *
@@ -66,6 +66,16 @@ public class Student extends User {
      */
     public Student(String firstName, String lastName, String email, String username, String password) {
         super(firstName, lastName, email, username, password, 1);
+    }
+
+    /**
+     * Constructs a new Student with a username and password
+     * @param username the students username
+     * @param password the students password
+     */
+    public Student(String username, String password)
+    {
+        super(username, password, 1);
     }
 
     // Getters

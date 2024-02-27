@@ -404,6 +404,14 @@ public class Course
 
     }
 
+    /**
+     * concatinates the course information to display for user
+     */
+    public String toString()
+    {
+        return courseID.toString();
+    }
+
 
 
 

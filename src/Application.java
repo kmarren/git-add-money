@@ -327,7 +327,7 @@ public class Application
      */
     public String viewCourse(Course course)
     {
-        return " ";
+        return course.toString();
     }
 
 

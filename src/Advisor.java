@@ -68,7 +68,7 @@ public class Advisor extends User {
     /**
      * Sets the Id of the advisor.
      * 
-     * @param advisorID The advisor's ID.
+     * @param id The advisor's ID.
      */
     public void setAdvisorId(UUID id) {
         this.advisorId = id;
@@ -221,7 +221,7 @@ public class Advisor extends User {
      * @param appointments A list of all their current appointments.
      * @return The current list of appointments.
      */
-    public ArrayList<UUID> viewAppointments(ArrayList<Appointment> appointments) {
+    public ArrayList<Appointment> viewAppointments(ArrayList<Appointment> appointments) {
         return appointments;
     }
 

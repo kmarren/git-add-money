@@ -34,7 +34,10 @@
       "courseID": "01c98311-e975-41da-b2af-8809c12d79a5",
       "courseCode": "PR",
       "courseName": "CSCE247",
-      "instructorID": "c1e22059-9c1a-4708-b732-79e80ae43a34",
+      "instructor": {
+        "name": "Dr. Smith",
+        "email": "drsmith@email.sc.edu"
+      },
       "prerequisites": [
         {
           "courseID": "ab25ae15-2a73-4403-bbb5-524a19d8b211"

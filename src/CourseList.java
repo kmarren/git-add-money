@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CourseList {
     private static CourseList courseList;
@@ -25,6 +26,15 @@ public class CourseList {
             }
         }
         return foundCourses;
+    }
+
+    public Course getCourseByUUID(UUID courseID) {
+        for (Course course : courses) {
+            if (course.getCourseID().equals(courseID)) {
+                return course;
+            }
+        }
+        return null;
     }
 
     public void addCourse(Course course)

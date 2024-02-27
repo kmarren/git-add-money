@@ -30,12 +30,12 @@ public class Student extends User {
      * @param advisor         The advisor assigned to the student.
      * @param riskFailing     Whether the student is at risk of failing.
      * @param hoursCompleted  The number of completed hours by the student.
-     * @param studentID       The ID of the student.
      * @param firstName       The first name of the student.
      * @param lastName        The last name of the student.
      * @param email           The email address of the student.
      * @param username        The username of the student.
      * @param password        The password of the student.
+     * @param major           The major/class tracker of the student.
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<Course> enrolledCourses,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted, 

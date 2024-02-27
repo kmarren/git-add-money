@@ -14,7 +14,7 @@ public abstract class DataConstants {
     protected static final String MAJOR_PROGRESSION = "progression";
 
     // course data constants
-    protected static final String COURSE_FILE_NAME = "course.json";
+    protected static final String COURSE_FILE_NAME = "data/course.json";
     protected static final String COURSE_COMMENTS = "courseComments";
     protected static final String COURSE_NUMBER = "courseNumber";
     protected static final String COURSE_ID = "courseID";

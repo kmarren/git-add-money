@@ -119,4 +119,52 @@ public class DataLoader extends DataConstants {
     }
     return students;
     }
+
+    public static ArrayList<Course> loadCourses() {
+        ArrayList<Course> courses = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(COURSE_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray courseArray = (JSONArray) parser.parse(reader);
+
+            for (Object obj : courseArray) {
+                JSONObject courseObj = (JSONObject) obj;
+
+                ArrayList<String> courseComments = (ArrayList<String>) courseObj.get(COURSE_COMMENTS);
+                int courseNumber = Integer.parseInt(courseObj.get(COURSE_NUMBER).toString());
+                String courseCode = (String) courseObj.get(COURSE_CODE);
+                String courseName = (String) courseObj.get(COURSE_NAME);
+                // Parsing instructor information
+                JSONObject instructorObj = (JSONObject) courseObj.get(COURSE_INSTRUCTOR);
+                String instructorName = (String) instructorObj.get("name");
+                String instructorEmail = (String) instructorObj.get("email");
+                Faculty instructor = new Faculty(instructorName, instructorEmail);
+                // Parsing prerequisites
+                JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES);
+                ArrayList<Course> prerequisites = new ArrayList<>();
+                /* 
+                for (Object prereqObj : prerequisitesArray) {
+                    JSONObject prereqJson = (JSONObject) prereqObj;
+                    String prereqCourseID = (String) prereqJson.get("courseID");
+                    // Assuming you have a method to fetch a course by its ID
+                    Course prereqCourse = fetchCourseByID(prereqCourseID);
+                    prerequisites.add(prereqCourse);
+                }
+                */
+                String description = (String) courseObj.get(COURSE_DESCRIPTION);
+                int totalSeats = Integer.parseInt(courseObj.get(COURSE_TOTAL_SEATS).toString());
+                int creditWorth = Integer.parseInt(courseObj.get(COURSE_CREDIT_WORTH).toString());
+                // Parsing corequisites, applicationArea, carolinaCore, elective, grade, completed, and enrolled
+                // These fields are straightforward to parse
+                // Creating Course object
+                Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
+                        prerequisites, description, totalSeats, creditWorth, new ArrayList<>(), false, false,
+                        false, 0.0, false, false);
+                courses.add(course);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return courses;
+    }
 }

@@ -222,7 +222,9 @@ public class Advisor extends User {
      * @return The current list of appointments.
      */
     public ArrayList<UUID> viewAppointments(ArrayList<Appointment> appointments) {
-        return appointments;
+       ArrayList<UUID> uuids = new ArrayList<UUID>();
+       
+        return uuids;
     }
 
     /**

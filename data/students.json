@@ -1,5 +1,10 @@
-{ 
-    "studentID": "be3d71a6-eb8d-4a94-ab1f-49dc80a75d99",
+[
+  {
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "email": "bob@email.sc.edu",
+    "username": "bobsmith123",
+    "password": "password123",
     "major": "Computer Science",
     "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
     "minor": false,
@@ -17,8 +22,35 @@
         "courseID": "32214390-6197-4535-887a-7b629945885b"
       }
     ],
-    "advisor":  "2a419d72-338b-40be-8c71-c83221c91334",
+    "advisorID":  "2a419d72-338b-40be-8c71-c83221c91334",
     "riskFailing": false,
     "hoursCompleted": 60.5
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice@email.sc.edu",
+    "username": "alicejohnson456",
+    "password": "securepass456",
+    "major": "Biology",
+    "majorID": "b32f91c8-7a5d-4f24-b3e7-8d9c5e2a6f18",
+    "minor": false,
+    "studentComments": ["Strong in lab work, should consider research opportunities."],
+    "achievements": [
+        { "achivementID": "e7f7a811-83e2-41bc-99e3-2d5a1e1b0a7c"},
+        { "achivementID": "57d88b6f-9c5a-4713-92f2-6b5e8582fb82"}
+    ],
+    "gpa": 3.8,
+    "enrolledCourses": [
+        {
+            "courseID": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d"
+        },
+        {
+            "courseID": "d5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a0"
+        }
+    ],
+    "advisorID": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "riskFailing": false,
+    "hoursCompleted": 72.3
   }
-  
+]

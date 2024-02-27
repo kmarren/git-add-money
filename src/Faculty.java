@@ -4,17 +4,24 @@ import java.util.ArrayList;
  * setting up faculty class
  * @author Kennedy Marren
  */
-public class Faculty
+public class Faculty extends User
 {
     private String officeHours;
     private ArrayList<Student> studentList;
     /**
      * Constructs a new faculty object with office hours and a list of students
-     * @param officeHours The office hours of the faculty.
-     * @param studentList The student list of the faculty.
+     * @param officeHours The office hours of the faculty member.
+     * @param studentList The student list of the faculty member.
+     * @param firstName The first name of the faculty member
+     * @param lastName The last name of the faculty member
+     * @param email The email of the faculty member
+     * @param username The username of the faculty member
+     * @param password The password of the faculty member
      */
-    public Faculty(String officeHours, ArrayList<Student> studentList)
+    public Faculty(String officeHours, ArrayList<Student> studentList, 
+    String firstName, String lastName, String email, String username, String password)
     {
+        super(firstName, lastName, email, username, password, 3);
         this.officeHours = officeHours;
         this.studentList = studentList;
     }

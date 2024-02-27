@@ -7,7 +7,7 @@ import java.util.UUID;
 * 
 * @author Kennedy Marren
 */
-public class User {
+public class abstract User {
     private String firstName;
     private String lastName;
     private UUID userID;
@@ -187,5 +187,11 @@ public class User {
         return false;
     }
 
+
+
+
+    /**
+     * 
+     */
 
 }

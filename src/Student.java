@@ -68,6 +68,11 @@ public class Student extends User {
         super(firstName, lastName, email, username, password, 1);
     }
 
+    /**
+     * Constructs a new Student with a username and password
+     * @param username the students username
+     * @param password the students password
+     */
     public Student(String username, String password)
     {
         super(username, password, 1);

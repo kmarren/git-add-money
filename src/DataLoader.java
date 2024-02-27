@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants {
 
+    // load students method
     public static ArrayList<Student> loadStudents() {
         ArrayList<Student> students = new ArrayList<>();
         try {
@@ -45,8 +46,8 @@ public class DataLoader extends DataConstants {
                      * achievements.add(achievementID);
                      * }
                      */
-                    double gpa = (double) studentJsonObj.get("gpa");
-                    JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get("enrolledCourses");
+                    double gpa = (double) studentJsonObj.get(STUDENT_GPA);
+                    JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     /*
                      * for (Object courseObj : enrolledCoursesArray) {
@@ -56,8 +57,8 @@ public class DataLoader extends DataConstants {
                      * }
                      */
                     Advisor advisor = null; // add an advisor later??
-                    boolean riskFailing = (boolean) studentJsonObj.get("riskFailing");
-                    double hoursCompleted = (double) studentJsonObj.get("hoursCompleted");
+                    boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
+                    double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor,
@@ -93,8 +94,8 @@ public class DataLoader extends DataConstants {
                  * achievements.add(achievementID);
                  * }
                  */
-                double gpa = (double) studentJsonObj.get("gpa");
-                JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get("enrolledCourses");
+                double gpa = (double) studentJsonObj.get(STUDENT_GPA);
+                JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                 ArrayList<Course> enrolledCourses = new ArrayList<>();
                 /*
                  * for (Object courseObj : enrolledCoursesArray) {
@@ -104,8 +105,8 @@ public class DataLoader extends DataConstants {
                  * }
                  */
                 Advisor advisor = new Advisor();
-                boolean riskFailing = (boolean) studentJsonObj.get("riskFailing");
-                double hoursCompleted = (double) studentJsonObj.get("hoursCompleted");
+                boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
+                double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor,
@@ -121,6 +122,7 @@ public class DataLoader extends DataConstants {
         return students;
     }
 
+    // load courses method
     public static ArrayList<Course> loadCourses() {
         ArrayList<Course> courses = new ArrayList<>();
         try {
@@ -167,6 +169,7 @@ public class DataLoader extends DataConstants {
         return courses;
     }
 
+    // load faculty method
     public static ArrayList<Faculty> loadFaculty() {
         ArrayList<Faculty> facultyList = new ArrayList<>();
         try {

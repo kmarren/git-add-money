@@ -9,7 +9,7 @@ import java.util.UUID;
  */
 public class Application 
 {
-    private User user;
+    //private User user;
     private UserList userList;
     private CourseList courseList;
     /**
@@ -72,10 +72,23 @@ public class Application
      * @param password the password attempt
      * @return the user who was logged in
      */
-    public User login(String username, String password)
+    public User login(String username, String password, int type)
     {
-        User user = new User();
-        return user;
+        if(type == 3)
+        {
+            Faculty faculty = new Faculty(username, password);
+            return faculty;
+        } 
+        else if(type == 2)
+        {
+            Advisor advisor = new Advisor(username, password);
+            return advisor;
+        }
+        else
+        {
+            Student student = new Student(username, password);
+            return student;
+        }
     }
 
     /**
@@ -84,10 +97,24 @@ public class Application
      * @param password the password given to create the new account
      * @return the new user
      */
-    public User signUp(String username, String password)
+    public User signUp(String username, String password, int type)
     {
-        User user = new User();
-        return user;
+        if(type == 3)
+        {
+            Faculty faculty = new Faculty(username, password);
+            return faculty;
+        } 
+        else if(type == 2)
+        {
+            Advisor advisor = new Advisor(username, password);
+            return advisor;
+        }
+        else
+        {
+            Student student = new Student(username, password);
+            return student;
+        }
+
     }
 
     /**

@@ -54,6 +54,10 @@ public class Advisor extends User {
         this.appointments = appointments;
     }
 
+    public Advisor(String username, String password)
+    {
+        super(username, password, 2);
+    }
     // Getters and Setters
 
     /**

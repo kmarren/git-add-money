@@ -26,6 +26,11 @@ public class Faculty extends User
         this.studentList = studentList;
     }
 
+    public Faculty(String username, String password)
+    {
+        super(username, password, 3);
+    }
+
     // getters and setters
 
     /**

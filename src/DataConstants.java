@@ -43,6 +43,16 @@ public abstract class DataConstants {
     protected static final String USER_USERNAME = "username";
     protected static final String USER_PASSWORD = "password";
 
+    // faculty data constants
+    protected static final String FACULTY_FILE_NAME = "data/faculty.json";
+    protected static final String FACULTY_OFFICE_HOURS = "officeHours";
+    protected static final String FACULTY_STUDENT_LIST = "studentList";
+    protected static final String FACULTY_FIRST_NAME = "firstName";
+    protected static final String FACULTY_LAST_NAME = "lastName";
+    protected static final String FACULTY_EMAIL = "email";
+    protected static final String FACULTY_USERNAME = "username";
+    protected static final String FACULTY_PASSWORD = "password";
+
     // student data constants
     protected static final String STUDENT_FILE_NAME = "data/students.json";
     protected static final String STUDENT_FIRST_NAME = "firstName";

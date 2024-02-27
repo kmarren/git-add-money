@@ -2,6 +2,8 @@ package src;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -112,9 +114,6 @@ public class DataLoader extends DataConstants {
 
                 // Add student to the list
                 students.add(student);
-            } else {
-                // Handle unsupported JSON format
-                System.err.println("Unsupported JSON format");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -137,12 +136,9 @@ public class DataLoader extends DataConstants {
                 String courseCode = (String) courseObj.get(COURSE_CODE);
                 String courseName = (String) courseObj.get(COURSE_NAME);
                 // Parsing instructor information
-                JSONObject instructorObj = (JSONObject) courseObj.get(COURSE_INSTRUCTOR);
-                String instructorName = (String) instructorObj.get("name");
-                String instructorEmail = (String) instructorObj.get("email");
-                Faculty instructor = new Faculty(instructorName, instructorEmail);
+                Faculty instructor = null; // also need to add an instructor later
                 // Parsing prerequisites
-                JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES);
+                JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
                 ArrayList<Course> prerequisites = new ArrayList<>();
                 /*
                  * for (Object prereqObj : prerequisitesArray) {
@@ -169,5 +165,34 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return courses;
+    }
+
+    public static ArrayList<Faculty> loadFaculty() {
+        ArrayList<Faculty> facultyList = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(FACULTY_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray facultyArray = (JSONArray) parser.parse(reader);
+
+            for (Object obj : facultyArray) {
+                JSONObject facultyObj = (JSONObject) obj;
+
+                String firstName = (String) facultyObj.get(FACULTY_FIRST_NAME);
+                String lastName = (String) facultyObj.get(FACULTY_LAST_NAME);
+                String email = (String) facultyObj.get(FACULTY_EMAIL);
+                String username = (String) facultyObj.get(FACULTY_USERNAME);
+                String password = (String) facultyObj.get(FACULTY_PASSWORD);
+                String officeHours = (String) facultyObj.get(FACULTY_OFFICE_HOURS);
+
+                ArrayList<Student> studentList = new ArrayList<>(); // Defaulting to an empty list
+
+                Faculty faculty = new Faculty(officeHours, studentList, firstName, lastName, email, username, password);
+                facultyList.add(faculty);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return facultyList;
+
     }
 }

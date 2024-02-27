@@ -9,62 +9,28 @@ import java.util.UUID;
  */
 public class Application 
 {
-    //private User user;
-    private UserList userList;
-    private CourseList courseList;
-    /**
-     * Constructs an application facade.
-     */
-    public Application()
-    {
 
-    }
-
-    // Getters and Setters
-    /**
-     * gets the user that will be interacting with the application
-     * @return the user interacting with the application
-     */
-    public User getUser() {
-        return user;
-    }
-    /**
-     * sets the user of the application to a specified user
-     * @param user the user who will be set to interact with the application
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
-    /**
-     * gets the list of users
-     * @return the list of users
-     */
-    public UserList getUserList() {
-        return userList;
-    }
-    /**
-     * sets the list of users based on the users within the database (JSON)
-     * @param userList the userlist to be set as the users
-     */
-    public void setUserList(UserList userList) {
-        this.userList = userList;
-    }
-    /**
-     * gets the complete list of courses
-     * @return the list of courses
-     */
-    public CourseList getCourseList() {
-        return courseList;
-    }
-    /**
-     * sets the list of courses for the application to use
-     * @param courseList the list of courses to be set for use by the application
-     */
-    public void setCourseList(CourseList courseList) {
-        this.courseList = courseList;
-    }
-
+    private static Application application;
     
+    /**
+     * private constructor that will not allow other classes to create a new applicatoin
+     */
+    private Application()
+    {
+        
+    }
+
+    /**
+     * creates an application if there is not one or returns the application if there is one
+     * @return the application
+     */
+    public static Application getInstance()
+    {
+        if (application == null) {
+			application = new Application();
+		}
+		return application;
+    }
 
     /**
      * takes in the a username and password and returns the user that is trying to login
@@ -74,21 +40,7 @@ public class Application
      */
     public User login(String username, String password, int type)
     {
-        if(type == 3)
-        {
-            Faculty faculty = new Faculty(username, password);
-            return faculty;
-        } 
-        else if(type == 2)
-        {
-            Advisor advisor = new Advisor(username, password);
-            return advisor;
-        }
-        else
-        {
-            Student student = new Student(username, password);
-            return student;
-        }
+        return UserList.getInstance().getUser(username, password);
     }
 
     /**
@@ -102,16 +54,19 @@ public class Application
         if(type == 3)
         {
             Faculty faculty = new Faculty(username, password);
+            UserList.getInstance().addUser(faculty);
             return faculty;
         } 
         else if(type == 2)
         {
             Advisor advisor = new Advisor(username, password);
+            UserList.getInstance().addUser(advisor);
             return advisor;
         }
         else
         {
             Student student = new Student(username, password);
+            UserList.getInstance().addUser(student);
             return student;
         }
 

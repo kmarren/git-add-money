@@ -7,7 +7,7 @@ public class UserList {
     private ArrayList<User> users;
 
     private UserList() {
-        users = new ArrayList<>();
+        users = new ArrayList<User>();
     }
 
     public static UserList getInstance() {
@@ -17,6 +17,7 @@ public class UserList {
         return userList;
     }
 
+
     public User getUser(String userName) {
         for (User user : users) {
             if (user.getUsername().equals(userName)) {
@@ -25,6 +26,21 @@ public class UserList {
         }
         return null;
     }
+
+    public User getUser(String userName, String password) {
+        for (User user : users) {
+            if (user.getUsername().equals(userName) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void addUser(User user)
+    {
+        users.add(user);
+    }
+
 
    
 }

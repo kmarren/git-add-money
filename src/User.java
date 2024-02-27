@@ -3,11 +3,12 @@ package src;
 import java.util.UUID;
 
 /**
-* class that represents a user. Users can be either a student, faculty, or advisor.
-* 
-* @author Kennedy Marren
-*/
-public class abstract User {
+ * class that represents a user. Users can be either a student, faculty, or
+ * advisor.
+ * 
+ * @author Kennedy Marren
+ */
+public abstract class User {
     private String firstName;
     private String lastName;
     private UUID userID;
@@ -59,7 +60,8 @@ public class abstract User {
     }
 
     /**
-     * Gets the first name of the user. 
+     * Gets the first name of the user.
+     * 
      * @return The user's first name.
      */
     public String getFirstName() {
@@ -68,6 +70,7 @@ public class abstract User {
 
     /**
      * Sets the user's first name.
+     * 
      * @param firstName The first name to set for the user.
      */
     public void setFirstName(String firstName) {
@@ -76,6 +79,7 @@ public class abstract User {
 
     /**
      * Gets the last name of the user.
+     * 
      * @return The user's last name.
      */
     public String getLastName() {
@@ -84,6 +88,7 @@ public class abstract User {
 
     /**
      * Sets the user's last name.
+     * 
      * @param firstName The last name to set for the user.
      */
     public void setLastName(String lastName) {
@@ -92,6 +97,7 @@ public class abstract User {
 
     /**
      * Gets the UUID of the user.
+     * 
      * @return The UUID of the user.
      */
     public UUID getUserID() {
@@ -100,6 +106,7 @@ public class abstract User {
 
     /**
      * Sets the UUID of the user.
+     * 
      * @param majorID The UUID to set.
      */
     public void setUserID(UUID userID) {
@@ -108,6 +115,7 @@ public class abstract User {
 
     /**
      * Gets the email of the user.
+     * 
      * @return The user's email.
      */
     public String getEmail() {
@@ -116,6 +124,7 @@ public class abstract User {
 
     /**
      * Sets the email of the user.
+     * 
      * @param email The email to be set for the user.
      */
     public void setEmail(String email) {
@@ -124,6 +133,7 @@ public class abstract User {
 
     /**
      * Gets the user's username.
+     * 
      * @return The username of the user.
      */
     public String getUsername() {
@@ -132,6 +142,7 @@ public class abstract User {
 
     /**
      * Sets the username of the user.
+     * 
      * @param username The username to set for the user.
      */
     public void setUsername(String username) {
@@ -140,6 +151,7 @@ public class abstract User {
 
     /**
      * Gets the users password.
+     * 
      * @return The password of the user.
      */
     public String getPassword() {
@@ -148,6 +160,7 @@ public class abstract User {
 
     /**
      * Sets the user's password.
+     * 
      * @param password The password to be set to the user.
      */
     public void setPassword(String password) {
@@ -155,7 +168,9 @@ public class abstract User {
     }
 
     /**
-     * Gets the type of user (1, 2, or 3) to indicate whether the user is a student, faculty, or advisor
+     * Gets the type of user (1, 2, or 3) to indicate whether the user is a student,
+     * faculty, or advisor
+     * 
      * @return
      */
     public int getType() {
@@ -164,6 +179,7 @@ public class abstract User {
 
     /**
      * Sets the type of the user.
+     * 
      * @param type The type to set for the user, either 1 2 or 3.
      */
     public void setType(int type) {
@@ -178,17 +194,12 @@ public class abstract User {
      * 
      * @return whether or not the login is verified
      */
-    public boolean login(String username, String password)
-    {
-        if (username.equals(getUsername()) && password.equals(getPassword()))
-        {
+    public boolean login(String username, String password) {
+        if (username.equals(getUsername()) && password.equals(getPassword())) {
             return true;
         }
         return false;
     }
-
-
-
 
     /**
      * 

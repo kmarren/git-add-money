@@ -26,7 +26,7 @@ public class DataLoader extends DataConstants {
                 if (type == 1) {
                     users.add(new Student(firstName, lastName, email, username, password));
                 } else {
-                    users.add(new User(firstName, lastName, email, username, password, type));
+
                 }
 
             }

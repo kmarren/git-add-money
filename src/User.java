@@ -194,10 +194,10 @@ public abstract class User {
      * 
      * @return whether or not the login is verified
      */
-    public boolean login(String username, String password) {
-        if (username.equals(getUsername()) && password.equals(getPassword())) {
+    public boolean login(String username, String password) 
+    {
+        if(UserList.getInstance().getUser(username, password) != null)
             return true;
-        }
         return false;
     }
 

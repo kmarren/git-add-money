@@ -9,6 +9,7 @@ import java.util.UUID;
  */
 public class Application 
 {
+    public User user;
 
     private static Application application;
     
@@ -40,7 +41,9 @@ public class Application
      */
     public User login(String username, String password, int type)
     {
-        return UserList.getInstance().getUser(username, password);
+        if(user.login(username, password))
+            return UserList.getInstance().getUser(username, password);
+        return null;
     }
 
     /**
@@ -73,7 +76,7 @@ public class Application
     }
 
     /**
-     * adds adds a generalized course and returns whether or not this action was completed successfully
+     * adds a generalized course
      * @param courseComments The comments for the course.
      * @param courseNumber The number for the course.
      * @param courseCode The code for the course.
@@ -89,15 +92,19 @@ public class Application
      * @param elective Whether or not the course counts for elective credit.
      * @return whether or not the course was added
      */
-    public boolean addCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
+    public void addCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
     Faculty instructor, ArrayList<Course> prereqisites, String description, int totalSeats, int creditWorth, 
     ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, boolean elective)
     {
-        return true;
+        Course course = new Course(courseComments, courseNumber, courseCode, courseName, 
+        instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
+        applicationArea, carolinaCore, elective);
+
+        CourseList.getInstance().addCourse(course);
     }
 
     /**
-     * adds adds a course specific to a student experience and returns whether or not this action was completed successfully
+     * adds adds a course specific to a student experience
      *@param courseComments The comments for the course.
      * @param courseNumber The number for the course.
      * @param courseCode The code for the course.
@@ -114,14 +121,17 @@ public class Application
      * @param grade The grade a student has earned in the course.
      * @param completed Whether or not the student has completed the course.
      * @param enrolled Whether or not the student is currently enrolled in the course.
-     * @return whether or not the course was added
      */
-    public boolean addStudentCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
+    public void addStudentCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
     Faculty instructor, ArrayList<Course> prereqisites, String description, int totalSeats, int creditWorth, 
     ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, boolean elective, double grade, 
     boolean completed, boolean enrolled)
     {
-        return true;
+        Course course = new Course(courseComments, courseNumber, courseCode, courseName, 
+        instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
+        applicationArea, carolinaCore, elective, grade, completed, enrolled);
+
+        CourseList.getInstance().addCourse(course);
     }
 
     /**

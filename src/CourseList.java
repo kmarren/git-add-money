@@ -27,5 +27,10 @@ public class CourseList {
         return foundCourses;
     }
 
+    public void addCourse(Course course)
+    {
+        courses.add(course);
+    }
+
 
 }

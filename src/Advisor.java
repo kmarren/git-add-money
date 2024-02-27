@@ -57,11 +57,11 @@ public class Advisor extends User {
 
     /**
      * Constructs a new faculty with a username and password
+     * 
      * @param username the facultys username
      * @param password the facultys password
      */
-    public Advisor(String username, String password)
-    {
+    public Advisor(String username, String password) {
         super(username, password, 2);
     }
     // Getters and Setters
@@ -253,25 +253,30 @@ public class Advisor extends User {
     public void addAppointment(Appointment appointments) {
 
     }
+
     /**
      * Allows a search for a student by their name
+     * 
      * @param searchFeild name that is being searched
      * @return Student with matching name
      */
     public ArrayList<Student> searchByName(String searchFeild) {
-        
 
     }
+
     /**
      * Allows a seach for a student by their ID
+     * 
      * @param searchFeild ID that is being searched
      * @return Student with matching ID
      */
     public ArrayList<Student> searchByID(String searchFeild) {
 
     }
+
     /**
      * Allows a search for a student by their username
+     * 
      * @param searchFeild username that is being searched
      * @return Student with matching username
      */

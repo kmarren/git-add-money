@@ -193,6 +193,50 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return facultyList;
+    }
 
+    // Load advisors method
+    public static ArrayList<Advisor> loadAdvisors() {
+        ArrayList<Advisor> advisorList = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(ADVISORS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray advisorArray = (JSONArray) parser.parse(reader);
+
+            for (Object obj : advisorArray) {
+                JSONObject advisorObj = (JSONObject) obj;
+
+                String office = (String) advisorObj.get(ADVISOR_OFFICE);
+                String officeHours = (String) advisorObj.get(ADVISOR_OFFICE_HOURS);
+                String phoneNumber = (String) advisorObj.get(ADVISOR_PHONE_NUMBER);
+                // Advises List
+                JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
+                ArrayList<Student> adviseeList = new ArrayList<>();
+                // Assuming adviseeList needs to be populated
+                // Advises List
+
+                String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
+                // Appointments
+                JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
+                ArrayList<Appointment> appointments = new ArrayList<>();
+                // Assuming appointments needs to be populated
+                // Appointments
+
+                String firstName = (String) advisorObj.get(ADVISOR_FIRST_NAME);
+                String lastName = (String) advisorObj.get(ADVISOR_LAST_NAME);
+                String email = (String) advisorObj.get(ADVISOR_EMAIL);
+                String username = (String) advisorObj.get(ADVISOR_USERNAME);
+                String password = (String) advisorObj.get(ADVISOR_PASSWORD);
+
+                // Create Advisor object and add to the list
+                Advisor advisor = new Advisor(office, officeHours, phoneNumber, adviseeList, schoolOfFocus,
+                        appointments,
+                        firstName, lastName, email, username, password);
+                advisorList.add(advisor);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return advisorList;
     }
 }

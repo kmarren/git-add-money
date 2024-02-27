@@ -1,0 +1,29 @@
+[
+    {
+      "office": "Office A",
+      "officeHours": "Monday 9:00 AM - 12:00 PM",
+      "phoneNumber": "+1234567890",
+      "adviseeList": [null],
+      "schoolOfFocus": "Engineering",
+      "appointments": [null],
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alicejohnson@example.com",
+      "username": "alice123",
+      "password": "securePassword123"
+    },
+    {
+      "office": "Office B",
+      "officeHours": "Tuesday 2:00 PM - 5:00 PM",
+      "phoneNumber": "+9876543210",
+      "adviseeList": [null],
+      "schoolOfFocus": "Business",
+      "appointments": [null],
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "email": "bobsmith@example.com",
+      "username": "bobsmith789",
+      "password": "strongPassword456"
+    }
+  ]
+  

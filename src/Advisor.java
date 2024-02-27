@@ -15,6 +15,7 @@ public class Advisor extends User {
     private String phoneNumber;
     private ArrayList<Student> adviseeList;
     private String schoolOfFocus;
+    private String searchField;
     // Appointment will cause errors for now until appointment class completed
     protected ArrayList<Appointment> appointments;
 
@@ -250,6 +251,31 @@ public class Advisor extends User {
      * @param appointments The advisor's current list of appointments.
      */
     public void addAppointment(Appointment appointments) {
+
+    }
+    /**
+     * Allows a search for a student by their name
+     * @param searchFeild name that is being searched
+     * @return Student with matching name
+     */
+    public ArrayList<Student> searchByName(String searchFeild) {
+        
+
+    }
+    /**
+     * Allows a seach for a student by their ID
+     * @param searchFeild ID that is being searched
+     * @return Student with matching ID
+     */
+    public ArrayList<Student> searchByID(String searchFeild) {
+
+    }
+    /**
+     * Allows a search for a student by their username
+     * @param searchFeild username that is being searched
+     * @return Student with matching username
+     */
+    public ArrayList<Student> searchByUserName(String searchFeild) {
 
     }
 }

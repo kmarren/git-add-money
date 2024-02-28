@@ -60,24 +60,6 @@ public class Advisor extends User {
     // Getters and Setters
 
     /**
-     * Gets the ID of the advisor.
-     * 
-     * @return The advisor's ID.
-     */
-    public UUID getAdvisorId() {
-        return advisorId;
-    }
-
-    /**
-     * Sets the Id of the advisor.
-     * 
-     * @param id The advisor's ID.
-     */
-    public void setAdvisorId(UUID id) {
-        this.advisorId = id;
-    }
-
-    /**
      * Gets the location of where the advisor's office is located.
      * 
      * @return The location of the office.

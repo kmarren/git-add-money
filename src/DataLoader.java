@@ -104,7 +104,7 @@ public class DataLoader extends DataConstants {
                  * enrolledCourses.add(courseID);
                  * }
                  */
-                Advisor advisor = new Advisor();
+                Advisor advisor = null;
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                 double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
 

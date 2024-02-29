@@ -139,19 +139,6 @@ public class Application
     }
 
     /**
-     * Adds a user to the system.
-     * @param firstName the user's first name.
-     * @param lastName the user's last name.
-     * @param email the user's email.
-     * @param username the user's username.
-     * @param password the user's password
-     */
-    public void addUser(String firstName, String lastName, String email, String username, String password)
-    {
-
-    }
-
-    /**
      * Gets the major map of a specified major
      * @param major the specified major
      * @return a string of each class within the major's requirements

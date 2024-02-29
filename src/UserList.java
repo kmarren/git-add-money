@@ -7,7 +7,13 @@ public class UserList {
     private ArrayList<User> users;
 
     private UserList() {
-        users = new ArrayList<User>();
+        users = new ArrayList<>();
+        ArrayList<User> advi= DataLoader.loadAdvisors();
+        ArrayList<User> fac = DataLoader.loadFaculty();
+        ArrayList<User> stud = DataLoader.loadStudents();
+        users.addAll(advi);
+        users.addAll(fac);
+        users.addAll(stud);
     }
 
     public static UserList getInstance() {

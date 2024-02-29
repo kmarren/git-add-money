@@ -11,8 +11,8 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     // load students method
-    public static ArrayList<Student> loadStudents() {
-        ArrayList<Student> students = new ArrayList<>();
+    public static ArrayList<User> loadStudents() {
+        ArrayList<User> students = new ArrayList<>();
         try {
             FileReader reader = new FileReader(STUDENT_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -173,8 +173,8 @@ public class DataLoader extends DataConstants {
     }
 
     // load faculty method
-    public static ArrayList<Faculty> loadFaculty() {
-        ArrayList<Faculty> facultyList = new ArrayList<>();
+    public static ArrayList<User> loadFaculty() {
+        ArrayList<User> facultyList = new ArrayList<>();
         try {
             FileReader reader = new FileReader(FACULTY_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -202,8 +202,8 @@ public class DataLoader extends DataConstants {
     }
 
     // Load advisors method
-    public static ArrayList<Advisor> loadAdvisors() {
-        ArrayList<Advisor> advisorList = new ArrayList<>();
+    public static ArrayList<User> loadAdvisors() {
+        ArrayList<User> advisorList = new ArrayList<>();
         try {
             FileReader reader = new FileReader(ADVISORS_FILE_NAME);
             JSONParser parser = new JSONParser();

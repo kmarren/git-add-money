@@ -154,13 +154,16 @@ public class DataLoader extends DataConstants {
                 String description = (String) courseObj.get(COURSE_DESCRIPTION);
                 int totalSeats = Integer.parseInt(courseObj.get(COURSE_TOTAL_SEATS).toString());
                 int creditWorth = Integer.parseInt(courseObj.get(COURSE_CREDIT_WORTH).toString());
-                // Parsing corequisites, applicationArea, carolinaCore, elective, grade,
-                // completed, and enrolled
-                // These fields are straightforward to parse
-                // Creating Course object
+                ArrayList<Course> coreqs = new ArrayList<>();
+                Boolean appArea = Boolean.parseBoolean(courseObj.get(COURSE_APPLICATION_AREA).toString());
+                Boolean carolinaCore = Boolean.parseBoolean(courseObj.get(COURSE_CAROLINA_CORE).toString());
+                Boolean elective = Boolean.parseBoolean(courseObj.get(COURSE_ELECTIVE).toString());
+                double grade =  Double.parseDouble(courseObj.get(COURSE_GRADE).toString());
+                Boolean completed = Boolean.parseBoolean(courseObj.get(COURSE_COMPLETED).toString());
+                Boolean enrolled = Boolean.parseBoolean(courseObj.get(COURSE_ENROLLED).toString());
                 Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
-                        prerequisites, description, totalSeats, creditWorth, new ArrayList<>(), false, false,
-                        false, 0.0, false, false);
+                        prerequisites, description, totalSeats, creditWorth, coreqs, appArea, carolinaCore,
+                        elective, grade, completed, enrolled);
                 courses.add(course);
             }
         } catch (Exception e) {

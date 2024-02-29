@@ -37,7 +37,7 @@ public class DataLoader extends DataConstants {
                         String comment = (String) commentObj;
                         studentComments.add(comment);
                     }
-                    JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                    // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                     ArrayList<Achievement> achievements = new ArrayList<>();
                     /*
                      * for (Object achievementObj : achievementsArray) {
@@ -47,7 +47,7 @@ public class DataLoader extends DataConstants {
                      * }
                      */
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                    JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                    // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     /*
                      * for (Object courseObj : enrolledCoursesArray) {
@@ -85,7 +85,7 @@ public class DataLoader extends DataConstants {
                     String comment = (String) commentObj;
                     studentComments.add(comment);
                 }
-                JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 /*
                  * for (Object achievementObj : achievementsArray) {
@@ -95,7 +95,7 @@ public class DataLoader extends DataConstants {
                  * }
                  */
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                 ArrayList<Course> enrolledCourses = new ArrayList<>();
                 /*
                  * for (Object courseObj : enrolledCoursesArray) {
@@ -140,7 +140,7 @@ public class DataLoader extends DataConstants {
                 // Parsing instructor information
                 Faculty instructor = null; // also need to add an instructor later
                 // Parsing prerequisites
-                JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
+                // JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
                 ArrayList<Course> prerequisites = new ArrayList<>();
                 /*
                  * for (Object prereqObj : prerequisitesArray) {
@@ -216,14 +216,14 @@ public class DataLoader extends DataConstants {
                 String officeHours = (String) advisorObj.get(ADVISOR_OFFICE_HOURS);
                 String phoneNumber = (String) advisorObj.get(ADVISOR_PHONE_NUMBER);
                 // Advises List
-                JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
+                // JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
                 ArrayList<Student> adviseeList = new ArrayList<>();
                 // Assuming adviseeList needs to be populated
                 // Advises List
 
                 String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
                 // Appointments
-                JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
+                // JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
                 ArrayList<Appointment> appointments = new ArrayList<>();
                 // Assuming appointments needs to be populated
                 // Appointments

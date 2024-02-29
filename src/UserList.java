@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private static UserList userList;
@@ -51,6 +52,13 @@ public class UserList {
         return getUser(userName, password) != null;
     }
 
-
+    public User getUserId(UUID userID) {
+        for (User user : users) {
+            if (user.getUserID().equals(userID)) {
+                return user;
+            }
+        }
+        return null;
+    }
    
 }

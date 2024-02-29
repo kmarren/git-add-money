@@ -43,6 +43,7 @@ public class Application
     public boolean login(String username, String password) //returns void, sets current user to the user who just logged in
     {
         // go through the user list and finds a match to the username and password, else returns false
+        user = userList.getUser(username, password);
         return userList.login(username, password);
         
     }

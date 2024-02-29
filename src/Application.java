@@ -10,6 +10,7 @@ import java.util.UUID;
 public class Application 
 {
     private User user;
+    private UserList userList = UserList.getInstance();
 
     private static Application application;
     
@@ -39,15 +40,11 @@ public class Application
      * @param password the password attempt
      * @return the user who was logged in
      */
-    public boolean login(String username, String password, int type) //returns void, sets current user to the user who just logged in
+    public boolean login(String username, String password) //returns void, sets current user to the user who just logged in
     {
-        if(user.login(username, password))
-        {
-            user = UserList.getInstance().getUser(username, password);
-            return true;
-        }
-       
-        return false;
+        // go through the user list and finds a match to the username and password, else returns false
+        return userList.login(username, password);
+        
     }
  
     /**
@@ -136,19 +133,6 @@ public class Application
         applicationArea, carolinaCore, elective, grade, completed, enrolled);
 
         CourseList.getInstance().addCourse(course);
-    }
-
-    /**
-     * Adds a user to the system.
-     * @param firstName the user's first name.
-     * @param lastName the user's last name.
-     * @param email the user's email.
-     * @param username the user's username.
-     * @param password the user's password
-     */
-    public void addUser(String firstName, String lastName, String email, String username, String password)
-    {
-
     }
 
     /**

@@ -409,7 +409,7 @@ public class Course
      */
     public String toString()
     {
-        return courseID.toString();
+        return courseName;
     }
 
 

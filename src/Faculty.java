@@ -103,5 +103,10 @@ public class Faculty extends User
 
     }
 
+    public String toString()
+    {
+        return getFirstName() + " " + getLastName();
+    }
+
     
 }

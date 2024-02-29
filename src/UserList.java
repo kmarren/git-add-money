@@ -47,6 +47,10 @@ public class UserList {
         users.add(user);
     }
 
+    public boolean login(String userName, String password) {
+        return getUser(userName, password) != null;
+    }
+
 
    
 }

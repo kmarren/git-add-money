@@ -268,12 +268,6 @@ public class Advisor extends User {
      * @return Student with matching username
      */
     public ArrayList<Student> searchByUserName(String searchFeild) {
-        ArrayList<Student> results = new ArrayList<>();
-        for (Student student : adviseeList) {
-            if (student.getUsername().equalsIgnoreCase(searchField)) {
-                results.add(student);
-            }
-        }
-        return results;
+        
     }
 }

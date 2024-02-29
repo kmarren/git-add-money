@@ -235,8 +235,10 @@ public class Advisor extends User {
      * @param searchFeild name that is being searched
      * @return Student with matching name
      */
-    public ArrayList<Student> searchByName(String searchFeild) {
-
+    public ArrayList<Student> searchByName(String searchFeild) 
+    {
+         ArrayList<Student> students = new ArrayList<Student>();
+        return students;
     }
 
     /**
@@ -245,8 +247,10 @@ public class Advisor extends User {
      * @param searchFeild ID that is being searched
      * @return Student with matching ID
      */
-    public ArrayList<Student> searchByID(String searchFeild) {
-
+    public ArrayList<Student> searchByID(String searchFeild) 
+    {
+        ArrayList<Student> students = new ArrayList<Student>();
+        return students;
     }
 
     /**
@@ -255,7 +259,9 @@ public class Advisor extends User {
      * @param searchFeild username that is being searched
      * @return Student with matching username
      */
-    public ArrayList<Student> searchByUserName(String searchFeild) {
-
+    public ArrayList<Student> searchByUserName(String searchFeild)
+    {
+        ArrayList<Student> students = new ArrayList<Student>();
+        return students;
     }
 }

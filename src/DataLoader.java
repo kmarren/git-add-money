@@ -8,7 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 /**
- * @author jacob robertson
+ * @author Jacob Robertson
  */
 
 public class DataLoader extends DataConstants {
@@ -247,5 +247,39 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return advisorList;
+    }
+
+    public static ArrayList<Major> loadMajors() {
+        ArrayList<Major> majorList = new ArrayList<>();
+        try {
+            // Read JSON file
+            FileReader reader = new FileReader(MAJOR_FILE_NAME);
+            JSONParser jsonParser = new JSONParser();
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray majorsArray = (JSONArray) obj;
+            // Assuming you have some JSON array of majors
+            for (Object majorObj : majorsArray) {
+                if (majorObj instanceof JSONObject) {
+                    JSONObject majorJson = (JSONObject) majorObj;
+                    String title = (String) majorJson.get(MAJOR_TITLE);
+                    
+                    // JSONArray requiredCoursesJsonArray = (JSONArray) majorJson.get(MAJOR_REQUIRED_COURSES);
+                    ArrayList<Course> requiredCourses = new ArrayList<>();
+                    // Similarly, parse other fields
+                    ArrayList<Course> completedCourses = new ArrayList<>();
+                    int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
+                    int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
+                    double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
+                    // Create Major object and add to list
+                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted, progression);
+                    majorList.add(major);
+                }
+            }
+        } catch (Exception e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
+        return majorList;
     }
 }

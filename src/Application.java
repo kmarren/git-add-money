@@ -9,7 +9,7 @@ import java.util.UUID;
  */
 public class Application 
 {
-    public User user;
+    private User user;
 
     private static Application application;
     
@@ -39,38 +39,42 @@ public class Application
      * @param password the password attempt
      * @return the user who was logged in
      */
-    public User login(String username, String password, int type)
+    public boolean login(String username, String password, int type) //returns void, sets current user to the user who just logged in
     {
         if(user.login(username, password))
-            return UserList.getInstance().getUser(username, password);
-        return null;
+        {
+            user = UserList.getInstance().getUser(username, password);
+            return true;
+        }
+       
+        return false;
     }
-
+ 
     /**
      * takes in a username and password to create a new user with the corresponding username and password
      * @param username the username given to create the new account
      * @param password the password given to create the new account
      * @return the new user
      */
-    public User signUp(String username, String password, int type)
+    public void signUp(String username, String password, int type) // returns void, sets current user to the new user
     {
         if(type == 3)
         {
             Faculty faculty = new Faculty(username, password);
             UserList.getInstance().addUser(faculty);
-            return faculty;
+            user = faculty;
         } 
         else if(type == 2)
         {
             Advisor advisor = new Advisor(username, password);
             UserList.getInstance().addUser(advisor);
-            return advisor;
+            user = advisor;
         }
         else
         {
             Student student = new Student(username, password);
             UserList.getInstance().addUser(student);
-            return student;
+            user = student;
         }
 
     }

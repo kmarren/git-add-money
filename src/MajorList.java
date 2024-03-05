@@ -8,7 +8,9 @@ public class MajorList {
 
     // Private constructor to restrict instantiation from outside
     private MajorList() {
-        majors = new ArrayList<>();
+        ArrayList<Major> majors = new ArrayList<>();
+        ArrayList<Major> mjr = DataLoader.loadMajors();
+        majors.addAll(mjr);
     }
 
     // Method to get the instance of MajorList

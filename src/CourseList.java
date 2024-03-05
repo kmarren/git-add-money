@@ -9,6 +9,8 @@ public class CourseList {
 
     private CourseList() {
         courses = new ArrayList<>();
+        ArrayList<Course> crs = DataLoader.loadCourses();
+        courses.addAll(crs);
     }
 
     public static CourseList getInstance() {
@@ -16,6 +18,10 @@ public class CourseList {
             courseList = new CourseList();
         }
         return courseList;
+    }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
     }
 
     public ArrayList<Course> getCourse(String courseName) {

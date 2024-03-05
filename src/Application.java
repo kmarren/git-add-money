@@ -11,6 +11,7 @@ public class Application
 {
     private User user;
     private UserList userList = UserList.getInstance();
+    private CourseList courseList = CourseList.getInstance();
 
     private static Application application;
     
@@ -77,6 +78,10 @@ public class Application
 
     }
 
+    public ArrayList<Course> getCourseList() {
+        return courseList.getCourses();
+    }
+
     /**
      * adds a generalized course
      * @param courseComments The comments for the course.
@@ -102,7 +107,7 @@ public class Application
         instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
         applicationArea, carolinaCore, elective);
 
-        CourseList.getInstance().addCourse(course);
+        courseList.addCourse(course);
     }
 
     /**
@@ -133,7 +138,7 @@ public class Application
         instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
         applicationArea, carolinaCore, elective, grade, completed, enrolled);
 
-        CourseList.getInstance().addCourse(course);
+        courseList.addCourse(course);
     }
 
     /**

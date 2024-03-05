@@ -7,6 +7,9 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+/**
+ * @author Jacob Robertson
+ */
 
 public class DataLoader extends DataConstants {
 
@@ -37,7 +40,7 @@ public class DataLoader extends DataConstants {
                         String comment = (String) commentObj;
                         studentComments.add(comment);
                     }
-                    JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                    // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                     ArrayList<Achievement> achievements = new ArrayList<>();
                     /*
                      * for (Object achievementObj : achievementsArray) {
@@ -47,7 +50,7 @@ public class DataLoader extends DataConstants {
                      * }
                      */
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                    JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                    // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     /*
                      * for (Object courseObj : enrolledCoursesArray) {
@@ -85,7 +88,7 @@ public class DataLoader extends DataConstants {
                     String comment = (String) commentObj;
                     studentComments.add(comment);
                 }
-                JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 /*
                  * for (Object achievementObj : achievementsArray) {
@@ -95,7 +98,7 @@ public class DataLoader extends DataConstants {
                  * }
                  */
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                 ArrayList<Course> enrolledCourses = new ArrayList<>();
                 /*
                  * for (Object courseObj : enrolledCoursesArray) {
@@ -140,7 +143,7 @@ public class DataLoader extends DataConstants {
                 // Parsing instructor information
                 Faculty instructor = null; // also need to add an instructor later
                 // Parsing prerequisites
-                JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
+                // JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
                 ArrayList<Course> prerequisites = new ArrayList<>();
                 /*
                  * for (Object prereqObj : prerequisitesArray) {
@@ -216,14 +219,14 @@ public class DataLoader extends DataConstants {
                 String officeHours = (String) advisorObj.get(ADVISOR_OFFICE_HOURS);
                 String phoneNumber = (String) advisorObj.get(ADVISOR_PHONE_NUMBER);
                 // Advises List
-                JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
+                // JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
                 ArrayList<Student> adviseeList = new ArrayList<>();
                 // Assuming adviseeList needs to be populated
                 // Advises List
 
                 String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
                 // Appointments
-                JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
+                // JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
                 ArrayList<Appointment> appointments = new ArrayList<>();
                 // Assuming appointments needs to be populated
                 // Appointments
@@ -244,5 +247,39 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return advisorList;
+    }
+
+    public static ArrayList<Major> loadMajors() {
+        ArrayList<Major> majorList = new ArrayList<>();
+        try {
+            // Read JSON file
+            FileReader reader = new FileReader(MAJOR_FILE_NAME);
+            JSONParser jsonParser = new JSONParser();
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray majorsArray = (JSONArray) obj;
+            // Assuming you have some JSON array of majors
+            for (Object majorObj : majorsArray) {
+                if (majorObj instanceof JSONObject) {
+                    JSONObject majorJson = (JSONObject) majorObj;
+                    String title = (String) majorJson.get(MAJOR_TITLE);
+                    
+                    // JSONArray requiredCoursesJsonArray = (JSONArray) majorJson.get(MAJOR_REQUIRED_COURSES);
+                    ArrayList<Course> requiredCourses = new ArrayList<>();
+                    // Similarly, parse other fields
+                    ArrayList<Course> completedCourses = new ArrayList<>();
+                    int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
+                    int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
+                    double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
+                    // Create Major object and add to list
+                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted, progression);
+                    majorList.add(major);
+                }
+            }
+        } catch (Exception e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
+        return majorList;
     }
 }

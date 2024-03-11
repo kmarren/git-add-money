@@ -40,6 +40,10 @@ public class DataWriter extends DataConstants {
 
     }
 
+    // need to have this go through the students, advisors etc as well, however i
+    // just wanted to get a basic understanding of the datawriter first
+    // should be pretty easy though just go through and look for the type then put
+    // that users information in
     public static void saveUsers() {
         UserList userList = UserList.getInstance();
         ArrayList<User> users = userList.getUsers();

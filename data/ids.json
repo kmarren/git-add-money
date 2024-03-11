@@ -1,0 +1,38 @@
+[
+    {
+        "advisorID": "8d539012-499c-488b-8762-58e5fa4d5153"
+    },
+    {
+        "advisorID": "c4a36962-831c-43df-8037-711e0f1669de"
+    },
+    {
+        "facultyID": "63017257-9ee6-42ad-980e-4eef53d4f915"
+    },
+    {
+        "facultyID": "15754bd2-26df-46e6-860d-bb0e913228c5"
+    },
+    {
+        "studentID": "4c2fb059-519b-4fdb-a9a9-c69acc677acf"
+    },
+    {
+        "studentID": "18b62e45-62b4-4cf1-af47-e18a03811490"
+    },
+    {
+        "studentID": "f6727f40-490a-4d7f-badf-131fa408dd9d"
+    },
+    {
+        "advisorID": "ed87e304-1255-4f65-aa28-6da13e214fa7"
+    },
+    {
+        "majorID": "93a32688-2ee9-441b-b9db-853129f1ce5b"
+    },
+    {
+        "majorID": "ac4e05b6-4033-4e58-b39c-1ea328dde32b"
+    },
+    {
+        "courseID": "68f4e0d3-860f-4f76-a8fb-3c42f92fcaff"
+    },
+    {
+        "courseID": "67f609c4-68c0-45cc-96d7-4edcdf710bab"
+    }
+]

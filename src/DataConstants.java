@@ -52,6 +52,7 @@ public abstract class DataConstants {
     protected static final String FACULTY_EMAIL = "email";
     protected static final String FACULTY_USERNAME = "username";
     protected static final String FACULTY_PASSWORD = "password";
+    protected static final String FACULTY_ID = "facultyID";
 
     // Advisor data constants
     protected static final String ADVISORS_FILE_NAME = "data/advisors.json";
@@ -66,6 +67,7 @@ public abstract class DataConstants {
     protected static final String ADVISOR_EMAIL = "email";
     protected static final String ADVISOR_USERNAME = "username";
     protected static final String ADVISOR_PASSWORD = "password";
+    protected static final String ADVISOR_ID = "advisorID";
 
     // student data constants
     protected static final String STUDENT_FILE_NAME = "data/students.json";
@@ -83,6 +85,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_ADVISOR = "advisorID";
     protected static final String STUDENT_RISK_FAILING = "riskFailing";
     protected static final String STUDENT_HOURS_COMPLETED = "hoursCompleted";
+    protected static final String STUDENT_ID = "studentID";
 
     // Achievement data constants
     protected static final String ACHIEVEMENT_FILE_NAME = "data/achievement.json";

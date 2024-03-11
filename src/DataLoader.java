@@ -52,22 +52,12 @@ public class DataLoader extends DataConstants {
                      * }
                      */
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                    // JSONArray enrolledCoursesArray = (JSONArray)
-                    // studentJsonObj.get(STUDENT_ENROLLED_COURSES);
-                    ArrayList<Course> enrolledCourses = new ArrayList<>();
-                    /*
-                     * for (Object courseObj : enrolledCoursesArray) {
-                     * JSONObject courseJson = (JSONObject) courseObj;
-                     * String courseID = (String) courseJson.get("courseID");
-                     * enrolledCourses.add(courseID);
-                     * }
-                     */
                     Advisor advisor = null; // add an advisor later??
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                     double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
 
                     // Create Student object
-                    Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor,
+                    Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                             riskFailing,
                             hoursCompleted, firstName, lastName, email, username, password, major);
 
@@ -117,7 +107,7 @@ public class DataLoader extends DataConstants {
                 double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
 
                 // Create Student object
-                Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor,
+                Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                         riskFailing,
                         hoursCompleted, firstName, lastName, email, username, password, major);
 
@@ -171,8 +161,7 @@ public class DataLoader extends DataConstants {
                 Boolean completed = Boolean.parseBoolean(courseObj.get(COURSE_COMPLETED).toString());
                 Boolean enrolled = Boolean.parseBoolean(courseObj.get(COURSE_ENROLLED).toString());
                 Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
-                        prerequisites, description, totalSeats, creditWorth, coreqs, appArea, carolinaCore,
-                        elective, grade, completed, enrolled);
+                        prerequisites, description, totalSeats, creditWorth, coreqs, appArea, carolinaCore, elective);
                 courses.add(course);
             }
         } catch (Exception e) {
@@ -275,19 +264,18 @@ public class DataLoader extends DataConstants {
                     // JSONArray requiredCoursesJsonArray = (JSONArray)
                     // majorJson.get(MAJOR_REQUIRED_COURSES);
                     ArrayList<Course> requiredCourses = new ArrayList<>();
-                    // Similarly, parse other fields
                     ArrayList<Course> completedCourses = new ArrayList<>();
+                    ArrayList<Course> enrolledCourses = new ArrayList<>();
                     int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
                     int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
                     double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
                     // Create Major object and add to list
                     Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted,
-                            progression);
+                            progression, enrolledCourses);
                     majorList.add(major);
                 }
             }
         } catch (Exception e) {
-            // Handle any exceptions
             e.printStackTrace();
         }
         return majorList;
@@ -302,7 +290,6 @@ public class DataLoader extends DataConstants {
             Object obj = jsonParser.parse(reader);
 
             JSONArray achievementsArray = (JSONArray) obj;
-            // Assuming you have some JSON array of achievements
             for (Object achievementObj : achievementsArray) {
                 if (achievementObj instanceof JSONObject) {
                     JSONObject achievementJson = (JSONObject) achievementObj;

@@ -1,5 +1,7 @@
 package src;
 
+import java.util.ArrayList;
+
 public class temporaryUI {
 
     private static Application application;
@@ -13,5 +15,7 @@ public class temporaryUI {
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
         DataWriter.saveUsers();
+
+        DataWriter.writeAllID();
     }
 }

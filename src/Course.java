@@ -1,12 +1,15 @@
 package src;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.UUID;
+
 /**
  * setting up course class
+ * 
  * @author Kennedy Marren
  */
-public class Course 
-{
+public class Course {
 
     private UUID courseID;
     protected ArrayList<String> courseComments;
@@ -14,43 +17,42 @@ public class Course
     private String courseCode;
     private String courseName;
     private Faculty instructor;
-    private ArrayList<Course> prerequisites;
+    private ArrayList<Course> prerequisites = new ArrayList<Course>();
+    private ArrayList<Course> corequisites = new ArrayList<Course>();;
     private String description;
     private int totalSeats;
     private int creditWorth;
-    private ArrayList<Course> corequisites;
     private boolean applicationArea;
     private boolean carolinaCore;
     private boolean elective;
     private double grade;
-    private boolean completed;
-    private boolean enrolled;
 
     /**
      * Constructor that creates a course object specific to the student.
      * 
-     * @param courseComments The comments for the course.
-     * @param courseNumber The number for the course.
-     * @param courseCode The code for the course.
-     * @param courseName The name of the course.
-     * @param instructor The instructor for the course.
-     * @param prerequisites The prerequisites for the course.
-     * @param description The course description. 
-     * @param totalSeats The maximum amount of student allowed to take the course.
-     * @param creditWorth The number of credits the course is worth.
-     * @param corequisites The corequisites for the course.
-     * @param applicationArea Whether or not the course applies for an application area.
-     * @param carolinaCore Whether or not the course counts for a carolina core requirement.
-     * @param elective Whether or not the course counts for elective credit.
-     * @param grade The grade a student has earned in the course.
-     * @param completed Whether or not the student has completed the course.
-     * @param enrolled Whether or not the student is currently enrolled in the course.
+     * @param courseComments  The comments for the course.
+     * @param courseNumber    The number for the course.
+     * @param courseCode      The code for the course.
+     * @param courseName      The name of the course.
+     * @param instructor      The instructor for the course.
+     * @param prerequisites   The prerequisites for the course.
+     * @param description     The course description.
+     * @param totalSeats      The maximum amount of student allowed to take the
+     *                        course.
+     * @param creditWorth     The number of credits the course is worth.
+     * @param corequisites    The corequisites for the course.
+     * @param applicationArea Whether or not the course applies for an application
+     *                        area.
+     * @param carolinaCore    Whether or not the course counts for a carolina core
+     *                        requirement.
+     * @param elective        Whether or not the course counts for elective credit.
+     * @param grade           The grade a student has earned in the course.
+     * @param completed       Whether or not the student has completed the course.
      */
-    public Course(ArrayList<String> courseComments, int courseNumber, String courseCode, 
-    String courseName, Faculty instructor, ArrayList<Course> prerequisites, String description, int totalSeats, 
-    int creditWorth, ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, 
-    boolean elective, double grade, boolean completed, boolean enrolled)
-    {
+    public Course(ArrayList<String> courseComments, int courseNumber, String courseCode,
+            String courseName, Faculty instructor, ArrayList<Course> prerequisites, String description, int totalSeats,
+            int creditWorth, ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore,
+            boolean elective, double grade) {
         this.courseID = UUID.randomUUID();
         this.courseComments = courseComments;
         this.courseNumber = courseNumber;
@@ -66,32 +68,32 @@ public class Course
         this.carolinaCore = carolinaCore;
         this.elective = elective;
         this.grade = grade;
-        this.completed = completed;
-        this.enrolled = enrolled;
     }
 
     /**
-     * Constructor that creates a course object specific to the student.
+     * Generalized course constructor.
      * 
-     * @param courseComments The comments for the course.
-     * @param courseNumber The number for the course.
-     * @param courseCode The code for the course.
-     * @param courseName The name of the course.
-     * @param instructor The instructor for the course.
-     * @param prerequisites The prerequisites for the course.
-     * @param description The course description. 
-     * @param totalSeats The maximum amount of student allowed to take the course.
-     * @param creditWorth The number of credits the course is worth.
-     * @param corequisites The corequisites for the course.
-     * @param applicationArea Whether or not the course applies for an application area.
-     * @param carolinaCore Whether or not the course counts for a carolina core requirement.
-     * @param elective Whether or not the course counts for elective credit.
+     * @param courseComments  The comments for the course.
+     * @param courseNumber    The number for the course.
+     * @param courseCode      The code for the course.
+     * @param courseName      The name of the course.
+     * @param instructor      The instructor for the course.
+     * @param prerequisites   The prerequisites for the course.
+     * @param description     The course description.
+     * @param totalSeats      The maximum amount of student allowed to take the
+     *                        course.
+     * @param creditWorth     The number of credits the course is worth.
+     * @param corequisites    The corequisites for the course.
+     * @param applicationArea Whether or not the course applies for an application
+     *                        area.
+     * @param carolinaCore    Whether or not the course counts for a carolina core
+     *                        requirement.
+     * @param elective        Whether or not the course counts for elective credit.
      */
-    public Course(ArrayList<String> courseComments, int courseNumber, String courseCode, 
-    String courseName, Faculty instructor, ArrayList<Course> prerequisites, String description, int totalSeats, 
-    int creditWorth, ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, 
-    boolean elective)
-    {
+    public Course(ArrayList<String> courseComments, int courseNumber, String courseCode,
+            String courseName, Faculty instructor, ArrayList<Course> prerequisites, String description, int totalSeats,
+            int creditWorth, ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore,
+            boolean elective) {
 
         this.courseID = UUID.randomUUID();
         this.courseComments = courseComments;
@@ -108,17 +110,15 @@ public class Course
         this.carolinaCore = carolinaCore;
         this.elective = elective;
     }
-    //getters and setters
-
-    // Getters and setters
+    // getters and setters
 
     /**
      * Gets the UUID of the course.
      * 
      * @return The UUID of the course.
      */
-    public UUID getCourseID() {
-        return courseID;
+    public String getCourseID() {
+        return courseID.toString();
     }
 
     /**
@@ -132,6 +132,7 @@ public class Course
 
     /**
      * Gets the course comments.
+     * 
      * @return The list of comments for the course.
      */
     public ArrayList<String> getCourseComments() {
@@ -140,6 +141,7 @@ public class Course
 
     /**
      * Sets the comments of the course.
+     * 
      * @param courseComments The comments to set for the course.
      */
     public void setCourseComments(ArrayList<String> courseComments) {
@@ -148,6 +150,7 @@ public class Course
 
     /**
      * Gets the course number.
+     * 
      * @return The number of the course.
      */
     public int getCourseNumber() {
@@ -156,6 +159,7 @@ public class Course
 
     /**
      * Sets the number for the course
+     * 
      * @param courseNumber The number to be set for the course.
      */
     public void setCourseNumber(int courseNumber) {
@@ -164,6 +168,7 @@ public class Course
 
     /**
      * Gets the course code.
+     * 
      * @return The code of the course.
      */
     public String getCourseCode() {
@@ -172,6 +177,7 @@ public class Course
 
     /**
      * Sets the code for the course
+     * 
      * @param courseCode The code to be set for the course.
      */
     public void setCourseCode(String courseCode) {
@@ -180,6 +186,7 @@ public class Course
 
     /**
      * Gets the course name.
+     * 
      * @return The name of the course.
      */
     public String getCourseName() {
@@ -188,6 +195,7 @@ public class Course
 
     /**
      * Sets the name of the course.
+     * 
      * @param courseName The name to set for the course.
      */
     public void setCourseName(String courseName) {
@@ -196,6 +204,7 @@ public class Course
 
     /**
      * Gets the course instructor(s).
+     * 
      * @return The instructor(s) of the course.
      */
     public Faculty getInstructor() {
@@ -204,6 +213,7 @@ public class Course
 
     /**
      * Sets the instrructor of the course.
+     * 
      * @param instructor The instructor for the course.
      */
     public void setInstructor(Faculty instructor) {
@@ -212,6 +222,7 @@ public class Course
 
     /**
      * Gets the list of prerequisites for the course.
+     * 
      * @return The course prerequisites.
      */
     public ArrayList<Course> getPrerequisites() {
@@ -220,6 +231,7 @@ public class Course
 
     /**
      * Sets the prerequisites for the course.
+     * 
      * @param prerequisites the list of prerequisites for the course.
      */
     public void setPrerequisites(ArrayList<Course> prerequisites) {
@@ -228,6 +240,7 @@ public class Course
 
     /**
      * Gets the course description.
+     * 
      * @return The description of the course.
      */
     public String getDescription() {
@@ -236,6 +249,7 @@ public class Course
 
     /**
      * Sets the description of the course.
+     * 
      * @param description The description to set for the course.
      */
     public void setDescription(String description) {
@@ -244,6 +258,7 @@ public class Course
 
     /**
      * Gets the maximum amount of student that can take the course.
+     * 
      * @return The max student number for the course.
      */
     public int getTotalSeats() {
@@ -252,6 +267,7 @@ public class Course
 
     /**
      * Sets the total seats for the course.
+     * 
      * @param totalSeats The max student number for the course.
      */
     public void setTotalSeats(int totalSeats) {
@@ -260,6 +276,7 @@ public class Course
 
     /**
      * Gets the amount of credits the course is worth.
+     * 
      * @return The amount of credits that the course is worth.
      */
     public int getCreditWorth() {
@@ -268,6 +285,7 @@ public class Course
 
     /**
      * Sets the amount of credits the course is worth.
+     * 
      * @param creditWorth The amount of credit hours the course is worth.
      */
     public void setCreditWorth(int creditWorth) {
@@ -276,14 +294,16 @@ public class Course
 
     /**
      * Gets the list of corequisites for the course.
+     * 
      * @return The course corequisites.
      */
     public ArrayList<Course> getCorequisites() {
         return corequisites;
     }
 
-     /**
+    /**
      * Sets the corequisites for the course.
+     * 
      * @param prerequisites the list of corequisites for the course.
      */
     public void setCorequisites(ArrayList<Course> corequisites) {
@@ -292,6 +312,7 @@ public class Course
 
     /**
      * Gets the boolean value of whether the course is an application area class.
+     * 
      * @return Whether or not the course is an application area class.
      */
     public boolean isApplicationArea() {
@@ -300,7 +321,9 @@ public class Course
 
     /**
      * Sets whether or not the course is an application area course.
-     * @param applicationArea Whether or not the course applies for an application area.
+     * 
+     * @param applicationArea Whether or not the course applies for an application
+     *                        area.
      */
     public void setApplicationArea(boolean applicationArea) {
         this.applicationArea = applicationArea;
@@ -308,6 +331,7 @@ public class Course
 
     /**
      * Gets the boolean value of whether the course is a carolina core class.
+     * 
      * @return Whether or not the course is a carolina core class.
      */
     public boolean isCarolinaCore() {
@@ -316,6 +340,7 @@ public class Course
 
     /**
      * Sets whether or not the course is a carolina core course.
+     * 
      * @param applicationArea Whether or not the course applies for carolina core.
      */
     public void setCarolinaCore(boolean carolinaCore) {
@@ -324,6 +349,7 @@ public class Course
 
     /**
      * Gets the boolean value of whether the course is an elective.
+     * 
      * @return Whether or not the course is an elective.
      */
     public boolean isElective() {
@@ -332,6 +358,7 @@ public class Course
 
     /**
      * Sets whether or not the course is an elective.
+     * 
      * @param applicationArea Whether or not the course is an elective.
      */
     public void setElective(boolean elective) {
@@ -340,6 +367,7 @@ public class Course
 
     /**
      * Gets the grade the a student earned in the course.
+     * 
      * @return The grade a student earned in the course.
      */
     public double getGrade() {
@@ -348,6 +376,7 @@ public class Course
 
     /**
      * Sets the grade a student has earned in a course.
+     * 
      * @param grade The grade a student has earned in the course.
      */
     public void setGrade(double grade) {
@@ -355,74 +384,29 @@ public class Course
     }
 
     /**
-     * Gets the boolean value of whether the course has been completed by a student.
-     * @return Whether or not the course has been completed.
-     */
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    /**
-     * Sets whether or not the course has been completed by a student.
-     * @param completed Whether or not the course has been completed by a student.
-     */
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    /**
-     * Gets the boolean value of whether the student is currently enrolled in the course.
-     * @return Whether or not the course is currently being taken by a student.
-     */
-    public boolean isEnrolled() {
-        return enrolled;
-    }
-
-    /**
-     * Sets whether or not the course is being currently taken by a student.
-     * @param applicationArea Whether or not the course is currently being taken by a student.
-     */
-    public void setEnrolled(boolean enrolled) {
-        this.enrolled = enrolled;
-    }
-
-    /**
      * adds a prerequisite to the course's list of prerequisites
+     * 
      * @param prerequisite a course that must be taken before the course
      */
-    public void addPrerequisites(Course prerequisite)
-    {
-
+    public void addPrerequisites(Course prerequisite) {
+        prerequisites.add(prerequisite);
     }
 
     /**
      * adds a corequisite to the course's list of prerequisites
-     * @param prerequisite a course that must be taken at the same time as the course
+     * 
+     * @param prerequisite a course that must be taken at the same time as the
+     *                     course
      */
-    public void addCorequisites(Course corequisite)
-    {
-
+    public void addCorequisites(Course corequisite) {
+        corequisites.add(corequisite);
     }
 
     /**
      * concatinates the course information to display for user
      */
-    public String toString()
-    {
+    public String toString() {
         return courseName;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

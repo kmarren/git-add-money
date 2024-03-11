@@ -14,8 +14,9 @@ import java.util.UUID;
 public class Major {
     private UUID majorID;
     private String title;
-    private ArrayList<Course> requiredCourses;
-    private ArrayList<Course> completedCourses;
+    private ArrayList<Course> requiredCourses = new ArrayList<Course>();;
+    private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
+    private ArrayList<Course> completedCourses = new ArrayList<Course>();;
     private int hoursRequired;
     private int hoursCompleted;
     private double progression;
@@ -35,7 +36,7 @@ public class Major {
      * @param progression      The progression percentage of the major completion.
      */
     public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired,
-            int hoursCompleted, double progression) {
+            int hoursCompleted, double progression, ArrayList<Course> enrolledCourses) {
         this();
         this.title = title;
         this.requiredCourses = courses;
@@ -43,6 +44,7 @@ public class Major {
         this.hoursRequired = hoursRequired;
         this.hoursCompleted = hoursCompleted;
         this.progression = progression;
+        this.enrolledCourses = enrolledCourses;
     }
 
     // Getters and setters
@@ -52,8 +54,8 @@ public class Major {
      * 
      * @return The UUID of the major.
      */
-    public UUID getMajorID() {
-        return majorID;
+    public String getMajorID() {
+        return majorID.toString();
     }
 
     /**
@@ -180,6 +182,7 @@ public class Major {
      */
     public void addRequiredCourse(Course course) {
         // Add the course to the required courses list
+        requiredCourses.add(course);
     }
 
     /**
@@ -189,6 +192,11 @@ public class Major {
      */
     public void addCompletedCourse(Course course) {
         // add the course to the completed courses list
+        completedCourses.add(course);
+    }
+
+    public void addEnrolledCourse(Course course) {
+        enrolledCourses.add(course);
     }
 
     /**

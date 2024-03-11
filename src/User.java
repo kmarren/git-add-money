@@ -100,8 +100,8 @@ public abstract class User {
      * 
      * @return The UUID of the user.
      */
-    public UUID getUserID() {
-        return userID;
+    public String getUserID() {
+        return userID.toString();
     }
 
     /**
@@ -194,9 +194,8 @@ public abstract class User {
      * 
      * @return whether or not the login is verified
      */
-    public boolean login(String username, String password) 
-    {
-        if(UserList.getInstance().getUser(username, password) != null)
+    public boolean login(String username, String password) {
+        if (UserList.getInstance().getUser(username, password) != null)
             return true;
         return false;
     }

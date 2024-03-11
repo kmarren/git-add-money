@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+
 /**
  * class to epresent a student, extends attributes from the User class
  * 
@@ -12,12 +13,10 @@ public class Student extends User {
     private boolean minor;
     protected ArrayList<String> studentComments;
     private ArrayList<Achievement> achievements;
-    private ArrayList<Course> enrolledCourses;
     private Advisor advisor;
     private boolean riskFailing;
     private double hoursCompleted;
 
-   
     /**
      * Constructs a new Student object with the specified attributes.
      *
@@ -37,15 +36,14 @@ public class Student extends User {
      * @param password        The password of the student.
      * @param major           The major/class tracker of the student.
      */
-    public Student(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<Course> enrolledCourses,
-            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted, 
+    public Student(double gpa, boolean minor, ArrayList<String> studentComments,
+            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
             String firstName, String lastName, String email, String username, String password, Major major) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
         this.studentComments = studentComments;
         this.achievements = achievements;
-        this.enrolledCourses = enrolledCourses;
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
@@ -70,11 +68,11 @@ public class Student extends User {
 
     /**
      * Constructs a new Student with a username and password
+     * 
      * @param username the students username
      * @param password the students password
      */
-    public Student(String username, String password)
-    {
+    public Student(String username, String password) {
         super(username, password, 1);
     }
 
@@ -113,15 +111,6 @@ public class Student extends User {
      */
     public ArrayList<Achievement> getAchievements() {
         return achievements;
-    }
-
-    /**
-     * Returns the courses in which the student is enrolled.
-     *
-     * @return The courses in which the student is enrolled.
-     */
-    public ArrayList<Course> getEnrolledCourses() {
-        return enrolledCourses;
     }
 
     /**
@@ -188,15 +177,6 @@ public class Student extends User {
      */
     public void setAchievement(ArrayList<Achievement> achievements) {
         this.achievements = achievements;
-    }
-
-    /**
-     * Sets the courses in which the student is enrolled.
-     *
-     * @param enrolledCourses The courses in which the student is enrolled.
-     */
-    public void setEnrolledCourse(ArrayList<Course> enrolledCourses) {
-        this.enrolledCourses = enrolledCourses;
     }
 
     /**

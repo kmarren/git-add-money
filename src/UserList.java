@@ -9,7 +9,7 @@ public class UserList {
 
     private UserList() {
         users = new ArrayList<>();
-        ArrayList<User> advi= DataLoader.loadAdvisors();
+        ArrayList<User> advi = DataLoader.loadAdvisors();
         ArrayList<User> fac = DataLoader.loadFaculty();
         ArrayList<User> stud = DataLoader.loadStudents();
         users.addAll(advi);
@@ -23,7 +23,6 @@ public class UserList {
         }
         return userList;
     }
-
 
     public User getUser(String userName) {
         for (User user : users) {
@@ -43,8 +42,7 @@ public class UserList {
         return null;
     }
 
-    public void addUser(User user)
-    {
+    public void addUser(User user) {
         users.add(user);
     }
 
@@ -60,5 +58,9 @@ public class UserList {
         }
         return null;
     }
-   
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
 }

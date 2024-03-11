@@ -3,6 +3,9 @@ package src;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/*
+ * !!!!!!!!!!!!!!!!!!!!!!MOVE ENROLLED COURSES HERE!!!!!!!!!!!!!!!!!!!!!!!
+ */
 /**
  * This class holds all of the degree progession for each student
  * 
@@ -17,9 +20,10 @@ public class Major {
     private int hoursCompleted;
     private double progression;
 
-    public Major(){
+    public Major() {
         this.majorID = UUID.randomUUID();
     }
+
     /**
      * Constructs a Major object with the specified parameters.
      * 

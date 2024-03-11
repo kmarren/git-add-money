@@ -24,14 +24,17 @@ public class Achievement {
      * @param benefits    The benefits associated with the achievement.
      * @param semester    The semester in which the achievement was earned.
      * @param description A description of the achievement.
+     * @param scholarship A boolean of whether or not this is a scholarship
      */
-    public Achievement(String name, String type, String benefits, String semester, String description) {
+    public Achievement(String name, String type, String benefits, String semester, String description,
+            Boolean scholarship) {
         this();
         this.name = name;
         this.type = type;
         this.benefits = benefits;
         this.semester = semester;
         this.description = description;
+        this.scholarship = scholarship;
     }
 
     public Achievement() {

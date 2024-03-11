@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 /**
  * @author Jacob Robertson
  */
@@ -40,7 +41,8 @@ public class DataLoader extends DataConstants {
                         String comment = (String) commentObj;
                         studentComments.add(comment);
                     }
-                    // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                    // JSONArray achievementsArray = (JSONArray)
+                    // studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                     ArrayList<Achievement> achievements = new ArrayList<>();
                     /*
                      * for (Object achievementObj : achievementsArray) {
@@ -50,7 +52,8 @@ public class DataLoader extends DataConstants {
                      * }
                      */
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                    // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                    // JSONArray enrolledCoursesArray = (JSONArray)
+                    // studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     /*
                      * for (Object courseObj : enrolledCoursesArray) {
@@ -88,7 +91,8 @@ public class DataLoader extends DataConstants {
                     String comment = (String) commentObj;
                     studentComments.add(comment);
                 }
-                // JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                // JSONArray achievementsArray = (JSONArray)
+                // studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 /*
                  * for (Object achievementObj : achievementsArray) {
@@ -98,7 +102,8 @@ public class DataLoader extends DataConstants {
                  * }
                  */
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                // JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                // JSONArray enrolledCoursesArray = (JSONArray)
+                // studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                 ArrayList<Course> enrolledCourses = new ArrayList<>();
                 /*
                  * for (Object courseObj : enrolledCoursesArray) {
@@ -143,7 +148,8 @@ public class DataLoader extends DataConstants {
                 // Parsing instructor information
                 Faculty instructor = null; // also need to add an instructor later
                 // Parsing prerequisites
-                // JSONArray prerequisitesArray = (JSONArray) courseObj.get(COURSE_PREREQUISITES); // not going to be fun
+                // JSONArray prerequisitesArray = (JSONArray)
+                // courseObj.get(COURSE_PREREQUISITES); // not going to be fun
                 ArrayList<Course> prerequisites = new ArrayList<>();
                 /*
                  * for (Object prereqObj : prerequisitesArray) {
@@ -161,7 +167,7 @@ public class DataLoader extends DataConstants {
                 Boolean appArea = Boolean.parseBoolean(courseObj.get(COURSE_APPLICATION_AREA).toString());
                 Boolean carolinaCore = Boolean.parseBoolean(courseObj.get(COURSE_CAROLINA_CORE).toString());
                 Boolean elective = Boolean.parseBoolean(courseObj.get(COURSE_ELECTIVE).toString());
-                double grade =  Double.parseDouble(courseObj.get(COURSE_GRADE).toString());
+                double grade = Double.parseDouble(courseObj.get(COURSE_GRADE).toString());
                 Boolean completed = Boolean.parseBoolean(courseObj.get(COURSE_COMPLETED).toString());
                 Boolean enrolled = Boolean.parseBoolean(courseObj.get(COURSE_ENROLLED).toString());
                 Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
@@ -219,14 +225,16 @@ public class DataLoader extends DataConstants {
                 String officeHours = (String) advisorObj.get(ADVISOR_OFFICE_HOURS);
                 String phoneNumber = (String) advisorObj.get(ADVISOR_PHONE_NUMBER);
                 // Advises List
-                // JSONArray adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
+                // JSONArray adviseeListArray = (JSONArray)
+                // advisorObj.get(ADVISOR_ADVISEE_LIST);
                 ArrayList<Student> adviseeList = new ArrayList<>();
                 // Assuming adviseeList needs to be populated
                 // Advises List
 
                 String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
                 // Appointments
-                // JSONArray appointmentsArray = (JSONArray) advisorObj.get(ADVISOR_APPOINTMENTS);
+                // JSONArray appointmentsArray = (JSONArray)
+                // advisorObj.get(ADVISOR_APPOINTMENTS);
                 ArrayList<Appointment> appointments = new ArrayList<>();
                 // Assuming appointments needs to be populated
                 // Appointments
@@ -263,8 +271,9 @@ public class DataLoader extends DataConstants {
                 if (majorObj instanceof JSONObject) {
                     JSONObject majorJson = (JSONObject) majorObj;
                     String title = (String) majorJson.get(MAJOR_TITLE);
-                    
-                    // JSONArray requiredCoursesJsonArray = (JSONArray) majorJson.get(MAJOR_REQUIRED_COURSES);
+
+                    // JSONArray requiredCoursesJsonArray = (JSONArray)
+                    // majorJson.get(MAJOR_REQUIRED_COURSES);
                     ArrayList<Course> requiredCourses = new ArrayList<>();
                     // Similarly, parse other fields
                     ArrayList<Course> completedCourses = new ArrayList<>();
@@ -272,7 +281,8 @@ public class DataLoader extends DataConstants {
                     int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
                     double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
                     // Create Major object and add to list
-                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted, progression);
+                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted,
+                            progression);
                     majorList.add(major);
                 }
             }
@@ -281,5 +291,38 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return majorList;
+    }
+
+    public static ArrayList<Achievement> loadAchievements() {
+        ArrayList<Achievement> achievementList = new ArrayList<>();
+        try {
+            // Read JSON file
+            FileReader reader = new FileReader(ACHIEVEMENT_FILE_NAME);
+            JSONParser jsonParser = new JSONParser();
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray achievementsArray = (JSONArray) obj;
+            // Assuming you have some JSON array of achievements
+            for (Object achievementObj : achievementsArray) {
+                if (achievementObj instanceof JSONObject) {
+                    JSONObject achievementJson = (JSONObject) achievementObj;
+                    String name = (String) achievementJson.get(ACHIEVEMENT_NAME);
+                    String type = (String) achievementJson.get(ACHIEVEMENT_TYPE);
+                    String benefits = (String) achievementJson.get(ACHIEVEMENT_BENEFITS);
+                    String semester = (String) achievementJson.get(ACHIEVEMENT_SEMESTER);
+                    String description = (String) achievementJson.get(ACHIEVEMENT_DESCRIPTION);
+                    Boolean scholarship = Boolean.parseBoolean(achievementJson.get(COURSE_COMPLETED).toString());
+
+                    // Create Achievement object and add to list
+                    Achievement achievement = new Achievement(name, type, benefits, semester,
+                            description, scholarship);
+                    achievementList.add(achievement);
+                }
+            }
+        } catch (Exception e) {
+            // Handle any exceptions
+            e.printStackTrace();
+        }
+        return achievementList;
     }
 }

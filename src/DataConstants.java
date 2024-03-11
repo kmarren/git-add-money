@@ -83,4 +83,14 @@ public abstract class DataConstants {
     protected static final String STUDENT_ADVISOR = "advisorID";
     protected static final String STUDENT_RISK_FAILING = "riskFailing";
     protected static final String STUDENT_HOURS_COMPLETED = "hoursCompleted";
+
+    // Achievement data constants
+    protected static final String ACHIEVEMENT_FILE_NAME = "data/achievement.json";
+    protected static final String ACHIEVEMENT_ID = "achievementID";
+    protected static final String ACHIEVEMENT_NAME = "name";
+    protected static final String ACHIEVEMENT_TYPE = "type";
+    protected static final String ACHIEVEMENT_BENEFITS = "benefits";
+    protected static final String ACHIEVEMENT_SEMESTER = "semester";
+    protected static final String ACHIEVEMENT_DESCRIPTION = "description";
+    protected static final String ACHIEVEMENT_SCHOLARSHIP = "scholarship";
 }

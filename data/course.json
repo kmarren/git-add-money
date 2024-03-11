@@ -1,45 +1,133 @@
 [
-    {
-      "courseComments": ["Great course!", "Difficult but rewarding."],
-      "courseNumber": 145,
-      "courseCode": "PR",
-      "courseName": "CSCE145",
-      "instructor": {
-        "name": "Dr. Smith",
-        "email": "drsmith@email.sc.edu"
-      },
-      "prerequisites": [null],
-      "description": "Introduction to Algorithms",
-      "totalSeats": 30,
-      "creditWorth": 3,
-      "corequisites": [null],
-      "applicationArea": false,
-      "carolinaCore": false,
-      "elective": false,
-      "grade": 4.0,
-      "completed": true,
-      "enrolled": false
-    },
-    {
-      "courseComments": ["Working on real-world projects!", "Teamwork is emphasized."],
-      "courseNumber": 247,
-      "courseCode": "PR",
-      "courseName": "CSCE247",
-      "instructor": {
-        "name": "Dr. Smith",
-        "email": "drsmith@email.sc.edu"
-      },
-      "prerequisites": [null],
-      "description": "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance of software systems.",
-      "totalSeats": 40,
-      "creditWorth": 3,
-      "corequisites": [null],
-      "applicationArea": false,
-      "carolinaCore": false,
-      "elective": false,
-      "grade": 0,
-      "completed": false,
-      "enrolled": true
-    }
-  ]
-  
+  {
+    "courseID": "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb",
+    "courseComments": [
+      "Great course!",
+      "Difficult but rewarding."
+    ],
+    "courseNumber": 145,
+    "courseCode": "PR",
+    "courseName": "CSCE145",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to Algorithms",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 4.0,
+    "completed": true,
+    "enrolled": false
+  },
+  {
+    "courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54",
+    "courseComments": [
+      "Working on real-world projects!",
+      "Teamwork is emphasized."
+    ],
+    "courseNumber": 247,
+    "courseCode": "PR",
+    "courseName": "CSCE247",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance of software systems.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": true
+  },
+  {
+    "courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+    "courseComments": [
+      "Hands-on experience with industry tools.",
+      "Guest lectures from professionals."
+    ],
+    "courseNumber": 310,
+    "courseCode": "BD",
+    "courseName": "CSCE310",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "This course introduces students to the basics of big data technologies, including Hadoop, Spark, and NoSQL databases.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": true
+  },
+  {
+    "courseID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
+    "courseComments": [
+      "Interactive programming assignments.",
+      "Weekly quizzes to reinforce learning."
+    ],
+    "courseNumber": 425,
+    "courseCode": "AI",
+    "courseName": "CSCE425",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      "CSCE310"
+    ],
+    "description": "This course provides an overview of artificial intelligence techniques, including search algorithms, knowledge representation, machine learning, and natural language processing.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": true
+  },
+  {
+    "courseID": "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb",
+    "courseComments": [
+      "Practical assignments with real-world datasets.",
+      "Open discussions on current trends."
+    ],
+    "courseNumber": 474,
+    "courseCode": "DM",
+    "courseName": "CSCE474",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      "CSCE310",
+      "CSCE425"
+    ],
+    "description": "This course explores advanced topics in data mining, including clustering, classification, association rule mining, and text mining.",
+    "totalSeats": 20,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": true
+  }
+]

@@ -55,12 +55,14 @@ public class DataLoader extends DataConstants {
                     Advisor advisor = null; // add an advisor later??
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                     double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
+                    String studentID = (String) studentJsonObj.get(STUDENT_ID);
+                    UUID uuid = UUID.fromString(studentID);
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                             riskFailing,
                             hoursCompleted, firstName, lastName, email, username, password, major);
-
+                    student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
                 }
@@ -92,24 +94,17 @@ public class DataLoader extends DataConstants {
                  * }
                  */
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
-                // JSONArray enrolledCoursesArray = (JSONArray)
-                // studentJsonObj.get(STUDENT_ENROLLED_COURSES);
-                ArrayList<Course> enrolledCourses = new ArrayList<>();
-                /*
-                 * for (Object courseObj : enrolledCoursesArray) {
-                 * JSONObject courseJson = (JSONObject) courseObj;
-                 * String courseID = (String) courseJson.get("courseID");
-                 * enrolledCourses.add(courseID);
-                 * }
-                 */
                 Advisor advisor = null;
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                 double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
+                String studentID = (String) studentJsonObj.get(STUDENT_ID);
+                UUID uuid = UUID.fromString(studentID);
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                         riskFailing,
                         hoursCompleted, firstName, lastName, email, username, password, major);
+                student.setUserID(uuid);
 
                 // Add student to the list
                 students.add(student);
@@ -160,8 +155,11 @@ public class DataLoader extends DataConstants {
                 double grade = Double.parseDouble(courseObj.get(COURSE_GRADE).toString());
                 Boolean completed = Boolean.parseBoolean(courseObj.get(COURSE_COMPLETED).toString());
                 Boolean enrolled = Boolean.parseBoolean(courseObj.get(COURSE_ENROLLED).toString());
+                String courseID = (String) courseObj.get(COURSE_ID);
+                UUID uuid = UUID.fromString(courseID);
                 Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
                         prerequisites, description, totalSeats, creditWorth, coreqs, appArea, carolinaCore, elective);
+                course.setCourseID(uuid);
                 courses.add(course);
             }
         } catch (Exception e) {
@@ -189,8 +187,10 @@ public class DataLoader extends DataConstants {
                 String officeHours = (String) facultyObj.get(FACULTY_OFFICE_HOURS);
 
                 ArrayList<Student> studentList = new ArrayList<>(); // Defaulting to an empty list
-
+                String facultyID = (String) facultyObj.get(FACULTY_ID);
+                UUID uuid = UUID.fromString(facultyID);
                 Faculty faculty = new Faculty(officeHours, studentList, firstName, lastName, email, username, password);
+                faculty.setUserID(uuid);
                 facultyList.add(faculty);
             }
         } catch (Exception e) {
@@ -233,11 +233,13 @@ public class DataLoader extends DataConstants {
                 String email = (String) advisorObj.get(ADVISOR_EMAIL);
                 String username = (String) advisorObj.get(ADVISOR_USERNAME);
                 String password = (String) advisorObj.get(ADVISOR_PASSWORD);
-
+                String advisorID = (String) advisorObj.get(ADVISOR_ID);
+                UUID uuid = UUID.fromString(advisorID);
                 // Create Advisor object and add to the list
                 Advisor advisor = new Advisor(office, officeHours, phoneNumber, adviseeList, schoolOfFocus,
                         appointments,
                         firstName, lastName, email, username, password);
+                advisor.setUserID(uuid);
                 advisorList.add(advisor);
             }
         } catch (Exception e) {
@@ -269,9 +271,12 @@ public class DataLoader extends DataConstants {
                     int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
                     int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
                     double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
+                    String majorId = (String) majorJson.get(MAJOR_ID);
+                    UUID uuid = UUID.fromString(majorId);
                     // Create Major object and add to list
                     Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted,
                             progression, enrolledCourses);
+                    major.setMajorID(uuid);
                     majorList.add(major);
                 }
             }

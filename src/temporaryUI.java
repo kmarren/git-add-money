@@ -15,7 +15,6 @@ public class temporaryUI {
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
         DataWriter.saveUsers();
-
         DataWriter.writeAllID();
     }
 }

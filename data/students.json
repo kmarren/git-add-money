@@ -1,5 +1,6 @@
 [
   {
+    "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b",
     "firstName": "Bob",
     "lastName": "Smith",
     "email": "bob@email.sc.edu",
@@ -7,46 +8,43 @@
     "password": "password123",
     "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
     "minor": false,
-    "studentComments": ["Advised to take CSCE350, MATH241"],
-    "achievements": [
-      { "achivementID": "ca2f1040-7b04-4700-839e-17d96aef9a3a"},
-      { "achivementID": "47b92651-1618-42ec-bc4b-26ed09789225"}
+    "studentComments": [
+      "Advised to take CSCE350, MATH241"
     ],
-    "gpa": 3.5,
-    "enrolledCourses": [
+    "achievements": [
       {
-        "courseID": "73f8429a-1c52-43b7-b428-79fd6dd00c9b"
+        "achivementID": "ca2f1040-7b04-4700-839e-17d96aef9a3a"
       },
       {
-        "courseID": "32214390-6197-4535-887a-7b629945885b"
+        "achivementID": "47b92651-1618-42ec-bc4b-26ed09789225"
       }
     ],
-    "advisorID":  "2a419d72-338b-40be-8c71-c83221c91334",
+    "gpa": 3.5,
+    "advisorID": "2a419d72-338b-40be-8c71-c83221c91334",
     "riskFailing": false,
     "hoursCompleted": 60.5
   },
   {
+    "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a",
     "firstName": "Alice",
     "lastName": "Johnson",
     "email": "alice@email.sc.edu",
     "username": "alicejohnson456",
     "password": "securepass456",
-    "majorID": "b32f91c8-7a5d-4f24-b3e7-8d9c5e2a6f18",
+    "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
     "minor": false,
-    "studentComments": ["Strong in lab work, should consider research opportunities."],
+    "studentComments": [
+      "Strong in lab work, should consider research opportunities."
+    ],
     "achievements": [
-        { "achivementID": "e7f7a811-83e2-41bc-99e3-2d5a1e1b0a7c"},
-        { "achivementID": "57d88b6f-9c5a-4713-92f2-6b5e8582fb82"}
+      {
+        "achivementID": "e7f7a811-83e2-41bc-99e3-2d5a1e1b0a7c"
+      },
+      {
+        "achivementID": "57d88b6f-9c5a-4713-92f2-6b5e8582fb82"
+      }
     ],
     "gpa": 3.8,
-    "enrolledCourses": [
-        {
-            "courseID": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d"
-        },
-        {
-            "courseID": "d5e6f7a8-b9c0-d1e2-f3a4-b5c6d7e8f9a0"
-        }
-    ],
     "advisorID": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
     "riskFailing": false,
     "hoursCompleted": 72.3

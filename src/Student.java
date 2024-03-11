@@ -285,4 +285,8 @@ public class Student extends User {
     public String viewProfile() {
         return " ";
     }
+
+    public void addStudentComment(String comment) {
+        studentComments.add(comment);
+    }
 }

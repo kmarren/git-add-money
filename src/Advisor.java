@@ -186,9 +186,20 @@ public class Advisor extends User {
      * 
      * @param avisees The list of the advisees.
      */
-    public void viewAdvisees(ArrayList<Student> advisees) {
-
+    public String viewAdvisees(ArrayList<Student> advisees) {
+        StringBuilder list = new StringBuilder();
+        if (advisees.isEmpty()) {
+            list.append("No advisees found for this advisor.");
+        } else {
+            list.append("List of Advisees:\n");
+            for (Student advisee : advisees) {
+                list.append("Name: ").append(advisee.getFirstName()).append(" ").append(advisee.getLastName()).append("\n");
+                list.append("Email: ").append(advisee.getEmail()).append("\n");   
+            }
+        }
+        return list.toString();  
     }
+    
 
     /**
      * Allows the advisor to view a specific student's profile.
@@ -197,8 +208,15 @@ public class Advisor extends User {
      * @return A string of the student's profile.
      */
     public String viewStudentProfile(Student student) {
-        return null;
+        StringBuilder profile = new StringBuilder();
+        profile.append("Student Profile:\n");
+        profile.append("Name: ").append(student.getFirstName()).append(" ").append(student.getLastName()).append("\n");
+        profile.append("Email: ").append(student.getEmail()).append("\n");
+        profile.append("Major: ").append(student.getMajor().getTitle()).append("\n");
+        profile.append("GPA: ").append(student.getGpa()).append("\n");
+        return profile.toString();
     }
+    
 
     /**
      * Allows the advisor to view all the appointments they have.

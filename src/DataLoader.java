@@ -291,8 +291,7 @@ public class DataLoader extends DataConstants {
         for (User student : students) {
             if (student.getType() == 1) { 
                 Student currentStudent = (Student) student;
-                String studentStringUUID = currentStudent.getUserID(); 
-                UUID studentUUID = UUID.fromString(studentStringUUID);
+                UUID studentUUID = currentStudent.getUserID();
                 for (Object studentObj : studentJSON) {
                     JSONObject studentJsonObj = (JSONObject) studentObj;
                     String studentID = (String) studentJsonObj.get(STUDENT_ID); 

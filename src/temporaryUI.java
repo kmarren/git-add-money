@@ -14,6 +14,7 @@ public class temporaryUI {
         System.out.println(application.login("timmyballer", "swagwrod"));
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
+        
         DataWriter.parseUserList();
         DataWriter.writeUsers();
         DataWriter.writeCourses();

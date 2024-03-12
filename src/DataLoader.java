@@ -258,12 +258,14 @@ public class DataLoader extends DataConstants {
                 JSONObject advisorObj = null;
                 String advisorID = null;
                 JSONArray adviseeListArray = null;
-                Advisor currentAdvisor = (Advisor) advisor;
-
+                Advisor currentAdvisor = null;
+                if (advisor.getType() == 2) {
+                    currentAdvisor = (Advisor) advisor;
+                } else {break;}
                 // Find the advisor object in the JSON array by matching IDs
                 for (Object obj : advisorArray) {
                     JSONObject objJson = (JSONObject) obj;
-                    advisorID = (String) objJson.get("advisorID");
+                    advisorID = (String) objJson.get(ADVISOR_ID);
                     if (advisorID.equals(currentAdvisor.getUserID().toString())) {
                         advisorObj = objJson;
                         break;
@@ -271,7 +273,7 @@ public class DataLoader extends DataConstants {
                 }
 
                 if (advisorObj != null) {
-                    adviseeListArray = (JSONArray) advisorObj.get("adviseeList");
+                    adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
                     ArrayList<Student> adviseeList = new ArrayList<>();
                     for (Object adviseeObj : adviseeListArray) {
                         JSONObject adviseeJson = (JSONObject) adviseeObj;
@@ -286,6 +288,31 @@ public class DataLoader extends DataConstants {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void finishStudents(ArrayList<User> students) {
+        UserList userList = UserList.getInstance();
+        try {
+            FileReader reader = new FileReader(STUDENT_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(reader);
+            JSONArray studentJSON = (JSONArray) obj;
+            for(User student : students) {
+                Student currentStudent = (Student) student;
+                for (Object studentObj : studentJSON) {
+                    JSONObject studentJsonObj = (JSONObject) studentObj;
+                    // Parse student data and create Student objects
+                    String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR);
+                    UUID advisorUUID = UUID.fromString(advisorID);
+                    Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
+                    if (advisor != null) {
+                        currentStudent.setAdvisor(advisor);
+                    }
+                }
+            }
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }

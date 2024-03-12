@@ -331,14 +331,10 @@ public class DataLoader extends DataConstants {
             Object obj = jsonParser.parse(reader);
 
             JSONArray majorsArray = (JSONArray) obj;
-            // Assuming you have some JSON array of majors
             for (Object majorObj : majorsArray) {
                 if (majorObj instanceof JSONObject) {
                     JSONObject majorJson = (JSONObject) majorObj;
                     String title = (String) majorJson.get(MAJOR_TITLE);
-
-                    // JSONArray requiredCoursesJsonArray = (JSONArray)
-                    // majorJson.get(MAJOR_REQUIRED_COURSES);
                     ArrayList<Course> requiredCourses = new ArrayList<>();
                     ArrayList<Course> completedCourses = new ArrayList<>();
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
@@ -358,6 +354,15 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return majorList;
+    }
+
+    public static void finishMajors(ArrayList<Major> majors) {
+        MajorList majorList = MajorList.getInstance();
+        try{
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static ArrayList<Achievement> loadAchievements() {

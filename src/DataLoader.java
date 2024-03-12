@@ -16,6 +16,7 @@ public class DataLoader extends DataConstants {
 
     // load students method
     public static ArrayList<User> loadStudents() {
+        AchievementList ach = AchievementList.getInstance();
         ArrayList<User> students = new ArrayList<>();
         try {
             FileReader reader = new FileReader(STUDENT_FILE_NAME);
@@ -41,16 +42,20 @@ public class DataLoader extends DataConstants {
                         String comment = (String) commentObj;
                         studentComments.add(comment);
                     }
-                    // JSONArray achievementsArray = (JSONArray)
-                    // studentJsonObj.get(STUDENT_ACHIEVEMENTS);
+                    JSONArray achievementsArray = (JSONArray) studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                     ArrayList<Achievement> achievements = new ArrayList<>();
-                    /*
-                     * for (Object achievementObj : achievementsArray) {
-                     * JSONObject achievementJson = (JSONObject) achievementObj;
-                     * String achievementID = (String) achievementJson.get("achievementID");
-                     * achievements.add(achievementID);
-                     * }
-                     */
+                    for (Object achievementObj : achievementsArray) {
+                        JSONObject achievementJson = (JSONObject) achievementObj;
+                        String achievementID = (String) achievementJson.get("achievementID");
+                        UUID achievementUUID = UUID.fromString(achievementID);
+
+                        Achievement existingAchievement = ach.getAchievement(achievementUUID);
+
+                        // Check if the existing achievement is not null before adding it to the list
+                        if (existingAchievement != null) {
+                            achievements.add(existingAchievement);
+                        }
+                    }
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                     Advisor advisor = null; // add an advisor later??
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);

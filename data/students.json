@@ -13,11 +13,11 @@
     ],
     "achievements": [
       {
-        "achivementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678"
+        "achievementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678"
       }
     ],
     "gpa": 3.5,
-    "advisorID": "2a419d72-338b-40be-8c71-c83221c91334",
+    "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
     "riskFailing": false,
     "hoursCompleted": 60.5
   },
@@ -35,11 +35,11 @@
     ],
     "achievements": [
       {
-        "achivementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+        "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
       }
     ],
     "gpa": 3.8,
-    "advisorID": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "advisorID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
     "riskFailing": false,
     "hoursCompleted": 72.3
   }

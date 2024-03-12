@@ -86,6 +86,9 @@ public class DataWriter extends DataConstants {
         CourseList courseList = CourseList.getInstance();
         ArrayList<Course> courses = courseList.getCourses();
 
+        AchievementList achievementList = AchievementList.getInstance();
+        ArrayList<Achievement> achievements = achievementList.getAchievements();
+
         // Create JSON array to hold IDs
         JSONArray jsonIDs = new JSONArray();
 
@@ -104,7 +107,6 @@ public class DataWriter extends DataConstants {
             jsonIDs.add(getCourseID(course));
         }
 
-        ArrayList<Achievement> achievements = DataLoader.loadAchievements();
         for (Achievement ach : achievements) {
             jsonIDs.add(getAchievementID(ach));
         }

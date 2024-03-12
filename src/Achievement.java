@@ -167,4 +167,8 @@ public class Achievement {
     public void setScholarship(boolean scholarship) {
         this.scholarship = scholarship;
     }
+
+    public String toString() {
+        return name + " " + description;
+    }
 }

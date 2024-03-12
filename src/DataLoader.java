@@ -289,16 +289,16 @@ public class DataLoader extends DataConstants {
         JSONArray studentJSON = (JSONArray) obj;
 
         for (User student : students) {
-            if (student.getType() == 1) { // Assuming getType() returns the type of the user
+            if (student.getType() == 1) { 
                 Student currentStudent = (Student) student;
-                String studentStringUUID = currentStudent.getUserID(); // Assuming getUserID() returns the UUID of the student
+                String studentStringUUID = currentStudent.getUserID(); 
                 UUID studentUUID = UUID.fromString(studentStringUUID);
                 for (Object studentObj : studentJSON) {
                     JSONObject studentJsonObj = (JSONObject) studentObj;
-                    String studentID = (String) studentJsonObj.get(STUDENT_ID); // Assuming "id" is the key for student UUID in your JSON
+                    String studentID = (String) studentJsonObj.get(STUDENT_ID); 
                     UUID jsonStudentUUID = UUID.fromString(studentID);
                     if (studentUUID.equals(jsonStudentUUID)) {
-                        String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR); // Assuming STUDENT_ADVISOR is a key in your JSON
+                        String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR); 
                         UUID advisorUUID = UUID.fromString(advisorID);
                         Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
                         if (advisor != null) {
@@ -306,7 +306,7 @@ public class DataLoader extends DataConstants {
                         }
 
                         // Load major for the student
-                        String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);// Assuming STUDENT_MAJOR_ID is a key in your JSON
+                        String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                         UUID majorUUID = UUID.fromString(majorID);
                         Major major = (Major) MajorList.getInstance().getMajorID(majorUUID);
                         if (major != null) {

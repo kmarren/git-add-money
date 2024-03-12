@@ -233,18 +233,18 @@ public class Advisor extends User {
      * 
      * @param advisees The list of advisees.
      */
-    public void addAdvisee(Student advisees) {
-
+    public void addAdvisee(Student advisee) {
+        adviseeList.add(advisee);
     }
 
     /**
      * Allows the advisor to add an appointment to their current list of
      * appointments
      * 
-     * @param appointments The advisor's current list of appointments.
+     * @param appointment The appointment the advior wants to add. 
      */
-    public void addAppointment(Appointment appointments) {
-
+    public void addAppointment(Appointment appointment) {
+        appointments.add(appointment);
     }
 
     /**

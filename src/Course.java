@@ -25,7 +25,11 @@ public class Course {
     private boolean applicationArea;
     private boolean carolinaCore;
     private boolean elective;
+    private boolean enrolled;
+    private boolean completed;
+
     private double grade;
+
 
     /**
      * Constructor that creates a course object specific to the student.
@@ -52,7 +56,7 @@ public class Course {
     public Course(ArrayList<String> courseComments, int courseNumber, String courseCode,
             String courseName, Faculty instructor, ArrayList<Course> prerequisites, String description, int totalSeats,
             int creditWorth, ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore,
-            boolean elective, double grade) {
+            boolean elective, double grade, boolean enrolled, boolean completed) {
         this.courseID = UUID.randomUUID();
         this.courseComments = courseComments;
         this.courseNumber = courseNumber;
@@ -68,6 +72,8 @@ public class Course {
         this.carolinaCore = carolinaCore;
         this.elective = elective;
         this.grade = grade;
+        this.enrolled = enrolled;
+        this.completed = completed;
     }
 
     /**
@@ -382,6 +388,27 @@ public class Course {
     public void setGrade(double grade) {
         this.grade = grade;
     }
+
+    public void setEnrolled(boolean enrolled)
+    {
+        this.enrolled = enrolled;
+    }
+
+    public boolean isEnrolled()
+    {
+        return enrolled;
+    }
+
+    public void setCompleted(boolean completed)
+    {
+        this.completed = completed;
+    }
+
+    public boolean isCompleted()
+    {
+        return completed;
+    }
+
 
     /**
      * adds a prerequisite to the course's list of prerequisites

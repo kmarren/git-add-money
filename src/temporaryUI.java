@@ -14,7 +14,13 @@ public class temporaryUI {
         System.out.println(application.login("timmyballer", "swagwrod"));
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
-        DataWriter.saveUsers();
+        DataWriter.parseUserList();
+        DataWriter.writeUsers();
+        DataWriter.writeCourses();
+        DataWriter.writeMajors();
+        DataWriter.writeFaculty();
+        DataWriter.writeAdvisors();
+        DataWriter.writeStudents();
         DataWriter.writeAllID();
     }
 }

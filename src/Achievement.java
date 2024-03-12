@@ -168,7 +168,8 @@ public class Achievement {
         this.scholarship = scholarship;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return name + " " + description;
     }
 }

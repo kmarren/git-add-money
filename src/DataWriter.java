@@ -12,9 +12,9 @@ import org.json.simple.parser.JSONParser;
 
 public class DataWriter extends DataConstants {
 
-    private static ArrayList<User> students = new ArrayList<User>();
-    private static ArrayList<User> faculties = new ArrayList<User>();;
-    private static ArrayList<User> advisors = new ArrayList<User>();;
+    private static ArrayList<Student> students = new ArrayList<Student>();
+    private static ArrayList<Faculty> faculties = new ArrayList<Faculty>();;
+    private static ArrayList<Advisor> advisors = new ArrayList<Advisor>();;
 
     private static ArrayList<Course> courses = new ArrayList<Course>();
 
@@ -23,13 +23,23 @@ public class DataWriter extends DataConstants {
     public static void parseUserList() {
         for (int i = 0; i < UserList.getInstance().getUsers().size(); i++) {
             if (UserList.getInstance().getUsers().get(i).getType() == 3) {
-                faculties.add(UserList.getInstance().getUsers().get(i));
+                User user = UserList.getInstance().getUsers().get(i);
+                Faculty faculty = null;
+                faculty = (Faculty)user ;
+                faculties.add(faculty);
             } else if (UserList.getInstance().getUsers().get(i).getType() == 2) {
-                advisors.add(UserList.getInstance().getUsers().get(i));
+                User user = UserList.getInstance().getUsers().get(i);
+                Advisor advisor = null;
+                advisor = (Advisor)user ;
+                advisors.add(advisor);
             } else {
-                students.add(UserList.getInstance().getUsers().get(i));
+                User user = UserList.getInstance().getUsers().get(i);
+                Student student = null;
+                student = (Student)user;
+                students.add(student);
             }
         }
+
     }
 
     public static void writeCourses() 
@@ -118,7 +128,7 @@ public class DataWriter extends DataConstants {
     {
         JSONArray studentJSON = new JSONArray();
 
-        for(User student : students)
+        for(Student student : students)
         {
             studentJSON.add(getStudentJSON(student));
         }
@@ -134,17 +144,28 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getStudentJSON(User student)
+    public static JSONObject getStudentJSON(Student student)
     {
         JSONObject studentJSON = new JSONObject();
 
-        studentJSON.put(USER_FIRST_NAME, student.getFirstName());
-        studentJSON.put(USER_LAST_NAME, student.getLastName());
-        studentJSON.put(USER_ID, student.getUserID());
-        studentJSON.put(USER_EMAIL, student.getEmail());
-        studentJSON.put(USER_USERNAME, student.getUsername());
-        studentJSON.put(USER_PASSWORD, student.getPassword());
-        studentJSON.put(USER_TYPE, student.getType());
+        studentJSON.put(STUDENT_FIRST_NAME, student.getFirstName());
+        studentJSON.put(STUDENT_LAST_NAME, student.getLastName());
+        studentJSON.put(STUDENT_ID, student.getUserID());
+        studentJSON.put(STUDENT_EMAIL, student.getEmail());
+        studentJSON.put(STUDENT_USERNAME, student.getUsername());
+        studentJSON.put(STUDENT_PASSWORD, student.getPassword());
+        studentJSON.put(USER_TYPE, 1);
+        studentJSON.put(STUDENT_MAJOR, student.getMajorID());
+        studentJSON.put(STUDENT_MINOR, student.hasMinor());
+        studentJSON.put(STUDENT_COMMENTS, student.getStudentComments());
+        studentJSON.put(STUDENT_GPA, student.getGpa());
+        studentJSON.put(STUDENT_ADVISOR, student.getAdvisor());
+        studentJSON.put(STUDENT_RISK_FAILING, student.isRiskFailing());
+        studentJSON.put(STUDENT_HOURS_COMPLETED, student.getHoursCompleted());
+        
+        
+
+
 
         return studentJSON;
     }
@@ -153,7 +174,7 @@ public class DataWriter extends DataConstants {
     {
         JSONArray advisorJSON = new JSONArray();
 
-        for(User advisor : advisors)
+        for(Advisor advisor : advisors)
         {
             advisorJSON.add(getAdvisorJSON(advisor));
         }
@@ -169,17 +190,25 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getAdvisorJSON(User advisor)
+    public static JSONObject getAdvisorJSON(Advisor advisor)
     {
         JSONObject advisorJSON = new JSONObject();
 
-        advisorJSON.put(USER_FIRST_NAME, advisor.getFirstName());
-        advisorJSON.put(USER_LAST_NAME, advisor.getLastName());
-        advisorJSON.put(USER_ID, advisor.getUserID());
-        advisorJSON.put(USER_EMAIL, advisor.getEmail());
-        advisorJSON.put(USER_USERNAME, advisor.getUsername());
-        advisorJSON.put(USER_PASSWORD, advisor.getPassword());
-        advisorJSON.put(USER_TYPE, advisor.getType());
+        advisorJSON.put(ADVISOR_FIRST_NAME, advisor.getFirstName());
+        advisorJSON.put(ADVISOR_LAST_NAME, advisor.getLastName());
+        advisorJSON.put(ADVISOR_ID, advisor.getUserID());
+        advisorJSON.put(ADVISOR_EMAIL, advisor.getEmail());
+        advisorJSON.put(ADVISOR_USERNAME, advisor.getUsername());
+        advisorJSON.put(ADVISOR_PASSWORD, advisor.getPassword());
+        advisorJSON.put(USER_TYPE, 2);
+        advisorJSON.put(ADVISOR_OFFICE, advisor.getOffice());
+        advisorJSON.put(ADVISOR_OFFICE_HOURS, advisor.getOfficeHours());
+        advisorJSON.put(ADVISOR_PHONE_NUMBER, advisor.getPhoneNumber());
+        advisorJSON.put(ADVISOR_ADVISEE_LIST, advisor.getAdviseeList());
+        advisorJSON.put(ADVISOR_SCHOOL_OF_FOCUS, advisor.getSchoolOfFocus());
+        advisorJSON.put(ADVISOR_APPOINTMENTS, advisor.getAppointments());
+
+
 
         return advisorJSON;
     }
@@ -188,7 +217,7 @@ public class DataWriter extends DataConstants {
     {
         JSONArray facultyJSON = new JSONArray();
 
-        for(User faculty : faculties)
+        for(Faculty faculty : faculties)
         {
             facultyJSON.add(getFacultyJSON(faculty));
         }
@@ -204,17 +233,19 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getFacultyJSON(User faculty)
+    public static JSONObject getFacultyJSON(Faculty faculty)
     {
         JSONObject facultyJSON = new JSONObject();
 
-        facultyJSON.put(USER_FIRST_NAME, faculty.getFirstName());
-        facultyJSON.put(USER_LAST_NAME, faculty.getLastName());
-        facultyJSON.put(USER_ID, faculty.getUserID());
-        facultyJSON.put(USER_EMAIL, faculty.getEmail());
-        facultyJSON.put(USER_USERNAME, faculty.getUsername());
-        facultyJSON.put(USER_PASSWORD, faculty.getPassword());
-        facultyJSON.put(USER_TYPE, faculty.getType());
+        facultyJSON.put(FACULTY_FIRST_NAME, faculty.getFirstName());
+        facultyJSON.put(FACULTY_LAST_NAME, faculty.getLastName());
+        facultyJSON.put(FACULTY_ID, faculty.getUserID());
+        facultyJSON.put(FACULTY_EMAIL, faculty.getEmail());
+        facultyJSON.put(FACULTY_USERNAME, faculty.getUsername());
+        facultyJSON.put(FACULTY_PASSWORD, faculty.getPassword());
+        facultyJSON.put(USER_TYPE, 3);
+        facultyJSON.put(FACULTY_OFFICE_HOURS, faculty.getOfficeHours());
+        facultyJSON.put(FACULTY_STUDENT_LIST, faculty.getStudentList());
 
         return facultyJSON;
     }

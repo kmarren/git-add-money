@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Jacob Robertson
  */
 public class Student extends User {
-    private Major major;
+    private String majorID;
     private double gpa;
     private boolean minor;
     protected ArrayList<String> studentComments;
@@ -38,7 +38,7 @@ public class Student extends User {
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-            String firstName, String lastName, String email, String username, String password, Major major) {
+            String firstName, String lastName, String email, String username, String password, String majorID) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -47,7 +47,7 @@ public class Student extends User {
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
-        this.major = major;
+        this.majorID = majorID;
     }
 
     /**
@@ -65,6 +65,7 @@ public class Student extends User {
     public Student(String firstName, String lastName, String email, String username, String password) {
         super(firstName, lastName, email, username, password, 1);
     }
+
 
     /**
      * Constructs a new Student with a username and password
@@ -86,6 +87,10 @@ public class Student extends User {
         return gpa;
     }
 
+    public String getMajorID()
+    {
+        return majorID;
+    }
     /**
      * Returns whether the student has a minor.
      *
@@ -288,5 +293,21 @@ public class Student extends User {
 
     public void addStudentComment(String comment) {
         studentComments.add(comment);
+    }
+
+    public void addAchievement(Achievement achievement)
+    {
+        achievements.add(achievement);
+    }
+
+    public ArrayList<String> getAchievementIDs()
+    {
+        ArrayList<String> achievementIDS = new ArrayList<String>();
+        for(Achievement achievement : achievements)
+        {
+           String add =  achievement.getAchievementID().toString();
+           achievementIDS.add(add);
+        }
+        return achievementIDS;
     }
 }

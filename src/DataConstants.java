@@ -76,7 +76,8 @@ public abstract class DataConstants {
     protected static final String STUDENT_EMAIL = "email";
     protected static final String STUDENT_USERNAME = "username";
     protected static final String STUDENT_PASSWORD = "password";
-    protected static final String STUDENT_MAJOR = "majorID";
+    protected static final String STUDENT_MAJOR = "major";
+    protected static final String STUDENT_MAJOR_ID = "majorID";
     protected static final String STUDENT_MINOR = "minor";
     protected static final String STUDENT_COMMENTS = "studentComments";
     protected static final String STUDENT_ACHIEVEMENTS = "achievements";

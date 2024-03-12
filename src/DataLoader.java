@@ -34,7 +34,7 @@ public class DataLoader extends DataConstants {
                     String email = (String) studentJsonObj.get(STUDENT_EMAIL);
                     String username = (String) studentJsonObj.get(STUDENT_USERNAME);
                     String password = (String) studentJsonObj.get(STUDENT_PASSWORD);
-                    Major major = null;
+                    String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                     boolean minor = (boolean) studentJsonObj.get(STUDENT_MINOR);
                     JSONArray commentsArray = (JSONArray) studentJsonObj.get(STUDENT_COMMENTS);
                     ArrayList<String> studentComments = new ArrayList<>();
@@ -66,7 +66,7 @@ public class DataLoader extends DataConstants {
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                             riskFailing,
-                            hoursCompleted, firstName, lastName, email, username, password, major);
+                            hoursCompleted, firstName, lastName, email, username, password, majorID);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -80,7 +80,7 @@ public class DataLoader extends DataConstants {
                 String email = (String) studentJsonObj.get(STUDENT_EMAIL);
                 String username = (String) studentJsonObj.get(STUDENT_USERNAME);
                 String password = (String) studentJsonObj.get(STUDENT_PASSWORD);
-                Major major = null;
+                String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                 boolean minor = (boolean) studentJsonObj.get(STUDENT_MINOR);
                 JSONArray commentsArray = (JSONArray) studentJsonObj.get(STUDENT_COMMENTS);
                 ArrayList<String> studentComments = new ArrayList<>();
@@ -108,7 +108,7 @@ public class DataLoader extends DataConstants {
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                         riskFailing,
-                        hoursCompleted, firstName, lastName, email, username, password, major);
+                        hoursCompleted, firstName, lastName, email, username, password, majorID);
                 student.setUserID(uuid);
 
                 // Add student to the list

@@ -3,14 +3,15 @@
     "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
     "title": "Computer Information Systems",
     "requiredCourses": [
-      {"courseID": "a01df799-abfa-4327-a63a-3980c863bd46"},
-      {"courseID": "dde223de-33d6-477c-a8f0-2b9085a558fc"},
-      {"courseID": "a31a4538-358d-42ee-b5b7-8dd9da832610"},
-      {"courseID": "e014cf0d-6784-4b6e-b559-43aa92266145"},
-      {"courseID": "cbc9da89-d491-4666-bf4c-cab82db2adec"}
+      {"courseID": "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"},
+      {"courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"}
+    ],
+    "enrolledCourses" : [
+      {"courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"},
+      {"courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"}
     ],
     "completedCourses": [
-      {"courseID": "69f56c10-90bc-4af3-afcd-0eebff71eaad"}
+      {"courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"}
     ],
     "hoursRequired": 110,
     "hoursCompleted": 40,
@@ -20,14 +21,15 @@
     "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
     "title": "Computer Science",
     "requiredCourses": [
-      {"courseID": "8ef52696-c02f-4637-92c9-a47c095a67a9"},
-      {"courseID": "d13b1884-f631-417c-ad8f-ab497eb94b71"},
-      {"courseID": "1462aaf3-e4e1-4cff-acc5-9f6621846041"},
-      {"courseID": "9bbf88f7-091e-4e0c-b6d2-48e57119fa80"},
-      {"courseID": "8f78a684-3275-4f20-a137-ee0d0e082bba"}
+      {"courseID": "f7adb3c4-31de-4c73-94c0-8aaff74cdd7c"},
+      {"courseID": "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"}
+    ],
+    "enrolledCourses": [
+      {"courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"},
+      {"courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"}
     ],
     "completedCourses": [
-      {"courseID": "58822196-9ae3-489b-9853-28de347751aa"}
+      {"courseID": "f989afe4-32d2-4c69-9b7c-2a7138f2f7b1"}
     ],
     "hoursRequired": 120,
     "hoursCompleted": 30,

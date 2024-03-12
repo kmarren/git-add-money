@@ -23,6 +23,9 @@ public class Application
         
     }
 
+    public void loadAll() {
+        userList.loadAll();
+    }
     /**
      * creates an application if there is not one or returns the application if there is one
      * @return the application
@@ -47,6 +50,10 @@ public class Application
         user = userList.getUser(username, password);
         return userList.login(username, password);
         
+    }
+
+    public void loadEverything() {
+
     }
  
     /**
@@ -167,12 +174,15 @@ public class Application
      * @param email           The email address of the student.
      * @param username        The username of the student.
      * @param password        The password of the student.
+     * @param major           The mojor of the student.
      */
     public void addStudent(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<UUID> enrolledCourses,
     ArrayList<UUID> achievements, UUID advisor, boolean riskFailing, double hoursCompleted,
-    String studentID, String firstName, String lastName, String email, String username, String password)
+    String studentID, String firstName, String lastName, String email, String username, String password )
     {
-
+        Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor, riskFailing,
+                                  hoursCompleted, firstName, lastName, email, username, password, major);
+        userList.addUser(student);
     }
 
     /**
@@ -195,7 +205,9 @@ public class Application
     ArrayList<UUID> appointments, String firstName, String lastName,
     String email, String username, String password)
     {
-
+        Advisor advisor = new Advisor(office, officeHours, phoneNumber, adviseeList, schoolOfFocus, appointments,
+                firstName, lastName, email, username, password);
+        UserList.getInstance().addUser(advisor);
     }
 
     /**
@@ -211,7 +223,8 @@ public class Application
     public void addFaculty(String officeHours, ArrayList<Student> studentList, 
     String firstName, String lastName, String email, String username, String password)
     {
-
+        Faculty faculty = new Faculty(officeHours, studentList, firstName, lastName, email, username, password);
+        UserList.getInstance().addUser(faculty);
     }
 
     /**
@@ -233,7 +246,7 @@ public class Application
      */
     public void bookAppointment(String time, String location, Advisor advisor)
     {
-
+        
     }
 
     /**
@@ -253,12 +266,15 @@ public class Application
      */
     public void sendStudentComment(Student student, String comment)
     {
-
+        ArrayList<String> comments = student.getStudentComments();
+        comments.add(comment);
+        student.setStudentComments(comments);
     }
 
     /**
      * Adds an achievement to the students list of achievements
      * @param achievement the achievement being added to the students list
+     * @return A string representation of the advisor's list of advisees.
      */
     public void addAchievement(Achievement achievement)
     {
@@ -268,9 +284,19 @@ public class Application
     /**
      * Gets the advisors list of advisees
      */
-    public void viewAdvisees()
-    {
+    public String viewAdvisees() {
+        StringBuilder result = new StringBuilder();
+    ArrayList<Student> advisees = Advisor.viewAdvisees(); //
 
+    if (advisees.isEmpty()) {
+        result.append("No advisees.");
+    } else {
+        result.append("Advisees:\n");
+        for (Student student : advisees) {
+            result.append(student.getFirstName()).append(" ").append(student.getLastName()).append("\n");
+        }
+    }
+    return result.toString();
     }
 
     /**
@@ -295,11 +321,12 @@ public class Application
 
     /**
      * Allows an advisor to add a student to their list of advisees
+     * @param advisor The advisor to whom the student will be added as an advisee.
      * @param student the student to be added to the list 
      */
-    public void addAdvisee(Student student)
+    public void addAdvisee(Advisor advisor, Student student)
     {
-
+        advisor.addAdvisee(student);
     }
 
     /**

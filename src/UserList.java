@@ -73,4 +73,9 @@ public class UserList {
         return students;
     }
 
+    public void loadAll() {
+        DataLoader.finishStudents(users);
+        DataLoader.finishAdvisors(users);
+    }
+
 }

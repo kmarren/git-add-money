@@ -188,6 +188,13 @@ public class Student extends User {
         this.advisor = advisor;
     }
 
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public Major getMajor() {
+        return this.major;
+    }
     /**
      * Sets whether the student is at risk of failing.
      *

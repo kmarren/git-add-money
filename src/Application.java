@@ -23,6 +23,9 @@ public class Application
         
     }
 
+    public void loadAll() {
+        userList.loadAll();
+    }
     /**
      * creates an application if there is not one or returns the application if there is one
      * @return the application
@@ -50,7 +53,7 @@ public class Application
     }
 
     public void loadEverything() {
-        
+
     }
  
     /**

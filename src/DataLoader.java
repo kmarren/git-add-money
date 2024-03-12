@@ -321,7 +321,7 @@ public class DataLoader extends DataConstants {
     } catch (Exception e) {
         e.printStackTrace();
     }
-        }
+}
 
     public static ArrayList<Major> loadMajors() {
         ArrayList<Major> majorList = new ArrayList<>();

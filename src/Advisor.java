@@ -176,8 +176,9 @@ public class Advisor extends User {
      * @param student The student that they are currently viewing/advising.
      * @return A string of the comment being written on the student's profile.
      */
-    public String writeStudentComment() {
-        return null;
+    public String writeStudentComment(Student student, String comment) 
+    {
+        return comment;
     }
 
     /**

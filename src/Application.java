@@ -48,6 +48,10 @@ public class Application
         return userList.login(username, password);
         
     }
+
+    public void loadEverything() {
+        
+    }
  
     /**
      * takes in a username and password to create a new user with the corresponding username and password

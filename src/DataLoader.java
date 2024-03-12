@@ -88,16 +88,7 @@ public class DataLoader extends DataConstants {
                     String comment = (String) commentObj;
                     studentComments.add(comment);
                 }
-                // JSONArray achievementsArray = (JSONArray)
-                // studentJsonObj.get(STUDENT_ACHIEVEMENTS);
                 ArrayList<Achievement> achievements = new ArrayList<>();
-                /*
-                 * for (Object achievementObj : achievementsArray) {
-                 * JSONObject achievementJson = (JSONObject) achievementObj;
-                 * String achievementID = (String) achievementJson.get("achievementID");
-                 * achievements.add(achievementID);
-                 * }
-                 */
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                 Advisor advisor = null;
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
@@ -137,9 +128,6 @@ public class DataLoader extends DataConstants {
                 String courseName = (String) courseObj.get(COURSE_NAME);
                 // Parsing instructor information
                 Faculty instructor = null; // also need to add an instructor later
-                // Parsing prerequisites
-                // JSONArray prerequisitesArray = (JSONArray)
-                // courseObj.get(COURSE_PREREQUISITES); // not going to be fun
                 ArrayList<Course> prerequisites = new ArrayList<>();
                 /*
                  * for (Object prereqObj : prerequisitesArray) {
@@ -294,28 +282,46 @@ public class DataLoader extends DataConstants {
 
     public static void finishStudents(ArrayList<User> students) {
         UserList userList = UserList.getInstance();
-        try {
-            FileReader reader = new FileReader(STUDENT_FILE_NAME);
-            JSONParser parser = new JSONParser();
-            Object obj = parser.parse(reader);
-            JSONArray studentJSON = (JSONArray) obj;
-            for(User student : students) {
+    try {
+        FileReader reader = new FileReader(STUDENT_FILE_NAME);
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(reader);
+        JSONArray studentJSON = (JSONArray) obj;
+
+        for (User student : students) {
+            if (student.getType() == 1) { // Assuming getType() returns the type of the user
                 Student currentStudent = (Student) student;
+                String studentStringUUID = currentStudent.getUserID(); // Assuming getUserID() returns the UUID of the student
+                UUID studentUUID = UUID.fromString(studentStringUUID);
                 for (Object studentObj : studentJSON) {
                     JSONObject studentJsonObj = (JSONObject) studentObj;
-                    // Parse student data and create Student objects
-                    String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR);
-                    UUID advisorUUID = UUID.fromString(advisorID);
-                    Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
-                    if (advisor != null) {
-                        currentStudent.setAdvisor(advisor);
+                    String studentID = (String) studentJsonObj.get(STUDENT_ID); // Assuming "id" is the key for student UUID in your JSON
+                    UUID jsonStudentUUID = UUID.fromString(studentID);
+                    if (studentUUID.equals(jsonStudentUUID)) {
+                        String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR); // Assuming STUDENT_ADVISOR is a key in your JSON
+                        UUID advisorUUID = UUID.fromString(advisorID);
+                        Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
+                        if (advisor != null) {
+                            currentStudent.setAdvisor(advisor);
+                        }
+
+                        // Load major for the student
+                        String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);// Assuming STUDENT_MAJOR_ID is a key in your JSON
+                        UUID majorUUID = UUID.fromString(majorID);
+                        Major major = (Major) MajorList.getInstance().getMajorID(majorUUID);
+                        if (major != null) {
+                            currentStudent.setMajor(major);
+                        }
+
+                        break; // Exit the loop after finding the advisor and major for the current student
                     }
                 }
             }
-        } catch(Exception e) {
-            e.printStackTrace();
         }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+        }
 
     public static ArrayList<Major> loadMajors() {
         ArrayList<Major> majorList = new ArrayList<>();

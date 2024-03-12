@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Student extends User {
     private String majorID;
+    private Major major;
     private double gpa;
     private boolean minor;
     protected ArrayList<String> studentComments;

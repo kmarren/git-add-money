@@ -100,8 +100,8 @@ public abstract class User {
      * 
      * @return The UUID of the user.
      */
-    public String getUserID() {
-        return userID.toString();
+    public UUID getUserID() {
+        return userID;
     }
 
     /**

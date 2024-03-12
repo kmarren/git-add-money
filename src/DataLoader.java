@@ -303,11 +303,14 @@ public class DataLoader extends DataConstants {
                     String benefits = (String) achievementJson.get(ACHIEVEMENT_BENEFITS);
                     String semester = (String) achievementJson.get(ACHIEVEMENT_SEMESTER);
                     String description = (String) achievementJson.get(ACHIEVEMENT_DESCRIPTION);
-                    Boolean scholarship = Boolean.parseBoolean(achievementJson.get(COURSE_COMPLETED).toString());
+                    Boolean scholarship = Boolean.parseBoolean(achievementJson.get(ACHIEVEMENT_SCHOLARSHIP).toString());
+                    String achID = (String) achievementJson.get(ACHIEVEMENT_ID);
+                    UUID uuid = UUID.fromString(achID);
 
                     // Create Achievement object and add to list
                     Achievement achievement = new Achievement(name, type, benefits, semester,
                             description, scholarship);
+                    achievement.setAchievementID(uuid);
                     achievementList.add(achievement);
                 }
             }

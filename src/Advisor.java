@@ -15,7 +15,6 @@ public class Advisor extends User {
     private ArrayList<Student> adviseeList;
     private String schoolOfFocus;
     private String searchField;
-    // Appointment will cause errors for now until appointment class completed
     protected ArrayList<Appointment> appointments;
 
     /**
@@ -276,6 +275,4 @@ public class Advisor extends User {
         }
         return results;
     }
-    }
-
-    
+}

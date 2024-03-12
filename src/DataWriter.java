@@ -104,6 +104,11 @@ public class DataWriter extends DataConstants {
             jsonIDs.add(getCourseID(course));
         }
 
+        ArrayList<Achievement> achievements = DataLoader.loadAchievements();
+        for (Achievement ach : achievements) {
+            jsonIDs.add(getAchievementID(ach));
+        }
+
         try (FileWriter file = new FileWriter("data/ids.json")) {
 
             file.write(jsonIDs.toJSONString());
@@ -137,5 +142,11 @@ public class DataWriter extends DataConstants {
         JSONObject courseJSON = new JSONObject();
         courseJSON.put(COURSE_ID, course.getCourseID());
         return courseJSON;
+    }
+
+    public static JSONObject getAchievementID(Achievement ach) {
+        JSONObject achJSON = new JSONObject();
+        achJSON.put(ACHIEVEMENT_ID, ach.getAchievementID().toString());
+        return achJSON;
     }
 }

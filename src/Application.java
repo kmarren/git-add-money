@@ -23,7 +23,7 @@ public class Application
         
     }
 
-    public void loadAll() {
+public void loadAll() {
         userList.loadAll();
     }
     /**
@@ -50,10 +50,6 @@ public class Application
         user = userList.getUser(username, password);
         return userList.login(username, password);
         
-    }
-
-    public void loadEverything() {
-
     }
  
     /**
@@ -176,11 +172,11 @@ public class Application
      * @param password        The password of the student.
      * @param major           The mojor of the student.
      */
-    public void addStudent(double gpa, boolean minor, ArrayList<String> studentComments, ArrayList<UUID> enrolledCourses,
-    ArrayList<UUID> achievements, UUID advisor, boolean riskFailing, double hoursCompleted,
-    String studentID, String firstName, String lastName, String email, String username, String password )
+    public void addStudent(double gpa, boolean minor, ArrayList<String> studentComments,
+    ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
+    String firstName, String lastName, String email, String username, String password, Major major)
     {
-        Student student = new Student(gpa, minor, studentComments, enrolledCourses, achievements, advisor, riskFailing,
+        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing,
                                   hoursCompleted, firstName, lastName, email, username, password, major);
         userList.addUser(student);
     }
@@ -201,8 +197,8 @@ public class Application
      * @param password      The password of the advisor.
      */
     public void addAdvisor(String office, String officeHours,
-    String phoneNumber, ArrayList<UUID> adviseeList, String schoolOfFocus,
-    ArrayList<UUID> appointments, String firstName, String lastName,
+    String phoneNumber, ArrayList<Student> adviseeList, String schoolOfFocus,
+    ArrayList<Appointment> appointments, String firstName, String lastName,
     String email, String username, String password)
     {
         Advisor advisor = new Advisor(office, officeHours, phoneNumber, adviseeList, schoolOfFocus, appointments,
@@ -246,7 +242,10 @@ public class Application
      */
     public void bookAppointment(String time, String location, Advisor advisor)
     {
-        
+        UUID advisorID = advisor.getUserID();
+        Appointment appointment = new Appointment(advisorID, time, location);
+        advisor.addAppointment(appointment);
+
     }
 
     /**
@@ -285,7 +284,7 @@ public class Application
      * Gets the advisors list of advisees
      */
     public String viewAdvisees() {
-        StringBuilder result = new StringBuilder();
+    StringBuilder result = new StringBuilder();
     ArrayList<Student> advisees = Advisor.viewAdvisees(); //
 
     if (advisees.isEmpty()) {

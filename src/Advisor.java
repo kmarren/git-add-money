@@ -294,4 +294,8 @@ public class Advisor extends User {
         }
         return results;
     }
+
+    public String toString() {
+        return this.username;
+    }
 }

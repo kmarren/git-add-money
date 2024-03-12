@@ -46,7 +46,7 @@ public class DataLoader extends DataConstants {
                     ArrayList<Achievement> achievements = new ArrayList<>();
                     for (Object achievementObj : achievementsArray) {
                         JSONObject achievementJson = (JSONObject) achievementObj;
-                        String achievementID = (String) achievementJson.get("achievementID");
+                        String achievementID = (String) achievementJson.get(ACHIEVEMENT_ID);
                         UUID achievementUUID = UUID.fromString(achievementID);
 
                         Achievement existingAchievement = ach.getAchievement(achievementUUID);
@@ -218,12 +218,7 @@ public class DataLoader extends DataConstants {
                 String office = (String) advisorObj.get(ADVISOR_OFFICE);
                 String officeHours = (String) advisorObj.get(ADVISOR_OFFICE_HOURS);
                 String phoneNumber = (String) advisorObj.get(ADVISOR_PHONE_NUMBER);
-                // Advises List
-                // JSONArray adviseeListArray = (JSONArray)
-                // advisorObj.get(ADVISOR_ADVISEE_LIST);
                 ArrayList<Student> adviseeList = new ArrayList<>();
-                // Assuming adviseeList needs to be populated
-                // Advises List
 
                 String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
                 // Appointments
@@ -251,6 +246,48 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return advisorList;
+    }
+
+    public static void finishAdvisors(ArrayList<User> advisors) {
+        UserList userlist = UserList.getInstance();
+        try {
+            FileReader reader = new FileReader(ADVISORS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray advisorArray = (JSONArray) parser.parse(reader);
+            for (User advisor : advisors) {
+                JSONObject advisorObj = null;
+                String advisorID = null;
+                JSONArray adviseeListArray = null;
+                Advisor currentAdvisor = (Advisor) advisor;
+
+                // Find the advisor object in the JSON array by matching IDs
+                for (Object obj : advisorArray) {
+                    JSONObject objJson = (JSONObject) obj;
+                    advisorID = (String) objJson.get("advisorID");
+                    if (advisorID.equals(currentAdvisor.getUserID().toString())) {
+                        advisorObj = objJson;
+                        break;
+                    }
+                }
+
+                if (advisorObj != null) {
+                    adviseeListArray = (JSONArray) advisorObj.get("adviseeList");
+                    ArrayList<Student> adviseeList = new ArrayList<>();
+                    for (Object adviseeObj : adviseeListArray) {
+                        JSONObject adviseeJson = (JSONObject) adviseeObj;
+                        String studentID = (String) adviseeJson.get(STUDENT_ID);
+                        UUID studentUUID = UUID.fromString(studentID);
+                        Student student = (Student) userlist.getUserId(studentUUID);
+                        if (student != null) {
+                            adviseeList.add(student);
+                        }
+                    }
+                    currentAdvisor.setAdviseeList(adviseeList); // Set the advisee list for the current advisor
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static ArrayList<Major> loadMajors() {

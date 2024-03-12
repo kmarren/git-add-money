@@ -36,17 +36,15 @@ public class CourseList {
 
     public Course getCourseByUUID(UUID courseID) {
         for (Course course : courses) {
-            if (course.getCourseID().equals(courseID)) {
+            if (course.getCourseID().equals(courseID.toString())) {
                 return course;
             }
         }
         return null;
     }
 
-    public void addCourse(Course course)
-    {
+    public void addCourse(Course course) {
         courses.add(course);
     }
-
 
 }

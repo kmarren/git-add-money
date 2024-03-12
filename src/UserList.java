@@ -52,7 +52,7 @@ public class UserList {
 
     public User getUserId(UUID userID) {
         for (User user : users) {
-            if (user.getUserID().equals(userID)) {
+            if (user.getUserID().equals(userID.toString())) {
                 return user;
             }
         }
@@ -61,6 +61,16 @@ public class UserList {
 
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    public ArrayList<Student> getStudents() {
+        ArrayList<Student> students = new ArrayList<>();
+        for (User user : users) {
+            if (user.getType() == 1) {
+                students.add((Student) user);
+            }
+        }
+        return students;
     }
 
 }

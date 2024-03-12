@@ -1,31 +1,42 @@
 [
-    {
-      "advisorID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
-      "office": "Office A",
-      "officeHours": "Monday 9:00 AM - 12:00 PM",
-      "phoneNumber": "+1234567890",
-      "adviseeList": [null],
-      "schoolOfFocus": "Engineering",
-      "appointments": [null],
-      "firstName": "Alice",
-      "lastName": "Johnson",
-      "email": "alicejohnson@example.com",
-      "username": "alice123",
-      "password": "securePassword123"
-    },
-    {
-      "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
-      "office": "Office B",
-      "officeHours": "Tuesday 2:00 PM - 5:00 PM",
-      "phoneNumber": "+9876543210",
-      "adviseeList": [null],
-      "schoolOfFocus": "Business",
-      "appointments": [null],
-      "firstName": "BobDaAdvisor",
-      "lastName": "Smith",
-      "email": "bobsmith@example.com",
-      "username": "bobsmith789",
-      "password": "strongPassword456"
-    }
-  ]
-  
+  {
+    "advisorID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
+    "office": "Office A",
+    "officeHours": "Monday 9:00 AM - 12:00 PM",
+    "phoneNumber": "+1234567890",
+    "adviseeList": [
+      {
+        "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a"
+      }
+    ],
+    "schoolOfFocus": "Engineering",
+    "appointments": [
+      null
+    ],
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alicejohnson@example.com",
+    "username": "alice123",
+    "password": "securePassword123"
+  },
+  {
+    "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+    "office": "Office B",
+    "officeHours": "Tuesday 2:00 PM - 5:00 PM",
+    "phoneNumber": "+9876543210",
+    "adviseeList": [
+      {
+        "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b"
+      }
+    ],
+    "schoolOfFocus": "Business",
+    "appointments": [
+      null
+    ],
+    "firstName": "BobDaAdvisor",
+    "lastName": "Smith",
+    "email": "bobsmith@example.com",
+    "username": "bobsmith789",
+    "password": "strongPassword456"
+  }
+]

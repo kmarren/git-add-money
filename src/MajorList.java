@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class MajorList {
     private static MajorList majorList;
@@ -23,6 +24,15 @@ public class MajorList {
 
     public ArrayList<Major> getMajors() {
         return majors;
+    }
+
+    public Major getMajorID(UUID majorID) {
+        for (Major major : majors) {
+            if (major.getMajorID().equals(majorID.toString())) {
+                return major;
+            }
+        }
+        return null;
     }
 
 }

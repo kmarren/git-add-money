@@ -326,8 +326,6 @@ public class DataLoader extends DataConstants {
                 } else {
                     break;
                 }
-
-                // Find the advisor object in the JSON array by matching IDs
                 for (Object obj : advisorArray) {
                     JSONObject advisorJson = (JSONObject) obj;
                     String advisorID = (String) advisorJson.get(ADVISOR_ID);
@@ -344,7 +342,7 @@ public class DataLoader extends DataConstants {
                                 adviseeList.add(student);
                             }
                         }
-                        currentAdvisor.setAdviseeList(adviseeList); // Set the advisee list for the current advisor
+                        currentAdvisor.setAdviseeList(adviseeList);
 
                         // Load appointments
                         JSONArray appointmentsArray = (JSONArray) advisorJson.get("appointments");
@@ -360,7 +358,7 @@ public class DataLoader extends DataConstants {
                         }
                         currentAdvisor.setAppointments(appointments);
 
-                        break; // Exit loop once the advisor is found
+                        break;
                     }
                 }
             }
@@ -401,7 +399,7 @@ public class DataLoader extends DataConstants {
                                 currentStudent.setMajor(major);
                             }
 
-                            break; // Exit the loop after finding the advisor and major for the current student
+                            break;
                         }
                     }
                 }
@@ -414,7 +412,6 @@ public class DataLoader extends DataConstants {
     public static ArrayList<Major> loadMajors() {
         ArrayList<Major> majorList = new ArrayList<>();
         try {
-            // Read JSON file
             FileReader reader = new FileReader(MAJOR_FILE_NAME);
             JSONParser jsonParser = new JSONParser();
             Object obj = jsonParser.parse(reader);
@@ -495,7 +492,7 @@ public class DataLoader extends DataConstants {
                             }
                         }
 
-                        break; // Exit the loop after finding the major information for the current major
+                        break;
                     }
                 }
             }
@@ -507,7 +504,6 @@ public class DataLoader extends DataConstants {
     public static ArrayList<Achievement> loadAchievements() {
         ArrayList<Achievement> achievementList = new ArrayList<>();
         try {
-            // Read JSON file
             FileReader reader = new FileReader(ACHIEVEMENT_FILE_NAME);
             JSONParser jsonParser = new JSONParser();
             Object obj = jsonParser.parse(reader);
@@ -592,9 +588,6 @@ public class DataLoader extends DataConstants {
                             Student setStudent = (Student) student;
                             appointment.setStudent(setStudent);
                             break;
-                        } else {
-                            // Handle case where the student does not exist in the user list
-                            System.out.println("Student not found for appointment with ID: " + appointmentUUID);
                         }
                     }
                 }

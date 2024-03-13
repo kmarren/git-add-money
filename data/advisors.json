@@ -11,7 +11,9 @@
     ],
     "schoolOfFocus": "Engineering",
     "appointments": [
-      null
+      {
+        "appointmentID": "76a89137-3754-418f-9638-3735b8601310"
+      }
     ],
     "firstName": "Alice",
     "lastName": "Johnson",
@@ -31,7 +33,9 @@
     ],
     "schoolOfFocus": "Business",
     "appointments": [
-      null
+      {
+        "appointmentID": "8af675cd-f1b0-4b3c-a5a1-d41335d934e7"
+      }
     ],
     "firstName": "BobDaAdvisor",
     "lastName": "Smith",

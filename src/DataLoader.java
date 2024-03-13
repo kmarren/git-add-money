@@ -237,43 +237,56 @@ public class DataLoader extends DataConstants {
     }
 
     public static void finishAdvisors(ArrayList<User> advisors) {
-        UserList userlist = UserList.getInstance();
+        UserList userList = UserList.getInstance();
+        AppointmentList appointmentList = AppointmentList.getInstance();
         try {
             FileReader reader = new FileReader(ADVISORS_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray advisorArray = (JSONArray) parser.parse(reader);
+
             for (User advisor : advisors) {
-                JSONObject advisorObj = null;
-                String advisorID = null;
-                JSONArray adviseeListArray = null;
                 Advisor currentAdvisor = null;
                 if (advisor instanceof Advisor) {
                     currentAdvisor = (Advisor) advisor;
-                } else {break;}
-                // Find the advisor object in the JSON array by matching IDs
-                for (Object obj : advisorArray) {
-                    JSONObject objJson = (JSONObject) obj;
-                    advisorID = (String) objJson.get(ADVISOR_ID);
-                    if (advisorID.equals(currentAdvisor.getUserID().toString())) {
-                        advisorObj = objJson;
-                        break;
-                    }
+                } else {
+                    break;
                 }
 
-                if (advisorObj != null) {
-                    adviseeListArray = (JSONArray) advisorObj.get(ADVISOR_ADVISEE_LIST);
-                    ArrayList<Student> adviseeList = new ArrayList<>();
-                    for (Object adviseeObj : adviseeListArray) {
-                        JSONObject adviseeJson = (JSONObject) adviseeObj;
-                        String studentID = (String) adviseeJson.get(STUDENT_ID);
-                        //System.out.println(studentID);
-                        UUID studentUUID = UUID.fromString(studentID);
-                        Student student = (Student) userlist.getUserId(studentUUID);
-                        if (student != null) {
-                            adviseeList.add(student);
+                // Find the advisor object in the JSON array by matching IDs
+                for (Object obj : advisorArray) {
+                    JSONObject advisorJson = (JSONObject) obj;
+                    String advisorID = (String) advisorJson.get(ADVISOR_ID);
+                    if (advisorID.equals(currentAdvisor.getUserID().toString())) {
+                        // Load advisee list
+                        JSONArray adviseeListArray = (JSONArray) advisorJson.get(ADVISOR_ADVISEE_LIST);
+                        ArrayList<Student> adviseeList = new ArrayList<>();
+                        for (Object adviseeObj : adviseeListArray) {
+                            JSONObject adviseeJson = (JSONObject) adviseeObj;
+                            String studentID = (String) adviseeJson.get(STUDENT_ID);
+                            UUID studentUUID = UUID.fromString(studentID);
+                            Student student = (Student) userList.getUserId(studentUUID);
+                            if (student != null) {
+                                adviseeList.add(student);
+                            }
                         }
+                        currentAdvisor.setAdviseeList(adviseeList); // Set the advisee list for the current advisor
+
+                        // Load appointments
+                        JSONArray appointmentsArray = (JSONArray) advisorJson.get("appointments");
+                        ArrayList<Appointment> appointments = new ArrayList<>();
+                        for (Object appointmentObj : appointmentsArray) {
+                            JSONObject appointmentJson = (JSONObject) appointmentObj;
+                            String appointmentIDStr = (String) appointmentJson.get("appointmentID");
+                            UUID appointmentID = UUID.fromString(appointmentIDStr);
+                            Appointment appointment = appointmentList.getAppointment(appointmentID);
+                            if (appointment != null) {
+                                appointments.add(appointment);
+                            }
+                        }
+                        currentAdvisor.setAppointments(appointments);
+
+                        break; // Exit loop once the advisor is found
                     }
-                    currentAdvisor.setAdviseeList(adviseeList); // Set the advisee list for the current advisor
                 }
             }
         } catch (Exception e) {
@@ -476,5 +489,43 @@ public class DataLoader extends DataConstants {
         }
 
         return appointments;
+    }
+
+    public static void finishAppointments(ArrayList<Appointment> appointments) {
+        UserList userList = UserList.getInstance();
+        try {
+            FileReader reader = new FileReader(APPOINTMENT_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(reader);
+            JSONArray appointmentJSON = (JSONArray) obj;
+            for (Appointment appointment : appointments) {
+                UUID appointmentUUID = appointment.getAppointmentID();
+                for (Object appointmentObj : appointmentJSON) {
+                    JSONObject appointmentJsonObj = (JSONObject) appointmentObj;
+                    String jsonAppointmentID = (String) appointmentJsonObj.get(APPOINTMENT_ID);
+                    UUID jsonAppointmentUUID = UUID.fromString(jsonAppointmentID);
+
+                    if (appointmentUUID.equals(jsonAppointmentUUID)) {
+                        String studentIDStr = (String) appointmentJsonObj.get(APPOINTMENT_STUDENT);
+                        UUID studentID = UUID.fromString(studentIDStr);
+
+                        // Find the student in the user list
+                        User student = userList.getUserId(studentID);
+
+                        // If the student exists, set it to the appointment
+                        if (student != null && student instanceof Student) {
+                            Student setStudent = (Student) student;
+                            appointment.setStudent(setStudent);
+                            break;
+                        } else {
+                            // Handle case where the student does not exist in the user list
+                            System.out.println("Student not found for appointment with ID: " + appointmentUUID);
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

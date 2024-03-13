@@ -36,5 +36,9 @@ public class AppointmentList {
     public ArrayList<Appointment> getAppointments() {
         return appointments;
     }
+
+    public void loadAll() {
+        DataLoader.finishAppointments(appointments);
+    }
 }
 

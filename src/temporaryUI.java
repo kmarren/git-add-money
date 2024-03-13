@@ -20,6 +20,10 @@ public class temporaryUI {
             if(user instanceof Advisor) {
                 if(((Advisor) user).getAdviseeList() != null) {
                     System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList().toString());
+                    ArrayList<Appointment> appointments = ((Advisor) user).getAppointments();
+                    for(Appointment appt : appointments) {
+                        System.out.println("ADVISOR " + user.getFirstName()+ " APPOINTMENT LOCATIONS: " + appt.toString());
+                    }
                 }
             } else if (user instanceof Student) {
                 if(((Student) user).getMajor() != null) {

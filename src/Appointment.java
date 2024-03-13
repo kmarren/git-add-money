@@ -107,4 +107,8 @@ public class Appointment {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String toString() {
+        return this.location;
+    }
 }

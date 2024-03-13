@@ -15,6 +15,7 @@ public class Application
     private UserList userList = UserList.getInstance();
     private CourseList courseList = CourseList.getInstance();
     private MajorList majorList = MajorList.getInstance();
+    private AppointmentList appointmentList = AppointmentList.getInstance();
 
     private static Application application;
     
@@ -29,6 +30,7 @@ public class Application
 public void loadAll() {
         userList.loadAll();
         majorList.loadAll();
+        appointmentList.loadAll();
     }
     /**
      * creates an application if there is not one or returns the application if there is one

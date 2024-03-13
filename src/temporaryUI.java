@@ -15,6 +15,12 @@ public class temporaryUI {
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
         application.loadAll();
+        ArrayList<Major> mjrs = application.getMajors();
+        for(Major major : mjrs) {
+            System.out.println("ENROLLED COURSES: " + major.getEnrolledCourses().toString());
+            System.out.println("REQUIRED COURSES: " + major.getRequiredCourses().toString());
+            System.out.println("COMPLETED COURSES: " + major.getCompletedCourses().toString());
+        } 
         DataWriter.parseUserList();
         DataWriter.writeUsers();
         DataWriter.writeCourses();

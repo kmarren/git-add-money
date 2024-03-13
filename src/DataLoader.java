@@ -305,7 +305,7 @@ public class DataLoader extends DataConstants {
                         }
 
                         // Load major for the student
-                        String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
+                        String majorID = (String) studentJsonObj.get(STUDENT_MAJOR_ID);
                         UUID majorUUID = UUID.fromString(majorID);
                         Major major = (Major) MajorList.getInstance().getMajorID(majorUUID);
                         if (major != null) {
@@ -357,9 +357,59 @@ public class DataLoader extends DataConstants {
     }
 
     public static void finishMajors(ArrayList<Major> majors) {
-        MajorList majorList = MajorList.getInstance();
-        try{
-
+        // MajorList majorList = MajorList.getInstance();
+        CourseList courseList = CourseList.getInstance(); // Assuming CourseList is your class that manages the list of courses
+        try {
+            FileReader reader = new FileReader(MAJOR_FILE_NAME); // Assuming MAJOR_FILE_NAME is the file path for your JSON file containing major information
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(reader);
+            JSONArray majorJSON = (JSONArray) obj;
+    
+            for (Major major : majors) {
+                String majorStringUUID = major.getMajorID(); // Assuming getMajorID() returns the UUID of the major
+                UUID majorUUID = UUID.fromString(majorStringUUID);
+                for (Object majorObj : majorJSON) {
+                    JSONObject majorJsonObj = (JSONObject) majorObj;
+                    String majorID = (String) majorJsonObj.get(MAJOR_ID); // Assuming "majorID" is the key for major UUID in your JSON
+                    UUID jsonMajorUUID = UUID.fromString(majorID);
+                    if (majorUUID.equals(jsonMajorUUID)) {
+                        // Load required courses
+                        JSONArray requiredCoursesArray = (JSONArray) majorJsonObj.get(MAJOR_REQUIRED_COURSES);
+                        for (Object courseObj : requiredCoursesArray) {
+                            JSONObject courseJsonObj = (JSONObject) courseObj;
+                            String courseID = (String) courseJsonObj.get(COURSE_ID);
+                            Course requiredCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                            if (requiredCourse != null) {
+                                major.addRequiredCourse(requiredCourse);
+                            }
+                        }
+    
+                        // Load enrolled courses
+                        JSONArray enrolledCoursesArray = (JSONArray) majorJsonObj.get(MAJOR_ENROLLED_COURSES);
+                        for (Object courseObj : enrolledCoursesArray) {
+                            JSONObject courseJsonObj = (JSONObject) courseObj;
+                            String courseID = (String) courseJsonObj.get(COURSE_ID);
+                            Course enrolledCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                            if (enrolledCourse != null) {
+                                major.addEnrolledCourse(enrolledCourse);
+                            }
+                        }
+    
+                        // Load completed courses
+                        JSONArray completedCoursesArray = (JSONArray) majorJsonObj.get(MAJOR_COMPLETED_COURSES);
+                        for (Object courseObj : completedCoursesArray) {
+                            JSONObject courseJsonObj = (JSONObject) courseObj;
+                            String courseID = (String) courseJsonObj.get(COURSE_ID);
+                            Course completedCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                            if (completedCourse != null) {
+                                major.addCompletedCourse(completedCourse);
+                            }
+                        }
+    
+                        break; // Exit the loop after finding the major information for the current major
+                    }
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

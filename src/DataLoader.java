@@ -358,19 +358,19 @@ public class DataLoader extends DataConstants {
 
     public static void finishMajors(ArrayList<Major> majors) {
         // MajorList majorList = MajorList.getInstance();
-        CourseList courseList = CourseList.getInstance(); // Assuming CourseList is your class that manages the list of courses
+        CourseList courseList = CourseList.getInstance();
         try {
-            FileReader reader = new FileReader(MAJOR_FILE_NAME); // Assuming MAJOR_FILE_NAME is the file path for your JSON file containing major information
+            FileReader reader = new FileReader(MAJOR_FILE_NAME);
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(reader);
             JSONArray majorJSON = (JSONArray) obj;
     
             for (Major major : majors) {
-                String majorStringUUID = major.getMajorID(); // Assuming getMajorID() returns the UUID of the major
+                String majorStringUUID = major.getMajorID();
                 UUID majorUUID = UUID.fromString(majorStringUUID);
                 for (Object majorObj : majorJSON) {
                     JSONObject majorJsonObj = (JSONObject) majorObj;
-                    String majorID = (String) majorJsonObj.get(MAJOR_ID); // Assuming "majorID" is the key for major UUID in your JSON
+                    String majorID = (String) majorJsonObj.get(MAJOR_ID);
                     UUID jsonMajorUUID = UUID.fromString(majorID);
                     if (majorUUID.equals(jsonMajorUUID)) {
                         // Load required courses

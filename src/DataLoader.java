@@ -83,10 +83,13 @@ public class DataLoader extends DataConstants {
                 String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                 boolean minor = (boolean) studentJsonObj.get(STUDENT_MINOR);
                 JSONArray commentsArray = (JSONArray) studentJsonObj.get(STUDENT_COMMENTS);
-                ArrayList<String> studentComments = new ArrayList<>();
-                for (Object commentObj : commentsArray) {
-                    String comment = (String) commentObj;
-                    studentComments.add(comment);
+                ArrayList<String> studentComments = null;
+                if (commentsArray != null) {
+                    studentComments = new ArrayList<>();
+                    for (Object commentObj : commentsArray) {
+                        String comment = (String) commentObj;
+                        studentComments.add(comment);
+                    }
                 }
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
@@ -450,7 +453,6 @@ public class DataLoader extends DataConstants {
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(reader);
             JSONArray majorJSON = (JSONArray) obj;
-
             for (Major major : majors) {
                 String majorStringUUID = major.getMajorID();
                 UUID majorUUID = UUID.fromString(majorStringUUID);
@@ -491,7 +493,6 @@ public class DataLoader extends DataConstants {
                                 major.addCompletedCourse(completedCourse);
                             }
                         }
-
                         break;
                     }
                 }

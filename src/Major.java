@@ -211,8 +211,7 @@ public class Major {
         // Calculate the progression based on completed and required hours
     }
 
-    public String toString()
-    {
+    public String toString() {
         return title;
     }
 }

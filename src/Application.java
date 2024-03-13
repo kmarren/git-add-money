@@ -31,6 +31,7 @@ public void loadAll() {
         userList.loadAll();
         majorList.loadAll();
         appointmentList.loadAll();
+        courseList.loadAll();
     }
     /**
      * creates an application if there is not one or returns the application if there is one

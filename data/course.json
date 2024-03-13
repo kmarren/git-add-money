@@ -10,7 +10,9 @@
     "courseName": "CSCE145",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
     ],
     "description": "Introduction to Algorithms",
     "totalSeats": 30,

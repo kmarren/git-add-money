@@ -47,4 +47,8 @@ public class CourseList {
         courses.add(course);
     }
 
+    public void loadAll() {
+        DataLoader.finishCourses(courses);
+    }
+
 }

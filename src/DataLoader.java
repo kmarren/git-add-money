@@ -2,6 +2,7 @@ package src;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.json.simple.JSONArray;
@@ -161,6 +162,75 @@ public class DataLoader extends DataConstants {
         return courses;
     }
 
+    public static void finishCourses(ArrayList<Course> courses) {
+        CourseList courseList = CourseList.getInstance();
+        try {
+            FileReader reader = new FileReader(COURSE_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray coursesJsonArray = (JSONArray) parser.parse(reader);
+    
+            for (Course course : courses) {
+                // Find the corresponding course object in the CourseList
+                Course foundCourse = courseList.getCourseByUUID(course.getRealCourseID());
+                if (foundCourse != null) {
+                    // Iterate over coursesJsonArray to find the JSON object for the current course
+                    for (Object obj : coursesJsonArray) {
+                        JSONObject courseJson = (JSONObject) obj;
+                        String courseIdStr = (String) courseJson.get(COURSE_ID);
+                        if (courseIdStr.equals(foundCourse.getCourseID().toString())) {
+                            // Load prerequisites
+                            JSONArray prerequisitesJson = (JSONArray) courseJson.get(COURSE_PREREQUISITES);
+                            ArrayList<Course> prerequisites = null;
+                            if (prerequisitesJson != null) {
+                                prerequisites = new ArrayList<>();
+                                for (Object prerequisiteObj : prerequisitesJson) {
+                                    if (prerequisiteObj != null && prerequisiteObj instanceof JSONObject) {
+
+                                    
+                                        JSONObject prerequisiteJson = (JSONObject) prerequisiteObj;
+                                        String prerequisiteIdStr = (String) prerequisiteJson.get(COURSE_ID);
+                                        
+                                        // Find the prerequisite course in the CourseList
+                                        Course prerequisiteCourse = courseList.getCourseByUUID(UUID.fromString(prerequisiteIdStr));
+                                        if (prerequisiteCourse != null) {
+                                            // Add the found prerequisite course to the list of prerequisites for the current course
+                                            prerequisites.add(prerequisiteCourse);
+                                        }
+                                    }
+                                }
+                            }
+                            foundCourse.setPrerequisites(prerequisites);
+    
+                            // Load corequisites
+                            JSONArray corequisitesJson = (JSONArray) courseJson.get(COURSE_COREQUISITES);
+                            ArrayList<Course> corequisites = null;
+                            if (corequisitesJson != null) {
+                                corequisites = new ArrayList<>();
+                                for (Object corequisiteObj : corequisitesJson) {
+                                    if (corequisiteObj != null && corequisiteObj instanceof JSONObject) {
+                                        JSONObject corequisiteJson = (JSONObject) corequisiteObj;
+                                        String corequisiteIdStr = (String) corequisiteJson.get(COURSE_ID);
+                                        // Find the corequisite course in the CourseList
+                                        Course corequisiteCourse = courseList.getCourseByUUID(UUID.fromString(corequisiteIdStr));
+                                        if (corequisiteCourse != null) {
+                                            // Add the found corequisite course to the list of corequisites for the current course
+                                            corequisites.add(corequisiteCourse);
+                                        }
+                                    }
+                                }
+                            }
+                            foundCourse.setCorequisites(corequisites);
+    
+                            break; // Exit loop once the course is found and processed
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     // load faculty method
     public static ArrayList<User> loadFaculty() {
         ArrayList<User> facultyList = new ArrayList<>();

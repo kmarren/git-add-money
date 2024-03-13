@@ -40,6 +40,13 @@ public class temporaryUI {
             System.out.println("COMPLETED COURSES: " + major.getCompletedCourses().toString());
         } 
 
+        ArrayList<Course> courses = application.getCourseList();
+        for(Course course : courses) {
+            System.out.println("COURSE NAME: " + course.getCourseName());
+            System.out.println("COURSE PREREQ: " + course.getPrerequisites());
+        }
+
+
         DataWriter.parseUserList();
         DataWriter.writeUsers();
         DataWriter.writeCourses();

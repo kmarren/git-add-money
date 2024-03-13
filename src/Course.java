@@ -127,6 +127,10 @@ public class Course {
         return courseID.toString();
     }
 
+    public UUID getRealCourseID() {
+        return this.courseID;
+    }
+
     /**
      * Sets the UUID of the course.
      * 

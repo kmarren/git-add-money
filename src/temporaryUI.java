@@ -29,5 +29,11 @@ public class temporaryUI {
         DataWriter.writeAdvisors();
         DataWriter.writeStudents();
         DataWriter.writeAllID();
+        ArrayList<User> users = application.getUserList();
+        for(User user : users) {
+            if(user instanceof Advisor) {
+                System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList());
+            } 
+        }
     }
 }

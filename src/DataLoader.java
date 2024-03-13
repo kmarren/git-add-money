@@ -247,7 +247,7 @@ public class DataLoader extends DataConstants {
                 String advisorID = null;
                 JSONArray adviseeListArray = null;
                 Advisor currentAdvisor = null;
-                if (advisor.getType() == 2) {
+                if (advisor instanceof Advisor) {
                     currentAdvisor = (Advisor) advisor;
                 } else {break;}
                 // Find the advisor object in the JSON array by matching IDs
@@ -266,6 +266,7 @@ public class DataLoader extends DataConstants {
                     for (Object adviseeObj : adviseeListArray) {
                         JSONObject adviseeJson = (JSONObject) adviseeObj;
                         String studentID = (String) adviseeJson.get(STUDENT_ID);
+                        System.out.println(studentID);
                         UUID studentUUID = UUID.fromString(studentID);
                         Student student = (Student) userlist.getUserId(studentUUID);
                         if (student != null) {

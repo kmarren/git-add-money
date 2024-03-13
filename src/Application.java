@@ -255,12 +255,10 @@ public void loadAll() {
      * @param location where the appointment will take place
      * @param advisor the students assigned advisor
      */
-    public void bookAppointment(String time, String location, Advisor advisor)
+    public void bookAppointment(Student student, String time, String location, Advisor advisor)
     {
-        UUID advisorID = advisor.getUserID();
-        Appointment appointment = new Appointment(advisorID, time, location);
+        Appointment appointment = new Appointment(student, time, location);
         advisor.addAppointment(appointment);
-
     }
 
     /**

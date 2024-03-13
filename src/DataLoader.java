@@ -66,7 +66,7 @@ public class DataLoader extends DataConstants {
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                             riskFailing,
-                            hoursCompleted, firstName, lastName, email, username, password, majorID);
+                            hoursCompleted, firstName, lastName, email, username, password);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -102,7 +102,7 @@ public class DataLoader extends DataConstants {
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                         riskFailing,
-                        hoursCompleted, firstName, lastName, email, username, password, majorID);
+                        hoursCompleted, firstName, lastName, email, username, password);
                 student.setUserID(uuid);
 
                 // Add student to the list

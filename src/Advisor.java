@@ -272,7 +272,7 @@ public class Advisor extends User {
     public ArrayList<Student> searchByID(String searchFeild) {
         ArrayList<Student> results = new ArrayList<>();
         for (Student student : adviseeList) {
-            if (student.getUserID().equals(searchField)) {
+            if (student.getUserID().toString().equals(searchField)) {
                 results.add(student);
             }
         }

@@ -189,10 +189,10 @@ public void loadAll() {
      */
     public void addStudent(double gpa, boolean minor, ArrayList<String> studentComments,
     ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-    String firstName, String lastName, String email, String username, String password, Major major)
+    String firstName, String lastName, String email, String username, String password, String majorID)
     {
         Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing,
-                                  hoursCompleted, firstName, lastName, email, username, password, major);
+                                  hoursCompleted, firstName, lastName, email, username, password, majorID);
         userList.addUser(student);
     }
 

@@ -22,13 +22,14 @@ public class temporaryUI {
                     System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList().toString());
                     ArrayList<Appointment> appointments = ((Advisor) user).getAppointments();
                     for(Appointment appt : appointments) {
-                        System.out.println("ADVISOR " + user.getFirstName()+ " APPOINTMENT LOCATIONS: " + appt.toString());
+                        System.out.println("ADVISOR " + user.getFirstName()+ " APPOINTMENT LOCATION: " + appt.toString());
+                        System.out.println("ADVISOR APPOINTMENT STUDENT: " + appt.getStudent().toString());
                     }
                 }
             } else if (user instanceof Student) {
                 if(((Student) user).getMajor() != null) {
-                    System.out.println("MAJOR: " + ((Student) user).getMajor().toString());
-                    System.out.println("MAJORID: " + ((Student) user).getMajor().getMajorID());
+                    System.out.println(user.getUsername() + " MAJOR: " + ((Student) user).getMajor().toString());
+                    System.out.println(user.getUsername() + " MAJORID: " + ((Student) user).getMajor().getMajorID());
                 }
             }
         }

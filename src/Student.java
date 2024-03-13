@@ -318,4 +318,8 @@ public class Student extends User {
         }
         return achievementIDS;
     }
+
+    public String toString() {
+        return this.username;
+    }
 }

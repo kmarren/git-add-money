@@ -1,0 +1,14 @@
+[
+    {
+        "appointmentID": "76a89137-3754-418f-9638-3735b8601310",
+        "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b",
+        "time": "2024-03-12T09:00:00",
+        "location": "Room A"
+    },
+    {
+        "appointmentID": "8af675cd-f1b0-4b3c-a5a1-d41335d934e7",
+        "studentID": "6d21e3cb-3d0e-4d92-9c42-8463f23a5f56",
+        "time": "2024-03-13T14:30:00",
+        "location": "Room B"
+    }
+]

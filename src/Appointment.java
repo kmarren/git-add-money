@@ -8,33 +8,59 @@ import java.util.UUID;
  * @author Ben Thompson
  */
 public class Appointment {
-    private UUID advisorID;
+    private UUID appointmentID;
+    private Student student;
     private String time;
     private String location;
 
+    public Appointment() {
+        this.appointmentID = UUID.randomUUID();
+    }
 
     /**
      * Constructs an appointment object with the following attributes.
      * 
-     * @param advisorID     The advisor's ID.
+     * @param student       the student appointment
      * @param time          The time of the appointment.
      * @param location      The location of the appointment.
      */
-    public Appointment(UUID advisorID, String time, String location) {
-        this.advisorID = advisorID;
+    public Appointment(Student student, String time, String location) {
+        this();
+        this.student = student;
         this.time = time;
         this.location = location;
     }
 
+    /**
+     * Constructs an appointment object with the following attributes.
+     * 
+     * @param student       the student appointment
+     * @param time          The time of the appointment.
+     * @param location      The location of the appointment.
+     */
+    public Appointment(Student student, String time, String location, UUID id) {
+        this.student = student;
+        this.time = time;
+        this.location = location;
+        this.appointmentID = id;
+    }
+
     // Getters and setters
 
+    public UUID getAppointmentID() {
+        return this.appointmentID;
+    }
+
+    public void setAppointmentID(UUID id) {
+        this.appointmentID = id;
+    }
     /**
      * Gets the ID of the advisor.
      * 
      * @return The advisor's ID.
      */
-    public UUID getAdvisorID() {
-        return advisorID;
+    public Student getStudent() {
+        return student;
     }
 
     /**
@@ -42,8 +68,8 @@ public class Appointment {
      * 
      * @param id The ID
      */
-    public void setAdvisorId(UUID id) {
-        this.advisorID = id;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     /**

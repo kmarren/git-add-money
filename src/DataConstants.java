@@ -98,4 +98,11 @@ public abstract class DataConstants {
     protected static final String ACHIEVEMENT_SEMESTER = "semester";
     protected static final String ACHIEVEMENT_DESCRIPTION = "description";
     protected static final String ACHIEVEMENT_SCHOLARSHIP = "scholarship";
+
+    // Appointment data constants
+    protected static final String APPOINTMENT_FILE_NAME = "data/appointments.json";
+    protected static final String APPOINTMENT_ID = "appointmentID";
+    protected static final String APPOINTMENT_STUDENT = "studentID";
+    protected static final String APPOINTMENT_TIME = "time";
+    protected static final String APPOINTMENT_LOCATION = "location";
 }

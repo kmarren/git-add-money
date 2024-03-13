@@ -450,4 +450,31 @@ public class DataLoader extends DataConstants {
         }
         return achievementList;
     }
+
+    public static ArrayList<Appointment> loadAppointments() {
+        ArrayList<Appointment> appointments = new ArrayList<>();
+        
+        try {
+            JSONParser parser = new JSONParser();
+            JSONArray appointmentArray = (JSONArray) parser.parse(new FileReader(APPOINTMENT_FILE_NAME));
+
+            for (Object obj : appointmentArray) {
+                JSONObject appointmentJSON = (JSONObject) obj;
+                UUID appointmentID = UUID.fromString((String) appointmentJSON.get(APPOINTMENT_ID));
+                // String studentID = (String) appointmentJSON.get(APPOINTMENT_STUDENT);
+                String time = (String) appointmentJSON.get(APPOINTMENT_TIME);
+                String location = (String) appointmentJSON.get(APPOINTMENT_LOCATION);
+
+                // will load students and advisors later
+                Student student = null; 
+
+                Appointment appointment = new Appointment(student, time, location, appointmentID);
+                appointments.add(appointment);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return appointments;
+    }
 }

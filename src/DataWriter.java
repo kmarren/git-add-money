@@ -19,26 +19,20 @@ public class DataWriter extends DataConstants {
     private static ArrayList<Course> courses = new ArrayList<Course>();
 
     private static ArrayList<Major> majors = new ArrayList<Major>();
+    private static UserList userList = UserList.getInstance();
 
     public static void parseUserList() {
-        for (int i = 0; i < UserList.getInstance().getUsers().size(); i++) {
-            if (UserList.getInstance().getUsers().get(i).getType() == 3) {
-                User user = UserList.getInstance().getUsers().get(i);
-                Faculty faculty = null;
-                faculty = (Faculty)user ;
-                faculties.add(faculty);
-            } else if (UserList.getInstance().getUsers().get(i).getType() == 2) {
-                User user = UserList.getInstance().getUsers().get(i);
-                Advisor advisor = null;
-                advisor = (Advisor)user ;
-                advisors.add(advisor);
-            } else {
-                User user = UserList.getInstance().getUsers().get(i);
-                Student student = null;
-                student = (Student)user;
-                students.add(student);
+        ArrayList<User> users = userList.getUsers();
+        for(User user : users) {
+            if (user instanceof Student) {
+                students.add((Student) user);
+            } else if (user instanceof Faculty) {
+                faculties.add((Faculty) user);
+            } else if (user instanceof Advisor) {
+                advisors.add((Advisor) user);
             }
         }
+        
 
     }
 
@@ -148,19 +142,29 @@ public class DataWriter extends DataConstants {
     public static JSONObject getStudentJSON(Student student)
     {
         JSONObject studentJSON = new JSONObject();
-
         studentJSON.put(STUDENT_FIRST_NAME, student.getFirstName());
         studentJSON.put(STUDENT_LAST_NAME, student.getLastName());
-        studentJSON.put(STUDENT_ID, student.getUserID());
+        studentJSON.put(STUDENT_ID, student.getUserID().toString());
         studentJSON.put(STUDENT_EMAIL, student.getEmail());
         studentJSON.put(STUDENT_USERNAME, student.getUsername());
         studentJSON.put(STUDENT_PASSWORD, student.getPassword());
         studentJSON.put(USER_TYPE, 1);
-        studentJSON.put(STUDENT_MAJOR_ID, student.getMajorID());
+        Major studentMajor = student.getMajor();
+        if (studentMajor != null && studentMajor.getMajorID() != null)  {
+            studentJSON.put(STUDENT_MAJOR_ID, studentMajor.getMajorID().toString());
+        } else {
+            studentJSON.put(STUDENT_MAJOR_ID, null);
+        }
         studentJSON.put(STUDENT_MINOR, student.hasMinor());
         studentJSON.put(STUDENT_COMMENTS, student.getStudentComments());
         studentJSON.put(STUDENT_GPA, student.getGpa());
-        studentJSON.put(STUDENT_ADVISOR, student.getAdvisor());
+        Advisor advisor = student.getAdvisor();
+        if (advisor != null && advisor.getUserStringID() != null) {
+            studentJSON.put(STUDENT_ADVISOR, advisor.getUserStringID());
+        } else {
+            studentJSON.put(STUDENT_ADVISOR, null);
+        }
+        //studentJSON.put(STUDENT_ADVISOR, student.getAdvisor().getUserID().toString());
         studentJSON.put(STUDENT_RISK_FAILING, student.isRiskFailing());
         studentJSON.put(STUDENT_HOURS_COMPLETED, student.getHoursCompleted());
         

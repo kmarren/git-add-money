@@ -15,6 +15,19 @@ public class temporaryUI {
         System.out.println(application.login("johndoe", "balsdj"));
         System.out.println(application.getCourseList().toString());
         application.loadAll();
+        ArrayList<User> users = application.getUserList();
+        for(User user : users) {
+            if(user instanceof Advisor) {
+                if(((Advisor) user).getAdviseeList() != null) {
+                    System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList().toString());
+                }
+            } else if (user instanceof Student) {
+                if(((Student) user).getMajor() != null) {
+                    System.out.println("MAJOR: " + ((Student) user).getMajor().toString());
+                    System.out.println("MAJORID: " + ((Student) user).getMajor().getMajorID());
+                }
+            }
+        }
         ArrayList<Major> mjrs = application.getMajors();
         for(Major major : mjrs) {
             System.out.println("ENROLLED COURSES: " + major.getEnrolledCourses().toString());
@@ -30,17 +43,5 @@ public class temporaryUI {
         DataWriter.writeAdvisors();
         DataWriter.writeStudents();
         DataWriter.writeAllID();
-        ArrayList<User> users = application.getUserList();
-        for(User user : users) {
-            if(user instanceof Advisor) {
-                if(((Advisor) user).getAdviseeList() != null) {
-                    System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList().toString());
-                }
-            } else if (user instanceof Student) {
-                if(((Student) user).getMajor() != null) {
-                    System.out.println("MAJOR: " + ((Student) user).getMajor().toString());
-                }
-            }
-        }
     }
 }

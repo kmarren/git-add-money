@@ -104,6 +104,10 @@ public abstract class User {
         return userID;
     }
 
+    public String getUserStringID() {
+        return userID.toString();
+    }
+
     /**
      * Sets the UUID of the user.
      * 

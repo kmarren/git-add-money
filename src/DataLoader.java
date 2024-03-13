@@ -266,7 +266,7 @@ public class DataLoader extends DataConstants {
                     for (Object adviseeObj : adviseeListArray) {
                         JSONObject adviseeJson = (JSONObject) adviseeObj;
                         String studentID = (String) adviseeJson.get(STUDENT_ID);
-                        System.out.println(studentID);
+                        //System.out.println(studentID);
                         UUID studentUUID = UUID.fromString(studentID);
                         Student student = (Student) userlist.getUserId(studentUUID);
                         if (student != null) {

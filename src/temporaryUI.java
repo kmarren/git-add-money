@@ -21,6 +21,7 @@ public class temporaryUI {
             System.out.println("REQUIRED COURSES: " + major.getRequiredCourses().toString());
             System.out.println("COMPLETED COURSES: " + major.getCompletedCourses().toString());
         } 
+
         DataWriter.parseUserList();
         DataWriter.writeUsers();
         DataWriter.writeCourses();
@@ -32,8 +33,14 @@ public class temporaryUI {
         ArrayList<User> users = application.getUserList();
         for(User user : users) {
             if(user instanceof Advisor) {
-                System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList());
-            } 
+                if(((Advisor) user).getAdviseeList() != null) {
+                    System.out.println("ADVISEE LIST: " + ((Advisor) user).getAdviseeList().toString());
+                }
+            } else if (user instanceof Student) {
+                if(((Student) user).getMajor() != null) {
+                    System.out.println("MAJOR: " + ((Student) user).getMajor().toString());
+                }
+            }
         }
     }
 }

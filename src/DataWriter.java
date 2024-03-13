@@ -119,6 +119,7 @@ public class DataWriter extends DataConstants {
         majorJSON.put(MAJOR_HOURS_REQUIRED, major.getHoursRequired());
         majorJSON.put(MAJOR_HOURS_COMPLETED, major.getHoursCompleted());
         majorJSON.put(MAJOR_PROGRESSION, major.getProgression());
+        majorJSON.put(MAJOR_ENROLLED_COURSES, major.getEnrolledCourses());
 
         return majorJSON;
     }

@@ -12,6 +12,7 @@ public abstract class DataConstants {
     protected static final String MAJOR_HOURS_REQUIRED = "hoursRequired";
     protected static final String MAJOR_HOURS_COMPLETED = "hoursCompleted";
     protected static final String MAJOR_PROGRESSION = "progression";
+    protected static final String MAJOR_ENROLLED_COURSES = "enrolledCourses";
 
     // course data constants
     protected static final String COURSE_FILE_NAME = "data/course.json";

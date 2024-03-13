@@ -35,4 +35,8 @@ public class MajorList {
         return null;
     }
 
+    public void loadAll() {
+        DataLoader.finishMajors(majors);
+    }
+
 }

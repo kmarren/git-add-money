@@ -282,5 +282,507 @@
     "grade": 0,
     "completed": false,
     "enrolled": false
+  },
+  {
+    "courseID": "00d62b3d-feff-4b67-a538-8b0fce882cb2",
+    "courseComments": [
+      "Very easy intro class. I Learned a lot."
+    ],
+    "courseNumber": 101,
+    "courseCode": "CC-ARP",
+    "courseName": "CSCE101",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "History, application, and social impact of computers; problem-solving, algorithm development, applications software, and programming in a procedural language.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "9f5ba460-c95e-45ed-ae13-4ad13515bf50",
+    "courseComments": [
+      "Easy class, some hands on learning and very useful!"
+    ],
+    "courseNumber": 102,
+    "courseCode": "CC-ARP",
+    "courseName": "CSCE102",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to systematic computer problem-solving and programming for a variety of applications.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "234db3a4-6d5a-47e5-b999-a018d6f3241e",
+    "courseComments": [
+      "Pretty laid back and chill lectures, helpful in the real world."
+    ],
+    "courseNumber": 390,
+    "courseCode": "CC-VSR",
+    "courseName": "CSCE390",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems.",
+    "totalSeats": 60,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "cc3a779c-988b-4482-9fc3-7242b999242a",
+    "courseComments": [
+      "Didn't feel like a 1 credit course.",
+      "Useful class! I knew little to nothing about Linux before this."
+    ],
+    "courseNumber": 215,
+    "courseCode": "PR",
+    "courseName": "CSCE215",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "UNIX operating system, user-level system commands, and programming tools. UNIX scripting languages.",
+    "totalSeats": 25,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "20a01dd9-2221-4e48-a5fb-8ce9df69cdfe",
+    "courseComments": [
+      "Very easy quizzes, professor is lenient with grading."
+    ],
+    "courseNumber": 201,
+    "courseCode": "PR",
+    "courseName": "CSCE201",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to the theory and practice of computer security, including security policies, authentification, digital certificates, firewalls, malicious code, legal and ethical issues, and incident handling.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "8294debf-618b-43c8-b4ec-b8beedd92948",
+    "courseComments": [
+      "In depth lectures and hands on learning with some group work."
+    ],
+    "courseNumber": 210,
+    "courseCode": "PR",
+    "courseName": "CSCE210",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Number representation, data formats, CPU and memory organization, assembly language, I/O and peripherals, computer networks.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "8294debf-618b-43c8-b4ec-b8beedd92948",
+    "courseComments": [
+      "Never thought I would be using COBOL."
+    ],
+    "courseNumber": 205,
+    "courseCode": "MR",
+    "courseName": "CSCE205",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to computer applications in business. Programming exercises in COBOL.",
+    "totalSeats": 20,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "7e646b5b-6b2b-469e-ab64-d0e0954a5711",
+    "courseComments": [
+      "Difficult class, but with enough work it helped a lot."
+    ],
+    "courseNumber": 242,
+    "courseCode": "MR",
+    "courseName": "CSCE242",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Web technologies to support client-server computing. Implementation of client-server applications.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "d768458a-f23e-4257-ba61-b2808fc83efd",
+    "courseComments": [
+      "Difficult class but very useful in getting better at coding."
+    ],
+    "courseNumber": 240,
+    "courseCode": "PR",
+    "courseName": "CSCE240",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Pointers; memory management; advanced programming language structures: operator overloading, iterators, multiple inheritance, polymorphism, templates, virtual functions; Unix programming environment.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "399fb76c-12ad-4a9b-b01a-257a8bf5cdcb",
+    "courseComments": [
+      "Easy and simple intro class for economics."
+    ],
+    "courseNumber": 224,
+    "courseCode": "PR",
+    "courseName": "ECON224",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "The study of supply and demand, markets, household and firm decision-making, gross domestic product, inflation, unemployment, and government policies. ",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "435f3b6f-7214-401e-a062-f9894a62d2c8",
+    "courseComments": [
+      "A lot of busy work, but useful."
+    ],
+    "courseNumber": 222,
+    "courseCode": "PR",
+    "courseName": "ACT224",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Survey of accounting topics related to business decisions including financial reporting, managerial accounting, and other special topics.",
+    "totalSeats": 100,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "54b7286c-d9de-4069-bc15-9052f17b7680",
+    "courseComments": [
+      "Useful lectures and a lot of work."
+    ],
+    "courseNumber": 371,
+    "courseCode": "PR",
+    "courseName": "MGMT371",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "A comprehensive survey of the basic principles of management applicable to all forms of business. The course provides the student with a basis for thinking about complex business situations in the framework of analysis of the management process.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "41fa19b6-8bd8-421a-93c4-6b22b8ad4a69",
+    "courseComments": [
+      "Hands-on experience with day-to-day use."
+    ],
+    "courseNumber": 290,
+    "courseCode": "PR",
+    "courseName": "MGSC290",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "An introduction to the effective use of information systems tools in day-to-day business communications, analysis, and decision making.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "117b0da0-46c9-48e9-8256-ca9d09463ebe",
+    "courseComments": [
+      "DIfficult math class but professor explains very well.",
+      "Lenient grading, hard exams."
+    ],
+    "courseNumber": 174,
+    "courseCode": "PR",
+    "courseName": "MATH174",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Logic, number theory, sequences, series, recursion, mathematical induction, set theory, enumeration, functions, relations, graphs and trees. Connections to computers and to programming are emphasized when possible.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "b17afc29-0840-4488-ad07-3280d2d7704d",
+    "courseComments": [
+      "Heard it was much more difficult than 174, but very important to go to the lectures."
+    ],
+    "courseNumber": 374,
+    "courseCode": "PR",
+    "courseName": "MATH374",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Propositional and predicate logic; proof techniques; recursion and recurrence relations; sets, combinatorics, and probability; functions, relations, and matrices; algebraic structures",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "341480f1-fb6d-4080-b771-e5fe760672de",
+    "courseComments": [
+      "Straightforward class. A lot of writing but not bad."
+    ],
+    "courseNumber": 462,
+    "courseCode": "PR",
+    "courseName": "ENGL462",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Preparation for and practice in types of writing important to scientists, engineers, and computer scientists, from brief technical letters to formal articles and reports.",
+    "totalSeats": 50,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "59461ae8-06e0-4a87-b459-c5c2b708e4e1",
+    "courseComments": [
+      "A good alternative to ENGL 462."
+    ],
+    "courseNumber": 463,
+    "courseCode": "PR",
+    "courseName": "ENGL463",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Extensive practice in different types of business writing, from brief letters to formal articles and reports.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "3688c526-736a-4085-b795-a3b15afd2d7c",
+    "courseComments": [
+      "Hard class, very important that you ask questions or you will struggle."
+    ],
+    "courseNumber": 509,
+    "courseCode": "PR",
+    "courseName": "STAT509",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Basic probability and statistics with applications and examples in engineering. Elementary probability, random variables and their distribution, random processes, statistical inference, linear regression, correlation and basic design of experiments with application to quality assurance, reliability, and life testing.",
+    "totalSeats": 55,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f5a2d491-ece1-4537-9214-997a9151907c",
+    "courseComments": [
+      "Very hands-on class, important to attend the lectures and do the work assigned."
+    ],
+    "courseNumber": 515,
+    "courseCode": "PR",
+    "courseName": "STAT515",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Applications and principles of elementary probability, essential discrete and continuous probability distributions, sampling distributions, estimation, and hypothesis testing. Inference for means, variances, proportions, one-way ANOVA, simple linear regression, and contingency tables. Statistical packages such as SAS or R. ",
+    "totalSeats": 55,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "5942e2bb-d680-4300-8d1d-1260d4d5c401",
+    "courseComments": [
+      "Continuation of 515, still hard."
+    ],
+    "courseNumber": 516,
+    "courseCode": "PR",
+    "courseName": "STAT516",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Applications and principles of linear models. Simple and multiple linear regression, analysis of variance for basic designs, multiple comparisons, random effects, and analysis of covariance. Statistical packages such as SAS. Not for CAS, MAS, MS, or PhD credit in Statistics.",
+    "totalSeats": 50,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
   }
 ]

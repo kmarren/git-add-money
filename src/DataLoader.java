@@ -18,6 +18,7 @@ public class DataLoader extends DataConstants {
     public static ArrayList<User> loadStudents() {
         AchievementList ach = AchievementList.getInstance();
         ArrayList<User> students = new ArrayList<>();
+        Major major = null;
         try {
             FileReader reader = new FileReader(STUDENT_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -35,6 +36,7 @@ public class DataLoader extends DataConstants {
                     String username = (String) studentJsonObj.get(STUDENT_USERNAME);
                     String password = (String) studentJsonObj.get(STUDENT_PASSWORD);
                     boolean minor = (boolean) studentJsonObj.get(STUDENT_MINOR);
+                    String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                     JSONArray commentsArray = (JSONArray) studentJsonObj.get(STUDENT_COMMENTS);
                     ArrayList<String> studentComments = new ArrayList<>();
                     for (Object commentObj : commentsArray) {
@@ -63,7 +65,7 @@ public class DataLoader extends DataConstants {
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                             riskFailing,
-                            hoursCompleted, firstName, lastName, email, username, password);
+                            hoursCompleted, firstName, lastName, email, username, password, major);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -99,7 +101,7 @@ public class DataLoader extends DataConstants {
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
                         riskFailing,
-                        hoursCompleted, firstName, lastName, email, username, password);
+                        hoursCompleted, firstName, lastName, email, username, password, major);
                 student.setUserID(uuid);
 
                 // Add student to the list

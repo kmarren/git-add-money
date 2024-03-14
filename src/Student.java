@@ -38,7 +38,7 @@ public class Student extends User {
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-            String firstName, String lastName, String email, String username, String password) {
+            String firstName, String lastName, String email, String username, String password, Major major) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -309,6 +309,7 @@ public class Student extends User {
         }
         return achievementIDS;
     }
+
 
     public String toString() {
         return this.username;

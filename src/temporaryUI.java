@@ -16,6 +16,7 @@ public class temporaryUI {
         System.out.println(application.getCourseList().toString());
         application.loadAll();
         ArrayList<User> users = application.getUserList();
+        System.out.println(users.toString());
         for(User user : users) {
             if(user instanceof Advisor) {
                 if(((Advisor) user).getAdviseeList() != null) {
@@ -30,13 +31,13 @@ public class temporaryUI {
                 if(((Student) user).getMajor() != null) {
                     System.out.println(user.getUsername() + " MAJOR: " + ((Student) user).getMajor().toString());
                     System.out.println(user.getUsername() + " MAJORID: " + ((Student) user).getMajor().getMajorID());
-                } else if (user instanceof Faculty) {
+                } 
+            } else if (user instanceof Faculty) {
                     if(((Faculty) user).getStudentList() != null) {
                         System.out.println("FACULTY HAS: " + user.getUsername() +((Faculty) user).getStudentList().toString());
                     }
                 }
             }
-        }
         ArrayList<Major> mjrs = application.getMajors();
         for(Major major : mjrs) {
             System.out.println("ENROLLED COURSES: " + major.getEnrolledCourses().toString());

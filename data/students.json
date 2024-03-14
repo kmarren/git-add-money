@@ -42,6 +42,28 @@
     "advisorID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
     "riskFailing": false,
     "hoursCompleted": 72.3
+  },
+  {
+    "studentID": "625284a8-867d-42ec-ade7-50fc0e7ebd53",
+    "firstName": "Brax",
+    "lastName": "West",
+    "email": "brax@email.sc.edu",
+    "username": "braxwest",
+    "password": "password4brax",
+    "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
+    "minor": false,
+    "studentComments": [
+      "Advised to take MATH 374, CSCE 212, CSCE 247, and ENGL 463."
+    ],
+    "achievements": [
+      {
+        "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+      }
+    ],
+    "gpa": 2.4,
+    "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+    "riskFailing": false,
+    "hoursCompleted": 78
   }
 
   

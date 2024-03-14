@@ -37,7 +37,7 @@ public class Student extends User {
      * @param major           The major/class tracker of the student.
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
-            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
+            ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing,
             String firstName, String lastName, String email, String username, String password, Major major) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;

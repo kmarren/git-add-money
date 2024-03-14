@@ -191,8 +191,7 @@ public void loadAll() {
     ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
     String firstName, String lastName, String email, String username, String password, Major major)
     {
-        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing,
-                                  hoursCompleted, firstName, lastName, email, username, password, major);
+        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing, firstName, lastName, email, username, password, major);
         userList.addUser(student);
     }
 

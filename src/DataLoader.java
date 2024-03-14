@@ -58,15 +58,13 @@ public class DataLoader extends DataConstants {
                     Advisor advisor = null; // add an advisor later??
                     Major major = null; //add an advisor later??
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
-                    double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                     String studentID = (String) studentJsonObj.get(STUDENT_ID);
                     UUID uuid = UUID.fromString(studentID);
 
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                            riskFailing,
-                            hoursCompleted, firstName, lastName, email, username, password, major);
+                            riskFailing, firstName, lastName, email, username, password, major);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -102,8 +100,7 @@ public class DataLoader extends DataConstants {
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                        riskFailing,
-                        hoursCompleted, firstName, lastName, email, username, password, major);
+                        riskFailing, firstName, lastName, email, username, password, major);
                 student.setUserID(uuid);
 
                 // Add student to the list

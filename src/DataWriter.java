@@ -105,12 +105,12 @@ public class DataWriter extends DataConstants {
 
         majorJSON.put(MAJOR_ID, major.getMajorID());
         majorJSON.put(MAJOR_TITLE, major.getTitle());
-        majorJSON.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourses());
-        majorJSON.put(MAJOR_COURSE_ID, major.getCompletedCourses());
+        majorJSON.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourseUUID());
+        majorJSON.put(MAJOR_COMPLETED_COURSES, major.getCompletedCourseUUID());
         majorJSON.put(MAJOR_HOURS_REQUIRED, major.getHoursRequired());
         majorJSON.put(MAJOR_HOURS_COMPLETED, major.getHoursCompleted());
         majorJSON.put(MAJOR_PROGRESSION, major.getProgression());
-        majorJSON.put(MAJOR_ENROLLED_COURSES, major.getEnrolledCourses());
+        majorJSON.put(MAJOR_ENROLLED_COURSES, major.getEnrolledCourseUUID());
 
         return majorJSON;
     }
@@ -282,7 +282,7 @@ public class DataWriter extends DataConstants {
         JSONObject userJSON = new JSONObject();
         userJSON.put(USER_FIRST_NAME, user.getFirstName());
         userJSON.put(USER_LAST_NAME, user.getLastName());
-        userJSON.put(USER_ID, user.getUserID());
+        userJSON.put(USER_ID, user.getUserID().toString());
         userJSON.put(USER_EMAIL, user.getEmail());
         userJSON.put(USER_USERNAME, user.getUsername());
         userJSON.put(USER_PASSWORD, user.getPassword());

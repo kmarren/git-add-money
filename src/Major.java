@@ -20,7 +20,10 @@ public class Major {
     private int hoursRequired;
     private int hoursCompleted;
     private double progression;
-
+    private ArrayList<String> requiredCourseUUIDS = new ArrayList<String>();
+    private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
+    private ArrayList<String> completedCourseUUIDS = new ArrayList<String>();
+    
     public Major() {
         this.majorID = UUID.randomUUID();
     }
@@ -93,6 +96,48 @@ public class Major {
     public ArrayList<Course> getRequiredCourses() {
         return requiredCourses;
     }
+
+    public ArrayList<String> getRequiredCourseUUID()
+    {
+        for (Course course : requiredCourses)
+        {
+            String courseID = course.getCourseID().toString();
+            requiredCourseUUIDS.add(courseID);
+        }
+
+        return requiredCourseUUIDS;
+    }
+
+    public ArrayList<String> getEnrolledCourseUUID()
+    {
+        for (Course course : enrolledCourses)
+        {
+            String courseID = course.getCourseID().toString();
+            enrolledCourseUUIDS.add(courseID);
+        }
+
+        return enrolledCourseUUIDS;
+    }
+
+    public ArrayList<String> getCompletedCourseUUID()
+    {
+        for (Course course : completedCourses)
+        {
+            String courseID = course.getCourseID().toString();
+            completedCourseUUIDS.add(courseID);
+        }
+
+        return completedCourseUUIDS;
+    }
+    
+
+
+
+
+
+
+
+
 
     /**
      * Sets the list of required courses for the major.

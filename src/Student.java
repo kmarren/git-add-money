@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * @author Jacob Robertson
  */
 public class Student extends User {
-    private String majorID;
     private Major major;
     private double gpa;
     private boolean minor;
@@ -39,7 +38,7 @@ public class Student extends User {
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-            String firstName, String lastName, String email, String username, String password, String majorID) {
+            String firstName, String lastName, String email, String username, String password) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -48,7 +47,6 @@ public class Student extends User {
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
-        this.majorID = majorID;
     }
 
     /**
@@ -66,7 +64,6 @@ public class Student extends User {
     public Student(String firstName, String lastName, String email, String username, String password) {
         super(firstName, lastName, email, username, password, 1);
     }
-
 
     /**
      * Constructs a new Student with a username and password
@@ -88,10 +85,6 @@ public class Student extends User {
         return gpa;
     }
 
-    public String getMajorID()
-    {
-        return majorID;
-    }
     /**
      * Returns whether the student has a minor.
      *
@@ -201,6 +194,7 @@ public class Student extends User {
     public Major getMajor() {
         return this.major;
     }
+
     /**
      * Sets whether the student is at risk of failing.
      *
@@ -303,18 +297,15 @@ public class Student extends User {
         studentComments.add(comment);
     }
 
-    public void addAchievement(Achievement achievement)
-    {
+    public void addAchievement(Achievement achievement) {
         achievements.add(achievement);
     }
 
-    public ArrayList<String> getAchievementIDs()
-    {
+    public ArrayList<String> getAchievementIDs() {
         ArrayList<String> achievementIDS = new ArrayList<String>();
-        for(Achievement achievement : achievements)
-        {
-           String add =  achievement.getAchievementID().toString();
-           achievementIDS.add(add);
+        for (Achievement achievement : achievements) {
+            String add = achievement.getAchievementID().toString();
+            achievementIDS.add(add);
         }
         return achievementIDS;
     }

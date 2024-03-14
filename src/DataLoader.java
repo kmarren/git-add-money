@@ -450,12 +450,11 @@ public class DataLoader extends DataConstants {
                     ArrayList<Course> completedCourses = new ArrayList<>();
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
-                    int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
                     double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
                     String majorId = (String) majorJson.get(MAJOR_ID);
                     UUID uuid = UUID.fromString(majorId);
                     // Create Major object and add to list
-                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted,
+                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired,
                             progression, enrolledCourses);
                     major.setMajorID(uuid);
                     majorList.add(major);

@@ -129,16 +129,6 @@ public class Major {
 
         return completedCourseUUIDS;
     }
-    
-
-
-
-
-
-
-
-
-
     /**
      * Sets the list of required courses for the major.
      * 

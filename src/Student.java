@@ -47,6 +47,7 @@ public class Student extends User {
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.hoursCompleted = hoursCompleted;
+        this.major = major;
     }
 
     /**
@@ -195,6 +196,7 @@ public class Student extends User {
         return this.major;
     }
 
+
     /**
      * Sets whether the student is at risk of failing.
      *
@@ -310,7 +312,7 @@ public class Student extends User {
         return achievementIDS;
     }
 
-
+    
     public String toString() {
         return this.username;
     }

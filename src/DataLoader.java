@@ -18,7 +18,6 @@ public class DataLoader extends DataConstants {
     public static ArrayList<User> loadStudents() {
         AchievementList ach = AchievementList.getInstance();
         ArrayList<User> students = new ArrayList<>();
-        Major major = null;
         try {
             FileReader reader = new FileReader(STUDENT_FILE_NAME);
             JSONParser parser = new JSONParser();
@@ -57,10 +56,12 @@ public class DataLoader extends DataConstants {
                     }
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                     Advisor advisor = null; // add an advisor later??
+                    Major major = null; //add an advisor later??
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                     double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                     String studentID = (String) studentJsonObj.get(STUDENT_ID);
                     UUID uuid = UUID.fromString(studentID);
+
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
@@ -93,6 +94,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                 Advisor advisor = null;
+                Major major = null;
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                 double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                 String studentID = (String) studentJsonObj.get(STUDENT_ID);

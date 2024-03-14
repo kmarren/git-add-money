@@ -34,7 +34,6 @@ public class DataLoader extends DataConstants {
                     String email = (String) studentJsonObj.get(STUDENT_EMAIL);
                     String username = (String) studentJsonObj.get(STUDENT_USERNAME);
                     String password = (String) studentJsonObj.get(STUDENT_PASSWORD);
-                    String majorID = (String) studentJsonObj.get(STUDENT_MAJOR);
                     boolean minor = (boolean) studentJsonObj.get(STUDENT_MINOR);
                     JSONArray commentsArray = (JSONArray) studentJsonObj.get(STUDENT_COMMENTS);
                     ArrayList<String> studentComments = new ArrayList<>();
@@ -48,9 +47,7 @@ public class DataLoader extends DataConstants {
                         JSONObject achievementJson = (JSONObject) achievementObj;
                         String achievementID = (String) achievementJson.get(ACHIEVEMENT_ID);
                         UUID achievementUUID = UUID.fromString(achievementID);
-
                         Achievement existingAchievement = ach.getAchievement(achievementUUID);
-
                         // Check if the existing achievement is not null before adding it to the list
                         if (existingAchievement != null) {
                             achievements.add(existingAchievement);
@@ -133,15 +130,6 @@ public class DataLoader extends DataConstants {
                 // Parsing instructor information
                 Faculty instructor = null; // also need to add an instructor later
                 ArrayList<Course> prerequisites = new ArrayList<>();
-                /*
-                 * for (Object prereqObj : prerequisitesArray) {
-                 * JSONObject prereqJson = (JSONObject) prereqObj;
-                 * String prereqCourseID = (String) prereqJson.get("courseID");
-                 * // Assuming you have a method to fetch a course by its ID
-                 * Course prereqCourse = fetchCourseByID(prereqCourseID);
-                 * prerequisites.add(prereqCourse);
-                 * }
-                 */
                 String description = (String) courseObj.get(COURSE_DESCRIPTION);
                 int totalSeats = Integer.parseInt(courseObj.get(COURSE_TOTAL_SEATS).toString());
                 int creditWorth = Integer.parseInt(courseObj.get(COURSE_CREDIT_WORTH).toString());
@@ -149,11 +137,6 @@ public class DataLoader extends DataConstants {
                 Boolean appArea = Boolean.parseBoolean(courseObj.get(COURSE_APPLICATION_AREA).toString());
                 Boolean carolinaCore = Boolean.parseBoolean(courseObj.get(COURSE_CAROLINA_CORE).toString());
                 Boolean elective = Boolean.parseBoolean(courseObj.get(COURSE_ELECTIVE).toString());
-                // double grade = Double.parseDouble(courseObj.get(COURSE_GRADE).toString());
-                // Boolean completed =
-                // Boolean.parseBoolean(courseObj.get(COURSE_COMPLETED).toString());
-                // Boolean enrolled =
-                // Boolean.parseBoolean(courseObj.get(COURSE_ENROLLED).toString());
                 String courseID = (String) courseObj.get(COURSE_ID);
                 UUID uuid = UUID.fromString(courseID);
                 Course course = new Course(courseComments, courseNumber, courseCode, courseName, instructor,
@@ -287,12 +270,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<Student> adviseeList = new ArrayList<>();
 
                 String schoolOfFocus = (String) advisorObj.get(ADVISOR_SCHOOL_OF_FOCUS);
-                // Appointments
-                // JSONArray appointmentsArray = (JSONArray)
-                // advisorObj.get(ADVISOR_APPOINTMENTS);
                 ArrayList<Appointment> appointments = new ArrayList<>();
-                // Assuming appointments needs to be populated
-                // Appointments
 
                 String firstName = (String) advisorObj.get(ADVISOR_FIRST_NAME);
                 String lastName = (String) advisorObj.get(ADVISOR_LAST_NAME);
@@ -348,11 +326,11 @@ public class DataLoader extends DataConstants {
                         currentAdvisor.setAdviseeList(adviseeList);
 
                         // Load appointments
-                        JSONArray appointmentsArray = (JSONArray) advisorJson.get("appointments");
+                        JSONArray appointmentsArray = (JSONArray) advisorJson.get(ADVISOR_APPOINTMENTS);
                         ArrayList<Appointment> appointments = new ArrayList<>();
                         for (Object appointmentObj : appointmentsArray) {
                             JSONObject appointmentJson = (JSONObject) appointmentObj;
-                            String appointmentIDStr = (String) appointmentJson.get("appointmentID");
+                            String appointmentIDStr = (String) appointmentJson.get(APPOINTMENT_ID);
                             UUID appointmentID = UUID.fromString(appointmentIDStr);
                             Appointment appointment = appointmentList.getAppointment(appointmentID);
                             if (appointment != null) {

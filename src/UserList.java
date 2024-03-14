@@ -76,6 +76,8 @@ public class UserList {
     public void loadAll() {
         DataLoader.finishStudents(users);
         DataLoader.finishAdvisors(users);
+        DataLoader.finishFaculty(users);
+        System.out.println("all users loaded");
     }
 
 }

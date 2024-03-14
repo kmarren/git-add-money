@@ -30,6 +30,10 @@ public class temporaryUI {
                 if(((Student) user).getMajor() != null) {
                     System.out.println(user.getUsername() + " MAJOR: " + ((Student) user).getMajor().toString());
                     System.out.println(user.getUsername() + " MAJORID: " + ((Student) user).getMajor().getMajorID());
+                } else if (user instanceof Faculty) {
+                    if(((Faculty) user).getStudentList() != null) {
+                        System.out.println("FACULTY HAS: " + user.getUsername() +((Faculty) user).getStudentList().toString());
+                    }
                 }
             }
         }

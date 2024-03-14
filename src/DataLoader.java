@@ -256,36 +256,38 @@ public class DataLoader extends DataConstants {
     public static void finishFaculty(ArrayList<User> faculty) {
         UserList userList = UserList.getInstance();
         try {
-            FileReader read = new FileReader(FACULTY_FILE_NAME);
+            FileReader reader = new FileReader(FACULTY_FILE_NAME);
             JSONParser parser = new JSONParser();
-            JSONArray facultyArray = (JSONArray) parser.parse(read);
-            for(User fac : faculty) {
-                Faculty currentFaculty = null;
-                if(fac instanceof Faculty) {
-                    currentFaculty = (Faculty) fac;
-                } else {
-                    break;
-                }
-                for (Object obj : facultyArray) {
-                    JSONObject facultyObj = (JSONObject) obj;
-                    String facultyID = (String) facultyObj.get(FACULTY_ID);
-                    if (facultyID.equals(currentFaculty.getUserID().toString())) {
-                        JSONArray studentArray = (JSONArray) facultyObj.get(FACULTY_STUDENT_LIST);
-                        ArrayList<Student> studentList = new ArrayList<>();
-                        for (Object studentObj : studentArray) {
-                            JSONObject student = (JSONObject) studentObj;
-                            String studentID = (String) student.get(STUDENT_ID);
-                            for (User studentUser : userList.getUsers()) {
-                                if (studentUser.getUserID().toString().equals(studentID)) {
+            JSONArray facultyArray = (JSONArray) parser.parse(reader);
+            
+            for (User fac : faculty) {
+                if (fac instanceof Faculty) {
+                    Faculty currentFaculty = (Faculty) fac;
+                    String facultyID = currentFaculty.getUserID().toString();
+                    
+                    for (Object obj : facultyArray) {
+                        JSONObject facultyObj = (JSONObject) obj;
+                        String jsonFacultyID = (String) facultyObj.get(FACULTY_ID);
+                        
+                        if (facultyID.equals(jsonFacultyID)) {
+                            JSONArray studentArray = (JSONArray) facultyObj.get(FACULTY_STUDENT_LIST);
+                            ArrayList<Student> studentList = new ArrayList<>();
+                            
+                            for (Object studentObj : studentArray) {
+                                JSONObject studentJson = (JSONObject) studentObj;
+                                String studentID = (String) studentJson.get(STUDENT_ID);
+                                User studentUser = userList.getUserId(UUID.fromString(studentID));
+                                
+                                if (studentUser instanceof Student) {
                                     studentList.add((Student) studentUser);
                                 }
                             }
                             currentFaculty.setStudentList(studentList);
+                            break; // Stop iterating over facultyArray once the faculty is found
                         }
                     }
                 }
             }
-                
         } catch (Exception e) {
             e.printStackTrace();
         }

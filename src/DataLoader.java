@@ -56,17 +56,15 @@ public class DataLoader extends DataConstants {
                     }
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                     Advisor advisor = null; // add an advisor later??
-                    Major major = null; //add an advisor later??
+                    Major major = MajorList.getInstance().getMajorID(majorID);
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
-                    double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                     String studentID = (String) studentJsonObj.get(STUDENT_ID);
                     UUID uuid = UUID.fromString(studentID);
 
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                            riskFailing,
-                            hoursCompleted, firstName, lastName, email, username, password, major);
+                            riskFailing, firstName, lastName, email, username, password, major);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -94,16 +92,14 @@ public class DataLoader extends DataConstants {
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                 Advisor advisor = null;
-                Major major = null;
+                Major major = MajorList.getInstance().getMajorID(majorID);
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
-                double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                 String studentID = (String) studentJsonObj.get(STUDENT_ID);
                 UUID uuid = UUID.fromString(studentID);
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                        riskFailing,
-                        hoursCompleted, firstName, lastName, email, username, password, major);
+                        riskFailing, firstName, lastName, email, username, password, major);
                 student.setUserID(uuid);
 
                 // Add student to the list
@@ -418,10 +414,9 @@ public class DataLoader extends DataConstants {
 
                             // Load major for the student
                             String majorID = (String) studentJsonObj.get(STUDENT_MAJOR_ID);
-                            UUID majorUUID = UUID.fromString(majorID);
-                            Major major = (Major) MajorList.getInstance().getMajorID(majorUUID);
+                            Major major = (Major) MajorList.getInstance().getMajorID(majorID);
                             if (major != null) {
-                                currentStudent.setMajor(major);
+                                currentStudent.setMajor(majorID);
                             }
 
                             break;
@@ -450,12 +445,11 @@ public class DataLoader extends DataConstants {
                     ArrayList<Course> completedCourses = new ArrayList<>();
                     ArrayList<Course> enrolledCourses = new ArrayList<>();
                     int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
-                    int hoursCompleted = Integer.parseInt(majorJson.get(MAJOR_HOURS_COMPLETED).toString());
                     double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
                     String majorId = (String) majorJson.get(MAJOR_ID);
                     UUID uuid = UUID.fromString(majorId);
                     // Create Major object and add to list
-                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired, hoursCompleted,
+                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired,
                             progression, enrolledCourses);
                     major.setMajorID(uuid);
                     majorList.add(major);

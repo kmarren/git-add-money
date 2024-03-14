@@ -18,7 +18,7 @@ public class Major {
     private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
     private ArrayList<Course> completedCourses = new ArrayList<Course>();;
     private int hoursRequired;
-    private int hoursCompleted;
+    private int hoursCompleted = 0;
     private double progression;
     private ArrayList<String> requiredCourseUUIDS = new ArrayList<String>();
     private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
@@ -38,14 +38,12 @@ public class Major {
      * @param hoursCompleted   The total hours completed for the major.
      * @param progression      The progression percentage of the major completion.
      */
-    public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired,
-            int hoursCompleted, double progression, ArrayList<Course> enrolledCourses) {
+    public Major(String title, ArrayList<Course> courses, ArrayList<Course> completedCourses, int hoursRequired, double progression, ArrayList<Course> enrolledCourses) {
         this();
         this.title = title;
         this.requiredCourses = courses;
         this.completedCourses = completedCourses;
         this.hoursRequired = hoursRequired;
-        this.hoursCompleted = hoursCompleted;
         this.progression = progression;
         this.enrolledCourses = enrolledCourses;
     }
@@ -184,6 +182,11 @@ public class Major {
      * @return The total hours completed for the major.
      */
     public int getHoursCompleted() {
+        for(Course course : completedCourses)
+        {
+            int curr = course.getCreditWorth();
+            hoursCompleted += curr;
+        }
         return hoursCompleted;
     }
 
@@ -242,8 +245,19 @@ public class Major {
      * Calculates the progression of the major based on completed and required
      * hours.
      */
-    public void calculateProgression() {
-        // Calculate the progression based on completed and required hours
+    public String calculateProgressionAsFraction() 
+    {
+        return String.valueOf(hoursCompleted) + "/" + String.valueOf(hoursRequired);
+    }
+
+    public String calculateProgressionAsCreditsNeeded()
+    {
+        return String.valueOf(hoursRequired - hoursCompleted);
+    }
+
+    public String calculateProgressionAsPercentage() 
+    {
+        return progression+"%";
     }
 
     public String toString() {

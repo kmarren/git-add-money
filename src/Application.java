@@ -191,8 +191,7 @@ public void loadAll() {
     ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
     String firstName, String lastName, String email, String username, String password, Major major)
     {
-        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing,
-                                  hoursCompleted, firstName, lastName, email, username, password, major);
+        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing, firstName, lastName, email, username, password, major);
         userList.addUser(student);
     }
 
@@ -342,7 +341,7 @@ public void loadAll() {
         advisor.addAdvisee(student);
     }
 
-    /**
+        /**
      * Allows an advisor to add an appointment to their list of available appointments
      * @param advisor the advisor whose list of appointments will be added to
      * @param time the time of the new appointment

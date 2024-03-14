@@ -10,7 +10,6 @@ public abstract class DataConstants {
     protected static final String MAJOR_COURSE_ID = "courseID";
     protected static final String MAJOR_COMPLETED_COURSES = "completedCourses";
     protected static final String MAJOR_HOURS_REQUIRED = "hoursRequired";
-    protected static final String MAJOR_HOURS_COMPLETED = "hoursCompleted";
     protected static final String MAJOR_PROGRESSION = "progression";
     protected static final String MAJOR_ENROLLED_COURSES = "enrolledCourses";
 

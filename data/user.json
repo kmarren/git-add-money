@@ -43,6 +43,15 @@
       "email": "michael@email.sc.edu",
       "username": "michaeljones789",
       "password": "passwordxyz"
+    },
+    {
+      "type": 1,
+      "firstName": "Brax",
+      "lastName": "West",
+      "ID": "625284a8-867d-42ec-ade7-50fc0e7ebd53",
+      "email": "brax@email.sc.edu",
+      "username": "braxwest",
+      "password": "password4brax"
     }
   ]
   

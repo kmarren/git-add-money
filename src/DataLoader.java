@@ -253,6 +253,44 @@ public class DataLoader extends DataConstants {
         return facultyList;
     }
 
+    public static void finishFaculty(ArrayList<User> faculty) {
+        UserList userList = UserList.getInstance();
+        try {
+            FileReader read = new FileReader(FACULTY_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray facultyArray = (JSONArray) parser.parse(read);
+            for(User fac : faculty) {
+                Faculty currentFaculty = null;
+                if(fac instanceof Faculty) {
+                    currentFaculty = (Faculty) fac;
+                } else {
+                    break;
+                }
+                for (Object obj : facultyArray) {
+                    JSONObject facultyObj = (JSONObject) obj;
+                    String facultyID = (String) facultyObj.get(FACULTY_ID);
+                    if (facultyID.equals(currentFaculty.getUserID().toString())) {
+                        JSONArray studentArray = (JSONArray) facultyObj.get(FACULTY_STUDENT_LIST);
+                        ArrayList<Student> studentList = new ArrayList<>();
+                        for (Object studentObj : studentArray) {
+                            JSONObject student = (JSONObject) studentObj;
+                            String studentID = (String) student.get(STUDENT_ID);
+                            for (User studentUser : userList.getUsers()) {
+                                if (studentUser.getUserID().toString().equals(studentID)) {
+                                    studentList.add((Student) studentUser);
+                                }
+                            }
+                            currentFaculty.setStudentList(studentList);
+                        }
+                    }
+                }
+            }
+                
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // Load advisors method
     public static ArrayList<User> loadAdvisors() {
         ArrayList<User> advisorList = new ArrayList<>();

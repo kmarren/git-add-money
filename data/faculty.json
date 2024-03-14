@@ -8,7 +8,12 @@
     "password": "securePassword123",
     "officeHours": "Monday 9:00 AM - 12:00 PM",
     "studentList": [
-      null
+      {
+        "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b"
+      },
+      {
+        "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a"
+      }
     ]
   },
   {
@@ -20,7 +25,9 @@
     "password": "strongPassword456",
     "officeHours": "Tuesday 1:00 PM - 4:00 PM",
     "studentList": [
-      null
+      {
+        "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a"
+      }
     ]
   }
 ]

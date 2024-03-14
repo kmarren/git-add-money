@@ -46,7 +46,6 @@ public class Student extends User {
         this.achievements = achievements;
         this.advisor = advisor;
         this.riskFailing = riskFailing;
-        this.hoursCompleted = hoursCompleted;
         this.major = major;
     }
 
@@ -188,12 +187,12 @@ public class Student extends User {
         this.advisor = advisor;
     }
 
-    public void setMajor(Major major) {
-        this.major = major;
+    public void setMajor(String uuid) {
+        major = MajorList.getInstance().getMajorID(uuid);
     }
 
     public Major getMajor() {
-        return this.major;
+        return major;
     }
 
 

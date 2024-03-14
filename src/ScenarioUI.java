@@ -20,17 +20,13 @@ public class ScenarioUI {
         {
             signUp();
         }
-
-
-
-
     }
 
     public static void login()
     {
-        System.out.println("Welcome back! Please enter your username.");
+        System.out.println("Welcome back! Username:");
         String username = keyboard.nextLine();
-        System.out.println("Please enter your password.");
+        System.out.println("Password:");
         String password = keyboard.nextLine();
 
         if(application.login(username, password))
@@ -45,6 +41,24 @@ public class ScenarioUI {
 
     public static void signUp()
     {
-        
+        int type = 0;
+        System.out.println("Are you a Student, Faculty, or Advisor?"); 
+        if(keyboard.nextLine().equalsIgnoreCase("student"))
+        {
+            type = 1;
+        }
+        else if(keyboard.nextLine().equalsIgnoreCase("advisor"))
+        {
+            type = 2;
+        }
+        else if(keyboard.nextLine().equalsIgnoreCase("faculty"))
+        {
+            type = 3;
+        }
+        System.out.println("Username:");
+        String username = keyboard.nextLine();
+        System.out.println("Password:");
+        String password = keyboard.nextLine();
+        application.signUp(username, password, type);
     }
 }

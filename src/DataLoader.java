@@ -56,7 +56,7 @@ public class DataLoader extends DataConstants {
                     }
                     double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                     Advisor advisor = null; // add an advisor later??
-                    Major major = null; //add an advisor later??
+                    Major major = MajorList.getInstance().getMajorID(majorID);
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                     String studentID = (String) studentJsonObj.get(STUDENT_ID);
                     UUID uuid = UUID.fromString(studentID);
@@ -92,9 +92,8 @@ public class DataLoader extends DataConstants {
                 ArrayList<Achievement> achievements = new ArrayList<>();
                 double gpa = (double) studentJsonObj.get(STUDENT_GPA);
                 Advisor advisor = null;
-                Major major = null;
+                Major major = MajorList.getInstance().getMajorID(majorID);
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
-                double hoursCompleted = (double) studentJsonObj.get(STUDENT_HOURS_COMPLETED);
                 String studentID = (String) studentJsonObj.get(STUDENT_ID);
                 UUID uuid = UUID.fromString(studentID);
 
@@ -415,10 +414,9 @@ public class DataLoader extends DataConstants {
 
                             // Load major for the student
                             String majorID = (String) studentJsonObj.get(STUDENT_MAJOR_ID);
-                            UUID majorUUID = UUID.fromString(majorID);
-                            Major major = (Major) MajorList.getInstance().getMajorID(majorUUID);
+                            Major major = (Major) MajorList.getInstance().getMajorID(majorID);
                             if (major != null) {
-                                currentStudent.setMajor(major);
+                                currentStudent.setMajor(majorID);
                             }
 
                             break;

@@ -26,9 +26,9 @@ public class MajorList {
         return majors;
     }
 
-    public Major getMajorID(UUID majorID) {
+    public Major getMajorID(String majorID) {
         for (Major major : majors) {
-            if (major.getMajorID().equals(majorID.toString())) {
+            if (major.getMajorID().equals(majorID)) {
                 return major;
             }
         }

@@ -341,7 +341,7 @@ public void loadAll() {
         advisor.addAdvisee(student);
     }
 
-    /**
+        /**
      * Allows an advisor to add an appointment to their list of available appointments
      * @param advisor the advisor whose list of appointments will be added to
      * @param time the time of the new appointment

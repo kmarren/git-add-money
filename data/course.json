@@ -784,5 +784,506 @@
     "grade": 0,
     "completed": false,
     "enrolled": false
+  },
+  {
+    "courseID": "f35af6c3-cef2-407b-894b-9453e91cdd07",
+    "courseComments": [
+      "A difficult class, but worth the grind."
+    ],
+    "courseNumber": 350,
+    "courseCode": "MR",
+    "courseName": "CSCE350",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "376f20e2-e7e2-445c-922b-eac863034e88",
+    "courseComments": [
+      "Good intro class to computer networking, very hands-on."
+    ],
+    "courseNumber": 416,
+    "courseCode": "MR",
+    "courseName": "CSCE416",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Concepts and components of computer networks and the Internet; network applications; network protocol stack.",
+    "totalSeats": 24,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "ba3a5821-1ab7-41cf-aa02-a4ffd4e52200",
+    "courseComments": [
+      "Long project that lasts all year, a lot of freedom to work on what our group wanted.",
+      "Make sure you have a good group for this."
+    ],
+    "courseNumber": 490,
+    "courseCode": "MR",
+    "courseName": "CSCE490",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Major team-based software design project to be undertaken in a student’s final year of study; project planning, software requirements analysis, design, and specification. Written reports and oral presentations in a technical setting.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "8bc2ff12-105e-4af4-a33c-72372c434b45",
+    "courseComments": [
+      "Useful to what it will look like after college."
+    ],
+    "courseNumber": 492,
+    "courseCode": "MR",
+    "courseName": "CSCE492",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Continuation of CSCE 490. Computer system implementation, testing, verification and validation of results. Written reports and oral presentations in a technical setting.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "e6aca905-f97b-4b70-a577-cb87a299c681",
+    "courseComments": [
+      "A lot of homework, but not busy work."
+    ],
+    "courseNumber": 520,
+    "courseCode": "MR",
+    "courseName": "CSCE520",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Database management systems; database design and implementation; security, integrity, and privacy.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "210fbf80-82ce-4315-ae08-3394aba9b810",
+    "courseComments": [
+      "Ineresting lectures, not too much of a workload either."
+    ],
+    "courseNumber": 522,
+    "courseCode": "MR",
+    "courseName": "CSCE522",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Threats to information resources and appropriate countermeasures. Cryptography, identification and authentication, access control models and mechanisms, multilevel database security, steganography, Internet security, and intrusion detection and prevention.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "25442f5d-bfe7-4d11-baa7-7987d0f91ead",
+    "courseComments": [
+      "A lot of hands-on experience, very much worth the time."
+    ],
+    "courseNumber": 594,
+    "courseCode": "MR",
+    "courseName": "CSCE594",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Strategic management and use of information systems in organizations.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "a0b75cfd-04c3-489c-8bee-d47a8ae767c0",
+    "courseComments": [
+      "Lectures are informative and easy to understand."
+    ],
+    "courseNumber": 447,
+    "courseCode": "MR",
+    "courseName": "ITEC447",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Overview of current practices and trends in end-user technology and information system management.",
+    "totalSeats": 20,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "741fdcd6-e2f5-476e-8da3-e3f975b9010c",
+    "courseComments": [
+      "Projects are the main thing in this course, get used to it."
+    ],
+    "courseNumber": 560,
+    "courseCode": "MR",
+    "courseName": "ITEC560",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Project management principles and standard practices, including software applications for project management.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "9f0b82ba-d004-4d96-aab1-ed4ad5ab8561",
+    "courseComments": [
+      "A LOT of thinking outside of the box, enjoyable course though."
+    ],
+    "courseNumber": 580,
+    "courseCode": "MR",
+    "courseName": "CSCE580",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Heuristic problem solving, theorem proving, and knowledge representation, including the use of appropriate programming.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "1398f54e-4c1a-4063-a28a-7b883b85c6b0",
+    "courseComments": [
+      "Very difficult class, talking to the professor helps a ton."
+    ],
+    "courseNumber": 555,
+    "courseCode": "MR",
+    "courseName": "CSCE555",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Concepts, algorithms and tools for important problems in Bioinformatics, including nucleotide and amino acid sequence alignment, DNA fragment assembly, phylogenetic reconstruction, and protein structure visualization and assessment.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "171c661f-5850-4ce0-a050-ca53c9e53f1a",
+    "courseComments": [
+      "A lot of data manipulation."
+    ],
+    "courseNumber": 567,
+    "courseCode": "MR",
+    "courseName": "CSCE567",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Scientific visualization tools as applied to sampled and generated data; methods for data manipulation and representation; investigation of visualization techniques.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "0a4b4a33-817b-4f6a-8e77-5ff9c2179ccb",
+    "courseComments": [
+      "Super fun class! I love robots ahaha."
+    ],
+    "courseNumber": 574,
+    "courseCode": "MR",
+    "courseName": "CSCE574",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Design and application of robotic systems; emphasis on mobile robots and intelligent machines.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "b207282f-7987-4b5e-9e79-8780ebfaf4e2",
+    "courseComments": [
+      "Difficult content and a lot of trial and error."
+    ],
+    "courseNumber": 578,
+    "courseCode": "MR",
+    "courseName": "CSCE578",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Text and natural language processing; formal models and data structures appropriate for text processing; selected topics in computational linguistics, stylistics, and content analysis.",
+    "totalSeats": 15,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f6ff0508-5380-4f8a-a1b9-694aaabb6bcf",
+    "courseComments": [
+      "I had no idea what I was doing."
+    ],
+    "courseNumber": 582,
+    "courseCode": "MR",
+    "courseName": "CSCE582",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Normative approaches to uncertainty in artificial intelligence. Probabilistic and causal modeling with Bayesian networks and influence diagrams. Applications in decision analysis and support. Algorithms for probability update in graphical models.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f2199020-854a-42d6-a033-357b70a6462b",
+    "courseComments": [
+      "Interesting class to take, very useful information."
+    ],
+    "courseNumber": 585,
+    "courseCode": "MR",
+    "courseName": "CSCE585",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Design and implementation of machine learning systems, Deep learning systems stack, machine learning platforms, scalable and distributed machine learning.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "eda0021f-3f5d-4a72-a11b-b6c593a76d71",
+    "courseComments": [
+      "I can see myself referring back to this class in my career!"
+    ],
+    "courseNumber": 587,
+    "courseCode": "MR",
+    "courseName": "CSCE587",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Foundational techniques and tools required for data science and big data analytics. Concepts, principles, and techniques applicable to any technology and industry for establishing a baseline that can be enhanced by future study.",
+    "totalSeats": 55,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "09bd3e41-5773-4bd9-a86a-dd8647fe2e9e",
+    "courseComments": [
+      "Busy work, important to take notes."
+    ],
+    "courseNumber": 311,
+    "courseCode": "MR",
+    "courseName": "CSCE311",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "07cdba80-2845-45d1-a3f0-e21b44c90040",
+    "courseComments": [
+      "A lot of hands-on learning, fun class!"
+    ],
+    "courseNumber": 548,
+    "courseCode": "MR",
+    "courseName": "CSCE548",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Construction of software systems resistant to vulnerabilities and attacks. Cryptographic tools. Language, operating system, and network security. Case studies. Development of best practices through programming assignments.",
+    "totalSeats": 20,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f985c327-28fa-4ec6-b82a-b02a5a8ad943",
+    "courseComments": [
+      "This class was super interesting. Cryptography is so much more in depth than I thought."
+    ],
+    "courseNumber": 557,
+    "courseCode": "MR",
+    "courseName": "CSCE557",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Design of secret codes for secure communication, including encryption and integrity verification: ciphers, cryptographic hashing, and public key cryptosystems such as RSA. Mathematical principles underlying encryption. Code-breaking techniques. Cryptographic protocols.",
+    "totalSeats": 32,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
   }
 ]

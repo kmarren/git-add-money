@@ -192,7 +192,7 @@ public void loadAll() {
     String firstName, String lastName, String email, String username, String password, String majorID)
     {
         Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing,
-                                  hoursCompleted, firstName, lastName, email, username, password, majorID);
+                                  hoursCompleted, firstName, lastName, email, username, password);
         userList.addUser(student);
     }
 
@@ -296,9 +296,10 @@ public void loadAll() {
     /**
      * Gets the advisors list of advisees
      */
-    public String viewAdvisees() {
+    public String viewAdvisees(Advisor advisor) 
+    {
     StringBuilder result = new StringBuilder();
-    ArrayList<Student> advisees = Advisor.viewAdvisees(); //
+    ArrayList<Student> advisees = advisor.getAdviseeList(); 
 
     if (advisees.isEmpty()) {
         result.append("No advisees.");

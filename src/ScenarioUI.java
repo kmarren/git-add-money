@@ -32,6 +32,14 @@ public class ScenarioUI {
         if(application.login(username, password))
         {
             System.out.println("Accepted");
+           
+            if(application.getCurrentUser().getType() == 1)
+                showStudentMenu();
+            else if(application.getCurrentUser().getType() == 2)
+                showAdvisorMenu();
+            else
+                showFacultyMenu();
+
         }
         else
         {
@@ -60,5 +68,24 @@ public class ScenarioUI {
         System.out.println("Password:");
         String password = keyboard.nextLine();
         application.signUp(username, password, type);
+
+    }
+    public static void showStudentMenu() {
+        boolean loggedIn = true;
+        while (loggedIn) {
+            System.out.println("\nStudent Menu:");
+            System.out.println("1. View Semester Plan");
+            System.out.println("2. View Past and Current Grades");
+            System.out.println("3. Logout");
+            int choice = Integer.parseInt(keyboard.nextLine());
+        }
+    }
+    
+    public static void showAdvisorMenu() {
+        
+    }
+    
+    public static void showFacultyMenu() {
+    
     }
 }

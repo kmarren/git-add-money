@@ -159,6 +159,11 @@ public void loadAll() {
         courseList.addCourse(course);
     }
 
+    public User getCurrentUser()
+    {
+        return user;
+    }
+
     /**
      * Gets the major map of a specified major
      * @param major the specified major

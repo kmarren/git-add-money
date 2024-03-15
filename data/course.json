@@ -10,9 +10,7 @@
     "courseName": "CSCE145",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      {
-        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
-      }
+      null
     ],
     "description": "Introduction to Algorithms",
     "totalSeats": 30,
@@ -38,7 +36,9 @@
     "courseName": "CSCE146",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
     ],
     "description": "Continuation of CSCE 145. Rigorous development of algorithms and computer programs: elementary data structures. 3 lecture hours and 2 lab hours per week.",
     "totalSeats": 30,
@@ -64,7 +64,9 @@
     "courseName": "CSCE247",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
     ],
     "description": "This course covers the principles and practices of software engineering, including requirements analysis, design, implementation, testing, and maintenance of software systems.",
     "totalSeats": 40,

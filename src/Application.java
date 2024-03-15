@@ -55,14 +55,22 @@ public class Application
      */
     public void login(String username, String password) //returns void, sets current user to the user who just logged in
     {
-        user = userList.getUser(username, password);
         if(userList.login(username, password))
+        {
+            user = userList.getUser(username, password);
             System.out.println("Accepted");
+        }
         else
-            System.out.println("Rejected");
+            System.out.println("Rejected. Please Try Again.");
     }
- 
-
+    
+    public boolean canLogin(String username, String password)
+    {
+        if(userList.login(username, password))
+            return true;
+        else
+            return false;
+    }
 
 
     /**
@@ -135,7 +143,6 @@ public class Application
             System.out.println("3. View Completed Courses");
             System.out.println("4. Logout");
     }
-    
     public void showAdvisorMenu() 
     {
             System.out.println("\nAdvisor Menu:");
@@ -144,7 +151,6 @@ public class Application
             System.out.println("3. Search");
             System.out.println("4. Logout");
     }
-    
     public void showFacultyMenu() 
     {
             System.out.println("\nFaculty Menu:");
@@ -152,23 +158,33 @@ public class Application
             System.out.println("2. Search");
             System.out.println("3. Logout");
     }
+    public void executeStudentChoice(int choice)
+    {
+        switch(choice)
+        {
+            case 1:
+                System.out.println("SHOULD DO SOMETHING BUT CANT");
+                break;
+            case 2:
+                System.out.println("SHOULD DO SOMETHING BUT CANT");
+                break;
+            case 3:
+                System.out.println(listCompletedCourses());
+                break;
+            case 4:
+                logout();
+                break;
+            default:
+                System.out.println("Invalid");
+                break;
+        }
+    }
 
     public int getUserType()
     {
         return user.getType();
     }
 
-    public int loginOrSignUp(String choice)
-    {
-        if(choice.equalsIgnoreCase("login"))
-        {
-            return 1;
-        }
-        else
-        {
-            return 2;
-        }
-    }
 
     public ArrayList<Course> getCourseList() {
         return courseList.getCourses();
@@ -397,6 +413,23 @@ public class Application
     public String viewCourse(Course course)
     {
         return course.toString();
+    }
+
+
+    /*
+     * logs the user out and saves all of th4e data to JSON
+     * ***MAKE SURE TO EVENTUALLY CHANGE THE NAME OF THE FILES THE SAVED DATA PRINTS TO***
+     */
+    public void logout()
+    {
+        DataWriter.parseUserList();
+        DataWriter.writeUsers();
+        DataWriter.writeCourses();
+        DataWriter.writeMajors();
+        DataWriter.writeFaculty();
+        DataWriter.writeAdvisors();
+        DataWriter.writeStudents();
+        DataWriter.writeAllID();
     }
 
 

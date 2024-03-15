@@ -11,6 +11,9 @@ import java.util.UUID;
  */
 public class Application 
 {
+    private Student student;
+    private Advisor advisor;
+    private Faculty faculty;
     private User user;
     private UserList userList = UserList.getInstance();
     private CourseList courseList = CourseList.getInstance();
@@ -59,6 +62,9 @@ public class Application
             System.out.println("Rejected");
     }
  
+
+
+
     /**
      * takes in a username and password to create a new user with the corresponding username and password
      * @param username the username given to create the new account
@@ -87,6 +93,34 @@ public class Application
         }
     }
 
+    public void createSpecificTypes()
+    {
+        if(user.getType()==1)
+        {
+            student = (Student)user;
+        }
+
+        else if(user.getType()==2)
+        {
+            advisor = (Advisor)user;
+        }
+
+        else if(user.getType()==3)
+        {
+            faculty = (Faculty)user;
+        }
+    }
+
+    public String listCompletedCourses()
+    {
+        return student.getMajor().getCompletedCourses().toString();
+    }
+
+    public String listCompletedCourses(Student aStudent)
+    {
+        return aStudent.getMajor().getCompletedCourses().toString();
+    }
+
     public void printGreeting()
     {
         System.out.println("Welcome to DegreeCraft");
@@ -98,7 +132,8 @@ public class Application
             System.out.println("\nStudent Menu:");
             System.out.println("1. View Semester Plan");
             System.out.println("2. View Past and Current Grades");
-            System.out.println("3. Logout");
+            System.out.println("3. View Completed Courses");
+            System.out.println("4. Logout");
     }
     
     public void showAdvisorMenu() 
@@ -116,6 +151,11 @@ public class Application
             System.out.println("1. Add Course");
             System.out.println("2. Search");
             System.out.println("3. Logout");
+    }
+
+    public int getUserType()
+    {
+        return user.getType();
     }
 
     public int loginOrSignUp(String choice)

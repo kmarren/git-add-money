@@ -5,20 +5,21 @@ public class ScenarioUI {
 
     private static Application application;
     private static Scanner keyboard = new Scanner(System.in);
-    private static boolean loggedIn = true;
+   //private static boolean loggedIn = true;
     public static void main(String[] args) 
     {
-        while(loggedIn)
+        application = Application.getInstance();
+        application.loadAll();
+        application.printGreeting();
+        if (application.loginOrSignUp(keyboard.nextLine()) == 1)
+            login();
+        else
         {
-            application = Application.getInstance();
-            application.loadAll();
-            application.printGreeting();
-            if (application.loginOrSignUp(keyboard.nextLine()) == 1)
-                login();
-            else
-                signUp();
-            
+            signUp();
         }
+        printOptions();
+        application.createSpecificTypes();
+        System.out.println(application.listCompletedCourses());
     }
 
     public static void login()
@@ -39,7 +40,22 @@ public class ScenarioUI {
         System.out.println("Password:");
         String password = keyboard.nextLine();
         application.signUp(username, password, accountType);
+    }
 
+    public static void printOptions()
+    {
+        if (application.getUserType() == 1)
+        {
+            application.showStudentMenu();
+        }
+        else if (application.getUserType() == 2)
+        {
+            application.showAdvisorMenu();
+        }
+        else 
+        {
+            application.showFacultyMenu();
+        }
     }
     
 }

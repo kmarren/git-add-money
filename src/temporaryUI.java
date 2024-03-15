@@ -1,10 +1,10 @@
 package src;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class temporaryUI {
 
-    private static Application application;
+    //private static Application application;
 
     /*
     public static void main(String[] args) {

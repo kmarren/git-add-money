@@ -36,9 +36,7 @@
     "courseName": "CSCE146",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      {
-        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
-      }
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
     ],
     "description": "Continuation of CSCE 145. Rigorous development of algorithms and computer programs: elementary data structures. 3 lecture hours and 2 lab hours per week.",
     "totalSeats": 30,
@@ -100,7 +98,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -113,12 +111,12 @@
       "Interactive programming assignments.",
       "Weekly quizzes to reinforce learning."
     ],
-    "courseNumber": 425,
+    "courseNumber": 180,
     "courseCode": "AI",
-    "courseName": "CSCE425",
+    "courseName": "CSCE180",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      "CSCE310"
+      null
     ],
     "description": "This course provides an overview of artificial intelligence techniques, including search algorithms, knowledge representation, machine learning, and natural language processing.",
     "totalSeats": 25,
@@ -126,7 +124,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -144,8 +142,8 @@
     "courseName": "CSCE474",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      "CSCE310",
-      "CSCE425"
+      "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+      "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4"
     ],
     "description": "This course explores advanced topics in data mining, including clustering, classification, association rule mining, and text mining.",
     "totalSeats": 20,
@@ -153,9 +151,9 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
-    "elective": false,
+    "elective": true,
     "grade": 0,
     "completed": false,
     "enrolled": true
@@ -179,7 +177,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -195,7 +193,7 @@
     "courseName": "ENGL102",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "0f41c8e3-5897-442a-8730-41aba771da5e"
     ],
     "description": "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.",
     "totalSeats": 20,
@@ -245,7 +243,7 @@
     "courseName": "MATH141",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "f989afe4-32d2-4c69-9b7c-2a7138f2f7b1"
     ],
     "description": "Functions, limits, derivatives, introduction to integrals, the Fundamental Theorem of Calculus, applications of derivatives and integrals. Four hours and one lab hour per week.",
     "totalSeats": 30,
@@ -270,7 +268,7 @@
     "courseName": "MATH142",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"
     ],
     "description": "Methods of integration, sequences and series, approximations. Four classroom hours and one laboratory hour per week.",
     "totalSeats": 45,
@@ -329,7 +327,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -354,7 +352,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -379,7 +377,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -396,7 +394,7 @@
     "courseName": "CSCE215",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"
     ],
     "description": "UNIX operating system, user-level system commands, and programming tools. UNIX scripting languages.",
     "totalSeats": 25,
@@ -421,7 +419,7 @@
     "courseName": "CSCE201",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "0f41c8e3-5897-442a-8730-41aba771da5e"
     ],
     "description": "Introduction to the theory and practice of computer security, including security policies, authentification, digital certificates, firewalls, malicious code, legal and ethical issues, and incident handling.",
     "totalSeats": 35,
@@ -446,7 +444,7 @@
     "courseName": "CSCE210",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"
     ],
     "description": "Number representation, data formats, CPU and memory organization, assembly language, I/O and peripherals, computer networks.",
     "totalSeats": 35,
@@ -471,7 +469,7 @@
     "courseName": "CSCE205",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "41fa19b6-8bd8-421a-93c4-6b22b8ad4a69"
     ],
     "description": "Introduction to computer applications in business. Programming exercises in COBOL.",
     "totalSeats": 20,
@@ -496,7 +494,7 @@
     "courseName": "CSCE242",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
     ],
     "description": "Web technologies to support client-server computing. Implementation of client-server applications.",
     "totalSeats": 30,
@@ -521,7 +519,7 @@
     "courseName": "CSCE240",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
     ],
     "description": "Pointers; memory management; advanced programming language structures: operator overloading, iterators, multiple inheritance, polymorphism, templates, virtual functions; Unix programming environment.",
     "totalSeats": 35,
@@ -566,9 +564,9 @@
     "courseComments": [
       "A lot of busy work, but useful."
     ],
-    "courseNumber": 222,
+    "courseNumber": 225,
     "courseCode": "PR",
-    "courseName": "ACT224",
+    "courseName": "ACT225",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
       null
@@ -672,7 +670,8 @@
     "courseName": "MATH374",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9",
+      "453273dd-3361-4bf5-925a-e43f4e2ddc42"
     ],
     "description": "Propositional and predicate logic; proof techniques; recursion and recurrence relations; sets, combinatorics, and probability; functions, relations, and matrices; algebraic structures",
     "totalSeats": 35,
@@ -697,7 +696,8 @@
     "courseName": "ENGL462",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+     "0f41c8e3-5897-442a-8730-41aba771da5e",
+     "00d2aaef-83f6-49f8-8885-d6b4e8294b3f"
     ],
     "description": "Preparation for and practice in types of writing important to scientists, engineers, and computer scientists, from brief technical letters to formal articles and reports.",
     "totalSeats": 50,
@@ -722,7 +722,8 @@
     "courseName": "ENGL463",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+     "0f41c8e3-5897-442a-8730-41aba771da5e",
+     "00d2aaef-83f6-49f8-8885-d6b4e8294b3f"
     ],
     "description": "Extensive practice in different types of business writing, from brief letters to formal articles and reports.",
     "totalSeats": 30,
@@ -747,7 +748,7 @@
     "courseName": "STAT509",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "453273dd-3361-4bf5-925a-e43f4e2ddc42"
     ],
     "description": "Basic probability and statistics with applications and examples in engineering. Elementary probability, random variables and their distribution, random processes, statistical inference, linear regression, correlation and basic design of experiments with application to quality assurance, reliability, and life testing.",
     "totalSeats": 55,
@@ -772,7 +773,7 @@
     "courseName": "STAT515",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"
     ],
     "description": "Applications and principles of elementary probability, essential discrete and continuous probability distributions, sampling distributions, estimation, and hypothesis testing. Inference for means, variances, proportions, one-way ANOVA, simple linear regression, and contingency tables. Statistical packages such as SAS or R. ",
     "totalSeats": 55,
@@ -797,7 +798,7 @@
     "courseName": "STAT516",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "f5a2d491-ece1-4537-9214-997a9151907c"
     ],
     "description": "Applications and principles of linear models. Simple and multiple linear regression, analysis of variance for basic designs, multiple comparisons, random effects, and analysis of covariance. Statistical packages such as SAS. Not for CAS, MAS, MS, or PhD credit in Statistics.",
     "totalSeats": 50,
@@ -822,7 +823,7 @@
     "courseName": "CSCE350",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques",
     "totalSeats": 35,
@@ -847,7 +848,7 @@
     "courseName": "CSCE416",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
     ],
     "description": "Concepts and components of computer networks and the Internet; network applications; network protocol stack.",
     "totalSeats": 24,
@@ -873,13 +874,13 @@
     "courseName": "CSCE490",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Major team-based software design project to be undertaken in a student’s final year of study; project planning, software requirements analysis, design, and specification. Written reports and oral presentations in a technical setting.",
     "totalSeats": 45,
     "creditWorth": 3,
     "corequisites": [
-      null
+      "f35af6c3-cef2-407b-894b-9453e91cdd07"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -898,7 +899,9 @@
     "courseName": "CSCE492",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "ba3a5821-1ab7-41cf-aa02-a4ffd4e52200",
+      "d768458a-f23e-4257-ba61-b2808fc83efd", 
+      "f35af6c3-cef2-407b-894b-9453e91cdd07"
     ],
     "description": "Continuation of CSCE 490. Computer system implementation, testing, verification and validation of results. Written reports and oral presentations in a technical setting.",
     "totalSeats": 45,
@@ -923,7 +926,7 @@
     "courseName": "CSCE520",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Database management systems; database design and implementation; security, integrity, and privacy.",
     "totalSeats": 30,
@@ -931,7 +934,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -948,7 +951,8 @@
     "courseName": "CSCE522",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9",
+      "117b0da0-46c9-48e9-8256-ca9d09463ebe"
     ],
     "description": "Threats to information resources and appropriate countermeasures. Cryptography, identification and authentication, access control models and mechanisms, multilevel database security, steganography, Internet security, and intrusion detection and prevention.",
     "totalSeats": 25,
@@ -1023,7 +1027,7 @@
     "courseName": "ITEC560",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "41fa19b6-8bd8-421a-93c4-6b22b8ad4a69"
     ],
     "description": "Project management principles and standard practices, including software applications for project management.",
     "totalSeats": 40,
@@ -1048,7 +1052,7 @@
     "courseName": "CSCE580",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "4e5be488-31f3-4d49-883c-882207094485"
     ],
     "description": "Heuristic problem solving, theorem proving, and knowledge representation, including the use of appropriate programming.",
     "totalSeats": 25,
@@ -1073,7 +1077,7 @@
     "courseName": "CSCE555",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "4e5be488-31f3-4d49-883c-882207094485"
     ],
     "description": "Concepts, algorithms and tools for important problems in Bioinformatics, including nucleotide and amino acid sequence alignment, DNA fragment assembly, phylogenetic reconstruction, and protein structure visualization and assessment.",
     "totalSeats": 35,
@@ -1098,7 +1102,7 @@
     "courseName": "CSCE567",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"
     ],
     "description": "Scientific visualization tools as applied to sampled and generated data; methods for data manipulation and representation; investigation of visualization techniques.",
     "totalSeats": 40,
@@ -1123,7 +1127,9 @@
     "courseName": "CSCE574",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "ad0d00f9-45db-40b4-98e1-8f8280a6706a",
+      "a3c79d28-5d43-40d7-b98e-8888c0363811",
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Design and application of robotic systems; emphasis on mobile robots and intelligent machines.",
     "totalSeats": 30,
@@ -1148,7 +1154,8 @@
     "courseName": "CSCE578",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "b78cf3bf-a6e3-4454-bf87-eb56fb13376c",
+      "be0416fe-22b7-482f-9264-0667e82817f3"
     ],
     "description": "Text and natural language processing; formal models and data structures appropriate for text processing; selected topics in computational linguistics, stylistics, and content analysis.",
     "totalSeats": 15,
@@ -1173,7 +1180,8 @@
     "courseName": "CSCE582",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb", 
+      "f5a2d491-ece1-4537-9214-997a9151907c"
     ],
     "description": "Normative approaches to uncertainty in artificial intelligence. Probabilistic and causal modeling with Bayesian networks and influence diagrams. Applications in decision analysis and support. Algorithms for probability update in graphical models.",
     "totalSeats": 25,
@@ -1198,7 +1206,7 @@
     "courseName": "CSCE585",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Design and implementation of machine learning systems, Deep learning systems stack, machine learning platforms, scalable and distributed machine learning.",
     "totalSeats": 40,
@@ -1223,7 +1231,7 @@
     "courseName": "CSCE587",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "f5a2d491-ece1-4537-9214-997a9151907c"
     ],
     "description": "Foundational techniques and tools required for data science and big data analytics. Concepts, principles, and techniques applicable to any technology and industry for establishing a baseline that can be enhanced by future study.",
     "totalSeats": 55,
@@ -1248,7 +1256,8 @@
     "courseName": "CSCE311",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd",
+      "8294debf-618b-43c8-b4ec-b8beedd92948"
     ],
     "description": "Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems.",
     "totalSeats": 25,
@@ -1273,7 +1282,7 @@
     "courseName": "CSCE548",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Construction of software systems resistant to vulnerabilities and attacks. Cryptographic tools. Language, operating system, and network security. Case studies. Development of best practices through programming assignments.",
     "totalSeats": 20,
@@ -1298,7 +1307,8 @@
     "courseName": "CSCE557",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb",
+      "b17afc29-0840-4488-ad07-3280d2d7704d"
     ],
     "description": "Design of secret codes for secure communication, including encryption and integrity verification: ciphers, cryptographic hashing, and public key cryptosystems such as RSA. Mathematical principles underlying encryption. Code-breaking techniques. Cryptographic protocols.",
     "totalSeats": 32,
@@ -1354,7 +1364,7 @@
     "totalSeats": 40,
     "creditWorth": 1,
     "corequisites": [
-      null
+      "c8edd513-367c-441d-924b-33c66f85af73"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -1373,7 +1383,7 @@
     "courseName": "CHEM112",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "c8edd513-367c-441d-924b-33c66f85af73"
     ],
     "description": "Continuation of CHEM 111. Special emphasis on chemical equilibrium. Three lecture and one recitation hours per week.",
     "totalSeats": 45,
@@ -1404,7 +1414,7 @@
     "totalSeats": 45,
     "creditWorth": 1,
     "corequisites": [
-      null
+      "b292e7a3-a4ae-458b-8056-66866de9d3f4"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -1423,7 +1433,7 @@
     "courseName": "PHYS211",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"
     ],
     "description": "Classical mechanics and wave motion. Calculus-level course for students of science and engineering.",
     "totalSeats": 35,
@@ -1454,7 +1464,7 @@
     "totalSeats": 35,
     "creditWorth": 1,
     "corequisites": [
-      null
+      "871f0b9d-412c-48f4-b73f-7ad52d6ca1d4"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -1473,7 +1483,7 @@
     "courseName": "PHYS212L",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "871f0b9d-412c-48f4-b73f-7ad52d6ca1d4"
     ],
     "description": "Classical electromagnetism and optics.",
     "totalSeats": 30,
@@ -1504,7 +1514,7 @@
     "totalSeats": 30,
     "creditWorth": 1,
     "corequisites": [
-      null
+      "318e2b80-234d-484e-8ad5-bcf0563a4a22"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -1523,7 +1533,7 @@
     "courseName": "MATH241",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "453273dd-3361-4bf5-925a-e43f4e2ddc42"
     ],
     "description": "Vector algebra, geometry of three-dimensional space; lines, planes, and curves in space; polar, cylindrical, and spherical coordinate systems; partial differentiation, max-min theory; multiple and iterated integration, line integrals, and Green’s theorem in the plane.",
     "totalSeats": 25,
@@ -1548,7 +1558,7 @@
     "courseName": "MATH344",
     "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
     "prerequisites": [
-      null
+      "453273dd-3361-4bf5-925a-e43f4e2ddc42"
     ],
     "description": "General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse. MATH 344L is an optional laboratory course where additional applications will be discussed.",
     "totalSeats": 35,
@@ -1579,7 +1589,7 @@
     "totalSeats": 35,
     "creditWorth": 1,
     "corequisites": [
-      null
+      "6b77417c-17e5-40cb-9c52-fefbcbf57d6c"
     ],
     "applicationArea": false,
     "carolinaCore": false,
@@ -1598,7 +1608,7 @@
     "courseName": "CSCE211",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"
     ],
     "description": "Number systems, Boolean algebra, logic design, sequential machines.",
     "totalSeats": 42,
@@ -1623,7 +1633,8 @@
     "courseName": "CSCE212",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "ad0d00f9-45db-40b4-98e1-8f8280a6706a",
+      "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"
     ],
     "description": "Computer architecture, components. and organization; memory addressing; Input/Output; instruction sets; interrupts; assembly-language programming. Students may not apply both CSCE 210 and CSCE 212 to any minor or major program of study.",
     "totalSeats": 25,
@@ -1648,7 +1659,8 @@
     "courseName": "CSCE311",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd",
+      "8294debf-618b-43c8-b4ec-b8beedd92948"
     ],
     "description": "Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems.",
     "totalSeats": 45,
@@ -1673,7 +1685,9 @@
     "courseName": "CSCE330",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd",
+      "117b0da0-46c9-48e9-8256-ca9d09463ebe"
+
     ],
     "description": "Formal specification of syntax and semantics; structure of algorithms; list processing and string manipulation languages; statement types, control structures, and interfacing procedures.",
     "totalSeats": 23,
@@ -1698,7 +1712,7 @@
     "courseName": "CSCE350",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "d768458a-f23e-4257-ba61-b2808fc83efd"
     ],
     "description": "Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques.",
     "totalSeats": 40,
@@ -1723,7 +1737,9 @@
     "courseName": "CSCE355",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "ad0d00f9-45db-40b4-98e1-8f8280a6706a",
+      "a3c79d28-5d43-40d7-b98e-8888c0363811",
+      "4e5be488-31f3-4d49-883c-882207094485"
     ],
     "description": "Basic theoretical principles of computing as modeled by formal languages, grammars, automata, and Turing machines; fundamental limits of computation.",
     "totalSeats": 25,
@@ -1748,7 +1764,7 @@
     "courseName": "CSCE416",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
-      null
+      "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
     ],
     "description": "Concepts and components of computer networks and the Internet; network applications; network protocol stack.",
     "totalSeats": 45,
@@ -1831,7 +1847,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1857,7 +1873,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -1882,7 +1898,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,
@@ -1907,7 +1923,7 @@
       null
     ],
     "applicationArea": false,
-    "carolinaCore": false,
+    "carolinaCore": true,
     "elective": false,
     "grade": 0,
     "completed": false,

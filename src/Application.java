@@ -16,9 +16,7 @@ public class Application
     private CourseList courseList = CourseList.getInstance();
     private MajorList majorList = MajorList.getInstance();
     private AppointmentList appointmentList = AppointmentList.getInstance();
-
     private static Application application;
-    
     /**
      * private constructor that will not allow other classes to create a new applicatoin
      */
@@ -27,12 +25,6 @@ public class Application
         
     }
 
-public void loadAll() {
-        userList.loadAll();
-        majorList.loadAll();
-        appointmentList.loadAll();
-        courseList.loadAll();
-    }
     /**
      * creates an application if there is not one or returns the application if there is one
      * @return the application
@@ -45,18 +37,26 @@ public void loadAll() {
 		return application;
     }
 
+    public void loadAll() {
+        userList.loadAll();
+        majorList.loadAll();
+        appointmentList.loadAll();
+        courseList.loadAll();
+    }
+
     /**
      * takes in the a username and password and returns the user that is trying to login
      * @param username the username attempt
      * @param password the password attempt
      * @return the user who was logged in
      */
-    public boolean login(String username, String password) //returns void, sets current user to the user who just logged in
+    public void login(String username, String password) //returns void, sets current user to the user who just logged in
     {
-        // go through the user list and finds a match to the username and password, else returns false
         user = userList.getUser(username, password);
-        return userList.login(username, password);
-        
+        if(userList.login(username, password))
+            System.out.println("Accepted");
+        else
+            System.out.println("Rejected");
     }
  
     /**
@@ -65,15 +65,15 @@ public void loadAll() {
      * @param password the password given to create the new account
      * @return the new user
      */
-    public void signUp(String username, String password, int type) // returns void, sets current user to the new user
+    public void signUp(String username, String password, String accountType) // returns void, sets current user to the new user
     {
-        if(type == 3)
+        if(accountType.equalsIgnoreCase("faculty"))
         {
             Faculty faculty = new Faculty(username, password);
             UserList.getInstance().addUser(faculty);
             user = faculty;
         } 
-        else if(type == 2)
+        else if(accountType.equalsIgnoreCase("advisor"))
         {
             Advisor advisor = new Advisor(username, password);
             UserList.getInstance().addUser(advisor);
@@ -85,7 +85,49 @@ public void loadAll() {
             UserList.getInstance().addUser(student);
             user = student;
         }
+    }
 
+    public void printGreeting()
+    {
+        System.out.println("Welcome to DegreeCraft");
+        System.out.println("Login or sign up?");
+    }
+
+    public void showStudentMenu() 
+    {
+            System.out.println("\nStudent Menu:");
+            System.out.println("1. View Semester Plan");
+            System.out.println("2. View Past and Current Grades");
+            System.out.println("3. Logout");
+    }
+    
+    public void showAdvisorMenu() 
+    {
+            System.out.println("\nAdvisor Menu:");
+            System.out.println("1. View Advisees");
+            System.out.println("2. View Appointments");
+            System.out.println("3. Search");
+            System.out.println("4. Logout");
+    }
+    
+    public void showFacultyMenu() 
+    {
+            System.out.println("\nFaculty Menu:");
+            System.out.println("1. Add Course");
+            System.out.println("2. Search");
+            System.out.println("3. Logout");
+    }
+
+    public int loginOrSignUp(String choice)
+    {
+        if(choice.equalsIgnoreCase("login"))
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
     }
 
     public ArrayList<Course> getCourseList() {
@@ -101,61 +143,10 @@ public void loadAll() {
     }
 
     /**
-     * adds a generalized course
-     * @param courseComments The comments for the course.
-     * @param courseNumber The number for the course.
-     * @param courseCode The code for the course.
-     * @param courseName The name of the course.
-     * @param instructor The instructor for the course.
-     * @param prerequisites The prerequisites for the course.
-     * @param description The course description. 
-     * @param totalSeats The maximum amount of student allowed to take the course.
-     * @param creditWorth The number of credits the course is worth.
-     * @param corequisites The corequisites for the course.
-     * @param applicationArea Whether or not the course applies for an application area.
-     * @param carolinaCore Whether or not the course counts for a carolina core requirement.
-     * @param elective Whether or not the course counts for elective credit.
-     * @return whether or not the course was added
+     * adds a generalized course to the course
      */
-    public void addCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
-    Faculty instructor, ArrayList<Course> prereqisites, String description, int totalSeats, int creditWorth, 
-    ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, boolean elective)
+    public void addCourse(Course course)
     {
-        Course course = new Course(courseComments, courseNumber, courseCode, courseName, 
-        instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
-        applicationArea, carolinaCore, elective);
-
-        courseList.addCourse(course);
-    }
-
-    /**
-     * adds adds a course specific to a student experience
-     *@param courseComments The comments for the course.
-     * @param courseNumber The number for the course.
-     * @param courseCode The code for the course.
-     * @param courseName The name of the course.
-     * @param instructor The instructor for the course.
-     * @param prerequisites The prerequisites for the course.
-     * @param description The course description. 
-     * @param totalSeats The maximum amount of student allowed to take the course.
-     * @param creditWorth The number of credits the course is worth.
-     * @param corequisites The corequisites for the course.
-     * @param applicationArea Whether or not the course applies for an application area.
-     * @param carolinaCore Whether or not the course counts for a carolina core requirement.
-     * @param elective Whether or not the course counts for elective credit.
-     * @param grade The grade a student has earned in the course.
-     * @param completed Whether or not the student has completed the course.
-     * @param enrolled Whether or not the student is currently enrolled in the course.
-     */
-    public void addStudentCourse(ArrayList<String> courseComments, int courseNumber, String courseCode, String courseName, 
-    Faculty instructor, ArrayList<Course> prereqisites, String description, int totalSeats, int creditWorth, 
-    ArrayList<Course> corequisites, boolean applicationArea, boolean carolinaCore, boolean elective, double grade, 
-    boolean completed, boolean enrolled)
-    {
-        Course course = new Course(courseComments, courseNumber, courseCode, courseName, 
-        instructor, prereqisites, description, totalSeats, creditWorth, corequisites, 
-        applicationArea, carolinaCore, elective, grade, completed, enrolled);
-
         courseList.addCourse(course);
     }
 

@@ -145,6 +145,7 @@ public class Major {
         return completedCourses;
     }
 
+
     public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }

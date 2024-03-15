@@ -5,20 +5,19 @@ public class ScenarioUI {
 
     private static Application application;
     private static Scanner keyboard = new Scanner(System.in);
-
+    private static boolean loggedIn = true;
     public static void main(String[] args) 
     {
-        application = Application.getInstance();
-        application.loadAll();
-        System.out.println("Welcome to DegreeCraft");
-        System.out.println("Login or sign up?");
-        if(keyboard.nextLine().equalsIgnoreCase("login"))
+        while(loggedIn)
         {
-            login();
-        }
-        else
-        {
-            signUp();
+            application = Application.getInstance();
+            application.loadAll();
+            application.printGreeting();
+            if (application.loginOrSignUp(keyboard.nextLine()) == 1)
+                login();
+            else
+                signUp();
+            
         }
     }
 
@@ -28,64 +27,19 @@ public class ScenarioUI {
         String username = keyboard.nextLine();
         System.out.println("Password:");
         String password = keyboard.nextLine();
-
-        if(application.login(username, password))
-        {
-            System.out.println("Accepted");
-           
-            if(application.getCurrentUser().getType() == 1)
-                showStudentMenu();
-            else if(application.getCurrentUser().getType() == 2)
-                showAdvisorMenu();
-            else
-                showFacultyMenu();
-
-        }
-        else
-        {
-            System.out.println("Rejected");
-        }
+        application.login(username, password);
     }
 
     public static void signUp()
     {
-        int type = 0;
         System.out.println("Are you a Student, Faculty, or Advisor?"); 
-        if(keyboard.nextLine().equalsIgnoreCase("student"))
-        {
-            type = 1;
-        }
-        else if(keyboard.nextLine().equalsIgnoreCase("advisor"))
-        {
-            type = 2;
-        }
-        else if(keyboard.nextLine().equalsIgnoreCase("faculty"))
-        {
-            type = 3;
-        }
+        String accountType = keyboard.nextLine();
         System.out.println("Username:");
         String username = keyboard.nextLine();
         System.out.println("Password:");
         String password = keyboard.nextLine();
-        application.signUp(username, password, type);
+        application.signUp(username, password, accountType);
 
     }
-    public static void showStudentMenu() {
-        boolean loggedIn = true;
-        while (loggedIn) {
-            System.out.println("\nStudent Menu:");
-            System.out.println("1. View Semester Plan");
-            System.out.println("2. View Past and Current Grades");
-            System.out.println("3. Logout");
-            int choice = Integer.parseInt(keyboard.nextLine());
-        }
-    }
     
-    public static void showAdvisorMenu() {
-        
-    }
-    
-    public static void showFacultyMenu() {
-    
-    }
 }

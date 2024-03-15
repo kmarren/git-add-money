@@ -259,6 +259,31 @@
     "enrolled": false
   },
   {
+    "courseID": "453273dd-3361-4bf5-925a-e43f4e2ddc42",
+    "courseComments": [
+      "A continuation of math 141, not too hard."
+    ],
+    "courseNumber": 142,
+    "courseCode": "CC-ARP",
+    "courseName": "MATH142",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Methods of integration, sequences and series, approximations. Four classroom hours and one laboratory hour per week.",
+    "totalSeats": 45,
+    "creditWorth": 4,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
     "courseID": "f7adb3c4-31de-4c73-94c0-8aaff74cdd7c",
     "courseComments": [
       "Very easy and fun class! I finally made my resume in this class."
@@ -1275,6 +1300,606 @@
     ],
     "description": "Design of secret codes for secure communication, including encryption and integrity verification: ciphers, cryptographic hashing, and public key cryptosystems such as RSA. Mathematical principles underlying encryption. Code-breaking techniques. Cryptographic protocols.",
     "totalSeats": 32,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "c8edd513-367c-441d-924b-33c66f85af73",
+    "courseComments": [
+      "Easy chemistry class."
+    ],
+    "courseNumber": 111,
+    "courseCode": "CC-SCI",
+    "courseName": "CHEM111",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Survey of the principles that underlie all chemistry with applications illustrating these principles. Three lecture and one recitation hours per week.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "9083feeb-21d6-4539-a4f0-dc4cf7a9669f",
+    "courseComments": [
+      "Easy lab sessions for chem 111"
+    ],
+    "courseNumber": 111,
+    "courseCode": "CC-SCI",
+    "courseName": "CHEM111L",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity.",
+    "totalSeats": 40,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "b292e7a3-a4ae-458b-8056-66866de9d3f4",
+    "courseComments": [
+      "A continuation of chem 112, still pretty easy."
+    ],
+    "courseNumber": 112,
+    "courseCode": "CC-SCI",
+    "courseName": "CHEM112",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Continuation of CHEM 111. Special emphasis on chemical equilibrium. Three lecture and one recitation hours per week.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "aa9a7c2c-be56-4f06-92fb-6faaef22cf62",
+    "courseComments": [
+      "Easy lab sessions for chem 112"
+    ],
+    "courseNumber": 112,
+    "courseCode": "CC-SCI",
+    "courseName": "CHEM112L",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Continuation of CHEM 111L with emphasis on solution properties, kinetics, equilibrium, acids and bases, and qualitative analysis.",
+    "totalSeats": 45,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "871f0b9d-412c-48f4-b73f-7ad52d6ca1d4",
+    "courseComments": [
+      "Much more difficult than chem, I would take that instead."
+    ],
+    "courseNumber": 211,
+    "courseCode": "CC-SCI",
+    "courseName": "PHYS211",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Classical mechanics and wave motion. Calculus-level course for students of science and engineering.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "76c83d76-834e-4c74-ba30-e7fb641f094f",
+    "courseComments": [
+      "Difficult lab, but useful."
+    ],
+    "courseNumber": 211,
+    "courseCode": "CC-SCI",
+    "courseName": "PHYS211L",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Classical mechanics and wave motion. Calculus-level course for students of science and engineering.",
+    "totalSeats": 35,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "318e2b80-234d-484e-8ad5-bcf0563a4a22",
+    "courseComments": [
+      "A continuation of phys 211, pretty difficult."
+    ],
+    "courseNumber": 212,
+    "courseCode": "CC-SCI",
+    "courseName": "PHYS212L",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Classical electromagnetism and optics.",
+    "totalSeats": 30,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "5f2d1352-ba4f-410d-842c-beff94fbfa15",
+    "courseComments": [
+      "A lot of hands-on lab stuff, make sure you study for them."
+    ],
+    "courseNumber": 212,
+    "courseCode": "CC-SCI",
+    "courseName": "PHYS212L",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Classical electromagnetism and optics.",
+    "totalSeats": 30,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f183c1b2-f92f-412d-9e94-b85104f2c019",
+    "courseComments": [
+      "Hardest math class I've taken yet!"
+    ],
+    "courseNumber": 241,
+    "courseCode": "PR",
+    "courseName": "MATH241",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Vector algebra, geometry of three-dimensional space; lines, planes, and curves in space; polar, cylindrical, and spherical coordinate systems; partial differentiation, max-min theory; multiple and iterated integration, line integrals, and Green’s theorem in the plane.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "6b77417c-17e5-40cb-9c52-fefbcbf57d6c",
+    "courseComments": [
+      "Another very hard math class. :("
+    ],
+    "courseNumber": 344,
+    "courseCode": "PR",
+    "courseName": "MATH344",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse. MATH 344L is an optional laboratory course where additional applications will be discussed.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "0f702851-20a8-4193-9e6f-70b939d5024d",
+    "courseComments": [
+      "Difficult lab, pay attention in the class pls!"
+    ],
+    "courseNumber": 344,
+    "courseCode": "PR",
+    "courseName": "MATH344L",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse. MATH 344L is an optional laboratory course where additional applications will be discussed.",
+    "totalSeats": 35,
+    "creditWorth": 1,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "ad0d00f9-45db-40b4-98e1-8f8280a6706a",
+    "courseComments": [
+      "Easy class if you pay attention during lectures and take notes."
+    ],
+    "courseNumber": 211,
+    "courseCode": "PR",
+    "courseName": "CSCE211",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Number systems, Boolean algebra, logic design, sequential machines.",
+    "totalSeats": 42,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "a3c79d28-5d43-40d7-b98e-8888c0363811",
+    "courseComments": [
+      "In depth lecutres on computer architecture."
+    ],
+    "courseNumber": 212,
+    "courseCode": "PR",
+    "courseName": "CSCE212",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Computer architecture, components. and organization; memory addressing; Input/Output; instruction sets; interrupts; assembly-language programming. Students may not apply both CSCE 210 and CSCE 212 to any minor or major program of study.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "47d8e57d-3f36-4f89-9ede-b6c1fa952512",
+    "courseComments": [
+      "Operating systems are hard wow."
+    ],
+    "courseNumber": 311,
+    "courseCode": "MR",
+    "courseName": "CSCE311",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "b78cf3bf-a6e3-4454-bf87-eb56fb13376c",
+    "courseComments": [
+      "Take a lot of notes, the lectures are very detailed."
+    ],
+    "courseNumber": 330,
+    "courseCode": "MR",
+    "courseName": "CSCE330",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Formal specification of syntax and semantics; structure of algorithms; list processing and string manipulation languages; statement types, control structures, and interfacing procedures.",
+    "totalSeats": 23,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "4e5be488-31f3-4d49-883c-882207094485",
+    "courseComments": [
+      "A lot of coding, be prepared."
+    ],
+    "courseNumber": 350,
+    "courseCode": "MR",
+    "courseName": "CSCE350",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques.",
+    "totalSeats": 40,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "be0416fe-22b7-482f-9264-0667e82817f3",
+    "courseComments": [
+      "Lectures are very interactive, with a lot of theoretical stuff."
+    ],
+    "courseNumber": 355,
+    "courseCode": "MR",
+    "courseName": "CSCE355",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Basic theoretical principles of computing as modeled by formal languages, grammars, automata, and Turing machines; fundamental limits of computation.",
+    "totalSeats": 25,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "c9adf1d8-c772-4901-b3db-779fcc25092f",
+    "courseComments": [
+      "Pretty simple intro class on computer networks."
+    ],
+    "courseNumber": 416,
+    "courseCode": "MR",
+    "courseName": "CSCE416",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "Concepts and components of computer networks and the Internet; network applications; network protocol stack.",
+    "totalSeats": 45,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "ae367967-73ba-4c88-b5c2-ecfd3411e1ba",
+    "courseComments": [
+      "Very useful for learning ASL! I use it all the time"
+    ],
+    "courseNumber": 121,
+    "courseCode": "CC-GFL",
+    "courseName": "ASLG121",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to basical vocabulary and common grammar structures of ASL. Focus on communication and familiarization with aspects of deaf culture.",
+    "totalSeats": 20,
+    "creditWorth": 4,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "c1c30d86-b169-4520-8840-e1e639fe3a5c",
+    "courseComments": [
+      "Very useful for learning ASL! I use it all the time"
+    ],
+    "courseNumber": 122,
+    "courseCode": "CC-GFL",
+    "courseName": "ASLG122",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Practice and further development in the language and culture of the American deaf community.",
+    "totalSeats": 20,
+    "creditWorth": 4,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "146de4fb-715d-436a-86e1-03735353dd01",
+    "courseComments": [
+      "Very informative, I learned a lot of things I didn't already know about US history."
+    ],
+    "courseNumber": 111,
+    "courseCode": "CC-GHS",
+    "courseName": "HIST111",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "A general survey of the United States from the era of discovery to 1865, emphasizing major political, economic, social, and intellectual developments.",
+    "totalSeats": 35,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "d97b22bd-86ec-4c10-9c4b-9987b2d042f3",
+    "courseComments": [
+      "A lot of info on the culture of food, very interesting."
+    ],
+    "courseNumber": 212,
+    "courseCode": "CC-GSS",
+    "courseName": "ANTH212",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Biological and cultural interactions affecting foodways around the world, and associated ethical issues.",
+    "totalSeats": 60,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "76e0946a-7351-4caa-80ec-c4cfb41f2bf8",
+    "courseComments": [
+      "So much interesting lectures on the film industry!"
+    ],
+    "courseNumber": 180,
+    "courseCode": "CC-AIU",
+    "courseName": "FAMS180",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "How the film industry developed and the impact the movies have had on global popular culture.",
+    "totalSeats": 55,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "082160b6-4f19-4964-941f-6b223f7978e7",
+    "courseComments": [
+      "This class helps to get better at giving speeches, definitely will remember a lot of the content from here."
+    ],
+    "courseNumber": 140,
+    "courseCode": "CC-CMS",
+    "courseName": "SPCH140",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Introduction to theory and practice of oral communication in public, social, and institutional contexts. Includes foundational and cumulative training in the invention, performance, and critical analysis of oral communication, with emphasis on argumentation, persuasion, audience analysis, delivery, and ethical forms of engagement.",
+    "totalSeats": 20,
     "creditWorth": 3,
     "corequisites": [
       null

@@ -32,7 +32,13 @@ public class ScenarioUI {
         if(application.login(username, password))
         {
             System.out.println("Accepted");
-            showStudentMenu();
+           
+            if(application.getCurrentUser().getType() == 1)
+                showStudentMenu();
+            else if(application.getCurrentUser().getType() == 2)
+                showAdvisorMenu();
+            else
+                showFacultyMenu();
 
         }
         else
@@ -72,7 +78,6 @@ public class ScenarioUI {
             System.out.println("2. View Past and Current Grades");
             System.out.println("3. Logout");
             int choice = Integer.parseInt(keyboard.nextLine());
-    
         }
     }
     

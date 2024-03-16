@@ -248,17 +248,18 @@ public class Major {
      */
     public String calculateProgressionAsFraction() 
     {
-        return String.valueOf(hoursCompleted) + "/" + String.valueOf(hoursRequired);
+        return String.valueOf(getHoursCompleted()) + "/" + String.valueOf(getHoursRequired());
     }
 
     public String calculateProgressionAsCreditsNeeded()
     {
-        return String.valueOf(hoursRequired - hoursCompleted);
+        return String.valueOf(hoursRequired - (getHoursCompleted()));
     }
 
     public String calculateProgressionAsPercentage() 
     {
-        return progression+"%";
+        double percent = (getHoursCompleted() / getHoursRequired()) * 100 ;
+        return String.valueOf(percent) + "%";
     }
 
     public String toString() {

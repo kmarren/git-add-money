@@ -15,7 +15,7 @@ public class Student extends User {
     private ArrayList<Achievement> achievements;
     private Advisor advisor;
     private boolean riskFailing;
-    private double hoursCompleted;
+    private int hoursCompleted;
 
     /**
      * Constructs a new Student object with the specified attributes.
@@ -135,7 +135,7 @@ public class Student extends User {
      *
      * @return The number of completed hours.
      */
-    public double getHoursCompleted() {
+    public int getHoursCompleted() {
         return hoursCompleted;
     }
 
@@ -210,7 +210,7 @@ public class Student extends User {
      *
      * @param hoursCompleted The number of completed hours.
      */
-    public void setHoursCompleted(double hoursCompleted) {
+    public void setHoursCompleted(int hoursCompleted) {
         this.hoursCompleted = hoursCompleted;
     }
 
@@ -234,8 +234,10 @@ public class Student extends User {
      */
     public String viewProfile() 
     {
-        return getFirstName() + " "  + getLastName() 
-        + "\n" + gpa + " " + getMajor().calculateProgressionAsFraction(); 
+        return 
+        "Name: " + getFirstName() + " " + getLastName() + "\n" +
+        "GPA: " + gpa + "\n" +
+        "Degree Progression " + getMajor().calculateProgressionAsPercentage() ;
     }
 
     /**

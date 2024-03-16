@@ -144,7 +144,6 @@ public class Application
     public void printGreeting()
     {
         System.out.println("Welcome to DegreeCraft");
-        System.out.println("Login or sign up?");
     }
 
     public void showStudentMenu() 

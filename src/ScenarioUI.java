@@ -9,27 +9,34 @@ public class ScenarioUI {
     {
         application.loadAll();
         application.printGreeting();
-        loginOrSignUp(keyboard.nextLine());
+        loginOrSignUp();
         application.createSpecificTypes();
         printOptions();
         int choice = keyboard.nextInt();
         application.executeStudentChoice(choice);
     }
 
-    public static void loginOrSignUp(String input)
+    public static void loginOrSignUp()
     {
-        if (input.equalsIgnoreCase("login"))
+        boolean choice = false;
+        while(!choice)
         {
-            login();
+            System.out.println("Login or Sign Up?");
+            String input = keyboard.nextLine();
+            if(application.canLoginOrSignUp(input))
+            {
+                if(input.equalsIgnoreCase("login"))
+                    login();
+                if(input.equalsIgnoreCase("sign up"))
+                    login();
+                choice = true;
+            }
+            else
+            {
+                System.out.println("Please Try Again");
+                continue;
+            }
         }
-        else if (input.equalsIgnoreCase("sign up"))
-        {
-            signUp();
-        }
-        else
-        {
-            System.out.println("Invalid input. Please Try Again.");
-        } 
     }
 
     public static void login()

@@ -72,6 +72,18 @@ public class Application
             return false;
     }
 
+    public boolean canLoginOrSignUp(String choice)
+    {
+        if(choice.equalsIgnoreCase("login") || choice.equalsIgnoreCase("sign up"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
     /**
      * takes in a username and password to create a new user with the corresponding username and password

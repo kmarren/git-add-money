@@ -28,7 +28,7 @@ public class ScenarioUI {
                 if(input.equalsIgnoreCase("login"))
                     login();
                 if(input.equalsIgnoreCase("sign up"))
-                    login();
+                    signUp();
                 choice = true;
             }
             else

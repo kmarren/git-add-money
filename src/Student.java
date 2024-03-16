@@ -232,10 +232,10 @@ public class Student extends User {
      * @param student The student whose profile is to be viewed.
      * @return A string representation of the student's profile.
      */
-    // I dont think we need to pass in a student here, can just pass in nothing??
-    public String viewStudentProfile() {
-        // Implementation goes here
-        return null; // Placeholder return statement
+    public String viewProfile() 
+    {
+        return getFirstName() + " "  + getLastName() 
+        + "\n" + gpa + " " + getMajor().calculateProgressionAsFraction(); 
     }
 
     /**
@@ -283,17 +283,6 @@ public class Student extends User {
         double gpa = 100000000;
         setGpa(gpa);
     }
-
-    /**
-     * Acts as a toString method which lists out the student's user information
-     * 
-     * @return The students profile information.
-     */
-
-    public String viewProfile() {
-        return " ";
-    }
-
     public void addStudentComment(String comment) {
         studentComments.add(comment);
     }

@@ -151,7 +151,7 @@ public class Application
     {
             System.out.println("\nStudent Menu:");
             System.out.println("1. View Semester Plan");
-            System.out.println("2. View Past and Current Grades");
+            System.out.println("2. View Profile");
             System.out.println("3. View Completed Courses");
             System.out.println("4. Logout");
     }
@@ -178,7 +178,7 @@ public class Application
                 System.out.println("SHOULD DO SOMETHING BUT CANT");
                 break;
             case 2:
-                System.out.println("SHOULD DO SOMETHING BUT CANT");
+                System.out.println(viewStudentProfile());
                 break;
             case 3:
                 System.out.println(listCompletedCourses());
@@ -376,15 +376,22 @@ public class Application
     }
 
     /**
-     * Takes in a student from the user and returns their information as a String
-     * @param student the student whos information will be displayed
+     * Returns the current students information
      * @return the students information
      */
-    public String viewStudent(Student student)
+    public String viewStudentProfile()
     {
-        return " ";
+        return student.viewProfile();
     }
 
+    /**
+     * Returns the current students information
+     * @return the students information
+     */
+    public String viewStudentProfile(Student aStudent)
+    {
+        return aStudent.viewProfile();
+    }
     /**
      * Retrieves an advisors list of available appointments
      * @return the advisors available appointments

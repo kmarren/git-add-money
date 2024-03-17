@@ -20,7 +20,7 @@ public class DataWriter extends DataConstants {
 
     public static void parseUserList() {
         ArrayList<User> users = userList.getUsers();
-        for(User user : users) {
+        for (User user : users) {
             if (user instanceof Student) {
                 students.add((Student) user);
             } else if (user instanceof Faculty) {
@@ -29,17 +29,14 @@ public class DataWriter extends DataConstants {
                 advisors.add((Advisor) user);
             }
         }
-        
 
     }
 
-    public static void writeCourses() 
-    {
+    public static void writeCourses() {
         courses = CourseList.getInstance().getCourses();
         JSONArray courseJSON = new JSONArray();
 
-        for(Course course : courses)
-        {
+        for (Course course : courses) {
             courseJSON.add(getCourseJSON(course));
         }
 
@@ -79,13 +76,11 @@ public class DataWriter extends DataConstants {
         return courseJSON;
     }
 
-    public static void writeMajors() 
-    {
+    public static void writeMajors() {
         majors = MajorList.getInstance().getMajors();
         JSONArray majorJSON = new JSONArray();
 
-        for(Major major : majors)
-        {
+        for (Major major : majors) {
             majorJSON.add(getMajorJSON(major));
         }
 
@@ -111,13 +106,12 @@ public class DataWriter extends DataConstants {
         return majorJSON;
     }
 
-    //curious about the proper way to write the data, should be convert from user to student somehow??
-    public static void writeStudents()
-    {
+    // curious about the proper way to write the data, should be convert from user
+    // to student somehow??
+    public static void writeStudents() {
         JSONArray studentJSON = new JSONArray();
 
-        for(Student student : students)
-        {
+        for (Student student : students) {
             studentJSON.add(getStudentJSON(student));
         }
 
@@ -132,8 +126,7 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getStudentJSON(Student student)
-    {
+    public static JSONObject getStudentJSON(Student student) {
         JSONObject studentJSON = new JSONObject();
         studentJSON.put(STUDENT_FIRST_NAME, student.getFirstName());
         studentJSON.put(STUDENT_LAST_NAME, student.getLastName());
@@ -143,7 +136,7 @@ public class DataWriter extends DataConstants {
         studentJSON.put(STUDENT_PASSWORD, student.getPassword());
         studentJSON.put(USER_TYPE, 1);
         Major studentMajor = student.getMajor();
-        if (studentMajor != null && studentMajor.getMajorID() != null)  {
+        if (studentMajor != null && studentMajor.getMajorID() != null) {
             studentJSON.put(STUDENT_MAJOR_ID, studentMajor.getMajorID().toString());
         } else {
             studentJSON.put(STUDENT_MAJOR_ID, null);
@@ -157,23 +150,20 @@ public class DataWriter extends DataConstants {
         } else {
             studentJSON.put(STUDENT_ADVISOR, null);
         }
-        //studentJSON.put(STUDENT_ADVISOR, student.getAdvisor().getUserID().toString());
+        // studentJSON.put(STUDENT_ADVISOR,
+        // student.getAdvisor().getUserID().toString());
         studentJSON.put(STUDENT_RISK_FAILING, student.isRiskFailing());
         studentJSON.put(STUDENT_HOURS_COMPLETED, student.getHoursCompleted());
-        
-        
-
-
+        studentJSON.put(STUDENT_COMPLETED_COURSES, student.getCompletedCourseUUID());
+        studentJSON.put(STUDENT_ENROLLED_COURSES, student.getEnrolledCourseUUID());
 
         return studentJSON;
     }
 
-    public static void writeAdvisors()
-    {
+    public static void writeAdvisors() {
         JSONArray advisorJSON = new JSONArray();
 
-        for(Advisor advisor : advisors)
-        {
+        for (Advisor advisor : advisors) {
             advisorJSON.add(getAdvisorJSON(advisor));
         }
 
@@ -188,8 +178,7 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getAdvisorJSON(Advisor advisor)
-    {
+    public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject advisorJSON = new JSONObject();
 
         advisorJSON.put(ADVISOR_FIRST_NAME, advisor.getFirstName());
@@ -206,17 +195,13 @@ public class DataWriter extends DataConstants {
         advisorJSON.put(ADVISOR_SCHOOL_OF_FOCUS, advisor.getSchoolOfFocus());
         advisorJSON.put(ADVISOR_APPOINTMENTS, advisor.getAppointments());
 
-
-
         return advisorJSON;
     }
 
-    public static void writeFaculty()
-    {
+    public static void writeFaculty() {
         JSONArray facultyJSON = new JSONArray();
 
-        for(Faculty faculty : faculties)
-        {
+        for (Faculty faculty : faculties) {
             facultyJSON.add(getFacultyJSON(faculty));
         }
 
@@ -231,8 +216,7 @@ public class DataWriter extends DataConstants {
     }
 
     @SuppressWarnings("unchecked")
-    public static JSONObject getFacultyJSON(Faculty faculty)
-    {
+    public static JSONObject getFacultyJSON(Faculty faculty) {
         JSONObject facultyJSON = new JSONObject();
 
         facultyJSON.put(FACULTY_FIRST_NAME, faculty.getFirstName());
@@ -247,8 +231,6 @@ public class DataWriter extends DataConstants {
 
         return facultyJSON;
     }
-
-
 
     // need to have this go through the students, advisors etc as well, however i
     // just wanted to get a basic understanding of the datawriter first

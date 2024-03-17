@@ -2499,6 +2499,31 @@
     "enrolled": false
   },
   {
+    "courseID": "e5ed5822-d6d6-418a-80a8-10d9484a5e82",
+    "courseComments": [
+      "Advanced course but creatively focused!"
+    ],
+    "courseNumber": 311,
+    "courseCode": "MR",
+    "courseName": "DGDN311",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Advanced techniques in design and graphics.",
+    "totalSeats": 18,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": true,
+    "carolinaCore": true,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
     "courseID": "f359896e-56b9-4faa-b9bd-0a0804d8b414",
     "courseComments": [
       "Learn the basics!"

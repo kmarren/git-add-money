@@ -21,6 +21,7 @@ public class Student extends User {
     private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
     private ArrayList<Course> completedCourses = new ArrayList<Course>();
     private ArrayList<Course> futureCourses = new ArrayList<Course>();
+    private ArrayList<Course> chosenCourses = new ArrayList<Course>();
     private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
     private ArrayList<String> completedCourseUUIDS = new ArrayList<String>();
     private int cmw = 0;
@@ -257,18 +258,6 @@ public class Student extends User {
         this.riskFailing = riskFailing;
     }
 
-    /*
-     * im not sure about these, I forget what they were supposed to do and I think
-     * we got rid of them
-     * public void sendAdvisorComment(Advisor advisor) {
-     * // Implementation goes here
-     * }
-     * 
-     * public void sendInstructorComment(Advisor advisor) {
-     * // Implementation goes here
-     * }
-     */
-
     /**
      * Views the profile of the specified student.
      *
@@ -453,9 +442,9 @@ public class Student extends User {
             return "Freshman";
         } else if (hours > 30 && hours < 60) {
             return "Sophomore";
-        } else if (hours > 60 && hours < 90) {
+        } else if (hours > 60 && hours < 100) {
             return "Junior";
-        } else if (hours > 90){
+        } else if (hours > 100){
             return "Senior";
         }else{
             return " ";
@@ -497,25 +486,25 @@ public class Student extends User {
         StringBuilder reqs = new StringBuilder();
 
         if(cmw < CarolinaCore.CC_CMW)
-            reqs.append("Carolina Core CMW").append("\n");
+            reqs.append("Carolina Core CMW: ").append(CarolinaCore.CC_CMW - cmw + " Credits Needed").append("\n");
         if(arp < CarolinaCore.CC_ARP)
-            reqs.append(" Carolina Core ARP").append("\n");
+            reqs.append(" Carolina Core ARP: ").append(CarolinaCore.CC_ARP - arp + " Credits Needed").append("\n");
         if(sci < CarolinaCore.CC_SCI)
-            reqs.append("Carolina Core SCI").append("\n");
+            reqs.append("Carolina Core SCI: ").append(CarolinaCore.CC_SCI - sci + " Credits Needed").append("\n");
         if(gfl < CarolinaCore.CC_GFL)
-            reqs.append("Carolina Core GFL").append("\n");
+            reqs.append("Carolina Core GFL: ").append(CarolinaCore.CC_GFL - gfl + " Credits Needed").append("\n");
         if(ghs < CarolinaCore.CC_GHS)
-            reqs.append("Carolina Core GHS").append("\n");
+            reqs.append("Carolina Core GHS: ").append(CarolinaCore.CC_GHS - ghs + " Credits Needed").append("\n");
         if(gss < CarolinaCore.CC_GSS)
-            reqs.append("Carolina Core GSS").append("\n");
+            reqs.append("Carolina Core GSS: ").append(CarolinaCore.CC_GSS - gss + " Credits Needed").append("\n");
         if(aiu < CarolinaCore.CC_AIU)
-            reqs.append("Carolina Core AIU").append("\n");
+            reqs.append("Carolina Core AIU: ").append(CarolinaCore.CC_AIU - aiu + " Credits Needed").append("\n");
         if(cms < CarolinaCore.CC_CMS)
-            reqs.append("Carolina Core CMS").append("\n");
+            reqs.append("Carolina Core CMS: ").append(CarolinaCore.CC_CMS - cms + " Credits Needed").append("\n");
         if(inf < CarolinaCore.CC_INF)
-            reqs.append("Carolina Core INF").append("\n");
+            reqs.append("Carolina Core INF: ").append(CarolinaCore.CC_INF - inf + " Credits Needed").append("\n");
         if(vsr < CarolinaCore.CC_VSR)
-            reqs.append("Carolina Core VSR").append("\n");
+            reqs.append("Carolina Core VSR: ").append(CarolinaCore.CC_VSR - vsr + " Credits Needed").append("\n");
         return reqs.toString();
 
     }
@@ -615,6 +604,11 @@ public class Student extends User {
                 continue;
             }
         }
+    }
+
+    public void chooseCourse(Course course)
+    {
+        chosenCourses.add(course);
     }
 
 }

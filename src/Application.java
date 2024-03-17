@@ -151,7 +151,8 @@ public class Application {
         System.out.println("2. View Future Courses");
         System.out.println("3. View Unsatisfied Carolina Core Requirements");
         System.out.println("4. View Profile");
-        System.out.println("5. Logout");
+        System.out.println("5. View Application Areas");
+        System.out.println("6. Logout");
     }
 
     public void showAdvisorMenu() {
@@ -181,10 +182,13 @@ public class Application {
                 System.out.println(viewNeededCC());
                 break;
             case 4:
-                System.out.println(student.getMajor());
                 System.out.println(viewStudentProfile());
                 break;
             case 5:
+                System.out.println(viewApplicationAreas());
+                executeApplicationArea(keyboard.nextInt());
+                break;
+            case 6:
                 logout();
                 break;
             default:
@@ -567,5 +571,48 @@ public class Application {
         DataWriter.writeStudents();
         DataWriter.writeAllID();
     }
+
+
+    
+     public String viewApplicationAreas() {
+        StringBuilder areas = new StringBuilder();
+       
+        areas.append("1. Science").append("\n");
+        areas.append("2. Math").append("\n");
+        areas.append("3. Robotics").append("\n");
+        areas.append("4. Digital Design").append("\n");
+        areas.append("5. Speech").append("\n");
+
+        return areas.toString();
+    }
+
+    public void executeApplicationArea(int choice) {
+        switch (choice) {
+            case 1: //science
+                System.out.println("Description:\n Students will explore a variety of lab sciences including Biology, Chemistry, and Physics.");
+                System.out.println("Compatable Courses:\n BIOL 101\n BIOL 102\n CHEM 111\n CHEM 112\n PHYS 111\n PHYS 112");
+                break;
+            case 2: //math
+                System.out.println("Description:\n Students interested in the physical -- as well as cognitive or algorithmic -- aspects of robots will benefit from these courses.");
+                System.out.println("Compatable Courses:\n CSCE 574\n CSCE 580\n EMCH 535\n ELCT 332\n ELCT 531");
+                break;
+            case 3: //robotics
+                System.out.println("Description:\n Provides students with basic abilities in linear and abstract algebra as well as a broad introduction to topics such as logic, set theory, functions and fundamental methods of mathematical proof.");
+                System.out.println("Compatable Courses:\n MATH 242\n MATH 300\n MATH 344\n MATH 374\n MATH 511");
+                break;
+            case 4: //digital design
+                System.out.println("Description:\n Prepares students to work in modern media production through hands-on experience and an understanding of how successful media works.");
+                System.out.println("Compatable Courses:\n DGDN 244\n DGDN 245\n DGDN 311\n ");
+                break;
+            case 5: //speech
+                System.out.println("Description:\n Students will learn about speech is the workplace and public speaking.");
+                System.out.println("Compatable Courses:\n SPCH 300\n SPCH 350\n SPCH 376\n ");
+                break;
+            default:
+                System.out.println("Invalid");
+                break;
+        }
+    }
+
 
 }

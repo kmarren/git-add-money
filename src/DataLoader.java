@@ -176,7 +176,7 @@ public class DataLoader extends DataConstants {
                             foundCourse.setGrade(courseGrade);
                         } else {
                             double targetGrade = 85.0; // Target grade
-                            double variability = 5.0; // Variability
+                            double variability = 15.0; // Variability
                             double minGrade = targetGrade - variability;
                             double maxGrade = targetGrade + variability;
 

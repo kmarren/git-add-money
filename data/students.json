@@ -16,6 +16,22 @@
         "achievementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678"
       }
     ],
+    "enrolledCourses": [
+      {
+        "courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"
+      },
+      {
+        "courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"
+      }
+    ],
+    "completedCourses": [
+      {
+        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"
+      },
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
+    ],
     "gpa": 3.5,
     "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
     "riskFailing": false,
@@ -38,6 +54,22 @@
         "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
       }
     ],
+    "enrolledCourses": [
+      {
+        "courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"
+      },
+      {
+        "courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"
+      }
+    ],
+    "completedCourses": [
+      {
+        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"
+      },
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
+    ],
     "gpa": 3.8,
     "advisorID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
     "riskFailing": false,
@@ -58,6 +90,22 @@
     "achievements": [
       {
         "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"
+      },
+      {
+        "courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"
+      }
+    ],
+    "completedCourses": [
+      {
+        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"
+      },
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
       }
     ],
     "gpa": 2.4,

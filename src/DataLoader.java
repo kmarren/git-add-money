@@ -60,11 +60,13 @@ public class DataLoader extends DataConstants {
                     boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                     String studentID = (String) studentJsonObj.get(STUDENT_ID);
                     UUID uuid = UUID.fromString(studentID);
-
+                    ArrayList<Course> enrolledCourses = new ArrayList<>();
+                    ArrayList<Course> completedCourses = new ArrayList<>();
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                            riskFailing, firstName, lastName, email, username, password, major);
+                            riskFailing, firstName, lastName, email, username, 
+                            password, major, enrolledCourses, completedCourses);
                     student.setUserID(uuid);
                     // Add student to the list
                     students.add(student);
@@ -96,10 +98,13 @@ public class DataLoader extends DataConstants {
                 boolean riskFailing = (boolean) studentJsonObj.get(STUDENT_RISK_FAILING);
                 String studentID = (String) studentJsonObj.get(STUDENT_ID);
                 UUID uuid = UUID.fromString(studentID);
+                ArrayList<Course> enrolledCourses = new ArrayList<>();
+                ArrayList<Course> completedCourses = new ArrayList<>();
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                        riskFailing, firstName, lastName, email, username, password, major);
+                        riskFailing, firstName, lastName, email, username, 
+                        password, major, enrolledCourses, completedCourses);
                 student.setUserID(uuid);
 
                 // Add student to the list
@@ -395,6 +400,7 @@ public class DataLoader extends DataConstants {
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(reader);
             JSONArray studentJSON = (JSONArray) obj;
+            CourseList courseList = CourseList.getInstance();
 
             for (User student : students) {
                 if (student.getType() == 1) {
@@ -417,6 +423,28 @@ public class DataLoader extends DataConstants {
                             Major major = (Major) MajorList.getInstance().getMajorID(majorID);
                             if (major != null) {
                                 currentStudent.setMajor(majorID);
+                            }
+
+                            // Load enrolled courses
+                            JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
+                            for (Object courseObj : enrolledCoursesArray) {
+                            JSONObject courseJsonObj = (JSONObject) courseObj;
+                            String courseID = (String) courseJsonObj.get(COURSE_ID);
+                            Course enrolledCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                            if (enrolledCourse != null) {
+                                currentStudent.addEnrolledCourse(enrolledCourse);
+                            }
+                            }
+
+                            // Load completed courses
+                            JSONArray completedCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_COMPLETED_COURSES);
+                            for (Object courseObj : completedCoursesArray) {
+                            JSONObject courseJsonObj = (JSONObject) courseObj;
+                            String courseID = (String) courseJsonObj.get(COURSE_ID);
+                            Course completedCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                            if (completedCourse != null) {
+                                currentStudent.addCompletedCourse(completedCourse);
+                            }
                             }
 
                             break;
@@ -442,15 +470,11 @@ public class DataLoader extends DataConstants {
                     JSONObject majorJson = (JSONObject) majorObj;
                     String title = (String) majorJson.get(MAJOR_TITLE);
                     ArrayList<Course> requiredCourses = new ArrayList<>();
-                    ArrayList<Course> completedCourses = new ArrayList<>();
-                    ArrayList<Course> enrolledCourses = new ArrayList<>();
                     int hoursRequired = Integer.parseInt(majorJson.get(MAJOR_HOURS_REQUIRED).toString());
-                    double progression = Double.parseDouble(majorJson.get(MAJOR_PROGRESSION).toString());
                     String majorId = (String) majorJson.get(MAJOR_ID);
                     UUID uuid = UUID.fromString(majorId);
                     // Create Major object and add to list
-                    Major major = new Major(title, requiredCourses, completedCourses, hoursRequired,
-                            progression, enrolledCourses);
+                    Major major = new Major(title, requiredCourses, hoursRequired);
                     major.setMajorID(uuid);
                     majorList.add(major);
                 }
@@ -485,28 +509,6 @@ public class DataLoader extends DataConstants {
                             Course requiredCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
                             if (requiredCourse != null) {
                                 major.addRequiredCourse(requiredCourse);
-                            }
-                        }
-
-                        // Load enrolled courses
-                        JSONArray enrolledCoursesArray = (JSONArray) majorJsonObj.get(MAJOR_ENROLLED_COURSES);
-                        for (Object courseObj : enrolledCoursesArray) {
-                            JSONObject courseJsonObj = (JSONObject) courseObj;
-                            String courseID = (String) courseJsonObj.get(COURSE_ID);
-                            Course enrolledCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
-                            if (enrolledCourse != null) {
-                                major.addEnrolledCourse(enrolledCourse);
-                            }
-                        }
-
-                        // Load completed courses
-                        JSONArray completedCoursesArray = (JSONArray) majorJsonObj.get(MAJOR_COMPLETED_COURSES);
-                        for (Object courseObj : completedCoursesArray) {
-                            JSONObject courseJsonObj = (JSONObject) courseObj;
-                            String courseID = (String) courseJsonObj.get(COURSE_ID);
-                            Course completedCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
-                            if (completedCourse != null) {
-                                major.addCompletedCourse(completedCourse);
                             }
                         }
                         break;

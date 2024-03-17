@@ -16,6 +16,10 @@ public class Student extends User {
     private Advisor advisor;
     private boolean riskFailing;
     private int hoursCompleted;
+    private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
+    private ArrayList<Course> completedCourses = new ArrayList<Course>();
+    private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
+    private ArrayList<String> completedCourseUUIDS = new ArrayList<String>();
 
     /**
      * Constructs a new Student object with the specified attributes.
@@ -28,7 +32,6 @@ public class Student extends User {
      *                        etc.)
      * @param advisor         The advisor assigned to the student.
      * @param riskFailing     Whether the student is at risk of failing.
-     * @param hoursCompleted  The number of completed hours by the student.
      * @param firstName       The first name of the student.
      * @param lastName        The last name of the student.
      * @param email           The email address of the student.
@@ -38,7 +41,8 @@ public class Student extends User {
      */
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing,
-            String firstName, String lastName, String email, String username, String password, Major major) {
+            String firstName, String lastName, String email, String username, String password,
+             Major major, ArrayList<Course> enrolledCourses, ArrayList<Course> completedCourses) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -47,6 +51,8 @@ public class Student extends User {
         this.advisor = advisor;
         this.riskFailing = riskFailing;
         this.major = major;
+        this.enrolledCourses = enrolledCourses;
+        this.completedCourses = completedCourses;
     }
 
     /**
@@ -130,14 +136,7 @@ public class Student extends User {
         return riskFailing;
     }
 
-    /**
-     * Returns the number of completed hours by the student.
-     *
-     * @return The number of completed hours.
-     */
-    public int getHoursCompleted() {
-        return hoursCompleted;
-    }
+
 
     // Setters
 
@@ -168,6 +167,35 @@ public class Student extends User {
     public void setStudentComments(ArrayList<String> studentComments) {
         this.studentComments = studentComments;
     }
+
+    /**
+     * Retrieves the total hours completed for the student.
+     * 
+     * @return The total hours completed for the student.
+     */
+    public int getHoursCompleted() {
+        for(Course course : completedCourses)
+        {
+            int curr = course.getCreditWorth();
+            hoursCompleted += curr;
+        }
+        return hoursCompleted;
+    }
+
+    public void resetHoursCompleted()
+    {
+        hoursCompleted = 0;
+    }
+
+    /**
+     * Sets the total hours completed for the major.
+     * 
+     * @param hoursCompleted The total hours completed to set.
+     */
+    public void setHoursCompleted(int hoursCompleted) {
+        this.hoursCompleted = hoursCompleted;
+    }
+
 
     /**
      * Sets the achievements earned by the student.
@@ -205,15 +233,6 @@ public class Student extends User {
         this.riskFailing = riskFailing;
     }
 
-    /**
-     * Sets the number of completed hours by the student.
-     *
-     * @param hoursCompleted The number of completed hours.
-     */
-    public void setHoursCompleted(int hoursCompleted) {
-        this.hoursCompleted = hoursCompleted;
-    }
-
     /*
      * im not sure about these, I forget what they were supposed to do and I think
      * we got rid of them
@@ -236,8 +255,11 @@ public class Student extends User {
     {
         return 
         "Name: " + getFirstName() + " " + getLastName() + "\n" +
+        "Major: " + getMajor() + "\n" +
+        "Classification: " + getGradeLevel() + "\n" +
         "GPA: " + gpa + "\n" +
-        "Degree Progression " + getMajor().calculateProgressionAsPercentage() ;
+        "Degree Progression: " + calculateProgressionAsPercentage() ;
+
     }
 
     /**
@@ -306,4 +328,96 @@ public class Student extends User {
     public String toString() {
         return this.username;
     }
+
+    public ArrayList<String> getEnrolledCourseUUID()
+    {
+        for (Course course : enrolledCourses)
+        {
+            String courseID = course.getCourseID().toString();
+            enrolledCourseUUIDS.add(courseID);
+        }
+
+        return enrolledCourseUUIDS;
+    }
+
+    public ArrayList<String> getCompletedCourseUUID()
+    {
+        for (Course course : completedCourses)
+        {
+            String courseID = course.getCourseID().toString();
+            completedCourseUUIDS.add(courseID);
+        }
+
+        return completedCourseUUIDS;
+    }
+
+    public ArrayList<Course> getCompletedCourses() {
+        return completedCourses;
+    }
+
+
+    public ArrayList<Course> getEnrolledCourses() {
+        return enrolledCourses;
+    }
+
+
+    public void setEnrolledCourses(ArrayList<Course> enrolledCourses) {
+        this.enrolledCourses = enrolledCourses;
+    }
+
+    public void setCompletedCourses(ArrayList<Course> completedCourses) {
+        this.completedCourses = completedCourses;
+    }
+
+    public void addCompletedCourse(Course course)
+    {
+        completedCourses.add(course);
+    }
+
+
+
+    /**
+     * Calculates the progression of the major based on completed and required
+     * hours.
+     */
+    public String calculateProgressionAsFraction() 
+    {
+        resetHoursCompleted();
+        return String.valueOf(getHoursCompleted()) + "/" + String.valueOf(getMajor().getHoursRequired());
+    }
+
+    public String calculateProgressionAsCreditsNeeded()
+    {
+        resetHoursCompleted();
+        return String.valueOf(getMajor().getHoursRequired() - getHoursCompleted());
+    }
+
+    public String calculateProgressionAsPercentage() 
+    {
+        resetHoursCompleted();
+        double percent = (getHoursCompleted() * 100)/ getMajor().getHoursRequired() ;
+        return String.valueOf(percent) + "%";
+    }
+
+    public String getGradeLevel()
+    {
+        if (getHoursCompleted() < 30)
+        {
+            return "Freshman";
+        }
+        else if(getHoursCompleted() > 30 && getHoursCompleted() < 60)
+        {
+            return "Sophomore";
+        }
+        else if(getHoursCompleted() > 60 && getHoursCompleted() < 90)
+        {
+            return "Junion";
+        }
+        else
+        {
+            return "Senior";
+        }
+    }
+
+
 }

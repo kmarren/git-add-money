@@ -8,10 +8,7 @@ public abstract class DataConstants {
     protected static final String MAJOR_TITLE = "title";
     protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
     protected static final String MAJOR_COURSE_ID = "courseID";
-    protected static final String MAJOR_COMPLETED_COURSES = "completedCourses";
     protected static final String MAJOR_HOURS_REQUIRED = "hoursRequired";
-    protected static final String MAJOR_PROGRESSION = "progression";
-    protected static final String MAJOR_ENROLLED_COURSES = "enrolledCourses";
 
     // course data constants
     protected static final String COURSE_FILE_NAME = "data/course.json";
@@ -83,6 +80,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_ACHIEVEMENTS = "achievements";
     protected static final String STUDENT_GPA = "gpa";
     protected static final String STUDENT_ENROLLED_COURSES = "enrolledCourses";
+    protected static final String STUDENT_COMPLETED_COURSES = "completedCourses";
     protected static final String STUDENT_ADVISOR = "advisorID";
     protected static final String STUDENT_RISK_FAILING = "riskFailing";
     protected static final String STUDENT_HOURS_COMPLETED = "hoursCompleted";

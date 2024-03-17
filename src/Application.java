@@ -133,12 +133,12 @@ public class Application
 
     public String listCompletedCourses()
     {
-        return student.getMajor().getCompletedCourses().toString();
+        return student.getCompletedCourses().toString();
     }
 
     public String listCompletedCourses(Student aStudent)
     {
-        return aStudent.getMajor().getCompletedCourses().toString();
+        return aStudent.getCompletedCourses().toString();
     }
 
     public void printGreeting()
@@ -241,7 +241,6 @@ public class Application
      * @param achievements    Achievements earned by the student (scholarships etc.)
      * @param advisor         The advisor assigned to the student.
      * @param riskFailing     Whether the student is at risk of failing.
-     * @param hoursCompleted  The number of completed hours by the student.
      * @param studentID       The ID of the student.
      * @param firstName       The first name of the student.
      * @param lastName        The last name of the student.
@@ -251,10 +250,13 @@ public class Application
      * @param major           The mojor of the student.
      */
     public void addStudent(double gpa, boolean minor, ArrayList<String> studentComments,
-    ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, double hoursCompleted,
-    String firstName, String lastName, String email, String username, String password, Major major)
+    ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing, 
+    String firstName, String lastName, String email, String username, String password, Major major,
+     ArrayList<Course> enrolledCourses, ArrayList<Course> completedCourses)
     {
-        Student student = new Student(gpa, minor, studentComments, achievements, advisor, riskFailing, firstName, lastName, email, username, password, major);
+        Student student = new Student(gpa, minor, studentComments, 
+        achievements, advisor, riskFailing, firstName, lastName, 
+        email, username, password, major, enrolledCourses, completedCourses);
         userList.addUser(student);
     }
 

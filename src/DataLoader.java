@@ -3,6 +3,7 @@ package src;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Random;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -169,6 +170,20 @@ public class DataLoader extends DataConstants {
                     // Iterate over coursesJsonArray to find the JSON object for the current course
                     for (Object obj : coursesJsonArray) {
                         JSONObject courseJson = (JSONObject) obj;
+                        if (Double.parseDouble(courseJson.get(COURSE_GRADE).toString()) != 0) {
+                            Number courseGradeNumber = (Number) courseJson.get(COURSE_GRADE);
+                            Double courseGrade = courseGradeNumber.doubleValue();
+                            foundCourse.setGrade(courseGrade);
+                        } else {
+                            double targetGrade = 85.0; // Target grade
+                            double variability = 5.0; // Variability
+                            double minGrade = targetGrade - variability;
+                            double maxGrade = targetGrade + variability;
+
+                            double randomGrade = minGrade + Math.random() * (maxGrade - minGrade);
+                            randomGrade = Math.round(randomGrade * 100.0) / 100.0;
+                            foundCourse.setGrade(randomGrade);
+                        }
                         String courseIdStr = (String) courseJson.get(COURSE_ID);
                         if (courseIdStr.equals(foundCourse.getCourseID().toString())) {
                             // Load prerequisites

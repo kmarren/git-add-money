@@ -467,7 +467,7 @@ public class Student extends User {
 
     public boolean isTaking(Course aCourse) {
         for (Course course : enrolledCourses) {
-            if (course.getCourseID() == aCourse.getCourseID())
+            if (course.getCourseID().equals(aCourse.getCourseID()))
                 return true;
         }
         return false;
@@ -475,7 +475,7 @@ public class Student extends User {
 
     public boolean hasTaken(Course aCourse) {
         for (Course course : completedCourses) {
-            if (course.getCourseID() == aCourse.getCourseID())
+            if (course.getCourseID().equals(aCourse.getCourseID()))
                 return true;
         }
         return false;

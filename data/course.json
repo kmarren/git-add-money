@@ -135,6 +135,31 @@
     "enrolled": true
   },
   {
+    "courseID": "65541aa4-b637-4d42-84f0-a9dfae30bf9d",
+    "courseComments": [
+      "A good class for real world practice."
+    ],
+    "courseNumber": 317,
+    "courseCode": "BD",
+    "courseName": "CSCE317",
+    "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
+    "prerequisites": [
+      null
+    ],
+    "description": "System modeling.",
+    "totalSeats": 14,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": false,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": true
+  },
+  {
     "courseID": "f8e4ee96-aa35-48bb-8bb2-0517c8ee66f4",
     "courseComments": [
       "Interactive programming assignments.",
@@ -1690,6 +1715,31 @@
     "enrolled": false
   },
   {
+    "courseID": "eb72b489-be6b-4bce-9b69-857b01fffe79",
+    "courseComments": [
+      "Hard class but you will definitely learn a lot"
+    ],
+    "courseNumber": 201,
+    "courseCode": "CC-SCI",
+    "courseName": "GEOG201",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+     null
+    ],
+    "description": "Hydrology, soil science, and interpretation of physical features formed by water, wind, and ice, with emphasis on environmental change. ",
+    "totalSeats": 78,
+    "creditWorth": 4,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": true,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
     "courseID": "6b77417c-17e5-40cb-9c52-fefbcbf57d6c",
     "courseComments": [
       "Another very hard math class. :("
@@ -2099,6 +2149,31 @@
     "enrolled": false
   },
   {
+    "courseID": "0a38d096-732a-49a7-9269-c793092ef844",
+    "courseComments": [
+      "Difficult but very helpful for real world interactions!."
+    ],
+    "courseNumber": 213,
+    "courseCode": "CC-CMS",
+    "courseName": "PHIL213",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "How to communicate moral issues.",
+    "totalSeats": 56,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": true,
+    "carolinaCore": true,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
     "courseID": "3a47614d-aab7-478d-8a1d-f2b3d600a85b",
     "courseComments": [
      null
@@ -2394,6 +2469,56 @@
     "applicationArea": true,
     "carolinaCore": true,
     "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "22846d1d-0aab-4431-a72e-5efcaf72d5b9",
+    "courseComments": [
+      "Continuation of Digital Design 244!"
+    ],
+    "courseNumber": 245,
+    "courseCode": "MR",
+    "courseName": "DGDN245",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Photoshop and Procreate focused design course",
+    "totalSeats": 50,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": true,
+    "carolinaCore": true,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
+  },
+  {
+    "courseID": "f359896e-56b9-4faa-b9bd-0a0804d8b414",
+    "courseComments": [
+      "Learn the basics!"
+    ],
+    "courseNumber": 109,
+    "courseCode": "CC-GFL",
+    "courseName": "SPAN109",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "Spanish course.",
+    "totalSeats": 250,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": false,
+    "carolinaCore": true,
+    "elective": true,
     "grade": 0,
     "completed": false,
     "enrolled": false

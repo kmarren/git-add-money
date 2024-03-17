@@ -94,10 +94,16 @@
     ],
     "enrolledCourses": [
       {
-        "courseID": "376f20e2-e7e2-445c-922b-eac863034e88"
+        "courseID": "b78cf3bf-a6e3-4454-bf87-eb56fb13376c"
       },
       {
-        "courseID": "3688c526-736a-4085-b795-a3b15afd2d7c"
+        "courseID": "f35af6c3-cef2-407b-894b-9453e91cdd07"
+      },
+      {
+        "courseID": "234db3a4-6d5a-47e5-b999-a018d6f3241e"
+      },
+      {
+        "courseID": "59461ae8-06e0-4a87-b459-c5c2b708e4e1"
       }
     ],
     "completedCourses": [
@@ -157,18 +163,6 @@
       },
       {
         "courseID": "09bd3e41-5773-4bd9-a86a-dd8647fe2e9e"
-      },
-      {
-        "courseID": "b78cf3bf-a6e3-4454-bf87-eb56fb13376c"
-      },
-      {
-        "courseID": "f35af6c3-cef2-407b-894b-9453e91cdd07"
-      },
-      {
-        "courseID": "234db3a4-6d5a-47e5-b999-a018d6f3241e"
-      },
-      {
-        "courseID": "59461ae8-06e0-4a87-b459-c5c2b708e4e1"
       }
     ],
     "gpa": 2.4,

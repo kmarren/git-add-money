@@ -17,6 +17,7 @@ public class Student extends User {
     private Advisor advisor;
     private boolean riskFailing;
     private int hoursCompleted;
+    private int hoursEnrolled;
     private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
     private ArrayList<Course> completedCourses = new ArrayList<Course>();
     private ArrayList<Course> futureCourses = new ArrayList<Course>();
@@ -183,6 +184,18 @@ public class Student extends User {
 
     public void resetHoursCompleted() {
         hoursCompleted = 0;
+    }
+
+    public int getHoursEnrolled() {
+        for (Course course : enrolledCourses) {
+            int curr = course.getCreditWorth();
+            hoursEnrolled += curr;
+        }
+        return hoursEnrolled;
+    }
+
+    public void resetHoursEnrolled() {
+        hoursEnrolled = 0;
     }
 
     /**
@@ -397,30 +410,42 @@ public class Student extends User {
      */
     public String calculateProgressionAsFraction() {
         resetHoursCompleted();
-        return String.valueOf(getHoursCompleted()) + "/" + String.valueOf(getMajor().getHoursRequired());
+        resetHoursEnrolled();
+        int hours = getHoursCompleted() + getHoursEnrolled();
+        return String.valueOf(hours) + "/" + String.valueOf(getMajor().getHoursRequired());
     }
 
     public String calculateProgressionAsCreditsNeeded() {
         resetHoursCompleted();
-        return String.valueOf(getMajor().getHoursRequired() - getHoursCompleted());
+        resetHoursEnrolled();
+        int hours = getHoursCompleted() + getHoursEnrolled();
+        return String.valueOf(getMajor().getHoursRequired() - hours);
     }
 
     public String calculateProgressionAsPercentage() {
         resetHoursCompleted();
-        double percent = (getHoursCompleted() * 100) / getMajor().getHoursRequired();
+        resetHoursEnrolled();
+        int hours = getHoursCompleted() + getHoursEnrolled();
+        double percent = (hours * 100) / getMajor().getHoursRequired();
         return String.valueOf(percent) + "%";
     }
 
     public String getGradeLevel() {
-        if (getHoursCompleted() < 30) {
+        resetHoursCompleted();
+        resetHoursEnrolled();
+        int hours = getHoursCompleted() + getHoursEnrolled();
+        if (hours < 30) {
             return "Freshman";
-        } else if (getHoursCompleted() > 30 && getHoursCompleted() < 60) {
+        } else if (hours > 30 && hours < 60) {
             return "Sophomore";
-        } else if (getHoursCompleted() > 60 && getHoursCompleted() < 90) {
-            return "Junion";
-        } else {
+        } else if (hours > 60 && hours < 90) {
+            return "Junior";
+        } else if (hours > 90){
             return "Senior";
+        }else{
+            return " ";
         }
+         
     }
 
     public ArrayList<Course> getFutureCourses() {

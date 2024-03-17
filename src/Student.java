@@ -186,6 +186,11 @@ public class Student extends User {
         hoursCompleted = 0;
     }
 
+    public void resetFutureCourses()
+    {
+        futureCourses.clear();
+    }
+
     public int getHoursEnrolled() {
         for (Course course : enrolledCourses) {
             int curr = course.getCreditWorth();
@@ -449,11 +454,12 @@ public class Student extends User {
     }
 
     public ArrayList<Course> getFutureCourses() {
+        resetFutureCourses();
         for (Course course : getMajor().getRequiredCourses()) {
-            if (isTaking(course) || hasTaken(course)) {
-                continue;
-            } else {
+            if (!isTaking(course) && !hasTaken(course)) {
                 futureCourses.add(course);
+            } else {
+                continue;
             }
         }
         return futureCourses;

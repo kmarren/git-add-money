@@ -18,6 +18,7 @@ public class Student extends User {
     private int hoursCompleted;
     private ArrayList<Course> enrolledCourses = new ArrayList<Course>();
     private ArrayList<Course> completedCourses = new ArrayList<Course>();
+    private ArrayList<Course> futureCourses = new ArrayList<Course>();
     private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
     private ArrayList<String> completedCourseUUIDS = new ArrayList<String>();
 
@@ -417,6 +418,39 @@ public class Student extends User {
         {
             return "Senior";
         }
+    }
+
+    public boolean isCurrentlyTaking(Course aCourse)
+    {
+        for (Course course : enrolledCourses)
+        {
+            if(aCourse.getCourseName().equalsIgnoreCase(course.getCourseName())) 
+                return true;
+            else
+                continue;
+        }
+        return false;
+    }
+    public boolean hasTaken(Course aCourse)
+    {
+        for (Course course :  completedCourses)
+        {
+            if(aCourse.getCourseName().equalsIgnoreCase(course.getCourseName())) 
+                return true;
+            else
+                continue;
+        }
+        return false;
+    }
+
+    public ArrayList<Course> getFutureCourses()
+    {
+        for(Course course : getMajor().getRequiredCourses())
+        {
+            if (!hasTaken(course) && !isCurrentlyTaking(course))
+                futureCourses.add(course);
+        }
+        return futureCourses;
     }
 
 

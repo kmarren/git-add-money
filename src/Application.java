@@ -2,6 +2,7 @@ package src;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Scanner;
 
 
 //test 
@@ -20,6 +21,7 @@ public class Application
     private MajorList majorList = MajorList.getInstance();
     private AppointmentList appointmentList = AppointmentList.getInstance();
     private static Application application;
+    private Scanner keyboard = new Scanner(System.in);
     /**
      * private constructor that will not allow other classes to create a new applicatoin
      */
@@ -131,14 +133,24 @@ public class Application
         }
     }
 
-    public String listCompletedCourses()
+    public ArrayList<Course> listCompletedCourses()
     {
-        return student.getCompletedCourses().toString();
+        return student.getCompletedCourses();
     }
 
-    public String listCompletedCourses(Student aStudent)
+    public ArrayList<Course> listCompletedCourses(Student aStudent)
     {
-        return aStudent.getCompletedCourses().toString();
+        return aStudent.getCompletedCourses();
+    }
+
+    public ArrayList<Course> listFutureCourses()
+    {
+        return student.getFutureCourses();
+    }
+
+    public ArrayList<Course> listFutureCourses(Student aStudent)
+    {
+        return aStudent.getFutureCourses();
     }
 
     public void printGreeting()
@@ -149,16 +161,16 @@ public class Application
     public void showStudentMenu() 
     {
             System.out.println("\nStudent Menu:");
-            System.out.println("1. View Semester Plan");
-            System.out.println("2. View Profile");
-            System.out.println("3. View Completed Courses");
+            System.out.println("1. View Completed Courses");
+            System.out.println("2. View Remaining Courses");
+            System.out.println("3. View Profile");
             System.out.println("4. Logout");
     }
     public void showAdvisorMenu() 
     {
             System.out.println("\nAdvisor Menu:");
-            System.out.println("1. View Advisees");
-            System.out.println("2. View Appointments");
+            System.out.println("1. Add Advisee");
+            System.out.println("2. Write Comment");
             System.out.println("3. Search");
             System.out.println("4. Logout");
     }
@@ -174,13 +186,41 @@ public class Application
         switch(choice)
         {
             case 1:
-                System.out.println("SHOULD DO SOMETHING BUT CANT");
+                for(Course course : listCompletedCourses())
+                {
+                    System.out.println(course.toString());
+                }
                 break;
             case 2:
-                System.out.println(viewStudentProfile());
+                for(Course course : listFutureCourses())
+                {
+                    System.out.println(course.toString());
+                }
                 break;
             case 3:
-                System.out.println(listCompletedCourses());
+                System.out.println(viewStudentProfile());
+                break;
+            case 4:
+                logout();
+                break;
+            default:
+                System.out.println("Invalid");
+                break;
+        }
+    }
+    public void executeAdvisorChoice(int choice)
+    {
+        switch(choice)
+        {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                System.out.println("Search: ");
+                System.out.println(searchForStudentByUsername(keyboard.nextLine()));
                 break;
             case 4:
                 logout();
@@ -196,6 +236,15 @@ public class Application
         return user.getType();
     }
 
+    public String searchForStudentByUsername(String searchField)
+    {
+        if(advisor.searchByUserName(searchField) == null)
+        {
+            return "Could Not Find User";
+        }
+        else
+            return viewStudentProfile((Student)advisor.searchByUserName(searchField));
+    }
 
     public ArrayList<Course> getCourseList() {
         return courseList.getCourses();
@@ -384,7 +433,6 @@ public class Application
     {
         return student.viewProfile();
     }
-
     /**
      * Returns the current students information
      * @return the students information
@@ -451,7 +499,6 @@ public class Application
         DataWriter.writeStudents();
         DataWriter.writeAllID();
     }
-
 
 
 }

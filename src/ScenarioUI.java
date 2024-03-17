@@ -13,7 +13,13 @@ public class ScenarioUI {
         application.createSpecificTypes();
         printOptions();
         int choice = keyboard.nextInt();
-        application.executeStudentChoice(choice);
+        if(application.getUserType() == 1)
+            application.executeStudentChoice(choice);
+        else if (application.getUserType() == 2)
+            application.executeAdvisorChoice(choice);
+        else
+           // application.executeFacultyChoice();
+           System.out.println(" ");
     }
 
     public static void loginOrSignUp()

@@ -285,14 +285,12 @@ public class Advisor extends User {
      * @param searchFeild username that is being searched
      * @return Student with matching username
      */
-    public ArrayList<Student> searchByUserName(String searchFeild) {
-        ArrayList<Student> results = new ArrayList<>();
-        for (Student student : adviseeList) {
-            if (student.getUsername().equalsIgnoreCase(searchField)) {
-                results.add(student);
+    public User searchByUserName(String searchFeild) {
+        for (User user : UserList.getInstance().getUsers()) {
+            if (user.getUsername().equalsIgnoreCase(searchField)) {
+                return user;
             }
-        }
-        return results;
+        }return null;
     }
 
     public String toString() {

@@ -125,18 +125,10 @@ public class Application {
     }
 
     public String listCompletedCourses() {
-        return student.getCompletedCourses().toString();
-    public ArrayList<Course> listCompletedCourses()
-    {
-        return student.getCompletedCourses();
-    }
+        return student.getCompletedCourses().toString();}
 
     public String listCompletedCourses(Student aStudent) {
-        return aStudent.getCompletedCourses().toString();
-    public ArrayList<Course> listCompletedCourses(Student aStudent)
-    {
-        return aStudent.getCompletedCourses();
-    }
+        return aStudent.getCompletedCourses().toString();}
 
     public ArrayList<Course> listFutureCourses()
     {
@@ -154,27 +146,12 @@ public class Application {
 
     public void showStudentMenu() {
         System.out.println("\nStudent Menu:");
-        System.out.println("1. View Semester Plan");
-        System.out.println("2. View Profile");
-        System.out.println("3. View Completed Courses");
+        System.out.println("1. View Completed Courses");
+        System.out.println("2. View Future Courses");
+        System.out.println("3. View Profile");
         System.out.println("4. Logout");
-    public void showStudentMenu() 
-    {
-            System.out.println("\nStudent Menu:");
-            System.out.println("1. View Completed Courses");
-            System.out.println("2. View Remaining Courses");
-            System.out.println("3. View Profile");
-            System.out.println("4. Logout");
     }
-
     public void showAdvisorMenu() {
-        System.out.println("\nAdvisor Menu:");
-        System.out.println("1. View Advisees");
-        System.out.println("2. View Appointments");
-        System.out.println("3. Search");
-        System.out.println("4. Logout");
-    public void showAdvisorMenu() 
-    {
             System.out.println("\nAdvisor Menu:");
             System.out.println("1. Add Advisee");
             System.out.println("2. Write Comment");
@@ -192,17 +169,10 @@ public class Application {
     public void executeStudentChoice(int choice) {
         switch (choice) {
             case 1:
-                System.out.println("nothing");
-                for(Course course : listCompletedCourses())
-                {
-                    System.out.println(course.toString());
-                }
+                System.out.println(listCompletedCourses());
                 break;
             case 2:
-                for(Course course : listFutureCourses())
-                {
-                    System.out.println(course.toString());
-                }
+                System.out.println(listFutureCourses());
                 break;
             case 3:
                 System.out.println(viewStudentProfile());
@@ -226,7 +196,6 @@ public class Application {
                 
                 break;
             case 3:
-                System.out.println(viewCompletedCourseInfo());
                 System.out.println("Search: ");
                 System.out.println(searchForStudentByUsername(keyboard.nextLine()));
                 break;

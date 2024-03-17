@@ -417,5 +417,41 @@ public class Student extends User {
         }
     }
 
+    public ArrayList<Course> getFutureCourses()
+    {
+        for(Course course : getMajor().getRequiredCourses())
+        {
+            if(isTaking(course) || hasTaken(course))
+            {
+                continue;
+            }
+            else
+            {
+                futureCourses.add(course);
+            }
+        }
+        return futureCourses;
+    }
+
+    public boolean isTaking(Course aCourse)
+    {
+        for(Course course : enrolledCourses)
+        {
+            if(course.getCourseID() == aCourse.getCourseID())
+                return true;
+        }
+        return false;
+    }
+
+    public boolean hasTaken(Course aCourse)
+    {
+        for(Course course : completedCourses)
+        {
+            if(course.getCourseID() == aCourse.getCourseID())
+                return true;
+        }
+        return false;
+    }
+
 
 }

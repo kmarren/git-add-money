@@ -470,7 +470,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1049,7 +1049,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1153,7 +1153,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1180,7 +1180,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1207,7 +1207,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1221,7 +1221,7 @@
     ],
     "courseNumber": 574,
     "courseCode": "MR",
-    "courseName": "CSCE574",
+    "courseName": "RBTS574",
     "instructor": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
     "prerequisites": [
       {
@@ -1240,7 +1240,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1270,7 +1270,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1300,7 +1300,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1327,7 +1327,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1354,7 +1354,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1411,7 +1411,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1441,7 +1441,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1574,7 +1574,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1601,7 +1601,7 @@
         "courseID": "871f0b9d-412c-48f4-b73f-7ad52d6ca1d4"
       }
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1709,7 +1709,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -1736,7 +1736,7 @@
         "courseID": "6b77417c-17e5-40cb-9c52-fefbcbf57d6c"
       }
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": false,
     "elective": false,
     "grade": 0,
@@ -2372,6 +2372,30 @@
     "grade": 0,
     "completed": false,
     "enrolled": false
+  },
+  {
+    "courseID": "2fe90d2a-0338-44f0-a291-4c57f5013e68",
+    "courseComments": [
+      "Awesome digital design class!"
+    ],
+    "courseNumber": 244,
+    "courseCode": "MR",
+    "courseName": "DGDN244",
+    "instructor": "dcd4a54f-f540-43e2-9442-014c79169ed0",
+    "prerequisites": [
+      null
+    ],
+    "description": "A class that goes over things to do with digital design.",
+    "totalSeats": 50,
+    "creditWorth": 3,
+    "corequisites": [
+      null
+    ],
+    "applicationArea": true,
+    "carolinaCore": true,
+    "elective": false,
+    "grade": 0,
+    "completed": false,
+    "enrolled": false
   }
-  
 ]

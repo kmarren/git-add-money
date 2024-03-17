@@ -12,7 +12,7 @@ public class Advisor extends User {
     private String office;
     private String officeHours;
     private String phoneNumber;
-    private ArrayList<Student> adviseeList;
+    private ArrayList<Student> adviseeList = new ArrayList<>();
     private String schoolOfFocus;
     private String searchField;
     protected ArrayList<Appointment> appointments;
@@ -285,9 +285,12 @@ public class Advisor extends User {
      * @param searchFeild username that is being searched
      * @return Student with matching username
      */
-    public User searchByUserName(String searchFeild) {
+    public User searchByUserName(String searchField) {
         for (User user : UserList.getInstance().getUsers()) {
-            if (user.getUsername().equalsIgnoreCase(searchField)) {
+            if(user.getUsername() == null) {
+                break;
+            }
+            if (user.getUsername().equalsIgnoreCase(searchField.trim())) {
                 return user;
             }
         }return null;

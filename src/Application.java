@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.Scanner;
 
@@ -190,7 +191,9 @@ public class Application {
         switch(choice)
         {
             case 1:
-                
+                System.out.println("Username of student: ");
+                User student = advisor.searchByUserName(keyboard.nextLine());
+                System.out.println(viewSpecificStudentInfo((Student)student));
                 break;
             case 2:
                 
@@ -198,6 +201,8 @@ public class Application {
             case 3:
                 System.out.println("Search: ");
                 System.out.println(searchForStudentByUsername(keyboard.nextLine()));
+                System.out.println("Succesfully added as advisee");
+                System.out.println("Your advisee list: " + advisor.getAdviseeList().toString());
                 break;
             case 4:
                 logout();
@@ -214,14 +219,42 @@ public class Application {
 
     public String searchForStudentByUsername(String searchField)
     {
-        if(advisor.searchByUserName(searchField) == null)
-        {
+        User searchedUser = advisor.searchByUserName(searchField.trim());
+        System.out.println("Searched Username: " + searchField.trim());
+        
+        if (searchedUser == null) {
             return "Could Not Find User";
+        } else {
+            System.out.println("Found User: " + searchedUser.getUsername());
+            if (searchedUser instanceof Student) {
+                advisor.addAdvisee((Student)searchedUser);
+                return viewStudentProfile((Student) searchedUser);
+            } else {
+                return "User is not a student";
+            }
         }
-        else
-            return viewStudentProfile((Student)advisor.searchByUserName(searchField));
     }
 
+    public String viewSpecificStudentInfo(Student student) {
+        StringBuilder info = new StringBuilder();
+
+        // Assuming student object has methods to retrieve enrolled and completed classes
+        ArrayList<Course> enrolledClasses = student.getEnrolledCourses();
+        ArrayList<Course> completedClasses = student.getCompletedCourses();
+
+        info.append("Enrolled Classes:\n");
+        for (Course enrolledClass : enrolledClasses) {
+            info.append(enrolledClass.getCourseNumber());
+        }
+
+        info.append("\nCompleted Classes:\n");
+        for (Course completedClass : completedClasses) {
+            info.append(completedClass.getCourseName()).append(" - Grade: ").append(completedClass.getGrade()).append("\n");
+        }
+
+        return info.toString();
+    }
+    
     public ArrayList<Course> getCourseList() {
         return courseList.getCourses();
     }

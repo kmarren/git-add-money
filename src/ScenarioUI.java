@@ -11,15 +11,24 @@ public class ScenarioUI {
         application.printGreeting();
         loginOrSignUp();
         application.createSpecificTypes();
-        printOptions();
-        int choice = keyboard.nextInt();
-        if(application.getUserType() == 1)
-            application.executeStudentChoice(choice);
-        else if (application.getUserType() == 2)
-            application.executeAdvisorChoice(choice);
-        else
-           // application.executeFacultyChoice();
-           System.out.println(" ");
+        while (true) { // Loop indefinitely
+            printOptions();
+            int choice = keyboard.nextInt();
+            if (application.getUserType() == 1)
+                application.executeStudentChoice(choice);
+            else if (application.getUserType() == 2)
+                application.executeAdvisorChoice(choice);
+            else
+                // application.executeFacultyChoice();
+                System.out.println(" ");
+    
+            System.out.println("Do you want to continue? (yes/no)");
+            String continueChoice = keyboard.next();
+            if (!continueChoice.equalsIgnoreCase("yes")) {
+                System.out.println("Exiting program.");
+                break; // Exit the loop and terminate the program
+            }
+        }
     }
 
     public static void loginOrSignUp()

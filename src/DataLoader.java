@@ -403,7 +403,7 @@ public class DataLoader extends DataConstants {
             CourseList courseList = CourseList.getInstance();
 
             for (User student : students) {
-                if (student.getType() == 1) {
+                if (student instanceof Student) {
                     Student currentStudent = (Student) student;
                     UUID studentUUID = currentStudent.getUserID();
                     for (Object studentObj : studentJSON) {
@@ -412,10 +412,12 @@ public class DataLoader extends DataConstants {
                         UUID jsonStudentUUID = UUID.fromString(studentID);
                         if (studentUUID.equals(jsonStudentUUID)) {
                             String advisorID = (String) studentJsonObj.get(STUDENT_ADVISOR);
-                            UUID advisorUUID = UUID.fromString(advisorID);
-                            Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
-                            if (advisor != null) {
-                                currentStudent.setAdvisor(advisor);
+                            if (advisorID != null) {
+                                UUID advisorUUID = UUID.fromString(advisorID);
+                                Advisor advisor = (Advisor) userList.getUserId(advisorUUID);
+                                if (advisor != null) {
+                                    currentStudent.setAdvisor(advisor);
+                                }
                             }
 
                             // Load major for the student

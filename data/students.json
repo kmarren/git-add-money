@@ -102,7 +102,7 @@
     ],
     "completedCourses": [
       {
-        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e" 
+        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"
       },
       {
         "courseID": "280ae7c2-39c0-4d70-ab19-4950c6f7ca26"
@@ -111,7 +111,7 @@
         "courseID": "bf40f6cf-9c09-44d2-b2e6-191a625ff7cb"
       },
       {
-        "courseID": "f7adb3c4-31de-4c73-94c0-8aaff74cdd7c" 
+        "courseID": "f7adb3c4-31de-4c73-94c0-8aaff74cdd7c"
       },
       {
         "courseID": "00d2aaef-83f6-49f8-8885-d6b4e8294b3f"
@@ -175,12 +175,43 @@
     "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
     "riskFailing": false,
     "hoursCompleted": 78
+  },
+  {
+    "studentID": "9fb39a81-8c63-4f18-b9b6-9dab44e7978f",
+    "firstName": "Tawnie",
+    "lastName": "hill",
+    "email": "tahill@email.sc.edu",
+    "username": "tawniehill9",
+    "password": "password",
+    "majorID": "570e08ee-787a-4e2d-bba8-6ebfe74555e6",
+    "minor": false,
+    "studentComments": [
+      null
+    ],
+    "achievements": [
+      {
+        "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "courseID": "a1a23f7d-cd7c-4fa6-b7b2-6dfb6f4d6b54"
+      },
+      {
+        "courseID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9"
+      }
+    ],
+    "completedCourses": [
+      {
+        "courseID": "0f41c8e3-5897-442a-8730-41aba771da5e"
+      },
+      {
+        "courseID": "cbdafc2e-78c3-4f3d-bb9f-7dc51afe34e9"
+      }
+    ],
+    "gpa": 3.8,
+    "advisorID": null,
+    "riskFailing": false,
+    "hoursCompleted": 72.3
   }
-
-  
-
-
-
-
-
 ]

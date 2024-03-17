@@ -171,7 +171,8 @@ public class Application {
     public void executeStudentChoice(int choice) {
         switch (choice) {
             case 1:
-                System.out.println(listCompletedCourses());
+                System.out.println(viewSpecificStudentInfo());
+                //System.out.println(listCompletedCourses());
                 break;
             case 2:
                 System.out.println(listFutureCourses());
@@ -243,6 +244,26 @@ public class Application {
     }
 
     public String viewSpecificStudentInfo(Student student) {
+        StringBuilder info = new StringBuilder();
+
+        ArrayList<Course> enrolledClasses = student.getEnrolledCourses();
+        ArrayList<Course> completedClasses = student.getCompletedCourses();
+
+        info.append("Enrolled Classes:\n");
+        for (Course enrolledClass : enrolledClasses) {
+            info.append(enrolledClass.getCourseName()).append("\n");
+        }
+
+        info.append("\nCompleted Classes:\n");
+        for (Course completedClass : completedClasses) {
+            info.append(completedClass.getCourseName()).append(" - Grade: ").append(completedClass.getGrade())
+                    .append("\n");
+        }
+
+        return info.toString();
+    }
+
+    public String viewSpecificStudentInfo() {
         StringBuilder info = new StringBuilder();
 
         ArrayList<Course> enrolledClasses = student.getEnrolledCourses();

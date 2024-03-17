@@ -245,11 +245,9 @@ public class Application {
     public String viewSpecificStudentInfo(Student student) {
         StringBuilder info = new StringBuilder();
 
-        // Assuming student object has methods to retrieve enrolled and completed
-        // classes
         ArrayList<Course> enrolledClasses = student.getEnrolledCourses();
         ArrayList<Course> completedClasses = student.getCompletedCourses();
-        System.out.println(enrolledClasses.toString());
+
         info.append("Enrolled Classes:\n");
         for (Course enrolledClass : enrolledClasses) {
             info.append(enrolledClass.getCourseName()).append("\n");

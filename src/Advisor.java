@@ -176,9 +176,8 @@ public class Advisor extends User {
      * @param student The student that they are currently viewing/advising.
      * @return A string of the comment being written on the student's profile.
      */
-    public String writeStudentComment(Student student, String comment) 
-    {
-        return comment;
+    public void writeStudentComment(Student student, String comment) {
+        student.addStudentComment(comment);
     }
 
     /**
@@ -193,13 +192,13 @@ public class Advisor extends User {
         } else {
             list.append("List of Advisees:\n");
             for (Student advisee : advisees) {
-                list.append("Name: ").append(advisee.getFirstName()).append(" ").append(advisee.getLastName()).append("\n");
-                list.append("Email: ").append(advisee.getEmail()).append("\n");   
+                list.append("Name: ").append(advisee.getFirstName()).append(" ").append(advisee.getLastName())
+                        .append("\n");
+                list.append("Email: ").append(advisee.getEmail()).append("\n");
             }
         }
-        return list.toString();  
+        return list.toString();
     }
-    
 
     /**
      * Allows the advisor to view a specific student's profile.
@@ -216,7 +215,6 @@ public class Advisor extends User {
         profile.append("GPA: ").append(student.getGpa()).append("\n");
         return profile.toString();
     }
-    
 
     /**
      * Allows the advisor to view all the appointments they have.
@@ -241,7 +239,7 @@ public class Advisor extends User {
      * Allows the advisor to add an appointment to their current list of
      * appointments
      * 
-     * @param appointment The appointment the advior wants to add. 
+     * @param appointment The appointment the advior wants to add.
      */
     public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
@@ -287,13 +285,14 @@ public class Advisor extends User {
      */
     public User searchByUserName(String searchField) {
         for (User user : UserList.getInstance().getUsers()) {
-            if(user.getUsername() == null) {
+            if (user.getUsername() == null) {
                 break;
             }
             if (user.getUsername().equalsIgnoreCase(searchField.trim())) {
                 return user;
             }
-        }return null;
+        }
+        return null;
     }
 
     public String toString() {

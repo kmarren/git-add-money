@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.Scanner;
 
-
 //test 
 /**
  * The aplication facade.
@@ -24,6 +23,7 @@ public class Application {
     private static Application application;
 
     private Scanner keyboard = new Scanner(System.in);
+
     /**
      * private constructor that will not allow other classes to create a new
      * applicatoin
@@ -126,18 +126,18 @@ public class Application {
     }
 
     public String listCompletedCourses() {
-        return student.getCompletedCourses().toString();}
+        return student.getCompletedCourses().toString();
+    }
 
     public String listCompletedCourses(Student aStudent) {
-        return aStudent.getCompletedCourses().toString();}
+        return aStudent.getCompletedCourses().toString();
+    }
 
-    public ArrayList<Course> listFutureCourses()
-    {
+    public ArrayList<Course> listFutureCourses() {
         return student.getFutureCourses();
     }
 
-    public ArrayList<Course> listFutureCourses(Student aStudent)
-    {
+    public ArrayList<Course> listFutureCourses(Student aStudent) {
         return aStudent.getFutureCourses();
     }
 
@@ -152,12 +152,13 @@ public class Application {
         System.out.println("3. View Profile");
         System.out.println("4. Logout");
     }
+
     public void showAdvisorMenu() {
-            System.out.println("\nAdvisor Menu:");
-            System.out.println("1. Add Advisee");
-            System.out.println("2. Write Comment");
-            System.out.println("3. Search");
-            System.out.println("4. Logout");
+        System.out.println("\nAdvisor Menu:");
+        System.out.println("1. View student courses");
+        System.out.println("2. Write Comment");
+        System.out.println("3. Search");
+        System.out.println("4. Logout");
     }
 
     public void showFacultyMenu() {
@@ -186,20 +187,26 @@ public class Application {
                 break;
         }
     }
-    public void executeAdvisorChoice(int choice)
-    {
-        switch(choice)
-        {
+
+    public void executeAdvisorChoice(int choice) {
+        switch (choice) {
             case 1:
                 System.out.println("Username of student: ");
                 User student = advisor.searchByUserName(keyboard.nextLine());
-                System.out.println(viewSpecificStudentInfo((Student)student));
+                System.out.println(viewSpecificStudentInfo((Student) student));
                 break;
             case 2:
-                
+                System.out.println("Username of student to comment on: ");
+                User studentToComment = UserList.getInstance().getUser(keyboard.nextLine().trim());
+                System.out.println("Comment contents: ");
+                String comment = keyboard.nextLine();
+                writeStudentComment((Student) studentToComment, comment);
+                System.out.println("Comment successfully sent");
+                System.out.println(studentToComment.getUsername() + " commments: "
+                        + ((Student) studentToComment).getStudentComments().toString());
                 break;
             case 3:
-                System.out.println("Search: ");
+                System.out.println("Username of student: ");
                 System.out.println(searchForStudentByUsername(keyboard.nextLine()));
                 System.out.println("Succesfully added as advisee");
                 System.out.println("Your advisee list: " + advisor.getAdviseeList().toString());
@@ -217,17 +224,17 @@ public class Application {
         return user.getType();
     }
 
-    public String searchForStudentByUsername(String searchField)
-    {
+    public String searchForStudentByUsername(String searchField) {
         User searchedUser = advisor.searchByUserName(searchField.trim());
         System.out.println("Searched Username: " + searchField.trim());
-        
+
         if (searchedUser == null) {
             return "Could Not Find User";
         } else {
             System.out.println("Found User: " + searchedUser.getUsername());
             if (searchedUser instanceof Student) {
-                advisor.addAdvisee((Student)searchedUser);
+                advisor.addAdvisee((Student) searchedUser);
+                ((Student) searchedUser).setAdvisor(advisor);
                 return viewStudentProfile((Student) searchedUser);
             } else {
                 return "User is not a student";
@@ -238,23 +245,29 @@ public class Application {
     public String viewSpecificStudentInfo(Student student) {
         StringBuilder info = new StringBuilder();
 
-        // Assuming student object has methods to retrieve enrolled and completed classes
+        // Assuming student object has methods to retrieve enrolled and completed
+        // classes
         ArrayList<Course> enrolledClasses = student.getEnrolledCourses();
         ArrayList<Course> completedClasses = student.getCompletedCourses();
-
+        System.out.println(enrolledClasses.toString());
         info.append("Enrolled Classes:\n");
         for (Course enrolledClass : enrolledClasses) {
-            info.append(enrolledClass.getCourseNumber());
+            info.append(enrolledClass.getCourseName()).append("\n");
         }
 
         info.append("\nCompleted Classes:\n");
         for (Course completedClass : completedClasses) {
-            info.append(completedClass.getCourseName()).append(" - Grade: ").append(completedClass.getGrade()).append("\n");
+            info.append(completedClass.getCourseName()).append(" - Grade: ").append(completedClass.getGrade())
+                    .append("\n");
         }
 
         return info.toString();
     }
-    
+
+    public void writeStudentComment(Student student, String comment) {
+        advisor.writeStudentComment(student, comment);
+    }
+
     public ArrayList<Course> getCourseList() {
         return courseList.getCourses();
     }
@@ -514,6 +527,5 @@ public class Application {
         DataWriter.writeStudents();
         DataWriter.writeAllID();
     }
-
 
 }

@@ -1,17 +1,18 @@
 package src;
+
 import java.util.Scanner;
 
 public class ScenarioUI {
 
     private static Application application = Application.getInstance();
     private static Scanner keyboard = new Scanner(System.in);
-    public static void main(String[] args) 
-    {
+
+    public static void main(String[] args) {
         application.loadAll();
         application.printGreeting();
         loginOrSignUp();
         application.createSpecificTypes();
-        while (true) { // Loop indefinitely
+        while (true) {
             printOptions();
             int choice = keyboard.nextInt();
             if (application.getUserType() == 1)
@@ -21,64 +22,53 @@ public class ScenarioUI {
             else
                 // application.executeFacultyChoice();
                 System.out.println(" ");
-    
-            System.out.println("Do you want to continue? (yes/no)");
+
+            System.out.println("Would you like to do more actions? (yes/no)");
             String continueChoice = keyboard.next();
             if (!continueChoice.equalsIgnoreCase("yes")) {
                 System.out.println("Exiting program.");
-                break; // Exit the loop and terminate the program
+                break;
             }
         }
     }
 
-    public static void loginOrSignUp()
-    {
+    public static void loginOrSignUp() {
         boolean choice = false;
-        while(!choice)
-        {
+        while (!choice) {
             System.out.println("Login or Sign Up?");
             String input = keyboard.nextLine();
-            if(application.canLoginOrSignUp(input))
-            {
-                if(input.equalsIgnoreCase("login"))
+            if (application.canLoginOrSignUp(input)) {
+                if (input.equalsIgnoreCase("login"))
                     login();
-                if(input.equalsIgnoreCase("sign up"))
+                if (input.equalsIgnoreCase("sign up"))
                     signUp();
                 choice = true;
-            }
-            else
-            {
+            } else {
                 System.out.println("Please Try Again");
                 continue;
             }
         }
     }
 
-    public static void login()
-    {
+    public static void login() {
         boolean login = false;
-        while(!login)
-        {
+        while (!login) {
             System.out.println("Username:");
             String username = keyboard.nextLine();
             System.out.println("Password:");
             String password = keyboard.nextLine();
             application.login(username, password);
-            if(application.canLogin(username, password))
-            {
+            if (application.canLogin(username, password)) {
                 login = true;
-            }
-            else
-            {
+            } else {
                 continue;
             }
         }
-       
+
     }
 
-    public static void signUp()
-    {
-        System.out.println("Are you a Student, Faculty, or Advisor?"); 
+    public static void signUp() {
+        System.out.println("Are you a Student, Faculty, or Advisor?");
         String accountType = keyboard.nextLine();
         System.out.println("Username:");
         String username = keyboard.nextLine();
@@ -87,21 +77,14 @@ public class ScenarioUI {
         application.signUp(username, password, accountType);
     }
 
-    public static void printOptions()
-    {
-        if (application.getUserType() == 1)
-        {
+    public static void printOptions() {
+        if (application.getUserType() == 1) {
             application.showStudentMenu();
-        }
-        else if (application.getUserType() == 2)
-        {
+        } else if (application.getUserType() == 2) {
             application.showAdvisorMenu();
-        }
-        else 
-        {
+        } else {
             application.showFacultyMenu();
         }
     }
 
-    
 }

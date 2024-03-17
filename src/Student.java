@@ -286,7 +286,7 @@ public class Student extends User {
      * @param enrolledCourse The course to be added.
      */
     public void addEnrolledCourse(Course enrolledCourse) {
-        // Implementation goes here
+        enrolledCourses.add(enrolledCourse);
     }
 
     /**
@@ -327,6 +327,12 @@ public class Student extends User {
     }
 
     public void addStudentComment(String comment) {
+        for (int i = 0; i < studentComments.size(); i++) {
+            if (studentComments.get(i) == null) {
+                studentComments.set(i, comment);
+                return;
+            }
+        }
         studentComments.add(comment);
     }
 
@@ -417,41 +423,31 @@ public class Student extends User {
         }
     }
 
-    public ArrayList<Course> getFutureCourses()
-    {
-        for(Course course : getMajor().getRequiredCourses())
-        {
-            if(isTaking(course) || hasTaken(course))
-            {
+    public ArrayList<Course> getFutureCourses() {
+        for (Course course : getMajor().getRequiredCourses()) {
+            if (isTaking(course) || hasTaken(course)) {
                 continue;
-            }
-            else
-            {
+            } else {
                 futureCourses.add(course);
             }
         }
         return futureCourses;
     }
 
-    public boolean isTaking(Course aCourse)
-    {
-        for(Course course : enrolledCourses)
-        {
-            if(course.getCourseID() == aCourse.getCourseID())
+    public boolean isTaking(Course aCourse) {
+        for (Course course : enrolledCourses) {
+            if (course.getCourseID() == aCourse.getCourseID())
                 return true;
         }
         return false;
     }
 
-    public boolean hasTaken(Course aCourse)
-    {
-        for(Course course : completedCourses)
-        {
-            if(course.getCourseID() == aCourse.getCourseID())
+    public boolean hasTaken(Course aCourse) {
+        for (Course course : completedCourses) {
+            if (course.getCourseID() == aCourse.getCourseID())
                 return true;
         }
         return false;
     }
-
 
 }

@@ -65,7 +65,7 @@ public class DataLoader extends DataConstants {
 
                     // Create Student object
                     Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                            riskFailing, firstName, lastName, email, username, 
+                            riskFailing, firstName, lastName, email, username,
                             password, major, enrolledCourses, completedCourses);
                     student.setUserID(uuid);
                     // Add student to the list
@@ -103,7 +103,7 @@ public class DataLoader extends DataConstants {
 
                 // Create Student object
                 Student student = new Student(gpa, minor, studentComments, achievements, advisor,
-                        riskFailing, firstName, lastName, email, username, 
+                        riskFailing, firstName, lastName, email, username,
                         password, major, enrolledCourses, completedCourses);
                 student.setUserID(uuid);
 
@@ -264,25 +264,25 @@ public class DataLoader extends DataConstants {
             FileReader reader = new FileReader(FACULTY_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray facultyArray = (JSONArray) parser.parse(reader);
-            
+
             for (User fac : faculty) {
                 if (fac instanceof Faculty) {
                     Faculty currentFaculty = (Faculty) fac;
                     String facultyID = currentFaculty.getUserID().toString();
-                    
+
                     for (Object obj : facultyArray) {
                         JSONObject facultyObj = (JSONObject) obj;
                         String jsonFacultyID = (String) facultyObj.get(FACULTY_ID);
-                        
+
                         if (facultyID.equals(jsonFacultyID)) {
                             JSONArray studentArray = (JSONArray) facultyObj.get(FACULTY_STUDENT_LIST);
                             ArrayList<Student> studentList = new ArrayList<>();
-                            
+
                             for (Object studentObj : studentArray) {
                                 JSONObject studentJson = (JSONObject) studentObj;
                                 String studentID = (String) studentJson.get(STUDENT_ID);
                                 User studentUser = userList.getUserId(UUID.fromString(studentID));
-                                
+
                                 if (studentUser instanceof Student) {
                                     studentList.add((Student) studentUser);
                                 }
@@ -430,23 +430,23 @@ public class DataLoader extends DataConstants {
                             // Load enrolled courses
                             JSONArray enrolledCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_ENROLLED_COURSES);
                             for (Object courseObj : enrolledCoursesArray) {
-                            JSONObject courseJsonObj = (JSONObject) courseObj;
-                            String courseID = (String) courseJsonObj.get(COURSE_ID);
-                            Course enrolledCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
-                            if (enrolledCourse != null) {
-                                currentStudent.addEnrolledCourse(enrolledCourse);
-                            }
+                                JSONObject courseJsonObj = (JSONObject) courseObj;
+                                String courseID = (String) courseJsonObj.get(COURSE_ID);
+                                Course enrolledCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                                if (enrolledCourse != null) {
+                                    currentStudent.addEnrolledCourse(enrolledCourse);
+                                }
                             }
 
                             // Load completed courses
                             JSONArray completedCoursesArray = (JSONArray) studentJsonObj.get(STUDENT_COMPLETED_COURSES);
                             for (Object courseObj : completedCoursesArray) {
-                            JSONObject courseJsonObj = (JSONObject) courseObj;
-                            String courseID = (String) courseJsonObj.get(COURSE_ID);
-                            Course completedCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
-                            if (completedCourse != null) {
-                                currentStudent.addCompletedCourse(completedCourse);
-                            }
+                                JSONObject courseJsonObj = (JSONObject) courseObj;
+                                String courseID = (String) courseJsonObj.get(COURSE_ID);
+                                Course completedCourse = courseList.getCourseByUUID(UUID.fromString(courseID));
+                                if (completedCourse != null) {
+                                    currentStudent.addCompletedCourse(completedCourse);
+                                }
                             }
 
                             break;

@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * class to epresent a student, extends attributes from the User class
@@ -43,7 +44,7 @@ public class Student extends User {
     public Student(double gpa, boolean minor, ArrayList<String> studentComments,
             ArrayList<Achievement> achievements, Advisor advisor, boolean riskFailing,
             String firstName, String lastName, String email, String username, String password,
-             Major major, ArrayList<Course> enrolledCourses, ArrayList<Course> completedCourses) {
+            Major major, ArrayList<Course> enrolledCourses, ArrayList<Course> completedCourses) {
         super(firstName, lastName, email, username, password, 1);
         this.gpa = gpa;
         this.minor = minor;
@@ -137,8 +138,6 @@ public class Student extends User {
         return riskFailing;
     }
 
-
-
     // Setters
 
     /**
@@ -175,16 +174,14 @@ public class Student extends User {
      * @return The total hours completed for the student.
      */
     public int getHoursCompleted() {
-        for(Course course : completedCourses)
-        {
+        for (Course course : completedCourses) {
             int curr = course.getCreditWorth();
             hoursCompleted += curr;
         }
         return hoursCompleted;
     }
 
-    public void resetHoursCompleted()
-    {
+    public void resetHoursCompleted() {
         hoursCompleted = 0;
     }
 
@@ -196,7 +193,6 @@ public class Student extends User {
     public void setHoursCompleted(int hoursCompleted) {
         this.hoursCompleted = hoursCompleted;
     }
-
 
     /**
      * Sets the achievements earned by the student.
@@ -223,7 +219,6 @@ public class Student extends User {
     public Major getMajor() {
         return major;
     }
-
 
     /**
      * Sets whether the student is at risk of failing.
@@ -252,15 +247,37 @@ public class Student extends User {
      * @param student The student whose profile is to be viewed.
      * @return A string representation of the student's profile.
      */
-    public String viewProfile() 
-    {
-        return 
-        "Name: " + getFirstName() + " " + getLastName() + "\n" +
-        "Major: " + getMajor() + "\n" +
-        "Classification: " + getGradeLevel() + "\n" +
-        "GPA: " + gpa + "\n" +
-        "Degree Progression: " + calculateProgressionAsPercentage() ;
+    public String viewProfile() {
+        return "Name: " + getFirstName() + " " + getLastName() + "\n" +
+                "Major: " + getMajor() + "\n" +
+                "Classification: " + getGradeLevel() + "\n" +
+                "GPA: " + gpa + "\n" +
+                "Degree Progression: " + calculateProgressionAsPercentage();
 
+    }
+
+    public String viewCompletedCourseInfo() {
+        ArrayList<Course> completedCourses = this.getCompletedCourses();
+        StringBuilder completedInfo = new StringBuilder();
+
+        for (Course course : completedCourses) {
+            String courseName = course.getCourseName();
+            double grade = course.getGrade();
+
+            String result;
+            if (grade < 70.0) { // Assuming 70 or below is failing
+                result = "Failed";
+            } else {
+                result = "Did not fail";
+            }
+
+            String courseInfo = "Course Name: " + courseName + "\n" +
+                    "Grade: " + grade + "\n" +
+                    "Result: " + result + "\n\n";
+            completedInfo.append(courseInfo);
+        }
+
+        return completedInfo.toString();
     }
 
     /**
@@ -308,6 +325,7 @@ public class Student extends User {
         double gpa = 100000000;
         setGpa(gpa);
     }
+
     public void addStudentComment(String comment) {
         studentComments.add(comment);
     }
@@ -325,15 +343,12 @@ public class Student extends User {
         return achievementIDS;
     }
 
-    
     public String toString() {
         return this.username;
     }
 
-    public ArrayList<String> getEnrolledCourseUUID()
-    {
-        for (Course course : enrolledCourses)
-        {
+    public ArrayList<String> getEnrolledCourseUUID() {
+        for (Course course : enrolledCourses) {
             String courseID = course.getCourseID().toString();
             enrolledCourseUUIDS.add(courseID);
         }
@@ -341,10 +356,8 @@ public class Student extends User {
         return enrolledCourseUUIDS;
     }
 
-    public ArrayList<String> getCompletedCourseUUID()
-    {
-        for (Course course : completedCourses)
-        {
+    public ArrayList<String> getCompletedCourseUUID() {
+        for (Course course : completedCourses) {
             String courseID = course.getCourseID().toString();
             completedCourseUUIDS.add(courseID);
         }
@@ -356,11 +369,9 @@ public class Student extends User {
         return completedCourses;
     }
 
-
     public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }
-
 
     public void setEnrolledCourses(ArrayList<Course> enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
@@ -370,87 +381,40 @@ public class Student extends User {
         this.completedCourses = completedCourses;
     }
 
-    public void addCompletedCourse(Course course)
-    {
+    public void addCompletedCourse(Course course) {
         completedCourses.add(course);
     }
-
-
 
     /**
      * Calculates the progression of the major based on completed and required
      * hours.
      */
-    public String calculateProgressionAsFraction() 
-    {
+    public String calculateProgressionAsFraction() {
         resetHoursCompleted();
         return String.valueOf(getHoursCompleted()) + "/" + String.valueOf(getMajor().getHoursRequired());
     }
 
-    public String calculateProgressionAsCreditsNeeded()
-    {
+    public String calculateProgressionAsCreditsNeeded() {
         resetHoursCompleted();
         return String.valueOf(getMajor().getHoursRequired() - getHoursCompleted());
     }
 
-    public String calculateProgressionAsPercentage() 
-    {
+    public String calculateProgressionAsPercentage() {
         resetHoursCompleted();
-        double percent = (getHoursCompleted() * 100)/ getMajor().getHoursRequired() ;
+        double percent = (getHoursCompleted() * 100) / getMajor().getHoursRequired();
         return String.valueOf(percent) + "%";
     }
 
-    public String getGradeLevel()
-    {
-        if (getHoursCompleted() < 30)
-        {
+    public String getGradeLevel() {
+        if (getHoursCompleted() < 30) {
             return "Freshman";
-        }
-        else if(getHoursCompleted() > 30 && getHoursCompleted() < 60)
-        {
+        } else if (getHoursCompleted() > 30 && getHoursCompleted() < 60) {
             return "Sophomore";
-        }
-        else if(getHoursCompleted() > 60 && getHoursCompleted() < 90)
-        {
+        } else if (getHoursCompleted() > 60 && getHoursCompleted() < 90) {
             return "Junion";
-        }
-        else
-        {
+        } else {
             return "Senior";
         }
-    }
-
-    public boolean isCurrentlyTaking(Course aCourse)
-    {
-        for (Course course : enrolledCourses)
-        {
-            if(aCourse.getCourseName().equalsIgnoreCase(course.getCourseName())) 
-                return true;
-            else
-                continue;
-        }
-        return false;
-    }
-    public boolean hasTaken(Course aCourse)
-    {
-        for (Course course :  completedCourses)
-        {
-            if(aCourse.getCourseName().equalsIgnoreCase(course.getCourseName())) 
-                return true;
-            else
-                continue;
-        }
-        return false;
-    }
-
-    public ArrayList<Course> getFutureCourses()
-    {
-        for(Course course : getMajor().getRequiredCourses())
-        {
-            if (!hasTaken(course) && !isCurrentlyTaking(course))
-                futureCourses.add(course);
-        }
-        return futureCourses;
     }
 
 

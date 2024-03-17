@@ -2091,7 +2091,7 @@
     "corequisites": [
       null
     ],
-    "applicationArea": false,
+    "applicationArea": true,
     "carolinaCore": true,
     "elective": false,
     "grade": 0,

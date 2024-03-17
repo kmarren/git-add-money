@@ -149,8 +149,9 @@ public class Application {
         System.out.println("\nStudent Menu:");
         System.out.println("1. View Completed Courses");
         System.out.println("2. View Future Courses");
-        System.out.println("3. View Profile");
-        System.out.println("4. Logout");
+        System.out.println("3. View Unsatisfied Carolina Core Requirements");
+        System.out.println("4. View Profile");
+        System.out.println("5. Logout");
     }
 
     public void showAdvisorMenu() {
@@ -172,15 +173,18 @@ public class Application {
         switch (choice) {
             case 1:
                 System.out.println(viewSpecificStudentInfo());
-                //System.out.println(listCompletedCourses());
                 break;
             case 2:
-                System.out.println(listFutureCourses());
+                System.out.println(viewStudentFutureCourses());
                 break;
             case 3:
-                System.out.println(viewStudentProfile());
+                System.out.println(viewNeededCC());
                 break;
             case 4:
+                System.out.println(student.getMajor());
+                System.out.println(viewStudentProfile());
+                break;
+            case 5:
                 logout();
                 break;
             default:
@@ -281,6 +285,23 @@ public class Application {
         }
 
         return info.toString();
+    }
+
+    public String viewStudentFutureCourses() {
+        StringBuilder info = new StringBuilder();
+
+        ArrayList<Course> futureCourses = student.getFutureCourses();
+
+        info.append("Future Courses:\n");
+        for (Course course : futureCourses) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String viewNeededCC()
+    {
+        return student.neededRequirements();
     }
 
     public void writeStudentComment(Student student, String comment) {

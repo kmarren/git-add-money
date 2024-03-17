@@ -23,6 +23,16 @@ public class Student extends User {
     private ArrayList<Course> futureCourses = new ArrayList<Course>();
     private ArrayList<String> enrolledCourseUUIDS = new ArrayList<String>();
     private ArrayList<String> completedCourseUUIDS = new ArrayList<String>();
+    private int cmw = 0;
+    private int arp = 0;
+    private int sci = 0;
+    private int gfl = 0;
+    private int ghs = 0;
+    private int gss = 0;
+    private int aiu = 0;
+    private int cms = 0;
+    private int inf = 0;
+    private int vsr = 0;
 
     /**
      * Constructs a new Student object with the specified attributes.
@@ -479,6 +489,132 @@ public class Student extends User {
                 return true;
         }
         return false;
+    }
+
+    public String neededRequirements()
+    {
+        setRequirements();
+        StringBuilder reqs = new StringBuilder();
+
+        if(cmw < CarolinaCore.CC_CMW)
+            reqs.append("Carolina Core CMW").append("\n");
+        if(arp < CarolinaCore.CC_ARP)
+            reqs.append(" Carolina Core ARP").append("\n");
+        if(sci < CarolinaCore.CC_SCI)
+            reqs.append("Carolina Core SCI").append("\n");
+        if(gfl < CarolinaCore.CC_GFL)
+            reqs.append("Carolina Core GFL").append("\n");
+        if(ghs < CarolinaCore.CC_GHS)
+            reqs.append("Carolina Core GHS").append("\n");
+        if(gss < CarolinaCore.CC_GSS)
+            reqs.append("Carolina Core GSS").append("\n");
+        if(aiu < CarolinaCore.CC_AIU)
+            reqs.append("Carolina Core AIU").append("\n");
+        if(cms < CarolinaCore.CC_CMS)
+            reqs.append("Carolina Core CMS").append("\n");
+        if(inf < CarolinaCore.CC_INF)
+            reqs.append("Carolina Core INF").append("\n");
+        if(vsr < CarolinaCore.CC_VSR)
+            reqs.append("Carolina Core VSR").append("\n");
+        return reqs.toString();
+
+    }
+    public void setRequirements()
+    {
+        for(Course course : enrolledCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-cmw"))
+            {
+                cmw += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-arp"))
+            {
+                arp += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-sci"))
+            {
+                sci += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-gfl"))
+            {
+                gfl += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-ghs"))
+            {
+                ghs += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-gss"))
+            {
+                gss += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-aiu"))
+            {
+                aiu += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-cms"))
+            {
+                cms += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-inf"))
+            {
+                inf += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-vsr"))
+            {
+                vsr += course.getCreditWorth();
+            }
+            else
+            {
+                continue;
+            }
+        }
+        for(Course course : completedCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-cmw"))
+            {
+                cmw += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-arp"))
+            {
+                arp += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-sci"))
+            {
+                sci += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-gfl"))
+            {
+                gfl += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-ghs"))
+            {
+                ghs += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-gss"))
+            {
+                gss += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-aiu"))
+            {
+                aiu += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-cms"))
+            {
+                cms += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-inf"))
+            {
+                inf += course.getCreditWorth();
+            }
+            else if(course.getCourseCode().equalsIgnoreCase("cc-vsr"))
+            {
+                vsr += course.getCreditWorth();
+            }
+            else
+            {
+                continue;
+            }
+        }
     }
 
 }

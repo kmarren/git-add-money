@@ -157,7 +157,7 @@ public class Application {
         System.out.println("\nAdvisor Menu:");
         System.out.println("1. View student courses");
         System.out.println("2. Write Comment");
-        System.out.println("3. Search");
+        System.out.println("3. Search and add");
         System.out.println("4. Logout");
     }
 

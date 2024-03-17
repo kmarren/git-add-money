@@ -183,7 +183,7 @@ public class DataWriter extends DataConstants {
 
         advisorJSON.put(ADVISOR_FIRST_NAME, advisor.getFirstName());
         advisorJSON.put(ADVISOR_LAST_NAME, advisor.getLastName());
-        advisorJSON.put(ADVISOR_ID, advisor.getUserID());
+        advisorJSON.put(ADVISOR_ID, advisor.getUserID().toString());
         advisorJSON.put(ADVISOR_EMAIL, advisor.getEmail());
         advisorJSON.put(ADVISOR_USERNAME, advisor.getUsername());
         advisorJSON.put(ADVISOR_PASSWORD, advisor.getPassword());
@@ -191,7 +191,12 @@ public class DataWriter extends DataConstants {
         advisorJSON.put(ADVISOR_OFFICE, advisor.getOffice());
         advisorJSON.put(ADVISOR_OFFICE_HOURS, advisor.getOfficeHours());
         advisorJSON.put(ADVISOR_PHONE_NUMBER, advisor.getPhoneNumber());
-        advisorJSON.put(ADVISOR_ADVISEE_LIST, advisor.getAdviseeList());
+        ArrayList<Student> studentsIds = advisor.getAdviseeList();
+        ArrayList<String> idstring = new ArrayList<>();
+        for (Student student : studentsIds) {
+            idstring.add(student.getUserStringID());
+        }
+        advisorJSON.put(ADVISOR_ADVISEE_LIST, idstring);
         advisorJSON.put(ADVISOR_SCHOOL_OF_FOCUS, advisor.getSchoolOfFocus());
         advisorJSON.put(ADVISOR_APPOINTMENTS, advisor.getAppointments());
 

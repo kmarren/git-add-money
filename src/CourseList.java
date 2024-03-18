@@ -43,6 +43,15 @@ public class CourseList {
         return null;
     }
 
+    public Course getCourseByCourseName(String courseName) {
+        for (Course course : courses) {
+            if (course.getCourseName().equalsIgnoreCase(courseName)) {
+                return course;
+            }
+        }
+        return null;
+    }
+
     public void addCourse(Course course) {
         courses.add(course);
     }

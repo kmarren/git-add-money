@@ -606,9 +606,194 @@ public class Student extends User {
         }
     }
 
+    public ArrayList<Course> getCMWCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> cmwCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-cmw"))
+            {
+                cmwCourses.add(course);
+            }
+        }
+        return cmwCourses;
+    }
+
+    public ArrayList<Course> getARPCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> arpCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-arp"))
+            {
+                arpCourses.add(course);
+            }
+        }
+        return arpCourses;
+    }
+
+    public ArrayList<Course> getSCICourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> sciCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-sci"))
+            {
+                sciCourses.add(course);
+            }
+        }
+        return sciCourses;
+    }
+    public ArrayList<Course> getGFLCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> gflCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-gfl"))
+            {
+                gflCourses.add(course);
+            }
+        }
+        return gflCourses;
+    }
+    public ArrayList<Course> getGHSCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> ghsCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-ghs"))
+            {
+                ghsCourses.add(course);
+            }
+        }
+        return ghsCourses;
+    }
+    public ArrayList<Course> getGSSCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> gssCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-gss"))
+            {
+                gssCourses.add(course);
+            }
+        }
+        return gssCourses;
+    }
+    public ArrayList<Course> getAIUCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> aiuCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-aiu"))
+            {
+                aiuCourses.add(course);
+            }
+        }
+        return aiuCourses;
+    }
+    public ArrayList<Course> getCMSCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> cmsCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-cms"))
+            {
+                cmsCourses.add(course);
+            }
+        }
+        return cmsCourses;
+    }
+    public ArrayList<Course> getINFCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> infCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-inf"))
+            {
+                infCourses.add(course);
+            }
+        }
+        return infCourses;
+    }
+    public ArrayList<Course> getVSRCourses()
+    {
+        ArrayList<Course> allCourses = CourseList.getInstance().getCourses();
+        ArrayList<Course> vsrCourses = new ArrayList<Course>();
+        for(Course course : allCourses)
+        {
+            if(course.getCourseCode().equalsIgnoreCase("cc-vsr"))
+            {
+                vsrCourses.add(course);
+            }
+        }
+        return vsrCourses;
+    }
+    public String searchForCC(String searchField)
+    {
+        if(searchField.equalsIgnoreCase("cmw"))
+        {
+            return getCMWCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("arp"))
+        {
+            return getARPCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("sci"))
+        {
+            return getSCICourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("gfl"))
+        {
+            return getGFLCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("ghs"))
+        {
+            return getGHSCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("gss"))
+        {
+            return getGSSCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("aiu"))
+        {
+            return getAIUCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("cms"))
+        {
+            return getCMSCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("inf"))
+        {
+            return getINFCourses().toString();
+        }
+        else if(searchField.equalsIgnoreCase("vsr"))
+        {
+            return getVSRCourses().toString();
+        }
+        else
+        {
+            return "Could not find";
+        }
+    }
+
     public void chooseCourse(Course course)
     {
         chosenCourses.add(course);
+    }
+
+    public Course findCourse(String name)
+    {
+        return CourseList.getInstance().getCourseByCourseName(name);
     }
 
 }

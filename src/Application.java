@@ -151,7 +151,7 @@ public class Application {
         System.out.println("2. View Future Courses");
         System.out.println("3. View Unsatisfied Carolina Core Requirements");
         System.out.println("4. View Profile");
-        System.out.println("5. View Application Areas");
+        System.out.println("5. Select Sample Application Area");
         System.out.println("6. Logout");
     }
 
@@ -180,6 +180,10 @@ public class Application {
                 break;
             case 3:
                 System.out.println(viewNeededCC());
+                System.out.println("More Information: ");
+                System.out.println(searchForCCCourses(keyboard.nextLine()));
+                System.out.println("Add Course to Plan: ");
+                addCourseToFuture(findCourse(keyboard.nextLine()));
                 break;
             case 4:
                 System.out.println(viewStudentProfile());
@@ -187,6 +191,8 @@ public class Application {
             case 5:
                 System.out.println(viewApplicationAreas());
                 executeApplicationArea(keyboard.nextInt());
+                System.out.println("Add Course to Plan: ");
+                addCourseToFuture(findCourse(keyboard.nextLine()));
                 break;
             case 6:
                 logout();
@@ -422,10 +428,13 @@ public class Application {
      * @param keyword the name, number, or code of the course, or something similar
      * @return a list of courses that contain the keyword in their information
      */
-    public ArrayList<Course> findCourse(String keyword) {
+    /*
+     * public ArrayList<Course> findCourse(String keyword) {
         ArrayList<Course> courseList = new ArrayList<Course>();
         return courseList;
     }
+     */
+    
 
     /**
      * Allows a student to book an appointment with their advisor based on the time,
@@ -591,27 +600,52 @@ public class Application {
             case 1: //science
                 System.out.println("Description:\n Students will explore a variety of lab sciences including Biology, Chemistry, and Physics.");
                 System.out.println("Compatable Courses:\n BIOL 101\n BIOL 102\n CHEM 111\n CHEM 112\n PHYS 111\n PHYS 112");
+                String word = keyboard.nextLine();
+                addCourseToFuture(findCourse(word));
                 break;
             case 2: //math
                 System.out.println("Description:\n Students interested in the physical -- as well as cognitive or algorithmic -- aspects of robots will benefit from these courses.");
                 System.out.println("Compatable Courses:\n CSCE 574\n CSCE 580\n EMCH 535\n ELCT 332\n ELCT 531");
+                String wordA = keyboard.nextLine();
+                addCourseToFuture(findCourse(wordA));
                 break;
             case 3: //robotics
                 System.out.println("Description:\n Provides students with basic abilities in linear and abstract algebra as well as a broad introduction to topics such as logic, set theory, functions and fundamental methods of mathematical proof.");
                 System.out.println("Compatable Courses:\n MATH 242\n MATH 300\n MATH 344\n MATH 374\n MATH 511");
+                String wordB = keyboard.nextLine();
+                addCourseToFuture(findCourse(wordB));
                 break;
             case 4: //digital design
                 System.out.println("Description:\n Prepares students to work in modern media production through hands-on experience and an understanding of how successful media works.");
                 System.out.println("Compatable Courses:\n DGDN 244\n DGDN 245\n DGDN 311\n ");
+                String wordC = keyboard.nextLine();
+                addCourseToFuture(findCourse(wordC));
                 break;
             case 5: //speech
                 System.out.println("Description:\n Students will learn about speech is the workplace and public speaking.");
                 System.out.println("Compatable Courses:\n SPCH 300\n SPCH 350\n SPCH 376\n ");
+                String wordD = keyboard.nextLine();
+                addCourseToFuture(findCourse(wordD));
                 break;
             default:
                 System.out.println("Invalid");
                 break;
         }
+    }
+
+    public String searchForCCCourses(String searchfield)
+    {
+        return student.searchForCC(searchfield);
+    }
+
+    public Course findCourse(String name)
+    {
+        return CourseList.getInstance().getCourseByCourseName(name);
+    }
+
+    public void addCourseToFuture(Course course)
+    {
+        student.chooseCourse(course);
     }
 
 

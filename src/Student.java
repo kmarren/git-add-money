@@ -202,6 +202,11 @@ public class Student extends User {
         futureCourses.clear();
     }
 
+    public void resetChosenCourses()
+    {
+        chosenCourses.clear();
+    }
+
     public int getHoursEnrolled() {
         for (Course course : enrolledCourses) {
             int curr = course.getCreditWorth();
@@ -794,6 +799,11 @@ public class Student extends User {
     public Course findCourse(String name)
     {
         return CourseList.getInstance().getCourseByCourseName(name);
+    }
+
+    public ArrayList<Course> getChosenCourses()
+    {
+        return chosenCourses;
     }
 
 }

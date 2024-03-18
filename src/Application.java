@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
 
 //test 
 /**
@@ -21,7 +24,6 @@ public class Application {
     private MajorList majorList = MajorList.getInstance();
     private AppointmentList appointmentList = AppointmentList.getInstance();
     private static Application application;
-
     private Scanner keyboard = new Scanner(System.in);
 
     /**
@@ -152,7 +154,8 @@ public class Application {
         System.out.println("3. View Unsatisfied Carolina Core Requirements");
         System.out.println("4. View Profile");
         System.out.println("5. Select Sample Application Area");
-        System.out.println("6. Logout");
+        System.out.println("6. Generate 8 Semester Plan");
+        System.out.println("7. Logout");
     }
 
     public void showAdvisorMenu() {
@@ -170,7 +173,8 @@ public class Application {
         System.out.println("3. Logout");
     }
 
-    public void executeStudentChoice(int choice) {
+    public void executeStudentChoice(int choice) throws IOException {
+        student.resetChosenCourses();
         switch (choice) {
             case 1:
                 System.out.println(viewSpecificStudentInfo());
@@ -195,6 +199,8 @@ public class Application {
                 addCourseToFuture(findCourse(keyboard.nextLine()));
                 break;
             case 6:
+                printEightSemesterPlan();
+            case 7:
                 logout();
                 break;
             default:
@@ -646,6 +652,137 @@ public class Application {
     public void addCourseToFuture(Course course)
     {
         student.chooseCourse(course);
+    }
+
+    public void printEightSemesterPlan() throws IOException
+    {
+        try{
+            File plan = new File("EightSemesterPlan.txt"); 
+            FileWriter fileWriter = new FileWriter("EightSemesterPlan.txt");
+            fileWriter.write("Eight Semester Plan \n");
+            fileWriter.write("Semester 1 \n");
+            fileWriter.write(getSemester1() + "\n");
+            fileWriter.write("Semester 2 \n");
+            fileWriter.write(getSemester2() + "\n");
+            fileWriter.write("Semester 3 \n");
+            fileWriter.write(getSemester3() + "\n");
+            fileWriter.write("Semester 4 \n");
+            fileWriter.write(getSemester4() + "\n");
+            fileWriter.write("Semester 5 \n");
+            fileWriter.write(getSemester5() + "\n");
+            fileWriter.write("Semester 6 *** Your Current Semester *** \n");
+            fileWriter.write(getSemester6() + "\n");
+            fileWriter.write("Semester 7 \n");
+            fileWriter.write(getSemester7() + "\n");
+            fileWriter.write("Semester 8 \n");
+            fileWriter.write(getSemester8() + "\n");
+            fileWriter.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        
+    }
+
+    public String getSemester1()
+    {
+        ArrayList<Course> semester1 = new ArrayList<Course>();
+        for(int i=0; i<5; i++)
+            semester1.add(student.getCompletedCourses().get(i));
+
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester1) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester2()
+    {
+        ArrayList<Course> semester2 = new ArrayList<Course>();
+        for(int i=5; i<11; i++)
+            semester2.add(student.getCompletedCourses().get(i));
+
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester2) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester3()
+    {
+        ArrayList<Course> semester3 = new ArrayList<Course>();
+        for(int i=11; i<17; i++)
+            semester3.add(student.getCompletedCourses().get(i));
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester3) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester4()
+    {
+        ArrayList<Course> semester4 = new ArrayList<Course>();
+        for(int i=17; i<22; i++)
+            semester4.add(student.getCompletedCourses().get(i));
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester4) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester5()
+    {
+        ArrayList<Course> semester5 = new ArrayList<Course>();
+        for(int i=22; i<28; i++)
+            semester5.add(student.getCompletedCourses().get(i));
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester5) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester6()
+    {
+        ArrayList<Course> semester6 = new ArrayList<Course>();
+        for(Course course : student.getEnrolledCourses())
+            semester6.add(course);
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester6) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester7()
+    {
+        ArrayList<Course> semester7 = new ArrayList<Course>();
+        for(Course course : student.getChosenCourses())
+            semester7.add(course);
+        for(int i=0; i<3; i++)
+            semester7.add(student.getFutureCourses().get(i));
+         StringBuilder info = new StringBuilder();
+        for (Course course : semester7) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
+    }
+
+    public String getSemester8()
+    {
+        ArrayList<Course> semester8 = new ArrayList<Course>();
+        for(int i=3; i<student.getFutureCourses().size(); i++)
+            semester8.add(student.getFutureCourses().get(i));
+        StringBuilder info = new StringBuilder();
+        for (Course course : semester8) {
+            info.append(course.getCourseName()).append("\n");
+        }
+        return info.toString();
     }
 
 

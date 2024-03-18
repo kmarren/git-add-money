@@ -1,5 +1,6 @@
 package src;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ScenarioUI {
@@ -7,7 +8,7 @@ public class ScenarioUI {
     private static Application application = Application.getInstance();
     private static Scanner keyboard = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         application.loadAll();
         application.printGreeting();
         loginOrSignUp();

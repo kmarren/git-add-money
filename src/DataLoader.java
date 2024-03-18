@@ -167,6 +167,7 @@ public class DataLoader extends DataConstants {
                 // Find the corresponding course object in the CourseList
                 Course foundCourse = courseList.getCourseByUUID(course.getRealCourseID());
                 if (foundCourse != null) {
+                    System.out.println("Found course" + foundCourse.getCourseName());
                     // Iterate over coursesJsonArray to find the JSON object for the current course
                     for (Object obj : coursesJsonArray) {
                         JSONObject courseJson = (JSONObject) obj;
@@ -196,11 +197,13 @@ public class DataLoader extends DataConstants {
 
                                         JSONObject prerequisiteJson = (JSONObject) prerequisiteObj;
                                         String prerequisiteIdStr = (String) prerequisiteJson.get(COURSE_ID);
+                                        System.out.println(prerequisiteIdStr);
 
                                         // Find the prerequisite course in the CourseList
                                         Course prerequisiteCourse = courseList
                                                 .getCourseByUUID(UUID.fromString(prerequisiteIdStr));
                                         if (prerequisiteCourse != null) {
+                                            System.out.println("adding:" + prerequisiteCourse.toString());
                                             // Add the found prerequisite course to the list of prerequisites for the
                                             // current course
                                             prerequisites.add(prerequisiteCourse);

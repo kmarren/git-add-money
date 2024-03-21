@@ -35,6 +35,10 @@ public class MajorList {
         return null;
     }
 
+    public void addMajor(Major major) {
+        majors.add(major);
+    }
+
     public void loadAll() {
         DataLoader.finishMajors(majors);
     }

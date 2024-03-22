@@ -7,14 +7,14 @@ import org.junit.After;
 import org.junit.Before;
 
 public class DataLoaderTest {
-    
+
     @BeforeClass
-    public void oneTimeSetup() {
+    public static void oneTimeSetup() {
         // one-time initialization code
     }
 
     @AfterClass
-    public void oneTimeTearDown() {
+    public static void oneTimeTearDown() {
         // one-time cleanup code
     }
 
@@ -32,6 +32,5 @@ public class DataLoaderTest {
     public void testLoadStudents() {
 
     }
-
 
 }

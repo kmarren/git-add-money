@@ -9,7 +9,10 @@ import src.Major;
 import src.MajorList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.junit.After;
@@ -86,7 +89,7 @@ public class MajorListTest {
         MajorList.getInstance().addMajor(testMake);
         assertEquals(testMake, MajorList.getInstance().getMajorID(thisMajorID));
     }
-    
+
     @Test
     public void testBadAdd() {
         Major testMake = new Major();
@@ -95,4 +98,49 @@ public class MajorListTest {
         assertEquals(testMake, MajorList.getInstance().getMajorID(realMajorID));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddNullMajor() {
+        MajorList.getInstance().addMajor(null);
+    }
+
+    @Test
+    public void testGetMajors() {
+        MajorList.getInstance().clear(); // Clearing the list before testing
+        Major testMajor1 = new Major();
+        Major testMajor2 = new Major();
+        MajorList.getInstance().addMajor(testMajor1);
+        MajorList.getInstance().addMajor(testMajor2);
+        ArrayList<Major> allMajors = MajorList.getInstance().getMajors();
+        assertEquals(2, allMajors.size());
+        assertTrue(allMajors.contains(testMajor1));
+        assertTrue(allMajors.contains(testMajor2));
+    }
+
+    @Test
+    public void testRemoveMajor() {
+        int sizeMajors = MajorList.getInstance().getMajors().size();
+        MajorList.getInstance().removeMajor("notarealid");
+        assertEquals(sizeMajors, MajorList.getInstance().getMajors().size());
+    }
+
+    @Test
+    public void testRemoveNullMajor() {
+        int sizeMajors = MajorList.getInstance().getMajors().size();
+        MajorList.getInstance().removeMajor(null);
+        assertEquals(sizeMajors, MajorList.getInstance().getMajors().size());
+    }
+
+    @Test
+    public void testRemoveFromEmptyList() {
+        MajorList.getInstance().clear();
+        MajorList.getInstance().removeMajor(realMajorID);
+        assertEquals(0, MajorList.getInstance().getMajors().size());
+    }
+
+    @Test
+    public void testRemoveMajorReal() {
+        int sizeMajors = MajorList.getInstance().getMajors().size();
+        MajorList.getInstance().removeMajor(realMajorID);
+        assertEquals(sizeMajors - 1, MajorList.getInstance().getMajors().size());
+    }
 }

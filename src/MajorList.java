@@ -39,8 +39,20 @@ public class MajorList {
         majors.add(major);
     }
 
+    public void removeMajor(String UUID) {
+        for (Major major : majors) {
+            if (major.getMajorID().equals(UUID)) {
+                majors.remove(major);
+            }
+        }
+    }
+
     public void loadAll() {
         DataLoader.finishMajors(majors);
+    }
+
+    public void clear() {
+        majors.clear();
     }
 
 }

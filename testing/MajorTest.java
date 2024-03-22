@@ -5,8 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import org.junit.Test;
-
 public class MajorTest {
     
 }
+
+

@@ -90,8 +90,9 @@ public class Student extends User {
      * 
      * @param username the students username
      * @param password the students password
+     * @param i 
      */
-    public Student(String username, String password) {
+    public Student(String username, String password, int i) {
         super(username, password, 1);
     }
 

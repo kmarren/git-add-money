@@ -8,13 +8,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import src.UserList;
-import src.Student; // Import the Student class (assuming it's a concrete subclass of User).
+import src.Student; 
 import src.User;
-
+import src.Faculty;
+import src.Advisor;
 
 public class UserTest {
     private UserList userList;
-    private ArrayList<User> users; // Use Student or another concrete subclass of User.
+    private ArrayList<User> users; 
 
     @Before
     public void setup() {
@@ -22,7 +23,7 @@ public class UserTest {
         users = userList.getUsers();
         users.clear();
         
-        // Assuming Student is a concrete subclass of User. Replace with actual subclasses.
+        
         users.add(new Student("jdoe", "password123", 1)); // Adjusted to use Student
         users.add(new Student("msmith", "password456", 2)); // Adjusted to use Student
     }
@@ -59,7 +60,7 @@ public class UserTest {
     
     @Test
     public void testSetAndGetAttributes() {
-        Student user = (Student) users.get(0); // Assuming the first user is a Student.
+        Student user = (Student) users.get(0); 
         user.setFirstName("John");
         user.setLastName("Doe");
         user.setEmail("johndoe@example.com");

@@ -9,7 +9,7 @@ public class AppointmentList {
 
     private AppointmentList() {
         appointments = new ArrayList<>();
-        ArrayList<Appointment> appts = DataLoader.loadAppointments(); 
+        ArrayList<Appointment> appts = DataLoader.loadAppointments();
         appointments.addAll(appts);
     }
 
@@ -22,6 +22,14 @@ public class AppointmentList {
 
     public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
+    }
+
+    public void removeAchievement(UUID uuid) {
+        for (Appointment appointment : appointments) {
+            if (appointment.getAppointmentID().equals(uuid)) {
+                appointments.remove(appointment);
+            }
+        }
     }
 
     public Appointment getAppointment(UUID uuid) {
@@ -40,5 +48,8 @@ public class AppointmentList {
     public void loadAll() {
         DataLoader.finishAppointments(appointments);
     }
-}
 
+    public void clear() {
+        appointments.clear();
+    }
+}

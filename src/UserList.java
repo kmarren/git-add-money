@@ -46,6 +46,14 @@ public class UserList {
         users.add(user);
     }
 
+    public void removeUser(UUID uuid) {
+        for (User user : users) {
+            if (user.getUserID().equals(uuid)) {
+                users.remove(user);
+            }
+        }
+    }
+
     public boolean login(String userName, String password) {
         return getUser(userName, password) != null;
     }
@@ -78,6 +86,10 @@ public class UserList {
         DataLoader.finishAdvisors(users);
         DataLoader.finishFaculty(users);
         System.out.println("all users loaded");
+    }
+
+    public void clear() {
+        users.clear();
     }
 
 }

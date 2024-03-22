@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class MajorList {
     private static MajorList majorList;

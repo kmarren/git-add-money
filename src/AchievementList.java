@@ -25,6 +25,14 @@ public class AchievementList {
         achievements.add(achievement);
     }
 
+    public void removeAchievement(UUID uuid) {
+        for (Achievement achievement : achievements) {
+            if (achievement.getAchievementID().equals(uuid)) {
+                achievements.remove(achievement);
+            }
+        }
+    }
+
     public Achievement getAchievement(UUID uuid) {
         for (Achievement achievement : achievements) {
             if (achievement.getAchievementID().equals(uuid)) {
@@ -36,5 +44,9 @@ public class AchievementList {
 
     public ArrayList<Achievement> getAchievements() {
         return achievements;
+    }
+
+    public void clear() {
+        achievements.clear();
     }
 }

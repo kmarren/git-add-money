@@ -440,4 +440,9 @@ public class Course {
         return courseName;
     }
 
+    public void writeCourseComment(String comment)
+    {
+        courseComments.add(comment);
+    }
+
 }

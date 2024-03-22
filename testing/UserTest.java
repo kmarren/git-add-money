@@ -24,8 +24,8 @@ public class UserTest {
         users.clear();
         
         
-        users.add(new Student("jdoe", "password123", 1)); // Adjusted to use Student
-        users.add(new Student("msmith", "password456", 2)); // Adjusted to use Student
+        users.add(new Student("jdoe", "password123")); // Adjusted to use Student
+        users.add(new Student("msmith", "password456")); // Adjusted to use Student
     }
     
     @After
@@ -35,7 +35,7 @@ public class UserTest {
     
     @Test
     public void testUserCreation() {
-        Student newUser = new Student("newUser", "newPass", 3); // Use Student instead of User
+        Student newUser = new Student("newUser", "newPass"); // Use Student instead of User
         assertNotNull(newUser.getUserID());
     }
     
@@ -53,8 +53,8 @@ public class UserTest {
     
     @Test
     public void testUniqueUserID() {
-        Student user1 = new Student("user1", "pass1", 1);
-        Student user2 = new Student("user2", "pass2", 2);
+        Student user1 = new Student("user1", "pass1");
+        Student user2 = new Student("user2", "pass2");
         assertNotEquals(user1.getUserID(), user2.getUserID());
     }
     

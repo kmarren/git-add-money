@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Faculty extends User
 {
     private String officeHours;
-    private ArrayList<Student> studentList;
+    private ArrayList<Student> studentList = new ArrayList<Student>();
     /**
      * Constructs a new faculty object with office hours and a list of students
      * @param officeHours The office hours of the faculty member.
@@ -71,17 +71,9 @@ public class Faculty extends User
      * Allows faculty members to write a note about a specific course.
      * @param course The specific course that the faculty wishes to write a comment for.
      */
-    public void writeCourseComment(Course course)
+    public void writeCourseComment(Course course, String comment)
     {
-
-    }
-    /**
-     * Allows a faculty member to view their list of students.
-     * @param students the faculty members list of students.
-     */
-    public ArrayList<Student> viewStudents(ArrayList<Student> students)
-    {
-        return students;
+        course.writeCourseComment(comment);
     }
 
     /**
@@ -100,7 +92,7 @@ public class Faculty extends User
      */
     public void addStudent(Student student)
     {
-
+        studentList.add(student);
     }
 
     public String toString()

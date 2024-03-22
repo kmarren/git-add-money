@@ -1,1 +1,1 @@
-# DegreeWorks
+# DegreeCraft

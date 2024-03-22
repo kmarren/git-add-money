@@ -23,16 +23,6 @@ public class MajorListTest {
     String realMajorID = "570e08ee-787a-4e2d-bba8-6ebfe74555e6";
     Major realMajor = MajorList.getInstance().getMajorID(realMajorID);
 
-    @BeforeClass
-    public static void oneTimeSetup() {
-        // one-time initialization code
-    }
-
-    @AfterClass
-    public static void oneTimeTearDown() {
-        // one-time cleanup code
-    }
-
     @Before
     public void setUp() {
         MajorList.getInstance().loadAll();
@@ -40,7 +30,7 @@ public class MajorListTest {
 
     @After
     public void tearDown() {
-        // MajorList.getInstance().clear();
+        MajorList.getInstance().clear();
     }
 
     @Test

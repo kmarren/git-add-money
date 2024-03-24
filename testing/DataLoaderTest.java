@@ -8,10 +8,13 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import src.Achievement;
+import src.Advisor;
 import src.Appointment;
 import src.Course;
 import src.DataLoader;
+import src.Faculty;
 import src.Major;
+import src.Student;
 import src.User;
 
 public class DataLoaderTest {
@@ -23,6 +26,7 @@ public class DataLoaderTest {
         assertFalse(students.isEmpty());
     }
 
+    // problem with null values
     @Test
     public void testLoadCourses() {
         ArrayList<Course> courses = DataLoader.loadCourses();
@@ -54,8 +58,13 @@ public class DataLoaderTest {
     @Test
     public void testFinishFaculty() {
         ArrayList<User> faculty = new ArrayList<>();
+
         DataLoader.finishFaculty(faculty);
-        // Add assertions to check if faculty are properly finished
+
+        for (User fac : faculty) {
+            assertTrue("Faculty should be an instance of Faculty class", fac instanceof Faculty);
+            assertNotNull("Student list should not be null", ((Faculty) fac).getStudentList());
+        }
     }
 
     @Test
@@ -69,14 +78,22 @@ public class DataLoaderTest {
     public void testFinishAdvisors() {
         ArrayList<User> advisors = new ArrayList<>();
         DataLoader.finishAdvisors(advisors);
-        // Add assertions to check if advisors are properly finished
+        for (User advisor : advisors) {
+            assertTrue("Advisor should be an instance of Advisor class", advisor instanceof Advisor);
+            assertNotNull("Advisee list should not be null", ((Advisor) advisor).getAdviseeList());
+            assertNotNull("Appointments should not be null", ((Advisor) advisor).getAppointments());
+        }
     }
 
     @Test
     public void testFinishStudents() {
         ArrayList<User> students = new ArrayList<>();
         DataLoader.finishStudents(students);
-        // Add assertions to check if students are properly finished
+        for (User student : students) {
+            assertTrue("Student should be an instance of Student class", student instanceof Student);
+            assertNotNull("Advisor should not be null", ((Student) student).getAdvisor());
+            assertNotNull("Major should not be null", ((Student) student).getMajor());
+        }
     }
 
     @Test
@@ -90,7 +107,10 @@ public class DataLoaderTest {
     public void testFinishMajors() {
         ArrayList<Major> majors = new ArrayList<>();
         DataLoader.finishMajors(majors);
-        // Add assertions to check if majors are properly finished
+        for (Major major : majors) {
+            assertNotNull("Required courses should not be null", major.getRequiredCourses());
+            assertFalse("Required courses list should not be empty", major.getRequiredCourses().isEmpty());
+        }
     }
 
     @Test

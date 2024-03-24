@@ -20,9 +20,9 @@ public class Appointment {
     /**
      * Constructs an appointment object with the following attributes.
      * 
-     * @param student       the student appointment
-     * @param time          The time of the appointment.
-     * @param location      The location of the appointment.
+     * @param student  the student appointment
+     * @param time     The time of the appointment.
+     * @param location The location of the appointment.
      */
     public Appointment(Student student, String time, String location) {
         this();
@@ -34,9 +34,9 @@ public class Appointment {
     /**
      * Constructs an appointment object with the following attributes.
      * 
-     * @param student       the student appointment
-     * @param time          The time of the appointment.
-     * @param location      The location of the appointment.
+     * @param student  the student appointment
+     * @param time     The time of the appointment.
+     * @param location The location of the appointment.
      */
     public Appointment(Student student, String time, String location, UUID id) {
         this.student = student;
@@ -54,6 +54,7 @@ public class Appointment {
     public void setAppointmentID(UUID id) {
         this.appointmentID = id;
     }
+
     /**
      * Gets the ID of the advisor.
      * 

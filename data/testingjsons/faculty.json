@@ -5,12 +5,7 @@
         "facultyID": "734e3fc7-3cfd-4917-9a26-2cb037b57347",
         "password": "securePassword123",
         "studentList": [
-            {
-                "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b"
-            },
-            {
-                "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a"
-            }
+            null
         ],
         "officeHours": "Monday 9:00 AM - 12:00 PM",
         "email": "johndoe@example.com",

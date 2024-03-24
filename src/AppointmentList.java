@@ -24,7 +24,7 @@ public class AppointmentList {
         appointments.add(appointment);
     }
 
-    public void removeAchievement(UUID uuid) {
+    public void removeAppointment(UUID uuid) {
         for (Appointment appointment : appointments) {
             if (appointment.getAppointmentID().equals(uuid)) {
                 appointments.remove(appointment);

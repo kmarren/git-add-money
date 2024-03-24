@@ -298,4 +298,17 @@ public class Advisor extends User {
     public String toString() {
         return this.username;
     }
+
+
+    public ArrayList<String> getAppointmentIDS()
+    {
+        ArrayList<String> IDS = new ArrayList<String>();
+
+        for(Appointment appointment : appointments){
+            String curr = appointment.getAppointmentID().toString();
+            IDS.add(curr);
+        }
+
+        return IDS;
+    }
 }

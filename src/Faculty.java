@@ -67,24 +67,6 @@ public class Faculty extends User
     public void setStudentList(ArrayList<Student> studentList) {
         this.studentList = studentList;
     }
-    /**
-     * Allows faculty members to write a note about a specific course.
-     * @param course The specific course that the faculty wishes to write a comment for.
-     */
-    public void writeCourseComment(Course course, String comment)
-    {
-        course.writeCourseComment(comment);
-    }
-
-    /**
-     * Allows the faculty member to view a student's profile.
-     * @param student ths specific student whose profile will be viewed.
-     * @return the students profile containing their information.
-     */
-    public String viewStudentProfile(Student student)
-    {
-        return " ";
-    }
 
     /**
      * Adds a student to a faculty member's list of students.
@@ -99,6 +81,4 @@ public class Faculty extends User
     {
         return getFirstName() + " " + getLastName();
     }
-
-    
 }

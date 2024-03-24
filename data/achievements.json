@@ -1,0 +1,20 @@
+[
+  {
+    "achievementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678",
+    "name": "Academic Excellence Award",
+    "type": "Academic",
+    "benefits": "Certificate of Achievement, Recognition",
+    "semester": "Fall 2023",
+    "description": "Awarded for achieving the highest GPA in the semester.",
+    "scholarship": false
+  },
+  {
+    "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321",
+    "name": "Leadership Award",
+    "type": "Leadership",
+    "benefits": "Leadership Training, Networking Opportunities",
+    "semester": "Spring 2022",
+    "description": "Recognized for outstanding leadership skills and contributions to the community.",
+    "scholarship": true
+  }
+]

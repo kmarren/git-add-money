@@ -11,7 +11,7 @@ public abstract class DataConstants {
     protected static final String MAJOR_HOURS_REQUIRED = "hoursRequired";
 
     // course data constants
-    protected static final String COURSE_FILE_NAME = "data/course.json";
+    protected static final String COURSE_FILE_NAME = "data/courses.json";
     protected static final String COURSE_COMMENTS = "courseComments";
     protected static final String COURSE_NUMBER = "courseNumber";
     protected static final String COURSE_ID = "courseID";
@@ -31,7 +31,7 @@ public abstract class DataConstants {
     protected static final String COURSE_ENROLLED = "enrolled";
 
     // user data constants
-    protected static final String USER_FILE_NAME = "data/user.json";
+    protected static final String USER_FILE_NAME = "data/users.json";
     protected static final String USER_TYPE = "type";
     protected static final String USER_FIRST_NAME = "firstName";
     protected static final String USER_LAST_NAME = "lastName";
@@ -87,7 +87,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_ID = "studentID";
 
     // Achievement data constants
-    protected static final String ACHIEVEMENT_FILE_NAME = "data/achievement.json";
+    protected static final String ACHIEVEMENT_FILE_NAME = "data/achievements.json";
     protected static final String ACHIEVEMENT_ID = "achievementID";
     protected static final String ACHIEVEMENT_NAME = "name";
     protected static final String ACHIEVEMENT_TYPE = "type";

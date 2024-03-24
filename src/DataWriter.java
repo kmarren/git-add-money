@@ -40,7 +40,7 @@ public class DataWriter extends DataConstants {
             courseJSON.add(getCourseJSON(course));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/coursewritetest.json")) {
+        try (FileWriter file = new FileWriter("data/courses.json")) {
 
             file.write(courseJSON.toJSONString());
             file.flush();
@@ -75,7 +75,7 @@ public class DataWriter extends DataConstants {
         for (Course coreq : coreqArrayList) {
             idCoreqList.add(coreq.getCourseID());
         }
-        courseJSON.put(COURSE_COREQUISITES, course.getCorequisites());
+        courseJSON.put(COURSE_COREQUISITES, idCoreqList);
         courseJSON.put(COURSE_APPLICATION_AREA, course.isApplicationArea());
         courseJSON.put(COURSE_CAROLINA_CORE, course.isCarolinaCore());
         courseJSON.put(COURSE_ELECTIVE, course.isElective());
@@ -94,7 +94,7 @@ public class DataWriter extends DataConstants {
             majorJSON.add(getMajorJSON(major));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/majorwritetest.json")) {
+        try (FileWriter file = new FileWriter("data/majors.json")) {
 
             file.write(majorJSON.toJSONString());
             file.flush();
@@ -107,11 +107,17 @@ public class DataWriter extends DataConstants {
     @SuppressWarnings("unchecked")
     public static JSONObject getMajorJSON(Major major) {
         JSONObject majorJSON = new JSONObject();
+        JSONArray reqCourseID = new JSONArray();
 
         majorJSON.put(MAJOR_ID, major.getMajorID());
         majorJSON.put(MAJOR_TITLE, major.getTitle());
-        majorJSON.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourseUUID());
         majorJSON.put(MAJOR_HOURS_REQUIRED, major.getHoursRequired());
+
+        ArrayList<Course> reqCourses = major.getRequiredCourses();
+        for (Course course : reqCourses) {
+            reqCourseID.add(getCourseID(course));
+        }
+        majorJSON.put(MAJOR_REQUIRED_COURSES, reqCourseID);
 
         return majorJSON;
     }
@@ -125,7 +131,7 @@ public class DataWriter extends DataConstants {
             studentJSON.add(getStudentJSON(student));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/studentwritetest.json")) {
+        try (FileWriter file = new FileWriter("data/students.json")) {
 
             file.write(studentJSON.toJSONString());
             file.flush();
@@ -138,13 +144,17 @@ public class DataWriter extends DataConstants {
     @SuppressWarnings("unchecked")
     public static JSONObject getStudentJSON(Student student) {
         JSONObject studentJSON = new JSONObject();
+        JSONArray enrolledCourseID = new JSONArray();
+        JSONArray completedCourseID = new JSONArray();
+        JSONArray achievementID = new JSONArray();
+
+
         studentJSON.put(STUDENT_FIRST_NAME, student.getFirstName());
         studentJSON.put(STUDENT_LAST_NAME, student.getLastName());
         studentJSON.put(STUDENT_ID, student.getUserID().toString());
         studentJSON.put(STUDENT_EMAIL, student.getEmail());
         studentJSON.put(STUDENT_USERNAME, student.getUsername());
         studentJSON.put(STUDENT_PASSWORD, student.getPassword());
-        studentJSON.put(USER_TYPE, 1);
         Major studentMajor = student.getMajor();
         if (studentMajor != null && studentMajor.getMajorID() != null) {
             studentJSON.put(STUDENT_MAJOR_ID, studentMajor.getMajorID().toString());
@@ -164,8 +174,24 @@ public class DataWriter extends DataConstants {
         // student.getAdvisor().getUserID().toString());
         studentJSON.put(STUDENT_RISK_FAILING, student.isRiskFailing());
         studentJSON.put(STUDENT_HOURS_COMPLETED, student.getHoursCompleted());
-        studentJSON.put(STUDENT_COMPLETED_COURSES, student.getCompletedCourseUUID());
-        studentJSON.put(STUDENT_ENROLLED_COURSES, student.getEnrolledCourseUUID());
+
+        ArrayList<Course> enrolledCourses = student.getEnrolledCourses();
+        for (Course course : enrolledCourses) {
+            enrolledCourseID.add(getCourseID(course));
+        }
+        studentJSON.put(STUDENT_COMPLETED_COURSES, enrolledCourseID);
+
+        ArrayList<Course> completedCourses = student.getCompletedCourses();
+        for (Course course : completedCourses) {
+            completedCourseID.add(getCourseID(course));
+        }
+        studentJSON.put(STUDENT_COMPLETED_COURSES, completedCourseID);
+
+        ArrayList<Achievement> achievements = student.getAchievements();
+        for (Achievement achievement : achievements) {
+            achievementID.add(getAchievementID(achievement));
+        }
+        studentJSON.put(STUDENT_ACHIEVEMENTS, achievementID);
 
         return studentJSON;
     }
@@ -177,7 +203,7 @@ public class DataWriter extends DataConstants {
             advisorJSON.add(getAdvisorJSON(advisor));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/advisorwritetest.json")) {
+        try (FileWriter file = new FileWriter("data/advisors.json")) {
 
             file.write(advisorJSON.toJSONString());
             file.flush();
@@ -190,6 +216,8 @@ public class DataWriter extends DataConstants {
     @SuppressWarnings("unchecked")
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject advisorJSON = new JSONObject();
+        JSONArray studentIDs = new JSONArray();
+        JSONArray appointmentIDs = new JSONArray();
 
         advisorJSON.put(ADVISOR_FIRST_NAME, advisor.getFirstName());
         advisorJSON.put(ADVISOR_LAST_NAME, advisor.getLastName());
@@ -197,21 +225,29 @@ public class DataWriter extends DataConstants {
         advisorJSON.put(ADVISOR_EMAIL, advisor.getEmail());
         advisorJSON.put(ADVISOR_USERNAME, advisor.getUsername());
         advisorJSON.put(ADVISOR_PASSWORD, advisor.getPassword());
-        advisorJSON.put(USER_TYPE, 2);
         advisorJSON.put(ADVISOR_OFFICE, advisor.getOffice());
         advisorJSON.put(ADVISOR_OFFICE_HOURS, advisor.getOfficeHours());
         advisorJSON.put(ADVISOR_PHONE_NUMBER, advisor.getPhoneNumber());
-        ArrayList<Student> studentsIds = advisor.getAdviseeList();
-        ArrayList<String> idstring = new ArrayList<>();
-        for (Student student : studentsIds) {
-            idstring.add(student.getUserStringID());
+        ArrayList<Student> students = advisor.getAdviseeList();
+        for (Student student : students) {
+            studentIDs.add(getStudentID(student));
         }
-        advisorJSON.put(ADVISOR_ADVISEE_LIST, idstring);
+        advisorJSON.put(ADVISOR_ADVISEE_LIST, studentIDs);
         advisorJSON.put(ADVISOR_SCHOOL_OF_FOCUS, advisor.getSchoolOfFocus());
-        advisorJSON.put(ADVISOR_APPOINTMENTS, advisor.getAppointments());
+        ArrayList<Appointment> Appointments = advisor.getAppointments();
+        for (Appointment appointment : Appointments) {
+            appointmentIDs.add(getAppointmentID(appointment));
+        }
+        advisorJSON.put(ADVISOR_APPOINTMENTS, appointmentIDs);
 
         return advisorJSON;
     }
+
+    public static JSONObject getAppointmentID(Appointment appointment) {
+        JSONObject appointmentJSON = new JSONObject();
+        appointmentJSON.put(APPOINTMENT_ID, appointment.getAppointmentID().toString());
+        return appointmentJSON;
+        }
 
     public static void writeFaculty() {
         JSONArray facultyJSON = new JSONArray();
@@ -220,7 +256,7 @@ public class DataWriter extends DataConstants {
             facultyJSON.add(getFacultyJSON(faculty));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/facultywritetest.json")) {
+        try (FileWriter file = new FileWriter("data/faculty.json")) {
 
             file.write(facultyJSON.toJSONString());
             file.flush();
@@ -233,19 +269,29 @@ public class DataWriter extends DataConstants {
     @SuppressWarnings("unchecked")
     public static JSONObject getFacultyJSON(Faculty faculty) {
         JSONObject facultyJSON = new JSONObject();
+        JSONArray studentIDs = new JSONArray();
 
         facultyJSON.put(FACULTY_FIRST_NAME, faculty.getFirstName());
         facultyJSON.put(FACULTY_LAST_NAME, faculty.getLastName());
-        facultyJSON.put(FACULTY_ID, faculty.getUserID());
+        facultyJSON.put(FACULTY_ID, faculty.getUserID().toString());
         facultyJSON.put(FACULTY_EMAIL, faculty.getEmail());
         facultyJSON.put(FACULTY_USERNAME, faculty.getUsername());
         facultyJSON.put(FACULTY_PASSWORD, faculty.getPassword());
-        facultyJSON.put(USER_TYPE, 3);
         facultyJSON.put(FACULTY_OFFICE_HOURS, faculty.getOfficeHours());
-        facultyJSON.put(FACULTY_STUDENT_LIST, faculty.getStudentList());
+        ArrayList<Student> students = faculty.getStudentList();
+        for (Student student : students) {
+            studentIDs.add(getStudentID(student));
+        }
+        facultyJSON.put(FACULTY_STUDENT_LIST, studentIDs);
 
         return facultyJSON;
     }
+    
+    public static JSONObject getStudentID(Student student) {
+        JSONObject studentJSON = new JSONObject();
+        studentJSON.put(STUDENT_ID, student.getUserID().toString());
+        return studentJSON;
+        }
 
     // need to have this go through the students, advisors etc as well, however i
     // just wanted to get a basic understanding of the datawriter first
@@ -260,7 +306,7 @@ public class DataWriter extends DataConstants {
             userJSON.add(getUserJSON(user));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/userwritetest.json")) {
+        try (FileWriter file = new FileWriter("data/users.json")) {
 
             file.write(userJSON.toJSONString());
             file.flush();
@@ -318,7 +364,7 @@ public class DataWriter extends DataConstants {
             jsonIDs.add(getAchievementID(ach));
         }
 
-        try (FileWriter file = new FileWriter("data/dataTesting/ids.json")) {
+        try (FileWriter file = new FileWriter("data/ids.json")) {
 
             file.write(jsonIDs.toJSONString());
             file.flush();
@@ -332,11 +378,11 @@ public class DataWriter extends DataConstants {
     public static JSONObject getUserID(User user) {
         JSONObject userJSON = new JSONObject();
         if (user.getType() == 1) {
-            userJSON.put(STUDENT_ID, user.getUserID());
+            userJSON.put(STUDENT_ID, user.getUserID().toString());
         } else if (user.getType() == 2) {
-            userJSON.put(ADVISOR_ID, user.getUserID());
+            userJSON.put(ADVISOR_ID, user.getUserID().toString());
         } else if (user.getType() == 3) {
-            userJSON.put(FACULTY_ID, user.getUserID());
+            userJSON.put(FACULTY_ID, user.getUserID().toString());
         }
         return userJSON;
     }

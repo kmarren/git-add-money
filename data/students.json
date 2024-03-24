@@ -1,1 +1,95 @@
-[{"lastName":"Smith","majorID":"112777c5-b3d2-4696-ac27-19321db183bb","advisorID":"c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9","achievements":[{"achievementID":"ee7308d8-18d9-4a39-8b79-eb6a12345678"}],"minor":false,"completedCourses":[],"studentID":"80f8d54c-fdde-4da5-bf1b-7ef241986f3b","firstName":"Bob","password":"password123","riskFailing":false,"gpa":3.5,"studentComments":["Advised to take CSCE350, MATH241"],"email":"bob@email.sc.edu","hoursCompleted":0,"username":"bobsmith123"},{"lastName":"Johnson","majorID":null,"advisorID":null,"achievements":[{"achievementID":"a3e70bfa-55ab-4e3b-bc2e-98bc87654321"}],"minor":false,"completedCourses":[],"studentID":"c902485b-418a-4e1d-97a2-b41c10c6a18a","firstName":"Alice","password":"securepass456","riskFailing":false,"gpa":3.8,"studentComments":["Strong in lab work, should consider research opportunities."],"email":"alice@email.sc.edu","hoursCompleted":0,"username":"alicejohnson456"},{"lastName":"West","majorID":null,"advisorID":null,"achievements":[{"achievementID":"a3e70bfa-55ab-4e3b-bc2e-98bc87654321"}],"minor":false,"completedCourses":[],"studentID":"112777c5-b3d2-4696-ac27-19321db183bb","firstName":"Brax","password":"password4brax","riskFailing":false,"gpa":2.4,"studentComments":["Advised to take MATH 374, CSCE 212, CSCE 247, and ENGL 463."],"email":"brax@email.sc.edu","hoursCompleted":0,"username":"braxwest"},{"lastName":"hill","majorID":null,"advisorID":null,"achievements":[{"achievementID":"a3e70bfa-55ab-4e3b-bc2e-98bc87654321"}],"minor":false,"completedCourses":[],"studentID":"9fb39a81-8c63-4f18-b9b6-9dab44e7978f","firstName":"Tawnie","password":"password","riskFailing":false,"gpa":3.8,"studentComments":[null],"email":"tahill@email.sc.edu","hoursCompleted":0,"username":"tawniehill9"}]
+[
+    {
+        "lastName": "Smith",
+        "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
+        "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+        "achievements": [
+            {
+                "achievementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678"
+            }
+        ],
+        "minor": false,
+        "completedCourses": [],
+        "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b",
+        "firstName": "Bob",
+        "password": "password123",
+        "riskFailing": false,
+        "gpa": 3.5,
+        "studentComments": [
+            "Advised to take CSCE350, MATH241"
+        ],
+        "email": "bob@email.sc.edu",
+        "hoursCompleted": 0,
+        "username": "bobsmith123"
+    },
+    {
+        "lastName": "Johnson",
+        "majorID": null,
+        "advisorID": null,
+        "achievements": [
+            {
+                "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+            }
+        ],
+        "minor": false,
+        "completedCourses": [],
+        "studentID": "c902485b-418a-4e1d-97a2-b41c10c6a18a",
+        "firstName": "Alice",
+        "password": "securepass456",
+        "riskFailing": false,
+        "gpa": 3.8,
+        "studentComments": [
+            "Strong in lab work, should consider research opportunities."
+        ],
+        "email": "alice@email.sc.edu",
+        "hoursCompleted": 0,
+        "username": "alicejohnson456"
+    },
+    {
+        "lastName": "West",
+        "majorID": null,
+        "advisorID": null,
+        "achievements": [
+            {
+                "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+            }
+        ],
+        "minor": false,
+        "completedCourses": [],
+        "studentID": "112777c5-b3d2-4696-ac27-19321db183bb",
+        "firstName": "Brax",
+        "password": "password4brax",
+        "riskFailing": false,
+        "gpa": 2.4,
+        "studentComments": [
+            "Advised to take MATH 374, CSCE 212, CSCE 247, and ENGL 463."
+        ],
+        "email": "brax@email.sc.edu",
+        "hoursCompleted": 0,
+        "username": "braxwest"
+    },
+    
+    {
+        "lastName": "hill",
+        "majorID": null,
+        "advisorID": null,
+        "achievements": [
+            {
+                "achievementID": "a3e70bfa-55ab-4e3b-bc2e-98bc87654321"
+            }
+        ],
+        "minor": false,
+        "completedCourses": [],
+        "studentID": "9fb39a81-8c63-4f18-b9b6-9dab44e7978f",
+        "firstName": "Tawnie",
+        "password": "password",
+        "riskFailing": false,
+        "gpa": 3.8,
+        "studentComments": [
+            null
+        ],
+        "email": "tahill@email.sc.edu",
+        "hoursCompleted": 0,
+        "username": "tawniehill9"
+    }
+]

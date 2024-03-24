@@ -1,0 +1,25 @@
+[
+    {
+        "lastName": null,
+        "majorID": "112777c5-b3d2-4696-ac27-19321db183bb",
+        "advisorID": "c7dab4d5-3f76-4be8-a4c6-097d92a1cbf9",
+        "achievements": [
+            {
+                "achievementID": "ee7308d8-18d9-4a39-8b79-eb6a12345678"
+            }
+        ],
+        "minor": false,
+        "completedCourses": [],
+        "studentID": "80f8d54c-fdde-4da5-bf1b-7ef241986f3b",
+        "firstName": "Bob",
+        "password": "password123",
+        "riskFailing": false,
+        "gpa": 3.5,
+        "studentComments": [
+            "nah"
+        ],
+        "email": "bob@email.sc.edu",
+        "hoursCompleted": -99,
+        "username": "bobsmith123"
+    }
+]

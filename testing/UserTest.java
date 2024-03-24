@@ -26,6 +26,7 @@ public class UserTest {
         
         users.add(new Student("jdoe", "password123")); // Adjusted to use Student
         users.add(new Student("msmith", "password456")); // Adjusted to use Student
+        users.add(new Advisor("mkaty", "password333"));
     }
     
     @After
@@ -68,4 +69,27 @@ public class UserTest {
         assertEquals("Doe", user.getLastName());
         assertEquals("johndoe@example.com", user.getEmail());
     }
+    @Test
+    public void testUpdateUserEmail() {
+    User user = users.get(0); // Assuming this is a Student
+    String newEmail = "newemail@example.com";
+    user.setEmail(newEmail);
+    assertEquals("Email should be updated to new email", newEmail, user.getEmail());
+    }
+
+    @Test 
+    public void testUserTypeAssignment() {
+        User student = users.get(0);
+        User advisor = users.get(2);
+        assertEquals("User should be of type Student", 1, student.getType());
+        assertEquals("User should be of type Advisor", 2, advisor.getType());
+    }
+    @Test
+    public void testPasswordChange() {
+        User user = users.get(1); // Assuming this is another Student
+        user.setPassword("newSecurePassword123");
+        assertTrue("Password should be updated and login should succeed with new password", 
+                user.login(user.getUsername(), "newSecurePassword123"));
+    }
+
 }

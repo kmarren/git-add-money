@@ -46,9 +46,9 @@ public class UserList {
         users.add(user);
     }
 
-    public void removeUser(UUID uuid) {
+    public void removeUser(String string) {
         for (User user : users) {
-            if (user.getUserID().equals(uuid)) {
+            if (user.getUserID().equals(string)) {
                 users.remove(user);
             }
         }

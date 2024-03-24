@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import src.Achievement;
 import src.AchievementList;
-import src.DataLoader;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -86,4 +84,40 @@ public class AchievementListTest {
         achievementList.clear();
         assertTrue(achievementList.getAchievements().isEmpty());
     }
+
+    // known issue
+    @Test
+    public void testAddNullAchievement() {
+        int sizeBefore = achievementList.getAchievements().size();
+        achievementList.addAchievement(null);
+        int sizeAfter = achievementList.getAchievements().size();
+        assertEquals(sizeBefore, sizeAfter);
+    }
+
+    @Test
+    public void testRemoveNullAchievement() {
+        int sizeBefore = achievementList.getAchievements().size();
+        achievementList.removeAchievement(null);
+        int sizeAfter = achievementList.getAchievements().size();
+        assertEquals(sizeBefore, sizeAfter);
+    }
+
+    @Test
+    public void testGetAchievementWithEmptyList() {
+        achievementList.clear();
+        assertNull(achievementList.getAchievement(UUID.randomUUID()));
+    }
+
+    @Test
+    public void testGetAchievementsWithEmptyList() {
+        achievementList.clear();
+        assertTrue(achievementList.getAchievements().isEmpty());
+    }
+
+    @Test
+    public void testClearEmptyList() {
+        achievementList.clear();
+        assertTrue(achievementList.getAchievements().isEmpty());
+    }
+
 }

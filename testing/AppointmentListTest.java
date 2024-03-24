@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import src.Appointment;
 import src.AppointmentList;
-import src.DataLoader;
-
 import java.util.ArrayList;
 import java.util.UUID;
 

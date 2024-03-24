@@ -60,4 +60,12 @@ public class CourseList {
         DataLoader.finishCourses(courses);
     }
 
+    public void removeCourse(Course course) {
+        courses.remove(course);
+    }
+
+    public void clear() {
+        courses.clear();
+    }
+
 }

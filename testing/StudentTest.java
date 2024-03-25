@@ -55,5 +55,4 @@ public class StudentTest {
         assertEquals("Intro to Programming", student.getEnrolledCourses().get(0).getCourseName());
     }
 
-    // Additional test cases should follow a similar pattern.
 }

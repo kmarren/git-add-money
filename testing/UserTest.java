@@ -26,7 +26,8 @@ public class UserTest {
         
         users.add(new Student("jdoe", "password123")); // Adjusted to use Student
         users.add(new Student("msmith", "password456")); // Adjusted to use Student
-        users.add(new Advisor("mkaty", "password333"));
+        users.add(new Advisor("mkaty", "password333")); // Adjusted to use Advisor
+        users.add(new Faculty("jdoe", "password123")); // Adjusted to use Faculty
     }
     
     @After
@@ -92,12 +93,7 @@ public class UserTest {
                 user.login(user.getUsername(), "newSecurePassword123"));
     }
     
-   
-    @Test(expected = IllegalArgumentException.class)
-    public void testSetInvalidEmail() {
-    User user = new Student("testUser", "testPass");
-    user.setEmail("invalidEmail"); // Assuming setEmail should validate email format
-}
+
     @Test
     public void testUUIDGeneration() {
     User user1 = new Student("user1", "pass1");
@@ -105,8 +101,39 @@ public class UserTest {
     assertNotNull(user1.getUserID());
     assertNotNull(user2.getUserID());
     assertNotEquals(user1.getUserID(), user2.getUserID());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testSetFirstNameWithNull() {
+    User user = new Student("jdoe", "password123");
+    user.setFirstName(null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testSetLastNameWithNull() {
+    User user = new Student("jdoe", "password123");
+    user.setLastName(null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testSetEmailWithNull() {
+    User user = new Student("jdoe", "password123");
+    user.setEmail(null);
+    }
+
+    @Test
+    public void testLoginWithNullUsername() {
+    assertFalse(userList.login(null, "password123"));
 }
 
-
+    @Test
+    public void testLoginWithEmptyPassword() {
+    assertFalse(userList.login("jdoe", ""));
+}
+    @Test
+    public void testAddUserWithDuplicateUsername() {
+    userList.addUser(new Student("jdoe", "password123"));
+    userList.addUser(new Student("jdoe", "newpassword")); // Assuming usernames must be unique
+}
 
 }

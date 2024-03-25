@@ -31,6 +31,13 @@ public class Appointment {
         this.location = location;
     }
 
+    public Appointment(String time, String location)
+    {
+        this();
+        this.time = time;
+        this.location = location;
+    }
+
     /**
      * Constructs an appointment object with the following attributes.
      * 

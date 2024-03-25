@@ -4,7 +4,7 @@ public abstract class DataConstants {
 
     // major data constants
     //protected static final String MAJOR_FILE_NAME = "data/majors.json";
-    protected static final String MAJOR_FILE_NAME = "data/testingjsons/majors.json";
+    protected static final String MAJOR_FILE_NAME = "data/majors.json";
     protected static final String MAJOR_ID = "majorID";
     protected static final String MAJOR_TITLE = "title";
     protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
@@ -13,7 +13,7 @@ public abstract class DataConstants {
 
     // course data constants
     //protected static final String COURSE_FILE_NAME = "data/courses.json";
-    protected static final String COURSE_FILE_NAME = "data/testingjsons/courses.json";
+    protected static final String COURSE_FILE_NAME = "data/courses.json";
     protected static final String COURSE_COMMENTS = "courseComments";
     protected static final String COURSE_NUMBER = "courseNumber";
     protected static final String COURSE_ID = "courseID";
@@ -34,7 +34,7 @@ public abstract class DataConstants {
 
     // user data constants
     // protected static final String USER_FILE_NAME = "data/users.json";
-    protected static final String USER_FILE_NAME = "data/testingjsons/users.json";
+    protected static final String USER_FILE_NAME = "data/users.json";
     protected static final String USER_TYPE = "type";
     protected static final String USER_FIRST_NAME = "firstName";
     protected static final String USER_LAST_NAME = "lastName";
@@ -45,7 +45,7 @@ public abstract class DataConstants {
 
     // faculty data constants
     // protected static final String FACULTY_FILE_NAME = "data/faculty.json";
-    protected static final String FACULTY_FILE_NAME = "data/testingjsons/faculty.json";
+    protected static final String FACULTY_FILE_NAME = "data/faculty.json";
     protected static final String FACULTY_OFFICE_HOURS = "officeHours";
     protected static final String FACULTY_STUDENT_LIST = "studentList";
     protected static final String FACULTY_FIRST_NAME = "firstName";
@@ -57,7 +57,7 @@ public abstract class DataConstants {
 
     // Advisor data constants
     // protected static final String ADVISORS_FILE_NAME = "data/advisors.json";
-    protected static final String ADVISORS_FILE_NAME = "data/testingjsons/advisors.json";
+    protected static final String ADVISORS_FILE_NAME = "data/advisors.json";
     protected static final String ADVISOR_OFFICE = "office";
     protected static final String ADVISOR_OFFICE_HOURS = "officeHours";
     protected static final String ADVISOR_PHONE_NUMBER = "phoneNumber";
@@ -73,7 +73,7 @@ public abstract class DataConstants {
 
     // student data constants
     // protected static final String STUDENT_FILE_NAME = "data/students.json";
-    protected static final String STUDENT_FILE_NAME = "data/testingjsons/students.json";
+    protected static final String STUDENT_FILE_NAME = "data/students.json";
     protected static final String STUDENT_FIRST_NAME = "firstName";
     protected static final String STUDENT_LAST_NAME = "lastName";
     protected static final String STUDENT_EMAIL = "email";
@@ -94,7 +94,7 @@ public abstract class DataConstants {
 
     // Achievement data constants
     // protected static final String ACHIEVEMENT_FILE_NAME = "data/achievements.json";
-    protected static final String ACHIEVEMENT_FILE_NAME = "data/testingjsons/achievements.json";
+    protected static final String ACHIEVEMENT_FILE_NAME = "data/achievements.json";
     protected static final String ACHIEVEMENT_ID = "achievementID";
     protected static final String ACHIEVEMENT_NAME = "name";
     protected static final String ACHIEVEMENT_TYPE = "type";
@@ -105,7 +105,7 @@ public abstract class DataConstants {
 
     // Appointment data constants
     // protected static final String APPOINTMENT_FILE_NAME = "data/appointments.json";
-    protected static final String APPOINTMENT_FILE_NAME = "data/testingjsons/appointments.json";
+    protected static final String APPOINTMENT_FILE_NAME = "data/appointments.json";
     protected static final String APPOINTMENT_ID = "appointmentID";
     protected static final String APPOINTMENT_STUDENT = "studentID";
     protected static final String APPOINTMENT_TIME = "time";

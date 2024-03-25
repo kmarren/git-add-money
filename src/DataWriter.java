@@ -179,7 +179,7 @@ public class DataWriter extends DataConstants {
         for (Course course : enrolledCourses) {
             enrolledCourseID.add(getCourseID(course));
         }
-        studentJSON.put(STUDENT_COMPLETED_COURSES, enrolledCourseID);
+        studentJSON.put(STUDENT_ENROLLED_COURSES, enrolledCourseID);
 
         ArrayList<Course> completedCourses = student.getCompletedCourses();
         for (Course course : completedCourses) {

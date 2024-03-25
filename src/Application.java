@@ -321,7 +321,7 @@ public class Application {
     }
 
     public void writeStudentComment(Student student, String comment) {
-        advisor.writeStudentComment(student, comment);
+        student.addStudentComment(comment);
     }
 
     public ArrayList<Course> getCourseList() {

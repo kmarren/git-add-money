@@ -116,6 +116,14 @@ public class Course {
         this.carolinaCore = carolinaCore;
         this.elective = elective;
     }
+
+    public Course(int courseNumber, String courseCode, String courseName)
+    {
+        this.courseID = UUID.randomUUID();
+        this.courseNumber = courseNumber;
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+    }
     // getters and setters
 
     /**

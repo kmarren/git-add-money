@@ -12,10 +12,10 @@ public class Advisor extends User {
     private String office;
     private String officeHours;
     private String phoneNumber;
-    private ArrayList<Student> adviseeList = new ArrayList<>();
+    private ArrayList<Student> adviseeList = new ArrayList<Student>();
     private String schoolOfFocus;
     private String searchField;
-    protected ArrayList<Appointment> appointments;
+    protected ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
     /**
      * Constructs an advisor object with the following attributes.
@@ -167,31 +167,18 @@ public class Advisor extends User {
         this.appointments = appointments;
     }
 
-    // Methods
-
-    /**
-     * Allows the advisor to write a comment on the profile of a student
-     * they are advising.
-     * 
-     * @param student The student that they are currently viewing/advising.
-     * @return A string of the comment being written on the student's profile.
-     */
-    public void writeStudentComment(Student student, String comment) {
-        student.addStudentComment(comment);
-    }
-
     /**
      * Lets the advisor view a list of the students they will advise.
      * 
      * @param avisees The list of the advisees.
      */
-    public String viewAdvisees(ArrayList<Student> advisees) {
+    public String viewAdvisees() {
         StringBuilder list = new StringBuilder();
-        if (advisees.isEmpty()) {
+        if (adviseeList.isEmpty()) {
             list.append("No advisees found for this advisor.");
         } else {
             list.append("List of Advisees:\n");
-            for (Student advisee : advisees) {
+            for (Student advisee : adviseeList) {
                 list.append("Name: ").append(advisee.getFirstName()).append(" ").append(advisee.getLastName())
                         .append("\n");
                 list.append("Email: ").append(advisee.getEmail()).append("\n");
@@ -200,21 +187,6 @@ public class Advisor extends User {
         return list.toString();
     }
 
-    /**
-     * Allows the advisor to view a specific student's profile.
-     * 
-     * @param student The student being viewed.
-     * @return A string of the student's profile.
-     */
-    public String viewStudentProfile(Student student) {
-        StringBuilder profile = new StringBuilder();
-        profile.append("Student Profile:\n");
-        profile.append("Name: ").append(student.getFirstName()).append(" ").append(student.getLastName()).append("\n");
-        profile.append("Email: ").append(student.getEmail()).append("\n");
-        profile.append("Major: ").append(student.getMajor().getTitle()).append("\n");
-        profile.append("GPA: ").append(student.getGpa()).append("\n");
-        return profile.toString();
-    }
 
     /**
      * Allows the advisor to view all the appointments they have.
@@ -222,8 +194,19 @@ public class Advisor extends User {
      * @param appointments A list of all their current appointments.
      * @return The current list of appointments.
      */
-    public ArrayList<Appointment> viewAppointments(ArrayList<Appointment> appointments) {
-        return appointments;
+    public String viewAppointments() {
+        StringBuilder list = new StringBuilder();
+        if (appointments.isEmpty()) {
+            list.append("No Available Appointments");
+        } else {
+            list.append("List of Available Appointments:\n");
+            for (Appointment appointment : appointments) {
+                list.append("Time: ").append(appointment.getTime())
+                        .append("\n");
+                list.append("Location: ").append(appointment.getLocation()).append("\n");
+            }
+        }
+        return list.toString();
     }
 
     /**
@@ -251,11 +234,11 @@ public class Advisor extends User {
      * @param searchFeild name that is being searched
      * @return Student with matching name
      */
-    public ArrayList<Student> searchByName(String searchFeild) {
-        ArrayList<Student> results = new ArrayList<>();
+    public String searchByName(String searchFeild) {
+        String results = new String();
         for (Student student : adviseeList) {
             if (student.getFirstName().equalsIgnoreCase(searchField)) {
-                results.add(student);
+                results = student.viewProfile();
             }
         }
         return results;

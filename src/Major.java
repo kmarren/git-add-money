@@ -39,6 +39,11 @@ public class Major {
         this.hoursRequired = hoursRequired;
     }
 
+    public Major(String title) {
+        this();
+        this.title = title;
+    }
+
     // Getters and setters
 
     /**

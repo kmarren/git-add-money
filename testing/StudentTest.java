@@ -1,60 +1,75 @@
 package testing;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import src.UserList;
-import src.Student; 
-import src.User;
-import src.Faculty;
-import src.Advisor;
+import src.Student;
 import src.Course;
+import src.Major;
+import src.Advisor;
 import src.Achievement;
+import java.util.ArrayList;
 
 public class StudentTest {
 
-    @Test
-    public void testConstructorWithParams() {
-        ArrayList<String> comments = new ArrayList<>();
-        comments.add("Excellent progress");
-        ArrayList<Achievement> achievements = new ArrayList<>();
-        // Assuming Achievement is a simple class with a name property for demonstration
-        achievements.add(new Achievement("Honor Roll"));
-        ArrayList<Course> enrolledCourses = new ArrayList<>();
-        // Add mock Course objects as needed
-        
-        Advisor advisor = new Advisor("AdvisorName", "AdvisorEmail"); // Mocked for demonstration
-        Student student = new Student(3.5, true, comments, achievements, advisor, false,
-                "John", "Doe", "john.doe@example.com", "johndoe", "password123",
-                new Major("Computer Science"), enrolledCourses, new ArrayList<>());
-                
-        assertEquals(3.5, student.getGpa());
-        assertTrue(student.hasMinor());
-        assertNotNull(student.getStudentComments());
-        assertEquals("AdvisorName", student.getAdvisor().getName()); // Assuming Advisor has a getName method
-        assertEquals("Computer Science", student.getMajor().getName()); // Assuming Major has a getName method
+    private Student student;
+    private Course course1;
+    private Course course2;
+    private Major major;
+    private Advisor advisor;
+    
+    @Before
+    public void setup() {
+        // Assuming Major, Course, and Advisor have suitable constructors
+        major = new Major("Computer Science");
+        course1 = new Course(null, 0, "Introduction to Computer Science", "CS101", null, null, null, 3, 0, null, false, false, false, 4.0, false, false);
+        course2 = new Course(null, 0, "Data Structures", "CS102", null, null, null, 3, 0, null, false, false, false, 3.6, false, false);
+        advisor = new Advisor("Jane Doe", "advisor@example.com", "advisorUsername", "password", 2);
+        student = new Student(3.5, false, new ArrayList<>(), new ArrayList<>(), advisor, false,
+                "John", "Doe", "john.doe@example.com", "johndoe", "password123", major,
+                new ArrayList<>(), new ArrayList<>());
     }
 
     @Test
-    public void testSetAndGetGpa() {
-        Student student = new Student("johndoe", "password123");
-        student.setGpa(3.9);
-        assertEquals(3.9, student.getGpa());
-    }
-
-    @Test
-    public void testAddAndGetEnrolledCourses() {
-        Student student = new Student("johndoe", "password123");
-        Course course = new Course("Intro to Programming", "CS101", 3); // Mocked for demonstration
-        student.addEnrolledCourse(course);
-        
+    public void testAddEnrolledCourse() {
+        student.addEnrolledCourse(course1);
         assertEquals(1, student.getEnrolledCourses().size());
-        assertEquals("Intro to Programming", student.getEnrolledCourses().get(0).getCourseName());
+        assertTrue(student.getEnrolledCourses().contains(course1));
     }
+
+    @Test
+    public void testAddCompletedCourse() {
+        student.addCompletedCourse(course1);
+        assertEquals(1, student.getCompletedCourses().size());
+        assertTrue(student.getCompletedCourses().contains(course1));
+    }
+
+    @Test
+    public void testCalculateGPA() {
+        // Assuming GPA is calculated based on completed courses
+        student.addCompletedCourse(course1); // 4.0 GPA
+        student.addCompletedCourse(course2); // 3.6 GPA
+        student.calculateGPA();
+        assertEquals(3.8, student.getGpa(), 0.1);
+    }
+
+    @Test
+    public void testAdvisorAssignment() {
+        assertEquals(advisor, student.getAdvisor());
+    }
+
+    @Test
+    public void testRiskFailing() {
+        student.setRiskFailing(true);
+        assertTrue(student.isRiskFailing());
+    }
+
+    @Test
+    public void testGetGradeLevel() {
+        student.setHoursCompleted(30); // Freshman threshold
+        assertEquals("Sophomore", student.getGradeLevel());
+    }
+
+
+
 }
-
-

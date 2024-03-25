@@ -52,8 +52,11 @@ public class Advisor extends User {
      * 
      * @param username the facultys username
      * @param password the facultys password
+     * @param i 
+     * @param string2 
+     * @param string 
      */
-    public Advisor(String username, String password) {
+    public Advisor(String username, String password, String string, String string2, int i) {
         super(username, password, 2);
     }
     // Getters and Setters

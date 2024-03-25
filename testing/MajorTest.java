@@ -9,6 +9,7 @@ import src.Course;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class MajorTest {
     private Major major;
@@ -80,5 +81,27 @@ public class MajorTest {
     major.addRequiredCourse(programming101); // Attempt to add a duplicate
     assertEquals("Major required courses list size should not change after adding a duplicate course", initialSize, major.getRequiredCourses().size());
 }
+@Test
+public void testTotalHoursAfterAddingCourse() {
+    Course newCourse = new Course(new ArrayList<>(), 106, "New Course", "New Course Title", null, new ArrayList<>(), "Description", 30, 4, new ArrayList<>(), false, false, false, 0.0, false, false);
+    int initialHours = major.getHoursRequired();
+    major.addRequiredCourse(newCourse);
+    assertEquals("Total hours required should increase by course credit hours", initialHours + 4, major.getHoursRequired());
+}
+@Test
+public void testMajorTitleAndId() {
+    String expectedTitle = "Computer Science";
+    assertEquals("Major title should match expected", expectedTitle, major.getTitle());
+
+    UUID majorId = UUID.fromString(major.getMajorID()); // Assuming getMajorID returns a String
+    assertNotNull("Major ID should not be null", majorId);
+}
+@Test
+public void testMajorWithNoCourses() {
+    Major emptyMajor = new Major("Empty Major", new ArrayList<>(), 0);
+    assertTrue("Newly created major should have no required courses", emptyMajor.getRequiredCourses().isEmpty());
+    assertEquals("Newly created major with no courses should have 0 required hours", 0, emptyMajor.getHoursRequired());
+}
+
 
 }

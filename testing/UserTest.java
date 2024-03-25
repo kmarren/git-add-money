@@ -91,5 +91,22 @@ public class UserTest {
         assertTrue("Password should be updated and login should succeed with new password", 
                 user.login(user.getUsername(), "newSecurePassword123"));
     }
+    
+   
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetInvalidEmail() {
+    User user = new Student("testUser", "testPass");
+    user.setEmail("invalidEmail"); // Assuming setEmail should validate email format
+}
+    @Test
+    public void testUUIDGeneration() {
+    User user1 = new Student("user1", "pass1");
+    User user2 = new Student("user2", "pass2");
+    assertNotNull(user1.getUserID());
+    assertNotNull(user2.getUserID());
+    assertNotEquals(user1.getUserID(), user2.getUserID());
+}
+
+
 
 }

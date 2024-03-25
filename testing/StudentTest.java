@@ -68,7 +68,13 @@ public class StudentTest {
         student.setHoursCompleted(30); // Freshman threshold
         assertEquals("Sophomore", student.getGradeLevel());
     }
-
+    @Test
+    public void testSetStudentCommentsWithNull() {
+        Student student = new Student("JohnDoe", "securePassword123");
+        student.setStudentComments(null);
+        assertNull("Student comments should be null", student.getStudentComments());
+    }
+    
 
 
 }

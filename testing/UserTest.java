@@ -116,7 +116,7 @@ public class UserTest {
     @Test
     public void testAddUserWithDuplicateUsername() {
     userList.addUser(new Student("jdoe", "password123"));
-    userList.addUser(new Student("jdoe", "newpassword")); // Assuming usernames must be unique
+    userList.addUser(new Student("jdoe", "newpassword")); // Duplicate username
 }
 
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * class to epresent a student, extends attributes from the User class
+ * class to represent a student, extends attributes from the User class
  * 
  * @author Jacob Robertson
  */

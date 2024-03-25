@@ -74,4 +74,11 @@ public class MajorTest {
         assertTrue("Application area course should be correctly identified", applicationAreaCourse.isApplicationArea());
         assertTrue("Carolina core course should be correctly identified", carolinaCoreCourse.isCarolinaCore());
     }
+    @Test
+    public void testDuplicateCourseAddition() {
+    int initialSize = major.getRequiredCourses().size();
+    major.addRequiredCourse(programming101); // Attempt to add a duplicate
+    assertEquals("Major required courses list size should not change after adding a duplicate course", initialSize, major.getRequiredCourses().size());
+}
+
 }

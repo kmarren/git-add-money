@@ -20,7 +20,7 @@ public class StudentTest {
     
     @Before
     public void setup() {
-        // Assuming Major, Course, and Advisor have suitable constructors
+       
         major = new Major("Computer Science");
         course1 = new Course(null, 0, "Introduction to Computer Science", "CS101", null, null, null, 3, 0, null, false, false, false, 4.0, false, false);
         course2 = new Course(null, 0, "Data Structures", "CS102", null, null, null, 3, 0, null, false, false, false, 3.6, false, false);
@@ -46,7 +46,6 @@ public class StudentTest {
 
     @Test
     public void testCalculateGPA() {
-        // Assuming GPA is calculated based on completed courses
         student.addCompletedCourse(course1); // 4.0 GPA
         student.addCompletedCourse(course2); // 3.6 GPA
         student.calculateGPA();

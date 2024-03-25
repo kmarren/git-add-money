@@ -17,6 +17,10 @@ import src.Major;
 import src.Student;
 import src.User;
 
+
+// NOTE: this is not really a complete test, however I know the main bugs with the dataloader and feel it would be 
+// better to test overall functionality rather than test the individual methods as they all have the same bugs/
+// pretty much do the same thing. Most of the issues come from JSON formatting and null values within the JSON file.
 public class DataLoaderTest {
 
     @Test

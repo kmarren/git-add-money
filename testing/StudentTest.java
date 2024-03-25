@@ -12,6 +12,7 @@ import src.Student;
 import src.User;
 import src.Faculty;
 import src.Advisor;
+import src.Course;
 import src.Achievement;
 
 public class StudentTest {
@@ -54,5 +55,6 @@ public class StudentTest {
         assertEquals(1, student.getEnrolledCourses().size());
         assertEquals("Intro to Programming", student.getEnrolledCourses().get(0).getCourseName());
     }
-
 }
+
+

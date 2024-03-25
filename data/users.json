@@ -70,5 +70,14 @@
         "userID": "9fb39a81-8c63-4f18-b9b6-9dab44e7978f",
         "email": "tahill@email.sc.edu",
         "username": "tawniehill9"
+    },
+    {
+        "firstName": null,
+        "lastName": null,
+        "password": "test",
+        "type": 1,
+        "userID": "e5cf633b-d913-4038-b320-ea18b991e22c",
+        "email": null,
+        "username": "test"
     }
 ]

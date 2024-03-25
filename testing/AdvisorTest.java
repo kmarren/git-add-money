@@ -209,6 +209,79 @@ public class AdvisorTest {
         assertTrue(advisor.getAppointments().contains(appointment2));
     }
 
+    // Testing setting office with invalid input
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetOfficeWithEmptyString() {
+        advisor.setOffice("");
+    }
+
+    // Testing setting office hours with invalid input
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetOfficeHoursWithEmptyString() {
+        advisor.setOfficeHours("");
+    }
+
+    // Testing setting phone number with invalid formats
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetPhoneNumberWithEmptyString() {
+        advisor.setPhoneNumber("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetPhoneNumberWithLetters() {
+        advisor.setPhoneNumber("abc-def-ghij");
+    }
+
+    // Testing setting school of focus with invalid input
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetSchoolOfFocusWithNull() {
+        advisor.setSchoolOfFocus(null);
+    }
+
+    // Testing for invalid search criteria
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByNameWithNull() {
+        advisor.searchByName(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByNameWithEmptyString() {
+        advisor.searchByName("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByIDWithNull() {
+        advisor.searchByID(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByIDWithEmptyString() {
+        advisor.searchByID("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByUserNameWithNull() {
+        advisor.searchByUserName(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSearchByUserNameWithEmptyString() {
+        advisor.searchByUserName("");
+    }
+
+    // Assuming Advisor class has a method to add comments to a student
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddCommentToStudentWithEmptyComment() {
+        Student student = new Student("Jane", "Doe", "jane@example.com", "janedoe", "pass");
+        advisor.writeStudentComment(student, "");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddCommentToStudentWithNullComment() {
+        Student student = new Student("Jane", "Doe", "jane@example.com", "janedoe", "pass");
+        advisor.writeStudentComment(student, null);
+    }
+
 }
 
 

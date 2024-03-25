@@ -38,7 +38,7 @@ public class ApplicationTest {
         appointments = new ArrayList<>();
         userList = UserList.getInstance();
 
-        student = new Student("John", "Doe", "john@example.com", "johndoe", "password");
+        student = new Student("Brax", "West", "brax@email.sc.edu", "braxwest", "password4brax");
         advisor = new Advisor("username", "password");
         faculty = new Faculty("facultyUsername", "facultyPassword");
         User existingUser = new Student("Braxton", "West", "braxwest@example.com", "braxwest", "password4brax");
@@ -64,10 +64,9 @@ public class ApplicationTest {
 
     @Test
     public void testLogin() {
-        application.login(student.getUsername(), student.getPassword());
+        application.login("braxwest", "password4brax");
         User loggedInUser = application.getCurrentUser();
-        assertTrue(loggedInUser);
-        assertEquals(student.getUsername(), loggedInUser.getUsername());
+        assertTrue(loggedInUser == student);
     }
     @Test
     public void testSignUp() {

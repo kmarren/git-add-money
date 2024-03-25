@@ -61,6 +61,10 @@ public class Advisor extends User {
     }
     // Getters and Setters
 
+    public Advisor(String string, String string2) {
+        //TODO Auto-generated constructor stub
+    }
+
     /**
      * Gets the location of where the advisor's office is located.
      * 

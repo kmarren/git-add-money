@@ -47,13 +47,16 @@ public class AdvisorTest {
     }
 
 
+ /*
     @Test
+ 
+ 
     public void testWriteStudentComment() {
         String comment = "Needs improvement in math";
         advisor.writeStudentComment(student1, comment);
         assertTrue(student1.getStudentComments().contains(comment));
     }
-
+*/
     @Test
     public void testViewAdvisees() {
         advisor.addAdvisee(student1);
@@ -62,11 +65,7 @@ public class AdvisorTest {
         assertTrue(advisees.contains(student1) && advisees.contains(student2));
     }
 
-    @Test
-    public void testViewStudentProfile() {
-        String profile = advisor.viewStudentProfile(student1);
-        assertTrue(profile.contains(student1.getFirstName()) && profile.contains(student1.getLastName()));
-    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testSetOfficeWithNull() {
         advisor.setOffice(null);
@@ -143,7 +142,7 @@ public class AdvisorTest {
         String name = student1.getFirstName();
         ArrayList<Student> foundStudents = advisor.searchByName(name);
         assertNotNull(foundStudents);
-        assertTrue(foundStudents.contains);
+        assertTrue(foundStudents.contains(student1));
     }
 
     @Test

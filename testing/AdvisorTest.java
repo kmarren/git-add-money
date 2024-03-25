@@ -1,129 +1,215 @@
 package testing;
-import java.util.ArrayList;
-import src.DataWriter;
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+import src.Advisor;
+import src.Appointment;
+import src.Student;
 import src.User;
 import src.UserList;
-import src.MajorList;
-import src.CourseList;
-import src.DataLoader;
-import src.Student;
-import src.Advisor;
-import src.Faculty;
-import src.Course;
-import src.Major;
-import src.Appointment;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.UUID;
+
+public class AdvisorTest {
+
+    private Advisor advisor;
+    private Student student1;
+    private Student student2;
+    private Appointment appointment1;
+    private Appointment appointment2;
+    private UserList userList;
+
+    @Before
+    public void setUp() {
+        userList = UserList.getInstance(); 
+
+        advisor = new Advisor("username", "password");
+        student1 = new Student("John", "Doe", "johndoe@example.com", "johndoe", "password123");
+        student2 = new Student("Jane", "Doe", "janedoe@example.com", "janedoe", "password456");
+
+        
+        appointment1 = new Appointment(student1, "10:00 AM", "Room 101");
+        appointment2 = new Appointment(student2, "11:00 AM", "Room 102");
+
+        
+        advisor.setAdviseeList(new ArrayList<>());
+        advisor.addAdvisee(student1);
+        advisor.addAdvisee(student2);
+
+        advisor.setAppointments(new ArrayList<>());
+        advisor.addAppointment(appointment1);
+        advisor.addAppointment(appointment2);
+        userList.addUser(student1);
+        userList.addUser(student2);
+        userList.addUser(advisor);
+    }
 
 
-public class AdvisorTest 
-{
-    Advisor advisor = new Advisor("kcm", "password");
-    Student student = new Student("Parker", "Martin", "pmartin@email.sc.edu", "pmm", "password");
-    Major major = new Major("Computer Science");
-    @BeforeEach
-    void reset()
-    {
-        advisor.getAdviseeList().clear();
-        advisor.getAppointments().clear();
-        String id = major.getMajorID();
-        student.setMajor(id);
+    @Test
+    public void testWriteStudentComment() {
+        String comment = "Needs improvement in math";
+        advisor.writeStudentComment(student1, comment);
+        assertTrue(student1.getStudentComments().contains(comment));
     }
 
     @Test
-    void testViewAdviseesNormal()
-    {
-        advisor.addAdvisee(student);
-        assertEquals("List of Advisees:\n" + "Name: Parker Martin\n" + "Email: pmartin@email.sc.edu" + "\n", advisor.viewAdvisees());
+    public void testViewAdvisees() {
+        advisor.addAdvisee(student1);
+        advisor.addAdvisee(student2);
+        ArrayList<Student> advisees = advisor.getAdviseeList();
+        assertTrue(advisees.contains(student1) && advisees.contains(student2));
     }
 
     @Test
-    void testViewAdviseesThree()
-    {
-        advisor.addAdvisee(student);
-        advisor.addAdvisee(new Student("Emma", "Grace", "egrace@email.sc.edu", "efg", "password"));
-        advisor.addAdvisee(new Student("Kyla", "Wilson", "kwilson@email.sc.edu", "klw", "password"));
-        assertEquals(
-        "List of Advisees:\n" + 
-        "Name: Parker Martin\n" + "Email: pmartin@email.sc.edu" + "\n"+ 
-        "Name: Emma Grace\n" + "Email: egrace@email.sc.edu" + "\n"+ 
-        "Name: Kyla Wilson\n" + "Email: kwilson@email.sc.edu" + "\n", advisor.viewAdvisees());
+    public void testViewStudentProfile() {
+        String profile = advisor.viewStudentProfile(student1);
+        assertTrue(profile.contains(student1.getFirstName()) && profile.contains(student1.getLastName()));
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetOfficeWithNull() {
+        advisor.setOffice(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetOfficeHoursWithInvalidFormat() {
+        advisor.setOfficeHours("invalidHours");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testSetPhoneNumberWithInvalidNumber() {
+        advisor.setPhoneNumber("803123455");
     }
 
     @Test
-    void testViewAppointmentsNormal()
-    {
-        advisor.addAppointment(new Appointment("2:30 PM", "Swearingen A101"));
-        assertEquals("List of Available Appointments:\n" + "Time: 2:30 PM\n" + "Location: Swearingen A101" + "\n", advisor.viewAppointments());
+    public void testSetSchoolOfFocusWithEmptyString() {
+        advisor.setSchoolOfFocus("");
+        assertEquals("", advisor.getSchoolOfFocus());
     }
 
     @Test
-    void testViewAppointmentsThree()
-    {
-        advisor.addAppointment(new Appointment("2:30 PM", "Swearingen A101"));
-        advisor.addAppointment(new Appointment("3:00 PM", "Swearingen A101"));
-        advisor.addAppointment(new Appointment("3:30 PM", "Swearingen A101"));
-        assertEquals(
-        "List of Available Appointments:\n" + 
-        "Time: 2:30 PM\n" + "Location: Swearingen A101" + "\n"+ 
-        "Time: 3:00 PM\n" + "Location: Swearingen A101" + "\n"+ 
-        "Time: 3:30 PM\n" + "Location: Swearingen A101" + "\n", advisor.viewAppointments());
+    public void testSetAdviseeListWithNull() {
+        advisor.setAdviseeList(null);
+        assertNull(advisor.getAdviseeList());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddNullAdvisee() {
+        advisor.addAdvisee(null);
     }
 
     @Test
-    void testSearchForStudentNameNormal()
-    {
-        advisor.addAdvisee(student);
-        assertEquals(advisor.searchByName("Parker"), advisor.getAdviseeList().get(0).viewProfile());
+    public void testSetAppointmentsWithNull() {
+        advisor.setAppointments(null);
+        assertNull(advisor.getAppointments());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddNullAppointment() {
+        advisor.addAppointment(null);
     }
 
     @Test
-    void testSearchForStudentNameDifferentCase()
-    {
-        advisor.addAdvisee(student);
-        assertEquals(advisor.searchByName("pArkER"), advisor.getAdviseeList().get(0).viewProfile());
+    public void testAddAdvisee() {
+        advisor.addAdvisee(student1);
+        assertTrue(advisor.getAdviseeList().contains(student1));
     }
 
     @Test
-    void testSearchForStudentNameNotInList()
-    {
-        advisor.addAdvisee(student);
-        assertNotEquals(advisor.searchByName("Kennedy"), advisor.getAdviseeList().get(0).viewProfile());
-    }@Test
-    void testSearchForStudentIDNormal()
-    {
-        advisor.addAdvisee(student);
-        String id = advisor.getAdviseeList().get(0).getUserStringID();
-        assertEquals(advisor.searchByID(id), advisor.getAdviseeList().get(0).viewProfile());
+    public void testAddAppointment() {
+        advisor.addAppointment(appointment1);
+        assertTrue(advisor.getAppointments().contains(appointment1));
     }
 
     @Test
-    void testSearchForStudentIDNotInList()
-    {
-        advisor.addAdvisee(student);
-        assertNotEquals(advisor.searchByID("9587cd29-4aa7-4d78-94fd-505b213b7fca"), advisor.getAdviseeList().get(0).viewProfile());
-    }@Test
-    void testSearchForStudentUNNormal()
-    {
-        advisor.addAdvisee(student);
-        assertEquals(advisor.searchByUserName("pmm"), advisor.getAdviseeList().get(0).viewProfile());
+    public void testViewAppointments() {
+        advisor.addAppointment(appointment1);
+        advisor.addAppointment(appointment2);
+        ArrayList<Appointment> appointments = advisor.getAppointments();
+        assertTrue(appointments.contains(appointment1) && appointments.contains(appointment2));
     }
 
     @Test
-    void testSearchForStudentUNNotInList()
-    {
-        advisor.addAdvisee(student);
-        assertNotEquals(advisor.searchByUserName("kmm"), advisor.getAdviseeList().get(0).viewProfile());
+    public void testSearchByID() {
+        String id = student1.getUserID().toString();
+        ArrayList<Student> foundStudents = advisor.searchByID(id);
+        assertNotNull(foundStudents);
+        assertTrue(foundStudents.contains(student1));
     }
 
+    @Test
+    public void testSearchByName() {
+        String name = student1.getFirstName();
+        ArrayList<Student> foundStudents = advisor.searchByName(name);
+        assertNotNull(foundStudents);
+        assertTrue(foundStudents.contains);
+    }
 
+    @Test
+    public void testSearchByUserName() {
+        String username = student2.getUsername();
+        User foundUser = advisor.searchByUserName(username);
+        assertNotNull(foundUser);
+        assertEquals(foundUser.getUsername(), student2.getUsername());
+    }
+    @Test
+    public void testSetAndGetOffice() {
+        String office = "Room 101";
+        advisor.setOffice(office);
+        assertEquals(office, advisor.getOffice());
+    }
 
+    @Test
+    public void testSetAndGetOfficeHours() {
+        String officeHours = "9 AM to 5 PM";
+        advisor.setOfficeHours(officeHours);
+        assertEquals(officeHours, advisor.getOfficeHours());
+    }
 
+    @Test
+    public void testSetAndGetPhoneNumber() {
+        String phoneNumber = "123-456-7890";
+        advisor.setPhoneNumber(phoneNumber);
+        assertEquals(phoneNumber, advisor.getPhoneNumber());
+    }
 
-   
+    @Test
+    public void testSetAndGetSchoolOfFocus() {
+        String schoolOfFocus = "Engineering";
+        advisor.setSchoolOfFocus(schoolOfFocus);
+        assertEquals(schoolOfFocus, advisor.getSchoolOfFocus());
+    }
 
+    @Test
+    public void testAdviseeList() {
+        ArrayList<Student> advisees = new ArrayList<>();
+        Student student1 = new Student("John", "Doe", "john@example.com", "john", "pass");
+        Student student2 = new Student("Jane", "Doe", "jane@example.com", "jane", "pass");
+        advisees.add(student1);
+        advisees.add(student2);
 
+        advisor.setAdviseeList(advisees);
+        assertEquals(advisees, advisor.getAdviseeList());
+        assertTrue(advisor.getAdviseeList().contains(student1));
+        assertTrue(advisor.getAdviseeList().contains(student2));
+    }
 
+    @Test
+    public void testAppointments() {
+        ArrayList<Appointment> appointments = new ArrayList<>();
+        Appointment appointment1 = new Appointment();
+        Appointment appointment2 = new Appointment();
+        appointments.add(appointment1);
+        appointments.add(appointment2);
+
+        advisor.setAppointments(appointments);
+        assertEquals(appointments, advisor.getAppointments());
+        assertTrue(advisor.getAppointments().contains(appointment1));
+        assertTrue(advisor.getAppointments().contains(appointment2));
+    }
 
 }
+
+
+

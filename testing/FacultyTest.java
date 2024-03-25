@@ -18,6 +18,13 @@ public class FacultyTest
     }
 
     @Test
+    void addEmptyStudent()
+    {
+        faculty.addStudent(new Student("", ""));
+        assertEquals("", faculty.getStudentList().get(0).getUsername());
+    }
+
+    @Test
     void addTwoStudents()
     {
         faculty.addStudent(new Student("pmm", "password"));

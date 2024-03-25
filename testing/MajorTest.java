@@ -3,6 +3,7 @@ package testing;
 import org.junit.Before;
 import org.junit.Test;
 
+import src.Course;
 import src.Major;
 import src.Course;
 import static org.junit.Assert.*;

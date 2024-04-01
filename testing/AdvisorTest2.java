@@ -117,13 +117,4 @@ public class AdvisorTest
         assertNotEquals(advisor.searchByUserName("kmm"), advisor.getAdviseeList().get(0).viewProfile());
     }
 
-
-
-
-
-   
-
-
-
-
 }

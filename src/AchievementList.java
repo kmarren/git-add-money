@@ -21,19 +21,44 @@ public class AchievementList {
         return instance;
     }
 
+    // adds an achievement to the list
     public void addAchievement(Achievement achievement) {
-        achievements.add(achievement);
+        if (achievement != null && achievement instanceof Achievement) {
+            achievements.add(achievement);
+        }
     }
 
     public void removeAchievement(UUID uuid) {
-        for (Achievement achievement : achievements) {
-            if (achievement.getAchievementID().equals(uuid)) {
-                achievements.remove(achievement);
+        if (uuid != null && uuid instanceof UUID) {
+            for (Achievement achievement : achievements) {
+                if (achievement.getAchievementID().equals(uuid)) {
+                    achievements.remove(achievement);
+                }
+            }
+        }
+    }
+
+    public void removeAchievement(String uuid) {
+        if (uuid != null) {
+            for (Achievement achievement : achievements) {
+                if (achievement.getAchievementID().equals(UUID.fromString(uuid))) {
+                    achievements.remove(achievement);
+                }
             }
         }
     }
 
     public Achievement getAchievement(UUID uuid) {
+        if (uuid != null && uuid instanceof UUID)
+            for (Achievement achievement : achievements) {
+                if (achievement.getAchievementID().equals(uuid)) {
+                    return achievement;
+                }
+            }
+        return null;
+    }
+
+    public Achievement getAchievement(String uuid) {
         for (Achievement achievement : achievements) {
             if (achievement.getAchievementID().equals(uuid)) {
                 return achievement;
